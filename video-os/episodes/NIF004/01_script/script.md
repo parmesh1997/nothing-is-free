@@ -38,74 +38,68 @@ re-record of that beat.
 ---
 
 ━━━ B00 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-WORDS 26   EST 10s   ·   OPENING · signature
+WORDS 33   EST 14s   ·   OPENING · signature   ·   MOTION: Glide
 
 PLAIN
-  Nothing is free. The map on your phone is the one app that never asks
-  you to pay. That's exactly how you know somebody already did.
+  Nothing is free. Google Maps has never charged you a cent, and it makes
+  about eleven billion dollars a year. This is where that money comes
+  from, and you are standing in the middle of it.
 
 v3 TAGGED
-  [matter-of-fact] Nothing is free. [slowly] The map on your phone is the
-  one app that never asks you to pay. That's exactly how you know somebody
-  already did.
+  [matter-of-fact] Nothing is free. [matter-of-fact] Google Maps has never
+  charged you a cent, and it makes about eleven billion dollars a year.
+  [slowly] This is where that money comes from, and you are standing in
+  the middle of it.
 
-NOTE  Fixed words flat, every episode (§6.4). Claim clause lands by 0:03.
-      Cold open: first-person view riding the blue navigation line; the
-      route quietly re-draws to curve past one orange "sponsored" pin; a
-      small corner meter ticks up from zero the moment the map loads.
-      Device is new: Ep1 concession stand, Ep2 narration-only, Ep3 Lucky
-      plus remote plus TV.
+NOTE  Fixed words flat, every episode (§6.4). The contradiction (free +
+      $11B) lands by ~0:06. Cold open: first-person view riding the blue
+      navigation line; the route quietly re-draws to curve past one orange
+      "sponsored" pin; a corner meter ticks up from zero the moment the map
+      loads. Glide register (runbook §22.10) — continuous camera, parallax,
+      the pin draws on. Device is new: Ep1 concession stand, Ep2
+      narration-only, Ep3 Lucky + remote + TV.
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 ━━━ B01 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-WORDS 71   EST 32s   ·   OPENING
+WORDS 72   EST 32s   ·   OPENING
 
 PLAIN
-  Open the map and three meters start running. One meter for every app
-  that shows you a map. One for every business that wants to be the pin
-  you tap. And one that runs on you, quietly, in the background. You never
-  see any of them. This episode reads all three, one at a time, and then
-  shows you how they connect. Because they turn out to be the same
-  machine.
+  The map is not doing this for the love of cartography. Turning it on
+  starts three meters running. One bills every app that shows you a map.
+  One bills every business that wants to be the pin you tap. And the third
+  one runs on you, and it is the one nobody mentions. This episode reads
+  all three, and then shows you they are the same machine.
 
 v3 TAGGED
-  [curious] Open the map and three meters start running. [matter-of-fact]
-  One meter for every app that shows you a map. One for every business
-  that wants to be the pin you tap. And one that runs on you, quietly, in
-  the background. You never see any of them.
-  [matter-of-fact] This episode reads all three, one at a time, and then
-  shows you how they connect. [slowly] Because they turn out to be the
-  same machine.
+  [dry] The map is not doing this for the love of cartography.
+  [matter-of-fact] Turning it on starts three meters running. One bills
+  every app that shows you a map. One bills every business that wants to be
+  the pin you tap. And the third one runs on you, and it is the one nobody
+  mentions.
+  [matter-of-fact] This episode reads all three, and then shows you they
+  are the same machine.
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 ━━━ B02 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-WORDS 116   EST 52s   ·   MEDIUM · save-the-cat
+WORDS 78   EST 36s   ·   MEDIUM · save-the-cat (compressed) + first proof
 
 PLAIN
-  First, the honest part. A map that covers the whole planet, stays
-  current, and is free to open is one of the hardest things anyone has
-  ever built. Cars drive down every street with a camera on the roof.
-  Satellites and planes reshoot the world from above. A pipeline takes
-  millions of user corrections and folds them in. Live traffic has to be
-  measured constantly, everywhere at once. None of that is cheap, and it
-  never stops. Nobody in this story is a cartoon villain. These are
-  companies that found a way to make a free map pay for itself, and then
-  kept pulling that lever, harder, every year. The rest of the episode is
-  about what the lever is.
+  Now, the honest part, quickly. This map is one of the hardest things
+  anyone has ever built, and it costs a fortune to keep running. That part
+  is real. The question is who pays for it. So start with the meter you
+  can see right now. Open your map and search for coffee. The pin sitting
+  on top is almost never the closest one to you. Somebody paid to put it
+  there. And that is the smallest of the three.
 
 v3 TAGGED
-  [warm] First, the honest part. A map that covers the whole planet, stays
-  current, and is free to open is one of the hardest things anyone has
-  ever built.
-  [matter-of-fact] Cars drive down every street with a camera on the roof.
-  Satellites and planes reshoot the world from above. A pipeline takes
-  millions of user corrections and folds them in. Live traffic has to be
-  measured constantly, everywhere at once. None of that is cheap, and it
-  never stops.
-  [thoughtful] Nobody in this story is a cartoon villain. These are
-  companies that found a way to make a free map pay for itself, and then
-  kept pulling that lever, harder, every year. The rest of the episode is
-  about what the lever is.
+  [warm] Now, the honest part, quickly. This map is one of the hardest
+  things anyone has ever built, and it costs a fortune to keep running.
+  That part is real.
+  [matter-of-fact] The question is who pays for it. So start with the
+  meter you can see right now. Open your map and search for coffee. The
+  pin sitting on top is almost never the closest one to you. [slowly]
+  Somebody paid to put it there. [matter-of-fact] And that is the smallest
+  of the three.
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 ━━━ B03 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -205,17 +199,16 @@ PLAIN
   Here is what a single look costs today. A moving, zoomable map runs
   about seven dollars for every thousand times it loads, once the free
   amount is used up. Tap a pin and the little card that slides up, the one
-  with the hours and the phone number, can cost the app between seventeen
-  and thirty two dollars per thousand. Every pin you tap on someone
-  else's app is a few cents on their bill. You just never see the receipt.
+  with the hours and the phone number, costs the app around seventeen
+  dollars per thousand. Every pin you tap on someone else's app is a few
+  cents on their bill. You just never see the receipt.
 
 v3 TAGGED
   [matter-of-fact] Here is what a single look costs today. A moving,
   zoomable map runs about seven dollars for every thousand times it loads,
   once the free amount is used up.
   Tap a pin and the little card that slides up, the one with the hours and
-  the phone number, can cost the app between seventeen and thirty two
-  dollars per thousand.
+  the phone number, costs the app around seventeen dollars per thousand.
   Every pin you tap on someone else's app is a few cents on their bill.
   [slowly] You just never see the receipt.
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -314,20 +307,22 @@ v3 TAGGED
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 ━━━ B12 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-WORDS 46   EST 20s   ·   REST · mid-roll CTA
+WORDS 55   EST 24s   ·   REST · mid-roll CTA   ·   loop handoff L1→L2
 
 PLAIN
   Quick pause. If you are still here, this is the channel that reads you
   the meter on things that look free. Subscribing tells the algorithm to
-  show you the next one. Now, the second meter. This one is easier to see,
-  once you know the word.
+  show you the next one. So that was the first meter, the apps paying per
+  look, and it is the cheap one. The second is bigger. Once you know the
+  word for it, you cannot unsee it.
 
 v3 TAGGED
   [warm] Quick pause. If you are still here, this is the channel that
   reads you the meter on things that look free. Subscribing tells the
   algorithm to show you the next one.
-  [matter-of-fact] Now, the second meter. This one is easier to see, once
-  you know the word.
+  [matter-of-fact] So that was the first meter, the apps paying per look,
+  and it is the cheap one. The second is bigger. [slowly] Once you know
+  the word for it, you cannot unsee it.
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 ━━━ B13 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -431,21 +426,24 @@ v3 TAGGED
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 ━━━ B18 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-WORDS 66   EST 36s   ·   MEDIUM
+WORDS 78   EST 40s   ·   MEDIUM   ·   loop handoff L2→L3
 
 PLAIN
-  Now the third meter. This one does not run on the apps or the
-  businesses. It runs on you. To route you around the jam ahead, the map
+  So that is the map as an ad. And that would be the whole story, except
+  for the third meter. The third meter is you. This one does not run on
+  the apps or the businesses. To route you around the jam ahead, the map
   needs to know exactly where you are, moving, in real time. That is a
   fair trade for the thing you opened it to do. The part nobody mentions
   is that the signal does not stop when you park.
 
 v3 TAGGED
-  [matter-of-fact] Now the third meter. This one does not run on the apps
-  or the businesses. It runs on you.
-  [matter-of-fact] To route you around the jam ahead, the map needs to
-  know exactly where you are, moving, in real time. That is a fair trade
-  for the thing you opened it to do.
+  [matter-of-fact] So that is the map as an ad. And that would be the
+  whole story, except for the third meter. [slowly] The third meter is
+  you.
+  [matter-of-fact] This one does not run on the apps or the businesses. To
+  route you around the jam ahead, the map needs to know exactly where you
+  are, moving, in real time. That is a fair trade for the thing you opened
+  it to do.
   [slowly] The part nobody mentions is that the signal does not stop when
   you park.
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -588,18 +586,22 @@ v3 TAGGED
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 ━━━ B25 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-WORDS 50   EST 24s   ·   MEDIUM
+WORDS 62   EST 28s   ·   MEDIUM   ·   loop handoff L3→reversal
 
 PLAIN
   You opened a map. You became the measurement. Not a customer, exactly,
   and not the product either. One reading, among two billion, in a chart
-  that other people pay to see. All you wanted was the fast way home.
+  that other people pay to see. All you wanted was the fast way home. Which
+  leaves one last question. If you are the one paying, why does it never
+  feel like it?
 
 v3 TAGGED
   [matter-of-fact] You opened a map. [slowly] You became the measurement.
   [thoughtful] Not a customer, exactly, and not the product either. One
   reading, among two billion, in a chart that other people pay to see.
   [warm] All you wanted was the fast way home.
+  [matter-of-fact] Which leaves one last question. [slowly] If you are the
+  one paying, why does it never feel like it?
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 ━━━ B26 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

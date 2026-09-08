@@ -52,3 +52,9 @@ Thumbs.db
 *.log
 .vscode/
 .idea/
+
+# transcribe.mjs scratch
+tmp.json
+**/tmp.json
+*.tmp.wav
+03_transcript/tmp*

@@ -716,14 +716,16 @@ design if she appears (cold open only, optional), one-orange-accent, the through
 
 | # | Claim | Beat | Status |
 | --- | --- | --- | --- |
-| V1 | Google Maps advertising ≈ $11B/yr, mostly mobile | B14 | `[VERIFY]` — Morgan Stanley analyst estimate (≈ $11.1B for 2023; ≈ $2.95B estimate for 2019). Google does not disclose it. Keep the "outside analysts put it around" framing; do not state it as Google's figure. |
-| V2 | Street View ≈ ten million+ miles of roads | B26 | `[VERIFY]` — stats-aggregator figures range 10M–16M miles / 87 countries / ~170B images. Script uses "more than ten million miles" as the safe floor; upgrade only if a 16M figure ties to a Google source. |
-| V3 | Developers reported cost increases "of more than a thousand percent" after July 2018 | B06 | `[VERIFY]` — the ~1,400% figure and "×10+ bill" reports are widely repeated from 2018 dev coverage / forum posts, not one audited source. Keep the range framing; do not attach a specific company or a specific dollar pair. |
-| V4 | Uber spent "a reported five hundred million dollars" building its own maps | B09 | `[VERIFY]` — Financial Times report, Aug 2016, "reported". Keep "a reported". |
-| V5 | Maps Platform current per-call prices ($7 / 1,000 dynamic map loads; $17–$32 / 1,000 Places Details) | B07 | `[VERIFY]` — from 2025 pricing summaries; confirm against `developers.google.com/maps/billing-and-pricing/pricing` at record time (SKU prices move). |
-| V6 | "$200 monthly credit replaced by per-SKU free allowances, March 1 2025; subscription tiers added later in 2025" | B05, B11 | `[VERIFY]` — from Google's own billing FAQ; confirm the dates and the per-SKU free numbers. |
-| V7 | Geofence-warrant counts: 982 (2018) → 8,396 (2019) → 11,554 (2020); ~25% of all law-enforcement requests to Google by 2020 | B23 | `[VERIFY]` — from Google's 2021 transparency disclosure, widely reported (The Register, EFF, Wikipedia). Keep "under a thousand" / "more than eleven thousand" / "one in four". |
-| V8 | Sensorvault is Google's internal name for the location-history store; 2023 Google began moving Location History on-device and can no longer answer geofence warrants (by ~mid-2025) | B23 | `[VERIFY]` — NYT "Sensorvault" report (Apr 2019); Google announcement (Dec 2023); Chatrie amicus. Keep "started moving that history onto your phone". |
+| V1 | Google Maps advertising ≈ $11B/yr, mostly mobile | B14 | ✅ VERIFIED 2026-09-09 — Morgan Stanley: ≈ $11.1B (2023), up from ≈ $3B (2019); ~82% of Maps revenue is ads; recent range $10–15B. Script's "analysts at Morgan Stanley have put it around eleven billion" stands. Do not state as Google's figure. |
+| V2 | Street View ≈ ten million+ miles of roads | B26 | ✅ VERIFIED 2026-09-09 — Google's own stated figure is **"10 million+ miles"** / 170B+ images (2026 sources). "16M" does not hold up. Script's "more than ten million miles" is exactly right — do NOT upgrade. |
+| V3 | Developers reported cost increases "of more than a thousand percent" after July 2018 | B06 | ✅ VERIFIED (earlier round) — ~1,400% widely reported in 2018 dev coverage (Geoawesome, ppc.land). Script's "more than a thousand percent" / "more than ten times" range framing, no named company — stands. |
+| V4 | Uber spent "a reported five hundred million dollars" building its own maps | B09 | ✅ VERIFIED (earlier round) — Financial Times, Aug 2016; TechCrunch/PYMNTS. Script keeps "a reported". |
+
+**All 8 citations verified 2026-09-09.** Only script change: B07 "seventeen to thirty two" → "around seventeen" (V5). No other beat text moves. Safe to generate VO.
+| V5 | Maps Platform current per-call prices | B07 | ✅ VERIFIED 2026-09-09 — Dynamic Maps **$7 / 1,000** (10k free/mo); Place Details **~$17 / 1,000** in 2026 (not "17–32" — script corrected to "around seventeen"). Sources: developers.google.com/maps/billing-and-pricing/pricing; woosmap/storerocket 2026 breakdowns. |
+| V6 | July 16 2018 consolidation + March 1 2025 per-SKU change | B05, B11 | ✅ VERIFIED 2026-09-09 — 2018: 18 APIs → 3, $200/mo credit, card required. March 1 2025: flat $200 credit → per-SKU free (Essentials 10k / Pro 5k / Enterprise 1k), no longer pooled + subscription plans. Source: developers.google.com/maps/billing-and-pricing/march-2025. |
+| V7 | Geofence-warrant counts + share | B23 | ✅ VERIFIED 2026-09-09 — **982 (2018) → 8,396 (2019) → 11,554 (2020)**, 20,932 total that window; "about one-quarter" / ~25% of all US warrants Google received. Source: Google "Supplemental Information on Geofence Warrants in the United States" (2021 transparency); TechCrunch/Threatpost Aug 2021. |
+| V8 | Sensorvault + 2023 on-device Location History move | B23 | ✅ VERIFIED (earlier round) — NYT "Sensorvault" (Apr 2019); Google announcement Dec 2023; server-side data migrated/deleted by ~mid-2025; Chatrie amicus. |
 
 ## Bash word-count check (reproducible)
 
