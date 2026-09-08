@@ -26,16 +26,22 @@ baked (runbook §22.7 / creator 2026-09-09):
 # rebuild the per-beat SFX mixes (safe to re-run)
 node scripts/build-sfx-mix-nif004.mjs
 
-# per-beat ProRes HQ clips → out/beats-nif004/NIF004-B##.mov  (for the conform)
-node scripts/render-beats-nif004.mjs
-
-# OR the whole episode in one file → out/beats-nif004/NIF004-EPISODE.mov
-node scripts/render-beats-nif004.mjs --episode
-
-# fast H.264 review copies instead
+# --- the recommended path: per-beat clips, then concat ---
+# 34 H.264 clips → out/review-nif004/NIF004-B##.mp4
 node scripts/render-beats-nif004.mjs --h264
+# stitch them into one file (hard cuts) → out/review-nif004/NIF004-EPISODE.mp4
+node scripts/concat-nif004.mjs
+
+# ProRes HQ instead (for archival / a lossless conform):
+node scripts/render-beats-nif004.mjs        # → out/beats-nif004/NIF004-B##.mov
+node scripts/concat-nif004.mjs --prores     # → out/beats-nif004/NIF004-EPISODE.mov
+
+# OR the whole episode as one render (slower, all-or-nothing):
+node scripts/render-beats-nif004.mjs --episode --h264
 ```
 
+Per-beat clips are what the Resolve conform wants (one per timeline clip, so the
+cross-dissolves go between them). The concat is a stream-copy — near instant.
 Composition ids: `NIF004-B00v4` … `NIF004-B33v4` (per beat), `NIF004-V4`
 (whole episode), `NIF004-SFX` (SFX-only stem — render to a .wav for a separate
 Fairlight track if wanted).
