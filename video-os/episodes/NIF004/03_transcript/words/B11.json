@@ -1,0 +1,562 @@
+[
+  {
+    "text": "In",
+    "startMs": 120,
+    "endMs": 140,
+    "timestampMs": 260,
+    "confidence": 0.869808
+  },
+  {
+    "text": " March",
+    "startMs": 140,
+    "endMs": 500,
+    "timestampMs": 600,
+    "confidence": 0.922185
+  },
+  {
+    "text": " of",
+    "startMs": 500,
+    "endMs": 640,
+    "timestampMs": 860,
+    "confidence": 0.974639
+  },
+  {
+    "text": " 2025",
+    "startMs": 640,
+    "endMs": 1540,
+    "timestampMs": 1680,
+    "confidence": 0.98307
+  },
+  {
+    "text": ",",
+    "startMs": 1540,
+    "endMs": 1640,
+    "timestampMs": 2060,
+    "confidence": 0.759252
+  },
+  {
+    "text": " Google",
+    "startMs": 1640,
+    "endMs": 2070,
+    "timestampMs": 2260,
+    "confidence": 0.94048
+  },
+  {
+    "text": " adjusted",
+    "startMs": 2070,
+    "endMs": 2670,
+    "timestampMs": 2820,
+    "confidence": 0.994309
+  },
+  {
+    "text": " the",
+    "startMs": 2670,
+    "endMs": 2850,
+    "timestampMs": 3100,
+    "confidence": 0.990711
+  },
+  {
+    "text": " meter",
+    "startMs": 2850,
+    "endMs": 3250,
+    "timestampMs": 3300,
+    "confidence": 0.965567
+  },
+  {
+    "text": " again",
+    "startMs": 3250,
+    "endMs": 3600,
+    "timestampMs": 3760,
+    "confidence": 0.992903
+  },
+  {
+    "text": ".",
+    "startMs": 3600,
+    "endMs": 3680,
+    "timestampMs": 4740,
+    "confidence": 0.940754
+  },
+  {
+    "text": " The",
+    "startMs": 3680,
+    "endMs": 3920,
+    "timestampMs": 4840,
+    "confidence": 0.993358
+  },
+  {
+    "text": " one",
+    "startMs": 3920,
+    "endMs": 4720,
+    "timestampMs": 5140,
+    "confidence": 0.895506
+  },
+  {
+    "text": " monthly",
+    "startMs": 4720,
+    "endMs": 5080,
+    "timestampMs": 5560,
+    "confidence": 0.757031
+  },
+  {
+    "text": " credit",
+    "startMs": 5080,
+    "endMs": 5730,
+    "timestampMs": 5920,
+    "confidence": 0.991639
+  },
+  {
+    "text": " was",
+    "startMs": 5730,
+    "endMs": 6080,
+    "timestampMs": 6220,
+    "confidence": 0.993832
+  },
+  {
+    "text": " split",
+    "startMs": 6080,
+    "endMs": 6710,
+    "timestampMs": 6560,
+    "confidence": 0.995137
+  },
+  {
+    "text": " into",
+    "startMs": 6710,
+    "endMs": 7040,
+    "timestampMs": 7000,
+    "confidence": 0.982542
+  },
+  {
+    "text": " a",
+    "startMs": 7040,
+    "endMs": 7130,
+    "timestampMs": 7300,
+    "confidence": 0.93055
+  },
+  {
+    "text": " separate",
+    "startMs": 7130,
+    "endMs": 7890,
+    "timestampMs": 7700,
+    "confidence": 0.992591
+  },
+  {
+    "text": " free",
+    "startMs": 7890,
+    "endMs": 8000,
+    "timestampMs": 8060,
+    "confidence": 0.741619
+  },
+  {
+    "text": " allowance",
+    "startMs": 8000,
+    "endMs": 8560,
+    "timestampMs": 8520,
+    "confidence": 0.988178
+  },
+  {
+    "text": " for",
+    "startMs": 8560,
+    "endMs": 8910,
+    "timestampMs": 8900,
+    "confidence": 0.981601
+  },
+  {
+    "text": " each",
+    "startMs": 8910,
+    "endMs": 9160,
+    "timestampMs": 9160,
+    "confidence": 0.985797
+  },
+  {
+    "text": " type",
+    "startMs": 9160,
+    "endMs": 9440,
+    "timestampMs": 9440,
+    "confidence": 0.987496
+  },
+  {
+    "text": " of",
+    "startMs": 9440,
+    "endMs": 9680,
+    "timestampMs": 9660,
+    "confidence": 0.989583
+  },
+  {
+    "text": " call",
+    "startMs": 9680,
+    "endMs": 9840,
+    "timestampMs": 9940,
+    "confidence": 0.990907
+  },
+  {
+    "text": ".",
+    "startMs": 9840,
+    "endMs": 9840,
+    "timestampMs": 10900,
+    "confidence": 0.455637
+  },
+  {
+    "text": " A",
+    "startMs": 9840,
+    "endMs": 10640,
+    "timestampMs": 11000,
+    "confidence": 0.967368
+  },
+  {
+    "text": " map",
+    "startMs": 10640,
+    "endMs": 10850,
+    "timestampMs": 11240,
+    "confidence": 0.896147
+  },
+  {
+    "text": " load",
+    "startMs": 10850,
+    "endMs": 11430,
+    "timestampMs": 11580,
+    "confidence": 0.963902
+  },
+  {
+    "text": ",",
+    "startMs": 11430,
+    "endMs": 11930,
+    "timestampMs": 12000,
+    "confidence": 0.937355
+  },
+  {
+    "text": " a",
+    "startMs": 11930,
+    "endMs": 11930,
+    "timestampMs": 12140,
+    "confidence": 0.978069
+  },
+  {
+    "text": " route",
+    "startMs": 11930,
+    "endMs": 12400,
+    "timestampMs": 12380,
+    "confidence": 0.991191
+  },
+  {
+    "text": ",",
+    "startMs": 12400,
+    "endMs": 12610,
+    "timestampMs": 12940,
+    "confidence": 0.985586
+  },
+  {
+    "text": " a",
+    "startMs": 12610,
+    "endMs": 12880,
+    "timestampMs": 13100,
+    "confidence": 0.99032
+  },
+  {
+    "text": " place",
+    "startMs": 12880,
+    "endMs": 13140,
+    "timestampMs": 13340,
+    "confidence": 0.981199
+  },
+  {
+    "text": " lookup",
+    "startMs": 13140,
+    "endMs": 13700,
+    "timestampMs": 13700,
+    "confidence": 0.665214
+  },
+  {
+    "text": ",",
+    "startMs": 13700,
+    "endMs": 14000,
+    "timestampMs": 14140,
+    "confidence": 0.973918
+  },
+  {
+    "text": " a",
+    "startMs": 14000,
+    "endMs": 14070,
+    "timestampMs": 14240,
+    "confidence": 0.954134
+  },
+  {
+    "text": " street",
+    "startMs": 14070,
+    "endMs": 14470,
+    "timestampMs": 14540,
+    "confidence": 0.936924
+  },
+  {
+    "text": " view",
+    "startMs": 14470,
+    "endMs": 14800,
+    "timestampMs": 14860,
+    "confidence": 0.986073
+  },
+  {
+    "text": ",",
+    "startMs": 14800,
+    "endMs": 15380,
+    "timestampMs": 15480,
+    "confidence": 0.321557
+  },
+  {
+    "text": " each",
+    "startMs": 15380,
+    "endMs": 15570,
+    "timestampMs": 15860,
+    "confidence": 0.920686
+  },
+  {
+    "text": " now",
+    "startMs": 15570,
+    "endMs": 15670,
+    "timestampMs": 16140,
+    "confidence": 0.989765
+  },
+  {
+    "text": " counted",
+    "startMs": 15670,
+    "endMs": 16350,
+    "timestampMs": 16580,
+    "confidence": 0.998814
+  },
+  {
+    "text": " on",
+    "startMs": 16350,
+    "endMs": 16540,
+    "timestampMs": 16960,
+    "confidence": 0.994006
+  },
+  {
+    "text": " its",
+    "startMs": 16540,
+    "endMs": 16830,
+    "timestampMs": 17140,
+    "confidence": 0.975215
+  },
+  {
+    "text": " own",
+    "startMs": 16830,
+    "endMs": 17140,
+    "timestampMs": 17580,
+    "confidence": 0.992729
+  },
+  {
+    "text": ".",
+    "startMs": 17140,
+    "endMs": 17440,
+    "timestampMs": 18960,
+    "confidence": 0.958263
+  },
+  {
+    "text": " Then",
+    "startMs": 17440,
+    "endMs": 17880,
+    "timestampMs": 19140,
+    "confidence": 0.993502
+  },
+  {
+    "text": " paid",
+    "startMs": 17880,
+    "endMs": 18890,
+    "timestampMs": 19500,
+    "confidence": 0.915706
+  },
+  {
+    "text": " monthly",
+    "startMs": 18890,
+    "endMs": 19230,
+    "timestampMs": 19920,
+    "confidence": 0.955872
+  },
+  {
+    "text": " plans",
+    "startMs": 19230,
+    "endMs": 19850,
+    "timestampMs": 20440,
+    "confidence": 0.994761
+  },
+  {
+    "text": " went",
+    "startMs": 19850,
+    "endMs": 20210,
+    "timestampMs": 20820,
+    "confidence": 0.991231
+  },
+  {
+    "text": " on",
+    "startMs": 20210,
+    "endMs": 20650,
+    "timestampMs": 21060,
+    "confidence": 0.998197
+  },
+  {
+    "text": " top",
+    "startMs": 20650,
+    "endMs": 20780,
+    "timestampMs": 21280,
+    "confidence": 0.996607
+  },
+  {
+    "text": " for",
+    "startMs": 20780,
+    "endMs": 21120,
+    "timestampMs": 21640,
+    "confidence": 0.988229
+  },
+  {
+    "text": " heavier",
+    "startMs": 21120,
+    "endMs": 21930,
+    "timestampMs": 22060,
+    "confidence": 0.985398
+  },
+  {
+    "text": " users",
+    "startMs": 21930,
+    "endMs": 22550,
+    "timestampMs": 22720,
+    "confidence": 0.998624
+  },
+  {
+    "text": ".",
+    "startMs": 22550,
+    "endMs": 22560,
+    "timestampMs": 24220,
+    "confidence": 0.985297
+  },
+  {
+    "text": " The",
+    "startMs": 24390,
+    "endMs": 24510,
+    "timestampMs": 24540,
+    "confidence": 0.995084
+  },
+  {
+    "text": " meter",
+    "startMs": 24510,
+    "endMs": 24930,
+    "timestampMs": 24760,
+    "confidence": 0.980129
+  },
+  {
+    "text": " did",
+    "startMs": 24930,
+    "endMs": 25430,
+    "timestampMs": 25000,
+    "confidence": 0.995353
+  },
+  {
+    "text": " not",
+    "startMs": 25430,
+    "endMs": 25500,
+    "timestampMs": 25280,
+    "confidence": 0.998205
+  },
+  {
+    "text": " switch",
+    "startMs": 25500,
+    "endMs": 25800,
+    "timestampMs": 25580,
+    "confidence": 0.99771
+  },
+  {
+    "text": " off",
+    "startMs": 25800,
+    "endMs": 26330,
+    "timestampMs": 26120,
+    "confidence": 0.982754
+  },
+  {
+    "text": ".",
+    "startMs": 26330,
+    "endMs": 26780,
+    "timestampMs": 26580,
+    "confidence": 0.716773
+  },
+  {
+    "text": " It",
+    "startMs": 26780,
+    "endMs": 26870,
+    "timestampMs": 27000,
+    "confidence": 0.985703
+  },
+  {
+    "text": " learned",
+    "startMs": 26870,
+    "endMs": 27450,
+    "timestampMs": 27420,
+    "confidence": 0.975654
+  },
+  {
+    "text": " to",
+    "startMs": 27450,
+    "endMs": 27610,
+    "timestampMs": 27680,
+    "confidence": 0.993665
+  },
+  {
+    "text": " charge",
+    "startMs": 27610,
+    "endMs": 28160,
+    "timestampMs": 27940,
+    "confidence": 0.998357
+  },
+  {
+    "text": " for",
+    "startMs": 28160,
+    "endMs": 28430,
+    "timestampMs": 28340,
+    "confidence": 0.997177
+  },
+  {
+    "text": " every",
+    "startMs": 28430,
+    "endMs": 28910,
+    "timestampMs": 28700,
+    "confidence": 0.99643
+  },
+  {
+    "text": " kind",
+    "startMs": 28910,
+    "endMs": 29260,
+    "timestampMs": 29160,
+    "confidence": 0.997603
+  },
+  {
+    "text": " of",
+    "startMs": 29260,
+    "endMs": 29440,
+    "timestampMs": 29500,
+    "confidence": 0.999363
+  },
+  {
+    "text": " look",
+    "startMs": 29440,
+    "endMs": 29990,
+    "timestampMs": 29740,
+    "confidence": 0.995714
+  },
+  {
+    "text": " by",
+    "startMs": 29990,
+    "endMs": 29990,
+    "timestampMs": 30120,
+    "confidence": 0.911974
+  },
+  {
+    "text": " name",
+    "startMs": 29990,
+    "endMs": 30480,
+    "timestampMs": 30460,
+    "confidence": 0.999458
+  },
+  {
+    "text": ".",
+    "startMs": 30480,
+    "endMs": 30480,
+    "timestampMs": 30460,
+    "confidence": 0.951722
+  }
+]

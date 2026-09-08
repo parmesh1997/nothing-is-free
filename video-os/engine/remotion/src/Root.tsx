@@ -31,6 +31,9 @@ import { MotionStudyGlide, MOTION_STUDY_GLIDE_TOTAL } from "./dev/MotionStudyGli
 import { V4_BEATS_NIF003 } from "./nif003/v4/beats";
 import { EpisodeV4 as EpisodeV4NIF003, EPISODE_V4_TOTAL as EPISODE_V4_TOTAL_NIF003 } from "./nif003/v4/EpisodeV4";
 import { SfxStem as SfxStemNIF003 } from "./nif003/v4/audio";
+import { V4_BEATS_NIF004 } from "./nif004/v4/beats";
+import { EpisodeV4 as EpisodeV4NIF004, EPISODE_V4_TOTAL as EPISODE_V4_TOTAL_NIF004 } from "./nif004/v4/EpisodeV4";
+import { SfxStem as SfxStemNIF004 } from "./nif004/v4/audio";
 
 /**
  * Root.tsx — the composition registry (§11.1 Tier 0).
@@ -119,6 +122,34 @@ const nif003 = (n: string, C: React.FC<any>, durationInFrames: number, globalSta
       globalStartFrame,
       episodeTotalFrames: NIF003_TOTAL,
       audioSrc: `audio/nif003/${n}.mp3`,
+      audioOffsetMs: 0,
+    }}
+    calculateMetadata={waitForFontsV4}
+  />
+);
+
+/** NIF004 ("Google Maps — the hidden economics of the free map") — real
+ *  durationInFrames + globalStartFrame from episodes/NIF004/03_transcript/
+ *  reconcile.json. episodeTotalFrames 31654 (Step 2 reconcile, creator accepted
+ *  2026-09-09). B30 is this episode's reversal (Dark Law engages mid-beat). */
+const NIF004_TOTAL = 31654;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const nif004 = (n: string, C: React.FC<any>, durationInFrames: number, globalStartFrame: number) => (
+  <Composition
+    id={`NIF004-${n}`}
+    component={C}
+    durationInFrames={durationInFrames}
+    fps={FPS}
+    width={WIDTH}
+    height={HEIGHT}
+    defaultProps={{
+      ...BEAT_PROPS_DEFAULTS,
+      beatId: n,
+      durationInFrames,
+      fps: FPS,
+      globalStartFrame,
+      episodeTotalFrames: NIF004_TOTAL,
+      audioSrc: `audio/nif004/${n}.mp3`,
       audioOffsetMs: 0,
     }}
     calculateMetadata={waitForFontsV4}
@@ -304,6 +335,43 @@ export const RemotionRoot: React.FC = () => {
           id="NIF003-SFX"
           component={SfxStemNIF003}
           durationInFrames={EPISODE_V4_TOTAL_NIF003}
+          fps={FPS}
+          width={WIDTH}
+          height={HEIGHT}
+        />
+      </Folder>
+
+      <Folder name="NIF004-v4-beats">
+        {(
+          [
+            ["B00v4", 493, 0], ["B01v4", 882, 493], ["B02v4", 1093, 1375], ["B03v4", 884, 2468],
+            ["B04v4", 1081, 3352], ["B05v4", 1107, 4433], ["B06v4", 1079, 5540], ["B07v4", 901, 6619],
+            ["B08v4", 1191, 7520], ["B09v4", 1110, 8711], ["B10v4", 1389, 9821], ["B11v4", 920, 11210],
+            ["B12v4", 784, 12130], ["B13v4", 637, 12914], ["B14v4", 827, 13551], ["B15v4", 1038, 14378],
+            ["B16v4", 764, 15416], ["B17v4", 748, 16180], ["B18v4", 1168, 16928], ["B19v4", 949, 18096],
+            ["B20v4", 942, 19045], ["B21v4", 1038, 19987], ["B22v4", 654, 21025], ["B23v4", 1470, 21679],
+            ["B24v4", 1114, 23149], ["B25v4", 834, 24263], ["B26v4", 892, 25097], ["B27v4", 1052, 25989],
+            ["B28v4", 748, 27041], ["B29v4", 657, 27789], ["B30v4", 1186, 28446], ["B31v4", 748, 29632],
+            ["B32v4", 678, 30380], ["B33v4", 596, 31058],
+          ] as [keyof typeof V4_BEATS_NIF004, number, number][]
+        ).map(([id, dur, start]) => nif004(id, V4_BEATS_NIF004[id], dur, start))}
+      </Folder>
+
+      <Folder name="NIF004-v4">
+        <Composition
+          id="NIF004-V4"
+          component={EpisodeV4NIF004}
+          durationInFrames={EPISODE_V4_TOTAL_NIF004}
+          fps={FPS}
+          width={WIDTH}
+          height={HEIGHT}
+          calculateMetadata={waitForFontsV4}
+        />
+        {/* SFX-only stem for the DaVinci Fairlight mix — render to a .wav */}
+        <Composition
+          id="NIF004-SFX"
+          component={SfxStemNIF004}
+          durationInFrames={EPISODE_V4_TOTAL_NIF004}
           fps={FPS}
           width={WIDTH}
           height={HEIGHT}
