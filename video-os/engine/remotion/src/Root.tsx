@@ -27,6 +27,7 @@ import { GrainTile } from "./field/Grain";
 import { V2PrimitivesDemo } from "./dev/V2PrimitivesDemo";
 import { Episode3StyleDemo, EPISODE3_STYLE_DEMO_TOTAL } from "./dev/Episode3StyleDemo";
 import { MassMethodDemo, MASS_METHOD_DEMO_TOTAL } from "./dev/MassMethodDemo";
+import { MotionStudyGlide, MOTION_STUDY_GLIDE_TOTAL } from "./dev/MotionStudyGlide";
 import { V4_BEATS_NIF003 } from "./nif003/v4/beats";
 import { EpisodeV4 as EpisodeV4NIF003, EPISODE_V4_TOTAL as EPISODE_V4_TOTAL_NIF003 } from "./nif003/v4/EpisodeV4";
 import { SfxStem as SfxStemNIF003 } from "./nif003/v4/audio";
@@ -153,6 +154,15 @@ export const RemotionRoot: React.FC = () => {
           fps={FPS}
           width={WIDTH}
           height={HEIGHT}
+        />
+        <Composition
+          id="MotionStudyGlide"
+          component={MotionStudyGlide}
+          durationInFrames={MOTION_STUDY_GLIDE_TOTAL}
+          fps={FPS}
+          width={WIDTH}
+          height={HEIGHT}
+          calculateMetadata={waitForFonts}
         />
       </Folder>
       <Folder name="dev-archetypes">

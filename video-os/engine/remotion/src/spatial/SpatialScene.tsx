@@ -1,5 +1,5 @@
 import { createContext, useContext, useMemo } from "react";
-import { AbsoluteFill, useCurrentFrame } from "remotion";
+import { AbsoluteFill, useCurrentFrame, useVideoConfig } from "remotion";
 import { HEIGHT, PlaneName, WIDTH, Z } from "../tokens";
 import {
   CameraKeyframe,
@@ -117,25 +117,58 @@ const resolveTarget = (
   return t;
 };
 
+/**
+ * Continuous ambient camera drift — the "never a frozen frame" floor for the
+ * Glide motion register (§3.1 stays true: this is opt-in, most scenes leave it
+ * off). Three sinusoids on co-prime-ish periods so the wobble never obviously
+ * repeats. `amount` 0 = locked, 1 = the house amount.
+ */
+export const ambientDrift = (seconds: number, amount: number): Partial<CameraState> => {
+  if (!amount) return { x: 0, y: 0, zoom: 0 };
+  const TAU = Math.PI * 2;
+  return {
+    x: (Math.sin((seconds / 17) * TAU) * 26 + Math.sin((seconds / 6.3) * TAU) * 7) * amount,
+    y: Math.cos((seconds / 23) * TAU) * 13 * amount,
+    zoom: Math.sin((seconds / 13) * TAU) * 0.014 * amount,
+  };
+};
+
 export const SpatialScene: React.FC<{
   objects?: SceneObjects;
   groups?: SceneGroups;
   camera?: SceneCameraKey[];
+  /** Continuous ambient camera drift (0 = locked, default; 1 = house amount).
+   *  Existing scenes are unaffected — the wobble is added to the sampled camera
+   *  pose, so at 0 it is a literal no-op. */
+  drift?: number;
   /** Debug overlay — development only, OFF in every render (§3.8). */
   debug?: boolean;
   children?: React.ReactNode;
-}> = ({ objects = {}, groups = {}, camera = [], debug = false, children }) => {
+}> = ({ objects = {}, groups = {}, camera = [], drift = 0, debug = false, children }) => {
   const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
 
   const camState = useMemo<CameraState>(() => {
-    if (camera.length === 0) return { ...CAMERA_HOME };
-    const kf: CameraKeyframe[] = camera.map((k) => ({
-      frame: k.frame,
-      pose: resolveTarget(k.target, objects, groups),
-      easing: k.easing,
-    }));
-    return sampleCamera(frame, kf);
-  }, [frame, camera, objects, groups]);
+    const base =
+      camera.length === 0
+        ? { ...CAMERA_HOME }
+        : sampleCamera(
+            frame,
+            camera.map<CameraKeyframe>((k) => ({
+              frame: k.frame,
+              pose: resolveTarget(k.target, objects, groups),
+              easing: k.easing,
+            })),
+          );
+    if (!drift) return base;
+    const w = ambientDrift(frame / fps, drift);
+    return {
+      ...base,
+      x: base.x + (w.x ?? 0),
+      y: base.y + (w.y ?? 0),
+      zoom: base.zoom + (w.zoom ?? 0),
+    };
+  }, [frame, fps, camera, objects, groups, drift]);
 
   const value: SceneCtx = { camera: camState, objects, groups, debug };
 
