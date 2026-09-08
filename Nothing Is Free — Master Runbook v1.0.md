@@ -1780,6 +1780,40 @@ Rules:
 - Monetization: every register is pure code motion, no generated assets — a
   richer motion kit makes the channel *more* defensible (§14.1), not less.
 
+### 22.11 · VO is API-generated now — one take per beat (creator, 2026-09-09)
+
+Type C. Amends §6.1, §6.2, §7 Step 2, §17 item 4. The creator connected an
+ElevenLabs API key; Step 2 VO is no longer a manual record-and-return.
+
+- **Claude generates the VO** via the ElevenLabs API from the script's per-beat
+  blocks, writes `B00.mp3 … B##.mp3` into `episodes/NIF00X/02_narration/`, then
+  runs the whisper transcribe + duration reconcile (Step 2) as before. Pipeline
+  order is unchanged — audio still lands after the visual design, before build
+  (the C1 rule).
+- **Model: `eleven_v3`.** It is available on the account (the app's own
+  recommendation of `eleven_multilingual_v2` for the clone was wrong for this
+  use). v3 reads the script's inline audio tags (`[matter-of-fact]`,
+  `[serious]`, `[slowly]`, `[drawn out]`) — so **the `v3 TAGGED` blocks are
+  generated as-is, no tag-strip pass.** `eleven_multilingual_v2` on the same
+  text delivered ~209 wpm (unusably fast, no documentary pacing); v3 delivered
+  ~132 wpm.
+- **The 134-wpm calibration holds.** v3 on "NIF JUJU v2" measured **~132 wpm**
+  on the B00 + B30 test passage — within noise of the §6.1 calibrated 134. No
+  recalibration; every word-budget and EST in the runbook stands.
+- **Settings:** voice `zLWsrQYpIfTgCZ3GXmUr` ("NIF JUJU v2"), `model_id:
+  eleven_v3`, `voice_settings { stability: 0.5 (Natural), use_speaker_boost:
+  true }`, `output_format: mp3_44100_192`. (Confirm once the creator has
+  listened; adjust stability only on a specific note.)
+- **ONE generation per beat. No regeneration.** This **overrides §6.2's**
+  "generate two or three takes of anything that matters, keep the best" — the
+  creator's standing rule from 2026-09-09 is one take, accept it, move on.
+  Regenerate a beat *only* if the take is genuinely broken (a tag read aloud, a
+  wrong number, a truncation) — never to shop for a nicer read. Credits are
+  finite (~131k/mo; a full episode ≈ 8k credits at v3 rates), and multi-take
+  selection is not worth the burn.
+- The generator script: `engine/remotion/scripts/tts-nif.mjs` (writes each
+  `B##.mp3`, skips any that already exist, prints per-beat credit cost + wpm).
+
 ## 23 · Channel programming — pillars, packaging discipline, publish cadence (2026-09-08)
 
 Filed under §16 **Type C** (topic/asset policy, packaging shape, production
