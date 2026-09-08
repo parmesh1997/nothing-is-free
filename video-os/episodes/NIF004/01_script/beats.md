@@ -42,6 +42,11 @@ B00  "Nothing is free. The map already charged three meters."   EST 10s   OPENIN
      Transition:     hard cut
      Loop:           L0 opens (the claim)
 
+     BUILT (2026-09-09): the perspective road + blue nav lane + line-art buildings
+                      sliding past + low dashboard/wheel/hands; corner meter ticks
+                      from $0; top-left "FREE TO YOU" strikes through to "$11B / YEAR"
+                      on the "$11 billion" line. Glide register (SpatialScene drift).
+
 B01  "Three meters, one map"                            EST 32s   OPENING
      Narration:      the promise — opening the map starts three meters: one for every
                       app that shows you a map, one for every business that wants to
@@ -52,6 +57,10 @@ B01  "Three meters, one map"                            EST 32s   OPENING
      Motion intent:  the phone sits centre; three meter dials rise out of it in turn
                       on their own line (APPS / BUSINESSES / YOU), each starts
                       ticking; a thin connector runs from the phone to each
+     BUILT (2026-09-09): three big low dials (APPS / BUSINESSES / YOU) on the faint
+                      map bed, a running $ ticking under each, dotted connectors from
+                      a map pin down to each; YOU lights on "the third one runs on
+                      you"; a bar joins all three + "THE SAME MACHINE" on the close.
      Planes:         BG field · MID none · FG the phone + three labelled meters
      Camera:         still; small push as the third meter appears
      Peak:           all three ticking together, ~0:22
@@ -80,6 +89,11 @@ B02  "The honest part"                                  EST 52s   MEDIUM · save
      Entry side:     objects enter from the right, one per line
      Transition:     hard cut
      Loop:           seeds the moat (B26–B28)
+     BUILT (2026-09-09): reworked to the hook — a phone with coffee pins on the map
+                      bed; the nearest pin circled "the closest"; a separate "#1 result"
+                      pin wired to a SPONSORED card ("somebody paid to put it there");
+                      "AND THIS IS THE SMALLEST OF THE THREE" on the close. The
+                      cost-of-the-map argument moved into B29 (counter-argument).
 
 B03  "So where is the dollar?"                          EST 30s   MEDIUM
      Narration:      the app has always been free. No subscription, no paywall, no
