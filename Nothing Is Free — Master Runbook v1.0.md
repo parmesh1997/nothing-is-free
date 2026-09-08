@@ -1748,6 +1748,38 @@ related episode — with no scheduling risk and no topic lock-in.
 somebody else does"*). It was already drafted at Step 1 and the creator supplied
 the topic for it. Every episode from NIF005 follows the rule above.
 
+### 22.10 · Motion registers — a named set, picked per beat (creator, 2026-09-09)
+
+Type C. From two AI-explainer reference videos (`demo.mp4` — different looks, one
+motion grammar) the creator's direction: **expand the engine's motion
+vocabulary — more smoothness, more transition types, more animation — while the
+visual identity stays locked per channel.** The workflow is shared across
+channels; only the look changes per episode.
+
+The engine now carries **motion registers** — each a reusable wrapper, chosen
+per beat, all rendering whatever the channel's locked visual identity is:
+
+| Register | What it is | Lives in | Use |
+| --- | --- | --- | --- |
+| **Punch** | spring pop-ins on the VO word, draw-on connectors, `Bloom`, hard cuts | the v4 kit (`nif002/v4/`) | **the default** — most NIF beats (data, diagrams, case studies) |
+| **Glide** | one continuous camera move + parallax layers + soft focus-pull enter/exit + held float + depth atmosphere | `src/motion/glide.tsx` (`GlideScene` / `GlideIn` / `GlideOut` / `GlideCard` / `Atmosphere`, on top of `src/spatial/`) | **1–2 beats per episode, maximum** — the cold open, the reversal, a "pull back to see the whole system" beat |
+| **Doodle** | draw-on / `Boil` quiver / typewriter | `channel2-prototype/src/doodle/` | channel-2, or a NIF "here's the napkin sketch" beat |
+
+Rules:
+
+- **Glide is not the identity** — §3.1 restated for motion. Using it on every
+  beat is the §14.2 code-template trap in motion form. Punch stays the workhorse.
+- A register is a *motion* choice, never a *look* choice. Glide on a NIF beat is
+  still cream + line-art + one orange accent + the two fonts. `GlideScene
+  tone="paper"|"ink"` is the only palette hook.
+- `SpatialScene`'s new `drift` prop (ambient camera wobble) is the "never a
+  frozen frame" floor for Glide — opt-in, a literal no-op everywhere else.
+- Before a **new** register touches a real episode, build a standalone motion
+  study (`MotionStudyGlide`, `DoodleDemo`) and get the creator's sign-off on
+  the feel.
+- Monetization: every register is pure code motion, no generated assets — a
+  richer motion kit makes the channel *more* defensible (§14.1), not less.
+
 ## 23 · Channel programming — pillars, packaging discipline, publish cadence (2026-09-08)
 
 Filed under §16 **Type C** (topic/asset policy, packaging shape, production
