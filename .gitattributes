@@ -1,0 +1,16 @@
+# Normalise line endings — repo stores LF, working copy is whatever the OS wants
+* text=auto eol=lf
+
+# Binary assets — never diff / never touch line endings
+*.mp3 binary
+*.wav binary
+*.mov binary
+*.mp4 binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.ico binary
+*.bin binary
+*.riv binary
+*.dctl binary

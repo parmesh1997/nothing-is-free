@@ -1,0 +1,55 @@
+// @mcp-dctl name=NIF_look kind=transform
+// NIF002 finishing look: warm editorial grade + a hard-cornered "net" vignette.
+// Grain stays baked from Remotion. Rec.709 gamma-space in/out.
+//
+// SOURCE OF TRUTH. Installed copy lives at:
+//   C:\Users\parme\AppData\Roaming\Blackmagic Design\DaVinci Resolve\Support\LUT\NIF_look.dctl
+// After editing this file: copy it there, then MCP `refresh_luts`, then re-apply.
+
+DEFINE_UI_PARAMS(p_Warm, Warmth, DCTLUI_SLIDER_FLOAT, 1.0, 0.0, 2.0, 0.05)
+DEFINE_UI_PARAMS(p_Vig, Vignette, DCTLUI_SLIDER_FLOAT, 1.0, 0.0, 2.0, 0.05)
+
+__DEVICE__ float _clampf(float x, float a, float b) { return _fmaxf(a, _fminf(b, x)); }
+
+__DEVICE__ float3 transform(int p_Width, int p_Height, int p_X, int p_Y,
+                            float p_R, float p_G, float p_B)
+{
+    float r = p_R, g = p_G, b = p_B;
+
+    // 1. gain: hold the cream off the ceiling (~0.90), lift the floor a hair
+    float gain = 0.955f;
+    float lift = 0.006f;
+    r = r * gain + lift;
+    g = g * gain + lift;
+    b = b * gain + lift;
+
+    // 2. warmth: push R up / B down, weighted toward mids
+    float luma = 0.2126f * r + 0.7152f * g + 0.0722f * b;
+    float midw = 1.0f - _fabs(luma - 0.5f) * 2.0f;
+    midw = _clampf(midw, 0.0f, 1.0f);
+    float w = 0.020f * p_Warm * midw;
+    r += w;
+    b -= w * 0.85f;
+
+    // 3. gentle S contrast around 0.42
+    float piv = 0.42f, k = 1.06f;
+    r = (r - piv) * k + piv;
+    g = (g - piv) * k + piv;
+    b = (b - piv) * k + piv;
+
+    // 4. small saturation lift
+    float l2 = 0.2126f * r + 0.7152f * g + 0.0722f * b;
+    float sat = 1.05f;
+    r = l2 + (r - l2) * sat;
+    g = l2 + (g - l2) * sat;
+    b = l2 + (b - l2) * sat;
+
+    // 5. hard-cornered vignette (superellipse falloff)
+    float u = ((float)p_X / (float)p_Width - 0.5f) * 2.0f;
+    float v = ((float)p_Y / (float)p_Height - 0.5f) * 2.0f;
+    float se = _powf(_powf(_fabs(u), 4.0f) + _powf(_fabs(v), 4.0f), 0.25f);
+    float vig = 1.0f - _clampf((se - 0.74f) / 0.34f, 0.0f, 1.0f) * 0.20f * p_Vig;
+    r *= vig; g *= vig; b *= vig;
+
+    return make_float3(_clampf(r, 0.0f, 1.0f), _clampf(g, 0.0f, 1.0f), _clampf(b, 0.0f, 1.0f));
+}

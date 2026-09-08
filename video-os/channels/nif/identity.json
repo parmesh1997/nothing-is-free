@@ -1,0 +1,104 @@
+{
+  "schemaVersion": "2.0",
+  "code": "NIF",
+  "name": "Nothing Is Free",
+  "tagline": "Someone always pays",
+  "assetPolicy": {
+    "mode": "code-first",
+    "generatedImagesAllowed": true,
+    "planeRule": {
+      "bg":   ["code", "asset"],
+      "mid":  ["code", "asset"],
+      "subj": ["code"],
+      "fg":   ["code"]
+    },
+    "maxGeneratedPlanesPerShot": 2,
+    "maxShotsWithGeneratedAssets": 0.40,
+    "disclosureBlock": "channels/nif/ON_AI.md"
+  },
+  "runtime": { "floorMinutes": 12, "ceilingMinutes": 60 },
+  "voice": {
+    "provider": "elevenlabs-v3",
+    "clone": "nif-primary",
+    "calibratedWpm": 134,
+    "calibratedFrom": "NIF002 full 28-beat record, 2026-09-01 (2254 words / 1010.7s)",
+    "stability": "natural"
+  },
+  "video": { "width": 1920, "height": 1080, "fps": 30 },
+  "audio": { "sampleRate": 48000, "channels": 2, "targetLUFS": -14.0, "truePeak": -1.0 },
+  "occupancy": {
+    "paper": "#F6F2E7",
+    "inkFloor": 0.22,
+    "inkTarget": [0.25, 0.30],
+    "bottomThirdFloor": 0.35,
+    "bottomThirdTarget": 0.45,
+    "subjectHeight": [0.45, 0.70],
+    "maxStaticSeconds": 3.0,
+    "maxStaticSecondsOpening": 1.5,
+    "headGraceSeconds": 4.0,
+    "tailGraceSeconds": 2.0,
+    "bloomExcluded": true
+  },
+  "motion": {
+    "maxEventIntervalSeconds": 3.5,
+    "eventsPer10s": { "OPENING": 7, "HIGH": 5, "MEDIUM": 4, "REST": 3 },
+    "maxSimultaneousEntries": 2,
+    "staggerFrames": 4,
+    "model": "hybrid",
+    "modelNote": "beat-specific elements clear to a settled/empty state at the cut; throughline elements (the auction ring, Lucky, progress state) persist and transform across beats. Creator direction 2026-09-02 (option C) reconciling the WhatsApp empty-seam model with v2.0 Step 6 continuity."
+  },
+  "palette": {
+    "paper": "#F6F2E7",
+    "paperShade": "#EDE5D6",
+    "ink": "#111111",
+    "outline": "#111111",
+    "accent": "#E24D28",
+    "grey": "#6D6A63",
+    "tan": "#E3B183",
+    "card": "#FBF8F0",
+    "grid": "#DDD5C4",
+    "ground": "#D3CBB9",
+    "stickerEdge": "#FDFBF5",
+    "rule": "one accent element per frame (the progress rule and Bloom pulses excepted). Flat colour + line-art outline on every drawn shape. Halftone is texture only, not the render method."
+  },
+  "typography": {
+    "hero": "Bebas Neue",
+    "sans": "Inter",
+    "mono": "IBM Plex Mono",
+    "heroMinPx": 140
+  },
+  "field": {
+    "gridOpacity": 0.30,
+    "gridSpacing": 60,
+    "vignetteOpacity": 0.28,
+    "vignetteCornerWeighted": true,
+    "creases": 0,
+    "grainMode": "baked-tile",
+    "groundRuleYFraction": 0.78
+  },
+  "characters": {
+    "Lucky": {
+      "rig": "rive",
+      "rivFile": "channels/nif/rigs/lucky.riv",
+      "status": "AWAITING_RIV",
+      "fallback": "svg (src/characters/lucky-rig.tsx)",
+      "scaleLaw": "human",
+      "required": false,
+      "reference": "Infographics Show — chunky, geometric, gestures, holds props in-hand"
+    },
+    "Maya": { "rig": null, "status": "unspecified" }
+  },
+  "bloom": {
+    "scope": "accent-only",
+    "engine": "@remotion/skia",
+    "usedFor": ["progressRule", "landingValue", "connectionDrawOnComplete", "winnerFlare", "reversal"],
+    "timeBoxed": true,
+    "countsTowardOccupancy": false
+  },
+  "novelty": { "newComponentsPerEpisode": 2, "maxShellReuse": 0.50 },
+  "signature": {
+    "fixedWords": "Nothing is free.",
+    "landsBySeconds": 3,
+    "fixedWordsNeverTagged": true
+  }
+}

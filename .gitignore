@@ -1,0 +1,54 @@
+# ── dependencies & build ──────────────────────────────────────────────
+node_modules/
+dist/
+build/
+.cache/
+*.tsbuildinfo
+
+# ── secrets ───────────────────────────────────────────────────────────
+.env
+.env.*
+!.env.example
+
+# ── render output (video-os/engine/remotion/out is ~98 GB) ────────────
+out/
+**/out/
+**/07_renders/
+**/09_master/
+**/_logs/
+*.mov
+*.mp4
+*.webm
+*.mkv
+*.avi
+*.mxf
+
+# ── scratch audio (keep source VO/SFX .mp3, drop loose .wav) ──────────
+*.wav
+*.aif
+*.aiff
+
+# ── local ML models ──────────────────────────────────────────────────
+.whisper/
+*.ggml
+ggml-*.bin
+
+# ── legacy pre-migration episode folders (multi-GB, superseded by ────
+#    video-os/episodes/NIF00X/ — re-include later with LFS if wanted) ──
+/Ep1/
+/Ep2/
+/Ep3/
+/nothing-is-free-remotion/
+
+# ── loose scratch media at the repo root ─────────────────────────────
+/*.png
+/*.jpg
+/*.jpeg
+!/nothing_is_free_top12_launch_order.png
+
+# ── OS / editor ──────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+*.log
+.vscode/
+.idea/

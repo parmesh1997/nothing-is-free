@@ -1,0 +1,64 @@
+{
+  "schemaVersion": "2.0",
+  "projectId": "NIF004",
+  "channel": "NIF",
+  "episode": 4,
+  "title": "Google Maps — the hidden economics of the \"free\" map",
+  "pillar": "C",
+  "pattern": "The Meter",
+  "state": "SCRIPT_DRAFTED",
+  "createdAt": "2026-09-07T00:00:00Z",
+  "updatedAt": "2026-09-07T00:00:00Z",
+  "paths": {
+    "script": "01_script/script.md",
+    "beats": "01_script/beats.md",
+    "narrationDir": "02_narration/",
+    "reconcile": "03_transcript/reconcile.json",
+    "transcript": "03_transcript/transcript.json",
+    "timing": "03_transcript/timing.json",
+    "remotionRoot": "../../engine/remotion/",
+    "remotionSrc": "../../engine/remotion/src/nif004/",
+    "conform": "08_conform/",
+    "master": "09_master/NIF004_master.mov"
+  },
+  "video": { "width": 1920, "height": 1080, "fps": 30 },
+  "audio": { "sampleRate": 48000, "channels": 2, "targetLUFS": -14.0, "truePeak": -1.0 },
+  "assetPolicy": { "resolved": "code-first", "onAiBlock": "channels/nif/ON_AI.md" },
+  "intake": {
+    "topicDirection": "Google Maps",
+    "chosenAngle": "C — Every pin has a meter (widened to absorb A). One free map, three meters: apps pay per look, businesses pay to be the pin, you pay in the trail you leave.",
+    "targetRuntimeMin": 20,
+    "runtimeBandMin": [19, 23],
+    "wordBudget": 2680,
+    "cta": "end + comment prompt",
+    "coldOpenDevice": "POV inside the blue navigation line; the route recalculates past a promoted pin; an unseen meter starts ticking",
+    "codeFit": "buildable without photographic assets — stylised cream + line-art map, meters, app-tile wall, auction motif, location-trace timeline, settlement doc card",
+    "decidedAt": "2026-09-07",
+    "decidedBy": "creator"
+  },
+  "counts": { "beats": 34 },
+  "approvals": [
+    { "id": "TOPIC", "by": "creator", "at": "2026-09-07T00:00:00Z", "note": "angle C + end/comment CTA chosen via AskUserQuestion" },
+    { "id": "SCRIPT", "by": null, "at": null, "note": "drafted 2026-09-07; open items: Ep5 bridge topic, V1–V8 citations, Lucky-in-cold-open y/n" },
+    { "id": "RECONCILE", "by": null, "at": null },
+    { "id": "OPENING_MINUTE", "by": null, "at": null },
+    { "id": "FINAL_CUT", "by": null, "at": null }
+  ],
+  "gates": { "SCRIPT": "DRAFT", "TIMING": null, "ASSET": null, "VISUAL": null, "AUDIO": null, "SHIP": null },
+  "buildDoctrine": "Runbook §22.8 + nif-episode-build-doctrine memory — 2-3 new visible assets/mechanisms (MapField, Meter, PinAuction) + ~3 prop-locations (road / car interior / dev desk); reference bar is src/nif003/v4/beats.tsx",
+  "plannedNextEpisode": {
+    "code": "NIF005",
+    "topic": "the free-to-play / mobile games economy",
+    "hook": "you don't pay a rupee for a game, so someone does",
+    "onScreenInThisEpisode": "B32 (the last forward bridge on the channel — runbook §22.9)",
+    "note": "NIF005 itself carries NO forward bridge; from NIF005 on the close references exactly one previous or related episode"
+  },
+  "openItems": [
+    "8 citations flagged [VERIFY] in beats.md (V1-V8) — confirm before VO record, a wrong on-screen number = a re-record",
+    "Runtime drafts to ~19-20 min (low end of band); if short after recording, add a body beat per §10, do not pad",
+    "Lucky in the cold open? optional — POV drive works with just hands on the wheel"
+  ],
+  "history": [
+    { "at": "2026-09-07", "state": "SCRIPT_DRAFTED", "note": "Step 0 intake done (creator chose angle C + end/comment CTA); Step 1 script + beats drafted, 34 beats B00-B33, ~2,440 PLAIN words; research pass with 8 [VERIFY] citations. Ep5 topic set (free-to-play games) + B32 rewritten to tease it; creator set 'no forward bridge from NIF005 on' rule (runbook §22.9). Waiting on creator: citation verification, Lucky y/n, then VO record (Step 2)." }
+  ]
+}

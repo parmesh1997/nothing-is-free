@@ -1,0 +1,239 @@
+{
+  "version": 1,
+  "skills": {
+    "after-effects": {
+      "source": "iart-ai/motion-design-skills",
+      "sourceType": "github",
+      "skillPath": "skills/after-effects/SKILL.md",
+      "computedHash": "59837ca57aedc5a49e41bbe9c6f7d4c4defbc1537a924966da03e7b0f101af9c"
+    },
+    "animated-infographic": {
+      "source": "iart-ai/data-animation-skills",
+      "sourceType": "github",
+      "skillPath": "skills/animated-infographic/SKILL.md",
+      "computedHash": "c57ec2e03f4da40f685ebaba18e1c28bfdc684fb7385d465569ae804455bc0ea"
+    },
+    "animation-principles": {
+      "source": "iart-ai/motion-design-skills",
+      "sourceType": "github",
+      "skillPath": "skills/animation-principles/SKILL.md",
+      "computedHash": "0a326d3bf3488aa365077a0a8974205e9dd92a474d4ce0c8f77591c56e831676"
+    },
+    "beat-sync-editing": {
+      "source": "iart-ai/motion-design-skills",
+      "sourceType": "github",
+      "skillPath": "skills/beat-sync-editing/SKILL.md",
+      "computedHash": "74264047126b3c80d248dc423b177edc921bcffae27e4cafbf53b08ae882c78d"
+    },
+    "chart-animation": {
+      "source": "iart-ai/data-animation-skills",
+      "sourceType": "github",
+      "skillPath": "skills/chart-animation/SKILL.md",
+      "computedHash": "4aa51c0432356d74cc8e3e9a7e932bc5b31e90f603f1f744084b6a88a84b635c"
+    },
+    "color-motion": {
+      "source": "iart-ai/motion-design-skills",
+      "sourceType": "github",
+      "skillPath": "skills/color-motion/SKILL.md",
+      "computedHash": "7b0806ecfaf403f40227a524a75eb679f10f399cfd8297a60eec89d5643d74e7"
+    },
+    "diagram-animation": {
+      "source": "iart-ai/explainer-video-skills",
+      "sourceType": "github",
+      "skillPath": "skills/diagram-animation/SKILL.md",
+      "computedHash": "cab09e7de2099b0cf0f281b506b3ec4b90dee0956a03d90c902eda1fe6c42347"
+    },
+    "explainer-video": {
+      "source": "iart-ai/explainer-video-skills",
+      "sourceType": "github",
+      "skillPath": "skills/explainer-video/SKILL.md",
+      "computedHash": "ebe17d1ecb70b514e6468af17d9189047c6af455786757e69e15ea46f3528e4f"
+    },
+    "gsap-core": {
+      "source": "greensock/gsap-skills",
+      "sourceType": "github",
+      "skillPath": "skills/gsap-core/SKILL.md",
+      "computedHash": "b891c9ed42d9319685250231085ebe21538f2c844613b277b9dd2b3ff529a542"
+    },
+    "gsap-frameworks": {
+      "source": "greensock/gsap-skills",
+      "sourceType": "github",
+      "skillPath": "skills/gsap-frameworks/SKILL.md",
+      "computedHash": "08b3917649997d53f94a9831b5db21afafafc89ee3a9a020d2471c69c336bdd6"
+    },
+    "gsap-performance": {
+      "source": "greensock/gsap-skills",
+      "sourceType": "github",
+      "skillPath": "skills/gsap-performance/SKILL.md",
+      "computedHash": "da73dbf11663abb1a880e1796367f84b19877db4a16186b36d1dce96fe0ce983"
+    },
+    "gsap-plugins": {
+      "source": "greensock/gsap-skills",
+      "sourceType": "github",
+      "skillPath": "skills/gsap-plugins/SKILL.md",
+      "computedHash": "50a320904c3053a1a7d01ea95235944814d18c0b5958f17e38046504aa6078a8"
+    },
+    "gsap-react": {
+      "source": "greensock/gsap-skills",
+      "sourceType": "github",
+      "skillPath": "skills/gsap-react/SKILL.md",
+      "computedHash": "255206fb6a4a079ad73b4a12e7c63197dc451a8549c7ac4e852b50ff74ef3bd6"
+    },
+    "gsap-scrolltrigger": {
+      "source": "greensock/gsap-skills",
+      "sourceType": "github",
+      "skillPath": "skills/gsap-scrolltrigger/SKILL.md",
+      "computedHash": "358dd3381c74fc4be8db5a94e0cd008bf0fa7c1ccd45999671b0d61b9d9ffd9b"
+    },
+    "gsap-timeline": {
+      "source": "greensock/gsap-skills",
+      "sourceType": "github",
+      "skillPath": "skills/gsap-timeline/SKILL.md",
+      "computedHash": "e7c07909bb427f74e1bda1ff716bd97ae166269382f7abbd649c0d1ba8f6e0ec"
+    },
+    "gsap-utils": {
+      "source": "greensock/gsap-skills",
+      "sourceType": "github",
+      "skillPath": "skills/gsap-utils/SKILL.md",
+      "computedHash": "72af4a036d417d6eaef7478eca2f28e760631fb78db822ba34a9c706797aab62"
+    },
+    "humanizer": {
+      "source": "blader/humanizer",
+      "sourceType": "github",
+      "skillPath": "SKILL.md",
+      "computedHash": "456120712f3020b0da940d57ca2b7840db0c83c6d2cf6d0dfa31296f3d29b31e"
+    },
+    "isometric-animation": {
+      "source": "iart-ai/explainer-video-skills",
+      "sourceType": "github",
+      "skillPath": "skills/isometric-animation/SKILL.md",
+      "computedHash": "b849bc3c9d1618e043955e1aac8f23021a5286c7088627686afe53bf711b9191"
+    },
+    "kinetic-typography": {
+      "source": "iart-ai/kinetic-typography-skills",
+      "sourceType": "github",
+      "skillPath": "skills/kinetic-typography/SKILL.md",
+      "computedHash": "ee17c621533649e7e56fd7c3aa307c4af42796db437f29701a6beca9e6bebb26"
+    },
+    "logo-animation": {
+      "source": "iart-ai/motion-design-skills",
+      "sourceType": "github",
+      "skillPath": "skills/logo-animation/SKILL.md",
+      "computedHash": "2458d6dd7ddf187c34dd09bf32fa664a97a88e8e190922b51b7280f948b1f3e5"
+    },
+    "motion-art-direction": {
+      "source": "iart-ai/motion-design-skills",
+      "sourceType": "github",
+      "skillPath": "skills/motion-art-direction/SKILL.md",
+      "computedHash": "80b93986865759aeeb8b316a9e416eae213f096216ce42b1c1f906e2055f2399"
+    },
+    "motion-background": {
+      "source": "iart-ai/motion-design-skills",
+      "sourceType": "github",
+      "skillPath": "skills/motion-background/SKILL.md",
+      "computedHash": "dab47844cc4ebaef944af96e75f3a9bdb6f11c4453337a145aa2a229e80fbf44"
+    },
+    "presentation-video": {
+      "source": "iart-ai/data-animation-skills",
+      "sourceType": "github",
+      "skillPath": "skills/presentation-video/SKILL.md",
+      "computedHash": "ec7dabce886cbe9e7566bfe880b21df5d8d1f9cbfdc3f0f5c8695830e5ebc01b"
+    },
+    "remotion-best-practices": {
+      "source": "remotion-dev/skills",
+      "sourceType": "github",
+      "skillPath": "skills/remotion-best-practices/SKILL.md",
+      "computedHash": "40a9072c3a29cd18aef31e0858f8037201df37e662fc51fbe9f8794a34160439"
+    },
+    "remotion-captions": {
+      "source": "remotion-dev/skills",
+      "sourceType": "github",
+      "skillPath": "skills/remotion-captions/SKILL.md",
+      "computedHash": "3d018e29bbb0a2ee1d8f71b68514a415264ae584ce6bd7a4967b8f08b643f50c"
+    },
+    "remotion-create": {
+      "source": "remotion-dev/skills",
+      "sourceType": "github",
+      "skillPath": "skills/remotion-create/SKILL.md",
+      "computedHash": "d7cc5833a4feaa8ec7c30dc32cd82b10efaef76ab8bca5c3d909e17ef9836485"
+    },
+    "remotion-docs": {
+      "source": "remotion-dev/skills",
+      "sourceType": "github",
+      "skillPath": "skills/remotion-docs/SKILL.md",
+      "computedHash": "a9fc95a4d2d6447103ffa30944eb86650b113b5ae1b717592db980c7c8aae653"
+    },
+    "remotion-interactivity": {
+      "source": "remotion-dev/skills",
+      "sourceType": "github",
+      "skillPath": "skills/remotion-interactivity/SKILL.md",
+      "computedHash": "08dda46a55dc2037fe3af30f409af08d0db0204182e25a9fe43692c235a814fd"
+    },
+    "remotion-maps": {
+      "source": "remotion-dev/skills",
+      "sourceType": "github",
+      "skillPath": "skills/remotion-maps/SKILL.md",
+      "computedHash": "f98b6c8ba1f3accc3fc597e360222ac55c4d853751e5c0727a5e450ff7e21414"
+    },
+    "remotion-markup": {
+      "source": "remotion-dev/skills",
+      "sourceType": "github",
+      "skillPath": "skills/remotion-markup/SKILL.md",
+      "computedHash": "0a6a4b9aed30688f601f59b34eaa7150cde354f77928e6b01c7dac56ae74af3d"
+    },
+    "remotion-multimedia": {
+      "source": "remotion-dev/skills",
+      "sourceType": "github",
+      "skillPath": "skills/remotion-multimedia/SKILL.md",
+      "computedHash": "656d4cfd5671351e379f17e8796852a9491cf26fe8db027f7ee11d65e4187aff"
+    },
+    "remotion-render": {
+      "source": "remotion-dev/skills",
+      "sourceType": "github",
+      "skillPath": "skills/remotion-render/SKILL.md",
+      "computedHash": "db58ea2c19d21e0842d669817d4fef17b8075fe3cf51afb54136f81f24918601"
+    },
+    "remotion-saas": {
+      "source": "remotion-dev/skills",
+      "sourceType": "github",
+      "skillPath": "skills/remotion-saas/SKILL.md",
+      "computedHash": "045f167e9237e6d0bc34c05c59bbd947d54423961c9e8d43df32c3227ed61fd7"
+    },
+    "remotion-studio": {
+      "source": "remotion-dev/skills",
+      "sourceType": "github",
+      "skillPath": "skills/remotion-studio/SKILL.md",
+      "computedHash": "4993a3cf3e3aa89bc3b825a8a092547c9410e923359a5f3aa038eb0aff4fa63c"
+    },
+    "remotion-upgrade": {
+      "source": "remotion-dev/skills",
+      "sourceType": "github",
+      "skillPath": "skills/remotion-upgrade/SKILL.md",
+      "computedHash": "5cf211c43097ee2dbe3fa7a18192bfe78dee9998b3cb10f191d17973879da522"
+    },
+    "remotion-video": {
+      "source": "iart-ai/motion-design-skills",
+      "sourceType": "github",
+      "skillPath": "skills/remotion-video/SKILL.md",
+      "computedHash": "be476bbf6e2f0e6fe04986d2d7a8387ca4a0c138b32777fce9a64c98e70afa67"
+    },
+    "shot-composition": {
+      "source": "iart-ai/motion-design-skills",
+      "sourceType": "github",
+      "skillPath": "skills/shot-composition/SKILL.md",
+      "computedHash": "3a9895bee82e808a9e61b6db08a66b0fc379fcb2442f1cf3760b08a4abbd19d9"
+    },
+    "whiteboard-animation": {
+      "source": "iart-ai/explainer-video-skills",
+      "sourceType": "github",
+      "skillPath": "skills/whiteboard-animation/SKILL.md",
+      "computedHash": "039fdbaaca34c55af4460e853778d7b72eca81235862604d4a99a0f2ded336b5"
+    },
+    "wrapped-video": {
+      "source": "iart-ai/explainer-video-skills",
+      "sourceType": "github",
+      "skillPath": "skills/wrapped-video/SKILL.md",
+      "computedHash": "97882c62877e90810eb5d58e55a2f9187b6d4d7e70ce1dfef0a5f943d30e657b"
+    }
+  }
+}

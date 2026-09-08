@@ -1,0 +1,408 @@
+[
+  {
+    "text": "Now",
+    "startMs": 80,
+    "endMs": 210,
+    "timestampMs": 240,
+    "confidence": 0.967726
+  },
+  {
+    "text": " here",
+    "startMs": 210,
+    "endMs": 490,
+    "timestampMs": 560,
+    "confidence": 0.855274
+  },
+  {
+    "text": "'s",
+    "startMs": 490,
+    "endMs": 670,
+    "timestampMs": 760,
+    "confidence": 0.736235
+  },
+  {
+    "text": " where",
+    "startMs": 670,
+    "endMs": 980,
+    "timestampMs": 1020,
+    "confidence": 0.994928
+  },
+  {
+    "text": " all",
+    "startMs": 980,
+    "endMs": 1190,
+    "timestampMs": 1320,
+    "confidence": 0.978108
+  },
+  {
+    "text": " of",
+    "startMs": 1190,
+    "endMs": 1330,
+    "timestampMs": 1500,
+    "confidence": 0.936801
+  },
+  {
+    "text": " this",
+    "startMs": 1330,
+    "endMs": 1610,
+    "timestampMs": 1740,
+    "confidence": 0.993472
+  },
+  {
+    "text": " should",
+    "startMs": 1610,
+    "endMs": 2080,
+    "timestampMs": 2100,
+    "confidence": 0.986594
+  },
+  {
+    "text": " be",
+    "startMs": 2080,
+    "endMs": 2220,
+    "timestampMs": 2280,
+    "confidence": 0.967106
+  },
+  {
+    "text": " falling",
+    "startMs": 2220,
+    "endMs": 2790,
+    "timestampMs": 2560,
+    "confidence": 0.986808
+  },
+  {
+    "text": " apart",
+    "startMs": 2790,
+    "endMs": 3170,
+    "timestampMs": 3020,
+    "confidence": 0.995691
+  },
+  {
+    "text": " on",
+    "startMs": 3170,
+    "endMs": 3300,
+    "timestampMs": 3320,
+    "confidence": 0.961483
+  },
+  {
+    "text": " its",
+    "startMs": 3300,
+    "endMs": 3560,
+    "timestampMs": 3480,
+    "confidence": 0.975643
+  },
+  {
+    "text": " own",
+    "startMs": 3560,
+    "endMs": 4990,
+    "timestampMs": 3840,
+    "confidence": 0.992466
+  },
+  {
+    "text": ".",
+    "startMs": 4990,
+    "endMs": 5180,
+    "timestampMs": 5040,
+    "confidence": 0.834086
+  },
+  {
+    "text": " More",
+    "startMs": 5180,
+    "endMs": 5530,
+    "timestampMs": 5240,
+    "confidence": 0.997371
+  },
+  {
+    "text": " people",
+    "startMs": 5530,
+    "endMs": 6060,
+    "timestampMs": 5600,
+    "confidence": 0.998879
+  },
+  {
+    "text": " are",
+    "startMs": 6060,
+    "endMs": 6320,
+    "timestampMs": 5880,
+    "confidence": 0.996656
+  },
+  {
+    "text": " quitting",
+    "startMs": 6320,
+    "endMs": 7030,
+    "timestampMs": 6120,
+    "confidence": 0.991285
+  },
+  {
+    "text": " cable",
+    "startMs": 7030,
+    "endMs": 7470,
+    "timestampMs": 6620,
+    "confidence": 0.981877
+  },
+  {
+    "text": " right",
+    "startMs": 7470,
+    "endMs": 7990,
+    "timestampMs": 7140,
+    "confidence": 0.95371
+  },
+  {
+    "text": " now",
+    "startMs": 7990,
+    "endMs": 8170,
+    "timestampMs": 7620,
+    "confidence": 0.999058
+  },
+  {
+    "text": " than",
+    "startMs": 8170,
+    "endMs": 8520,
+    "timestampMs": 8100,
+    "confidence": 0.955671
+  },
+  {
+    "text": " at",
+    "startMs": 8520,
+    "endMs": 8730,
+    "timestampMs": 8320,
+    "confidence": 0.987008
+  },
+  {
+    "text": " any",
+    "startMs": 8730,
+    "endMs": 8950,
+    "timestampMs": 8600,
+    "confidence": 0.996903
+  },
+  {
+    "text": " point",
+    "startMs": 8950,
+    "endMs": 9440,
+    "timestampMs": 9000,
+    "confidence": 0.996881
+  },
+  {
+    "text": " on",
+    "startMs": 9440,
+    "endMs": 9560,
+    "timestampMs": 9260,
+    "confidence": 0.992676
+  },
+  {
+    "text": " record",
+    "startMs": 9560,
+    "endMs": 10090,
+    "timestampMs": 9660,
+    "confidence": 0.993403
+  },
+  {
+    "text": ".",
+    "startMs": 10090,
+    "endMs": 10440,
+    "timestampMs": 10860,
+    "confidence": 0.969355
+  },
+  {
+    "text": " 77",
+    "startMs": 10440,
+    "endMs": 11080,
+    "timestampMs": 11340,
+    "confidence": 0.989464
+  },
+  {
+    "text": " million",
+    "startMs": 11080,
+    "endMs": 11800,
+    "timestampMs": 11820,
+    "confidence": 0.941964
+  },
+  {
+    "text": " American",
+    "startMs": 11800,
+    "endMs": 12640,
+    "timestampMs": 12440,
+    "confidence": 0.975785
+  },
+  {
+    "text": " households",
+    "startMs": 12640,
+    "endMs": 13690,
+    "timestampMs": 13020,
+    "confidence": 0.995311
+  },
+  {
+    "text": " have",
+    "startMs": 13690,
+    "endMs": 14180,
+    "timestampMs": 13400,
+    "confidence": 0.995676
+  },
+  {
+    "text": " already",
+    "startMs": 14180,
+    "endMs": 14840,
+    "timestampMs": 13860,
+    "confidence": 0.992506
+  },
+  {
+    "text": " cut",
+    "startMs": 14840,
+    "endMs": 15360,
+    "timestampMs": 14160,
+    "confidence": 0.997582
+  },
+  {
+    "text": " it",
+    "startMs": 15360,
+    "endMs": 15360,
+    "timestampMs": 14460,
+    "confidence": 0.995866
+  },
+  {
+    "text": " entirely",
+    "startMs": 15360,
+    "endMs": 16560,
+    "timestampMs": 15040,
+    "confidence": 0.992328
+  },
+  {
+    "text": ".",
+    "startMs": 16560,
+    "endMs": 16560,
+    "timestampMs": 16460,
+    "confidence": 0.981781
+  },
+  {
+    "text": " For",
+    "startMs": 16560,
+    "endMs": 16920,
+    "timestampMs": 16660,
+    "confidence": 0.996778
+  },
+  {
+    "text": " the",
+    "startMs": 16920,
+    "endMs": 17040,
+    "timestampMs": 16880,
+    "confidence": 0.999153
+  },
+  {
+    "text": " first",
+    "startMs": 17040,
+    "endMs": 17430,
+    "timestampMs": 17140,
+    "confidence": 0.998018
+  },
+  {
+    "text": " time",
+    "startMs": 17430,
+    "endMs": 17790,
+    "timestampMs": 17540,
+    "confidence": 0.988007
+  },
+  {
+    "text": " ever",
+    "startMs": 17790,
+    "endMs": 18060,
+    "timestampMs": 17840,
+    "confidence": 0.992964
+  },
+  {
+    "text": " measured",
+    "startMs": 18060,
+    "endMs": 18880,
+    "timestampMs": 18400,
+    "confidence": 0.9924
+  },
+  {
+    "text": ",",
+    "startMs": 18880,
+    "endMs": 19070,
+    "timestampMs": 19020,
+    "confidence": 0.975628
+  },
+  {
+    "text": " fewer",
+    "startMs": 19070,
+    "endMs": 19290,
+    "timestampMs": 19260,
+    "confidence": 0.975509
+  },
+  {
+    "text": " than",
+    "startMs": 19290,
+    "endMs": 19730,
+    "timestampMs": 19640,
+    "confidence": 0.998616
+  },
+  {
+    "text": " half",
+    "startMs": 19730,
+    "endMs": 19950,
+    "timestampMs": 19960,
+    "confidence": 0.97964
+  },
+  {
+    "text": " of",
+    "startMs": 19950,
+    "endMs": 20110,
+    "timestampMs": 20260,
+    "confidence": 0.98293
+  },
+  {
+    "text": " American",
+    "startMs": 20110,
+    "endMs": 20780,
+    "timestampMs": 20680,
+    "confidence": 0.96994
+  },
+  {
+    "text": " households",
+    "startMs": 20780,
+    "endMs": 21940,
+    "timestampMs": 21320,
+    "confidence": 0.991872
+  },
+  {
+    "text": " still",
+    "startMs": 21940,
+    "endMs": 22080,
+    "timestampMs": 22120,
+    "confidence": 0.955771
+  },
+  {
+    "text": " pay",
+    "startMs": 22080,
+    "endMs": 22340,
+    "timestampMs": 22480,
+    "confidence": 0.993868
+  },
+  {
+    "text": " for",
+    "startMs": 22340,
+    "endMs": 22620,
+    "timestampMs": 22760,
+    "confidence": 0.990664
+  },
+  {
+    "text": " traditional",
+    "startMs": 22620,
+    "endMs": 23550,
+    "timestampMs": 23200,
+    "confidence": 0.94878
+  },
+  {
+    "text": " TV",
+    "startMs": 23550,
+    "endMs": 23740,
+    "timestampMs": 23620,
+    "confidence": 0.962509
+  },
+  {
+    "text": ".",
+    "startMs": 23740,
+    "endMs": 23740,
+    "timestampMs": 23720,
+    "confidence": 0.946014
+  }
+]

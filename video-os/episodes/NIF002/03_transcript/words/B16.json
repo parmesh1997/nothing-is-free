@@ -1,0 +1,548 @@
+[
+  {
+    "text": "Once",
+    "startMs": 100,
+    "endMs": 250,
+    "timestampMs": 320,
+    "confidence": 0.919623
+  },
+  {
+    "text": " a",
+    "startMs": 250,
+    "endMs": 350,
+    "timestampMs": 520,
+    "confidence": 0.955547
+  },
+  {
+    "text": " developer",
+    "startMs": 350,
+    "endMs": 880,
+    "timestampMs": 840,
+    "confidence": 0.970739
+  },
+  {
+    "text": " sees",
+    "startMs": 880,
+    "endMs": 1130,
+    "timestampMs": 1200,
+    "confidence": 0.981087
+  },
+  {
+    "text": " the",
+    "startMs": 1130,
+    "endMs": 1320,
+    "timestampMs": 1440,
+    "confidence": 0.988829
+  },
+  {
+    "text": " auction",
+    "startMs": 1320,
+    "endMs": 1770,
+    "timestampMs": 1720,
+    "confidence": 0.976928
+  },
+  {
+    "text": " pay",
+    "startMs": 1770,
+    "endMs": 2000,
+    "timestampMs": 2020,
+    "confidence": 0.986939
+  },
+  {
+    "text": ",",
+    "startMs": 2000,
+    "endMs": 2270,
+    "timestampMs": 2420,
+    "confidence": 0.85687
+  },
+  {
+    "text": " the",
+    "startMs": 2270,
+    "endMs": 2350,
+    "timestampMs": 2500,
+    "confidence": 0.930766
+  },
+  {
+    "text": " app",
+    "startMs": 2350,
+    "endMs": 2560,
+    "timestampMs": 2720,
+    "confidence": 0.986338
+  },
+  {
+    "text": " changes",
+    "startMs": 2560,
+    "endMs": 3050,
+    "timestampMs": 3120,
+    "confidence": 0.995209
+  },
+  {
+    "text": " shape",
+    "startMs": 3050,
+    "endMs": 3480,
+    "timestampMs": 3460,
+    "confidence": 0.964347
+  },
+  {
+    "text": " around",
+    "startMs": 3480,
+    "endMs": 3810,
+    "timestampMs": 3740,
+    "confidence": 0.9934
+  },
+  {
+    "text": " it",
+    "startMs": 3810,
+    "endMs": 4000,
+    "timestampMs": 4200,
+    "confidence": 0.995057
+  },
+  {
+    "text": ".",
+    "startMs": 4000,
+    "endMs": 4000,
+    "timestampMs": 4820,
+    "confidence": 0.836794
+  },
+  {
+    "text": " Add",
+    "startMs": 4000,
+    "endMs": 4310,
+    "timestampMs": 5080,
+    "confidence": 0.987458
+  },
+  {
+    "text": " one",
+    "startMs": 4310,
+    "endMs": 4840,
+    "timestampMs": 5360,
+    "confidence": 0.921602
+  },
+  {
+    "text": " video",
+    "startMs": 4840,
+    "endMs": 5180,
+    "timestampMs": 5700,
+    "confidence": 0.990214
+  },
+  {
+    "text": " ad",
+    "startMs": 5180,
+    "endMs": 5390,
+    "timestampMs": 6100,
+    "confidence": 0.994139
+  },
+  {
+    "text": " that",
+    "startMs": 5390,
+    "endMs": 5810,
+    "timestampMs": 6400,
+    "confidence": 0.97574
+  },
+  {
+    "text": " people",
+    "startMs": 5810,
+    "endMs": 6470,
+    "timestampMs": 6700,
+    "confidence": 0.997368
+  },
+  {
+    "text": " watch",
+    "startMs": 6470,
+    "endMs": 7050,
+    "timestampMs": 7060,
+    "confidence": 0.994173
+  },
+  {
+    "text": " for",
+    "startMs": 7050,
+    "endMs": 7330,
+    "timestampMs": 7320,
+    "confidence": 0.997078
+  },
+  {
+    "text": " a",
+    "startMs": 7330,
+    "endMs": 7440,
+    "timestampMs": 7480,
+    "confidence": 0.989387
+  },
+  {
+    "text": " reward",
+    "startMs": 7440,
+    "endMs": 8270,
+    "timestampMs": 7840,
+    "confidence": 0.99886
+  },
+  {
+    "text": " and",
+    "startMs": 8270,
+    "endMs": 8400,
+    "timestampMs": 8420,
+    "confidence": 0.642354
+  },
+  {
+    "text": " average",
+    "startMs": 8400,
+    "endMs": 8950,
+    "timestampMs": 8860,
+    "confidence": 0.9599
+  },
+  {
+    "text": " revenue",
+    "startMs": 8950,
+    "endMs": 9500,
+    "timestampMs": 9260,
+    "confidence": 0.979926
+  },
+  {
+    "text": " per",
+    "startMs": 9500,
+    "endMs": 9740,
+    "timestampMs": 9560,
+    "confidence": 0.991758
+  },
+  {
+    "text": " user",
+    "startMs": 9740,
+    "endMs": 10070,
+    "timestampMs": 9980,
+    "confidence": 0.991821
+  },
+  {
+    "text": " jumps",
+    "startMs": 10070,
+    "endMs": 10690,
+    "timestampMs": 10440,
+    "confidence": 0.964718
+  },
+  {
+    "text": " 30",
+    "startMs": 10690,
+    "endMs": 11070,
+    "timestampMs": 11100,
+    "confidence": 0.961529
+  },
+  {
+    "text": " to",
+    "startMs": 11070,
+    "endMs": 11240,
+    "timestampMs": 11320,
+    "confidence": 0.449388
+  },
+  {
+    "text": " 60",
+    "startMs": 11240,
+    "endMs": 11760,
+    "timestampMs": 11820,
+    "confidence": 0.995
+  },
+  {
+    "text": " percent",
+    "startMs": 11760,
+    "endMs": 12240,
+    "timestampMs": 12400,
+    "confidence": 0.550935
+  },
+  {
+    "text": ".",
+    "startMs": 12240,
+    "endMs": 12240,
+    "timestampMs": 13440,
+    "confidence": 0.92411
+  },
+  {
+    "text": " So",
+    "startMs": 12240,
+    "endMs": 12360,
+    "timestampMs": 13600,
+    "confidence": 0.990807
+  },
+  {
+    "text": " the",
+    "startMs": 12360,
+    "endMs": 12680,
+    "timestampMs": 13800,
+    "confidence": 0.853615
+  },
+  {
+    "text": " free",
+    "startMs": 12680,
+    "endMs": 13410,
+    "timestampMs": 13980,
+    "confidence": 0.978847
+  },
+  {
+    "text": " game",
+    "startMs": 13410,
+    "endMs": 13520,
+    "timestampMs": 14360,
+    "confidence": 0.997824
+  },
+  {
+    "text": " grows",
+    "startMs": 13520,
+    "endMs": 13860,
+    "timestampMs": 14760,
+    "confidence": 0.995978
+  },
+  {
+    "text": " a",
+    "startMs": 13860,
+    "endMs": 13950,
+    "timestampMs": 14940,
+    "confidence": 0.995034
+  },
+  {
+    "text": " slot",
+    "startMs": 13950,
+    "endMs": 14310,
+    "timestampMs": 15300,
+    "confidence": 0.992286
+  },
+  {
+    "text": " where",
+    "startMs": 14310,
+    "endMs": 14760,
+    "timestampMs": 15660,
+    "confidence": 0.941092
+  },
+  {
+    "text": " you",
+    "startMs": 14760,
+    "endMs": 15030,
+    "timestampMs": 15820,
+    "confidence": 0.999241
+  },
+  {
+    "text": " watch",
+    "startMs": 15030,
+    "endMs": 15480,
+    "timestampMs": 16140,
+    "confidence": 0.99768
+  },
+  {
+    "text": " 30",
+    "startMs": 15480,
+    "endMs": 16340,
+    "timestampMs": 16580,
+    "confidence": 0.978771
+  },
+  {
+    "text": " seconds",
+    "startMs": 16340,
+    "endMs": 16690,
+    "timestampMs": 16980,
+    "confidence": 0.995638
+  },
+  {
+    "text": " to",
+    "startMs": 16690,
+    "endMs": 16850,
+    "timestampMs": 17260,
+    "confidence": 0.99639
+  },
+  {
+    "text": " keep",
+    "startMs": 16850,
+    "endMs": 17190,
+    "timestampMs": 17440,
+    "confidence": 0.998593
+  },
+  {
+    "text": " playing",
+    "startMs": 17190,
+    "endMs": 17840,
+    "timestampMs": 17880,
+    "confidence": 0.998079
+  },
+  {
+    "text": ".",
+    "startMs": 17840,
+    "endMs": 17840,
+    "timestampMs": 18720,
+    "confidence": 0.939402
+  },
+  {
+    "text": " It",
+    "startMs": 17840,
+    "endMs": 18230,
+    "timestampMs": 18900,
+    "confidence": 0.992585
+  },
+  {
+    "text": " feels",
+    "startMs": 18230,
+    "endMs": 18760,
+    "timestampMs": 19160,
+    "confidence": 0.998731
+  },
+  {
+    "text": " like",
+    "startMs": 18760,
+    "endMs": 18960,
+    "timestampMs": 19380,
+    "confidence": 0.999329
+  },
+  {
+    "text": " the",
+    "startMs": 18960,
+    "endMs": 19230,
+    "timestampMs": 19600,
+    "confidence": 0.997185
+  },
+  {
+    "text": " game",
+    "startMs": 19230,
+    "endMs": 19520,
+    "timestampMs": 19820,
+    "confidence": 0.999428
+  },
+  {
+    "text": " doing",
+    "startMs": 19520,
+    "endMs": 19990,
+    "timestampMs": 20120,
+    "confidence": 0.969074
+  },
+  {
+    "text": " you",
+    "startMs": 19990,
+    "endMs": 20270,
+    "timestampMs": 20380,
+    "confidence": 0.997965
+  },
+  {
+    "text": " a",
+    "startMs": 20270,
+    "endMs": 20360,
+    "timestampMs": 20620,
+    "confidence": 0.99752
+  },
+  {
+    "text": " favor",
+    "startMs": 20360,
+    "endMs": 20880,
+    "timestampMs": 20860,
+    "confidence": 0.946815
+  },
+  {
+    "text": ".",
+    "startMs": 20880,
+    "endMs": 21150,
+    "timestampMs": 21440,
+    "confidence": 0.688143
+  },
+  {
+    "text": " It",
+    "startMs": 21150,
+    "endMs": 21570,
+    "timestampMs": 21680,
+    "confidence": 0.670745
+  },
+  {
+    "text": " is",
+    "startMs": 21570,
+    "endMs": 21580,
+    "timestampMs": 21900,
+    "confidence": 0.98821
+  },
+  {
+    "text": " the",
+    "startMs": 21580,
+    "endMs": 21990,
+    "timestampMs": 22080,
+    "confidence": 0.995175
+  },
+  {
+    "text": " game",
+    "startMs": 21990,
+    "endMs": 22320,
+    "timestampMs": 22340,
+    "confidence": 0.996003
+  },
+  {
+    "text": " building",
+    "startMs": 22320,
+    "endMs": 22640,
+    "timestampMs": 22680,
+    "confidence": 0.945179
+  },
+  {
+    "text": " a",
+    "startMs": 22640,
+    "endMs": 22710,
+    "timestampMs": 22900,
+    "confidence": 0.987585
+  },
+  {
+    "text": " better",
+    "startMs": 22710,
+    "endMs": 23250,
+    "timestampMs": 23100,
+    "confidence": 0.993437
+  },
+  {
+    "text": " seat",
+    "startMs": 23250,
+    "endMs": 23540,
+    "timestampMs": 23400,
+    "confidence": 0.966225
+  },
+  {
+    "text": " for",
+    "startMs": 23540,
+    "endMs": 23600,
+    "timestampMs": 23660,
+    "confidence": 0.982463
+  },
+  {
+    "text": " the",
+    "startMs": 23600,
+    "endMs": 23760,
+    "timestampMs": 23840,
+    "confidence": 0.962996
+  },
+  {
+    "text": " auction",
+    "startMs": 23760,
+    "endMs": 24630,
+    "timestampMs": 24220,
+    "confidence": 0.959512
+  },
+  {
+    "text": " with",
+    "startMs": 24630,
+    "endMs": 24880,
+    "timestampMs": 24860,
+    "confidence": 0.548206
+  },
+  {
+    "text": " you",
+    "startMs": 24880,
+    "endMs": 25230,
+    "timestampMs": 25200,
+    "confidence": 0.88475
+  },
+  {
+    "text": " in",
+    "startMs": 25230,
+    "endMs": 25500,
+    "timestampMs": 25640,
+    "confidence": 0.990784
+  },
+  {
+    "text": " it",
+    "startMs": 25500,
+    "endMs": 25760,
+    "timestampMs": 25740,
+    "confidence": 0.99666
+  },
+  {
+    "text": ".",
+    "startMs": 25760,
+    "endMs": 25760,
+    "timestampMs": 25740,
+    "confidence": 0.898875
+  }
+]

@@ -1,0 +1,57 @@
+{
+  "name": "nothing-is-free-remotion",
+  "version": "1.0.0",
+  "description": "Nothing Is Free — channel-level Remotion project (Master Runbook v1.0, Phase 0)",
+  "repository": {},
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@google/genai": "^2.21.0",
+    "@react-three/fiber": "^9.7.0",
+    "@remotion/captions": "^4.0.519",
+    "@remotion/cli": "4.0.519",
+    "@remotion/fonts": "^4.0.519",
+    "@remotion/google-fonts": "4.0.519",
+    "@remotion/install-whisper-cpp": "^4.0.519",
+    "@remotion/layout-utils": "^4.0.519",
+    "@remotion/media-utils": "^4.0.519",
+    "@remotion/motion-blur": "^4.0.519",
+    "@remotion/noise": "^4.0.519",
+    "@remotion/paths": "^4.0.519",
+    "@remotion/rive": "^4.0.519",
+    "@remotion/shapes": "^4.0.519",
+    "@remotion/three": "^4.0.519",
+    "@remotion/transitions": "^4.0.519",
+    "dotenv": "^17.4.2",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "remotion": "4.0.519",
+    "three": "^0.185.1"
+  },
+  "devDependencies": {
+    "@remotion/eslint-config-flat": "4.0.519",
+    "@types/react": "19.2.7",
+    "@types/web": "0.0.166",
+    "eslint": "9.19.0",
+    "prettier": "3.8.1",
+    "typescript": "5.9.3"
+  },
+  "scripts": {
+    "dev": "remotion studio",
+    "studio": "remotion studio",
+    "build": "remotion bundle",
+    "upgrade": "remotion upgrade",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src && tsc --noEmit",
+    "render": "remotion render",
+    "render:all": "node scripts/render-all.mjs",
+    "occupancy": "node scripts/occupancy-check.mjs",
+    "gen:assets": "node scripts/gen-assets.mjs"
+  },
+  "sideEffects": [
+    "*.css"
+  ],
+  "allowScripts": {
+    "esbuild@0.28.1": true
+  }
+}

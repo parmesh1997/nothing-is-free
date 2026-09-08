@@ -1,0 +1,744 @@
+[
+  {
+    "text": "It",
+    "startMs": 90,
+    "endMs": 210,
+    "timestampMs": 200,
+    "confidence": 0.92829
+  },
+  {
+    "text": " happened",
+    "startMs": 210,
+    "endMs": 810,
+    "timestampMs": 480,
+    "confidence": 0.995049
+  },
+  {
+    "text": " again",
+    "startMs": 810,
+    "endMs": 1260,
+    "timestampMs": 880,
+    "confidence": 0.992422
+  },
+  {
+    "text": " less",
+    "startMs": 1260,
+    "endMs": 1590,
+    "timestampMs": 1460,
+    "confidence": 0.365515
+  },
+  {
+    "text": " than",
+    "startMs": 1590,
+    "endMs": 1860,
+    "timestampMs": 1700,
+    "confidence": 0.994025
+  },
+  {
+    "text": " a",
+    "startMs": 1860,
+    "endMs": 1940,
+    "timestampMs": 1840,
+    "confidence": 0.993343
+  },
+  {
+    "text": " year",
+    "startMs": 1940,
+    "endMs": 2260,
+    "timestampMs": 1960,
+    "confidence": 0.997356
+  },
+  {
+    "text": " later",
+    "startMs": 2260,
+    "endMs": 2870,
+    "timestampMs": 2480,
+    "confidence": 0.990084
+  },
+  {
+    "text": " on",
+    "startMs": 2870,
+    "endMs": 2900,
+    "timestampMs": 2980,
+    "confidence": 0.525905
+  },
+  {
+    "text": " a",
+    "startMs": 2900,
+    "endMs": 3000,
+    "timestampMs": 3140,
+    "confidence": 0.992538
+  },
+  {
+    "text": " completely",
+    "startMs": 3000,
+    "endMs": 3600,
+    "timestampMs": 3560,
+    "confidence": 0.974295
+  },
+  {
+    "text": " different",
+    "startMs": 3600,
+    "endMs": 3920,
+    "timestampMs": 3920,
+    "confidence": 0.969703
+  },
+  {
+    "text": " kind",
+    "startMs": 3920,
+    "endMs": 4150,
+    "timestampMs": 4200,
+    "confidence": 0.962498
+  },
+  {
+    "text": " of",
+    "startMs": 4150,
+    "endMs": 4360,
+    "timestampMs": 4340,
+    "confidence": 0.996307
+  },
+  {
+    "text": " pipe",
+    "startMs": 4360,
+    "endMs": 4560,
+    "timestampMs": 4740,
+    "confidence": 0.92727
+  },
+  {
+    "text": ".",
+    "startMs": 4560,
+    "endMs": 4560,
+    "timestampMs": 6020,
+    "confidence": 0.88431
+  },
+  {
+    "text": " September",
+    "startMs": 4560,
+    "endMs": 5990,
+    "timestampMs": 6360,
+    "confidence": 0.991766
+  },
+  {
+    "text": " 2024",
+    "startMs": 5990,
+    "endMs": 7180,
+    "timestampMs": 7400,
+    "confidence": 0.947083
+  },
+  {
+    "text": ",",
+    "startMs": 7180,
+    "endMs": 7420,
+    "timestampMs": 8220,
+    "confidence": 0.526992
+  },
+  {
+    "text": " Disney",
+    "startMs": 7420,
+    "endMs": 8180,
+    "timestampMs": 8480,
+    "confidence": 0.979167
+  },
+  {
+    "text": " and",
+    "startMs": 8180,
+    "endMs": 8540,
+    "timestampMs": 8800,
+    "confidence": 0.98426
+  },
+  {
+    "text": " Dire",
+    "startMs": 8540,
+    "endMs": 9120,
+    "timestampMs": 8980,
+    "confidence": 0.917953
+  },
+  {
+    "text": "c",
+    "startMs": 9120,
+    "endMs": 9160,
+    "timestampMs": 9140,
+    "confidence": 0.990074
+  },
+  {
+    "text": "TV",
+    "startMs": 9160,
+    "endMs": 9440,
+    "timestampMs": 9300,
+    "confidence": 0.993801
+  },
+  {
+    "text": " missed",
+    "startMs": 9440,
+    "endMs": 9840,
+    "timestampMs": 9760,
+    "confidence": 0.946599
+  },
+  {
+    "text": " their",
+    "startMs": 9840,
+    "endMs": 10030,
+    "timestampMs": 9980,
+    "confidence": 0.98679
+  },
+  {
+    "text": " deadline",
+    "startMs": 10030,
+    "endMs": 10490,
+    "timestampMs": 10280,
+    "confidence": 0.990495
+  },
+  {
+    "text": " too",
+    "startMs": 10490,
+    "endMs": 10640,
+    "timestampMs": 10960,
+    "confidence": 0.842984
+  },
+  {
+    "text": ".",
+    "startMs": 10640,
+    "endMs": 10640,
+    "timestampMs": 11980,
+    "confidence": 0.959441
+  },
+  {
+    "text": " Disney",
+    "startMs": 10640,
+    "endMs": 11170,
+    "timestampMs": 12280,
+    "confidence": 0.995516
+  },
+  {
+    "text": "'s",
+    "startMs": 11170,
+    "endMs": 11980,
+    "timestampMs": 12480,
+    "confidence": 0.969407
+  },
+  {
+    "text": " channels",
+    "startMs": 11980,
+    "endMs": 12100,
+    "timestampMs": 12700,
+    "confidence": 0.985408
+  },
+  {
+    "text": " went",
+    "startMs": 12100,
+    "endMs": 12460,
+    "timestampMs": 13040,
+    "confidence": 0.997071
+  },
+  {
+    "text": " dark",
+    "startMs": 12460,
+    "endMs": 12890,
+    "timestampMs": 13420,
+    "confidence": 0.997725
+  },
+  {
+    "text": " for",
+    "startMs": 12890,
+    "endMs": 13140,
+    "timestampMs": 13740,
+    "confidence": 0.99658
+  },
+  {
+    "text": " over",
+    "startMs": 13140,
+    "endMs": 13580,
+    "timestampMs": 14140,
+    "confidence": 0.995306
+  },
+  {
+    "text": " 11",
+    "startMs": 13580,
+    "endMs": 14000,
+    "timestampMs": 14700,
+    "confidence": 0.965392
+  },
+  {
+    "text": " million",
+    "startMs": 14000,
+    "endMs": 14640,
+    "timestampMs": 15140,
+    "confidence": 0.978161
+  },
+  {
+    "text": " Dire",
+    "startMs": 14640,
+    "endMs": 15000,
+    "timestampMs": 15520,
+    "confidence": 0.988733
+  },
+  {
+    "text": "c",
+    "startMs": 15000,
+    "endMs": 15090,
+    "timestampMs": 15740,
+    "confidence": 0.999918
+  },
+  {
+    "text": "TV",
+    "startMs": 15090,
+    "endMs": 15300,
+    "timestampMs": 15900,
+    "confidence": 0.998843
+  },
+  {
+    "text": " satellite",
+    "startMs": 15300,
+    "endMs": 16100,
+    "timestampMs": 16440,
+    "confidence": 0.657968
+  },
+  {
+    "text": " subscribers",
+    "startMs": 16100,
+    "endMs": 17200,
+    "timestampMs": 17180,
+    "confidence": 0.991352
+  },
+  {
+    "text": ".",
+    "startMs": 17200,
+    "endMs": 17200,
+    "timestampMs": 18520,
+    "confidence": 0.972518
+  },
+  {
+    "text": " It",
+    "startMs": 17200,
+    "endMs": 17390,
+    "timestampMs": 18960,
+    "confidence": 0.994583
+  },
+  {
+    "text": " happened",
+    "startMs": 17390,
+    "endMs": 18100,
+    "timestampMs": 19280,
+    "confidence": 0.998338
+  },
+  {
+    "text": " right",
+    "startMs": 18100,
+    "endMs": 18730,
+    "timestampMs": 19580,
+    "confidence": 0.996725
+  },
+  {
+    "text": " as",
+    "startMs": 18730,
+    "endMs": 18830,
+    "timestampMs": 19800,
+    "confidence": 0.997067
+  },
+  {
+    "text": " the",
+    "startMs": 18830,
+    "endMs": 19000,
+    "timestampMs": 19960,
+    "confidence": 0.996318
+  },
+  {
+    "text": " US",
+    "startMs": 19000,
+    "endMs": 19180,
+    "timestampMs": 20200,
+    "confidence": 0.673353
+  },
+  {
+    "text": " Open",
+    "startMs": 19180,
+    "endMs": 19540,
+    "timestampMs": 20560,
+    "confidence": 0.773811
+  },
+  {
+    "text": " and",
+    "startMs": 19540,
+    "endMs": 19830,
+    "timestampMs": 20960,
+    "confidence": 0.979492
+  },
+  {
+    "text": " two",
+    "startMs": 19830,
+    "endMs": 20080,
+    "timestampMs": 21220,
+    "confidence": 0.843705
+  },
+  {
+    "text": " weeks",
+    "startMs": 20080,
+    "endMs": 20530,
+    "timestampMs": 21520,
+    "confidence": 0.996694
+  },
+  {
+    "text": " of",
+    "startMs": 20530,
+    "endMs": 20790,
+    "timestampMs": 21780,
+    "confidence": 0.998049
+  },
+  {
+    "text": " college",
+    "startMs": 20790,
+    "endMs": 21340,
+    "timestampMs": 21980,
+    "confidence": 0.957501
+  },
+  {
+    "text": " football",
+    "startMs": 21340,
+    "endMs": 22100,
+    "timestampMs": 22420,
+    "confidence": 0.992767
+  },
+  {
+    "text": " were",
+    "startMs": 22100,
+    "endMs": 22420,
+    "timestampMs": 22680,
+    "confidence": 0.974408
+  },
+  {
+    "text": " about",
+    "startMs": 22420,
+    "endMs": 22870,
+    "timestampMs": 22940,
+    "confidence": 0.993597
+  },
+  {
+    "text": " to",
+    "startMs": 22870,
+    "endMs": 23140,
+    "timestampMs": 23220,
+    "confidence": 0.997866
+  },
+  {
+    "text": " air",
+    "startMs": 23140,
+    "endMs": 23360,
+    "timestampMs": 23420,
+    "confidence": 0.963306
+  },
+  {
+    "text": ".",
+    "startMs": 23360,
+    "endMs": 23360,
+    "timestampMs": 24460,
+    "confidence": 0.899539
+  },
+  {
+    "text": " So",
+    "startMs": 24660,
+    "endMs": 24690,
+    "timestampMs": 24800,
+    "confidence": 0.996052
+  },
+  {
+    "text": " was",
+    "startMs": 24690,
+    "endMs": 24940,
+    "timestampMs": 25060,
+    "confidence": 0.983292
+  },
+  {
+    "text": " the",
+    "startMs": 24940,
+    "endMs": 25280,
+    "timestampMs": 25280,
+    "confidence": 0.993282
+  },
+  {
+    "text": " season",
+    "startMs": 25280,
+    "endMs": 25820,
+    "timestampMs": 25540,
+    "confidence": 0.964989
+  },
+  {
+    "text": "'s",
+    "startMs": 25820,
+    "endMs": 25960,
+    "timestampMs": 25820,
+    "confidence": 0.997885
+  },
+  {
+    "text": " first",
+    "startMs": 25960,
+    "endMs": 26420,
+    "timestampMs": 26160,
+    "confidence": 0.994852
+  },
+  {
+    "text": " Monday",
+    "startMs": 26420,
+    "endMs": 26980,
+    "timestampMs": 26600,
+    "confidence": 0.987025
+  },
+  {
+    "text": " Night",
+    "startMs": 26980,
+    "endMs": 27440,
+    "timestampMs": 26840,
+    "confidence": 0.823017
+  },
+  {
+    "text": " Football",
+    "startMs": 27440,
+    "endMs": 28170,
+    "timestampMs": 27280,
+    "confidence": 0.929004
+  },
+  {
+    "text": ".",
+    "startMs": 28170,
+    "endMs": 28460,
+    "timestampMs": 28900,
+    "confidence": 0.910976
+  },
+  {
+    "text": " The",
+    "startMs": 28460,
+    "endMs": 28940,
+    "timestampMs": 29100,
+    "confidence": 0.983481
+  },
+  {
+    "text": " blackout",
+    "startMs": 28940,
+    "endMs": 29480,
+    "timestampMs": 29420,
+    "confidence": 0.887652
+  },
+  {
+    "text": " lasted",
+    "startMs": 29480,
+    "endMs": 30040,
+    "timestampMs": 30060,
+    "confidence": 0.999112
+  },
+  {
+    "text": " 13",
+    "startMs": 30040,
+    "endMs": 30600,
+    "timestampMs": 30580,
+    "confidence": 0.974708
+  },
+  {
+    "text": " days",
+    "startMs": 30600,
+    "endMs": 31040,
+    "timestampMs": 31340,
+    "confidence": 0.992761
+  },
+  {
+    "text": ".",
+    "startMs": 31040,
+    "endMs": 31040,
+    "timestampMs": 33300,
+    "confidence": 0.970371
+  },
+  {
+    "text": " Dire",
+    "startMs": 31040,
+    "endMs": 31500,
+    "timestampMs": 33420,
+    "confidence": 0.995441
+  },
+  {
+    "text": "c",
+    "startMs": 31500,
+    "endMs": 31620,
+    "timestampMs": 33600,
+    "confidence": 0.999924
+  },
+  {
+    "text": "TV",
+    "startMs": 31620,
+    "endMs": 31850,
+    "timestampMs": 33760,
+    "confidence": 0.999386
+  },
+  {
+    "text": " eventually",
+    "startMs": 31850,
+    "endMs": 33220,
+    "timestampMs": 34480,
+    "confidence": 0.995695
+  },
+  {
+    "text": " offered",
+    "startMs": 33220,
+    "endMs": 33840,
+    "timestampMs": 34920,
+    "confidence": 0.999405
+  },
+  {
+    "text": " affected",
+    "startMs": 33840,
+    "endMs": 34790,
+    "timestampMs": 35360,
+    "confidence": 0.994926
+  },
+  {
+    "text": " customers",
+    "startMs": 34790,
+    "endMs": 35830,
+    "timestampMs": 35860,
+    "confidence": 0.98978
+  },
+  {
+    "text": " a",
+    "startMs": 35830,
+    "endMs": 35940,
+    "timestampMs": 36260,
+    "confidence": 0.990497
+  },
+  {
+    "text": " $",
+    "startMs": 35940,
+    "endMs": 36070,
+    "timestampMs": 36340,
+    "confidence": 0.729777
+  },
+  {
+    "text": "20",
+    "startMs": 36070,
+    "endMs": 36800,
+    "timestampMs": 36640,
+    "confidence": 0.995763
+  },
+  {
+    "text": " credit",
+    "startMs": 36800,
+    "endMs": 37200,
+    "timestampMs": 37260,
+    "confidence": 0.93783
+  },
+  {
+    "text": ".",
+    "startMs": 37200,
+    "endMs": 37200,
+    "timestampMs": 38440,
+    "confidence": 0.735322
+  },
+  {
+    "text": " That",
+    "startMs": 37200,
+    "endMs": 37610,
+    "timestampMs": 38640,
+    "confidence": 0.988463
+  },
+  {
+    "text": "'s",
+    "startMs": 37610,
+    "endMs": 37840,
+    "timestampMs": 38800,
+    "confidence": 0.981998
+  },
+  {
+    "text": " for",
+    "startMs": 37840,
+    "endMs": 38450,
+    "timestampMs": 38920,
+    "confidence": 0.994962
+  },
+  {
+    "text": " three",
+    "startMs": 38450,
+    "endMs": 38830,
+    "timestampMs": 39300,
+    "confidence": 0.758618
+  },
+  {
+    "text": " weeks",
+    "startMs": 38830,
+    "endMs": 39220,
+    "timestampMs": 39640,
+    "confidence": 0.993896
+  },
+  {
+    "text": " of",
+    "startMs": 39220,
+    "endMs": 39430,
+    "timestampMs": 39880,
+    "confidence": 0.99795
+  },
+  {
+    "text": " channels",
+    "startMs": 39430,
+    "endMs": 40290,
+    "timestampMs": 40320,
+    "confidence": 0.994664
+  },
+  {
+    "text": " they",
+    "startMs": 40290,
+    "endMs": 40720,
+    "timestampMs": 40660,
+    "confidence": 0.970717
+  },
+  {
+    "text": " were",
+    "startMs": 40720,
+    "endMs": 41150,
+    "timestampMs": 40860,
+    "confidence": 0.995915
+  },
+  {
+    "text": " already",
+    "startMs": 41150,
+    "endMs": 41960,
+    "timestampMs": 41400,
+    "confidence": 0.998395
+  },
+  {
+    "text": " paying",
+    "startMs": 41960,
+    "endMs": 42730,
+    "timestampMs": 41760,
+    "confidence": 0.988074
+  },
+  {
+    "text": " for",
+    "startMs": 42730,
+    "endMs": 42860,
+    "timestampMs": 42400,
+    "confidence": 0.996299
+  },
+  {
+    "text": " every",
+    "startMs": 42860,
+    "endMs": 43580,
+    "timestampMs": 43140,
+    "confidence": 0.823469
+  },
+  {
+    "text": " single",
+    "startMs": 43580,
+    "endMs": 44250,
+    "timestampMs": 43960,
+    "confidence": 0.986555
+  },
+  {
+    "text": " month",
+    "startMs": 44250,
+    "endMs": 44640,
+    "timestampMs": 44620,
+    "confidence": 0.994512
+  },
+  {
+    "text": ".",
+    "startMs": 44640,
+    "endMs": 44640,
+    "timestampMs": 44620,
+    "confidence": 0.938557
+  }
+]

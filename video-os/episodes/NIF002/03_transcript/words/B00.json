@@ -1,0 +1,135 @@
+[
+  {
+    "text": "nothing",
+    "startMs": 90,
+    "endMs": 1370,
+    "timestampMs": 460,
+    "confidence": 0.546677
+  },
+  {
+    "text": " is",
+    "startMs": 1370,
+    "endMs": 1370,
+    "timestampMs": 660,
+    "confidence": 0.99682
+  },
+  {
+    "text": " free",
+    "startMs": 1370,
+    "endMs": 2060,
+    "timestampMs": 1080,
+    "confidence": 0.992235
+  },
+  {
+    "text": " and",
+    "startMs": 2060,
+    "endMs": 2590,
+    "timestampMs": 2740,
+    "confidence": 0.664345
+  },
+  {
+    "text": " the",
+    "startMs": 2590,
+    "endMs": 2640,
+    "timestampMs": 3060,
+    "confidence": 0.912485
+  },
+  {
+    "text": " app",
+    "startMs": 2640,
+    "endMs": 3010,
+    "timestampMs": 3300,
+    "confidence": 0.944616
+  },
+  {
+    "text": " that",
+    "startMs": 3010,
+    "endMs": 3460,
+    "timestampMs": 3620,
+    "confidence": 0.994452
+  },
+  {
+    "text": " just",
+    "startMs": 3460,
+    "endMs": 4020,
+    "timestampMs": 3920,
+    "confidence": 0.997194
+  },
+  {
+    "text": " charged",
+    "startMs": 4020,
+    "endMs": 4450,
+    "timestampMs": 4400,
+    "confidence": 0.969959
+  },
+  {
+    "text": " you",
+    "startMs": 4450,
+    "endMs": 4720,
+    "timestampMs": 4620,
+    "confidence": 0.996839
+  },
+  {
+    "text": " nothing",
+    "startMs": 4720,
+    "endMs": 6000,
+    "timestampMs": 5340,
+    "confidence": 0.975031
+  },
+  {
+    "text": " ran",
+    "startMs": 6000,
+    "endMs": 6520,
+    "timestampMs": 6360,
+    "confidence": 0.84887
+  },
+  {
+    "text": " an",
+    "startMs": 6520,
+    "endMs": 6800,
+    "timestampMs": 6840,
+    "confidence": 0.987639
+  },
+  {
+    "text": " auction",
+    "startMs": 6800,
+    "endMs": 7650,
+    "timestampMs": 7320,
+    "confidence": 0.978616
+  },
+  {
+    "text": " the",
+    "startMs": 7650,
+    "endMs": 7970,
+    "timestampMs": 7800,
+    "confidence": 0.971223
+  },
+  {
+    "text": " second",
+    "startMs": 7970,
+    "endMs": 8200,
+    "timestampMs": 8260,
+    "confidence": 0.901806
+  },
+  {
+    "text": " you",
+    "startMs": 8200,
+    "endMs": 8420,
+    "timestampMs": 8540,
+    "confidence": 0.998068
+  },
+  {
+    "text": " opened",
+    "startMs": 8420,
+    "endMs": 8880,
+    "timestampMs": 8920,
+    "confidence": 0.992294
+  },
+  {
+    "text": " it",
+    "startMs": 8880,
+    "endMs": 9040,
+    "timestampMs": 9020,
+    "confidence": 0.984647
+  }
+]

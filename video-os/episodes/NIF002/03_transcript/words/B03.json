@@ -1,0 +1,555 @@
+[
+  {
+    "text": "and",
+    "startMs": 100,
+    "endMs": 430,
+    "timestampMs": 240,
+    "confidence": 0.275707
+  },
+  {
+    "text": " it",
+    "startMs": 430,
+    "endMs": 790,
+    "timestampMs": 400,
+    "confidence": 0.986523
+  },
+  {
+    "text": " is",
+    "startMs": 790,
+    "endMs": 910,
+    "timestampMs": 760,
+    "confidence": 0.958954
+  },
+  {
+    "text": " a",
+    "startMs": 910,
+    "endMs": 1160,
+    "timestampMs": 1080,
+    "confidence": 0.986397
+  },
+  {
+    "text": " big",
+    "startMs": 1160,
+    "endMs": 1660,
+    "timestampMs": 1440,
+    "confidence": 0.944022
+  },
+  {
+    "text": " rent",
+    "startMs": 1660,
+    "endMs": 2000,
+    "timestampMs": 2320,
+    "confidence": 0.933339
+  },
+  {
+    "text": ".",
+    "startMs": 2000,
+    "endMs": 2940,
+    "timestampMs": 2960,
+    "confidence": 0.874732
+  },
+  {
+    "text": " Ad",
+    "startMs": 2940,
+    "endMs": 3040,
+    "timestampMs": 3180,
+    "confidence": 0.512383
+  },
+  {
+    "text": "vertis",
+    "startMs": 3040,
+    "endMs": 3510,
+    "timestampMs": 3380,
+    "confidence": 0.991293
+  },
+  {
+    "text": "ers",
+    "startMs": 3510,
+    "endMs": 3960,
+    "timestampMs": 3800,
+    "confidence": 0.976589
+  },
+  {
+    "text": " spend",
+    "startMs": 3960,
+    "endMs": 4160,
+    "timestampMs": 4240,
+    "confidence": 0.989719
+  },
+  {
+    "text": " around",
+    "startMs": 4160,
+    "endMs": 4900,
+    "timestampMs": 4700,
+    "confidence": 0.959673
+  },
+  {
+    "text": " 390",
+    "startMs": 4900,
+    "endMs": 6740,
+    "timestampMs": 6080,
+    "confidence": 0.592888
+  },
+  {
+    "text": " billion",
+    "startMs": 6740,
+    "endMs": 7120,
+    "timestampMs": 7040,
+    "confidence": 0.908112
+  },
+  {
+    "text": " dollars",
+    "startMs": 7120,
+    "endMs": 7730,
+    "timestampMs": 7580,
+    "confidence": 0.965719
+  },
+  {
+    "text": " a",
+    "startMs": 7730,
+    "endMs": 7790,
+    "timestampMs": 7880,
+    "confidence": 0.947218
+  },
+  {
+    "text": " year",
+    "startMs": 7790,
+    "endMs": 8340,
+    "timestampMs": 8160,
+    "confidence": 0.993252
+  },
+  {
+    "text": " on",
+    "startMs": 8340,
+    "endMs": 8650,
+    "timestampMs": 8560,
+    "confidence": 0.900148
+  },
+  {
+    "text": " ads",
+    "startMs": 8650,
+    "endMs": 9390,
+    "timestampMs": 8960,
+    "confidence": 0.976805
+  },
+  {
+    "text": " inside",
+    "startMs": 9390,
+    "endMs": 10080,
+    "timestampMs": 9860,
+    "confidence": 0.885799
+  },
+  {
+    "text": " phone",
+    "startMs": 10080,
+    "endMs": 10320,
+    "timestampMs": 10300,
+    "confidence": 0.976857
+  },
+  {
+    "text": " apps",
+    "startMs": 10320,
+    "endMs": 10690,
+    "timestampMs": 10780,
+    "confidence": 0.99099
+  },
+  {
+    "text": ".",
+    "startMs": 10690,
+    "endMs": 11080,
+    "timestampMs": 11660,
+    "confidence": 0.808047
+  },
+  {
+    "text": " That",
+    "startMs": 11080,
+    "endMs": 11720,
+    "timestampMs": 11940,
+    "confidence": 0.964299
+  },
+  {
+    "text": " is",
+    "startMs": 11720,
+    "endMs": 11780,
+    "timestampMs": 12100,
+    "confidence": 0.992112
+  },
+  {
+    "text": " now",
+    "startMs": 11780,
+    "endMs": 12110,
+    "timestampMs": 12520,
+    "confidence": 0.993168
+  },
+  {
+    "text": " more",
+    "startMs": 12110,
+    "endMs": 12920,
+    "timestampMs": 13120,
+    "confidence": 0.936911
+  },
+  {
+    "text": " than",
+    "startMs": 12920,
+    "endMs": 13010,
+    "timestampMs": 13500,
+    "confidence": 0.996824
+  },
+  {
+    "text": " 80",
+    "startMs": 13010,
+    "endMs": 13820,
+    "timestampMs": 13920,
+    "confidence": 0.932885
+  },
+  {
+    "text": " cents",
+    "startMs": 13820,
+    "endMs": 14240,
+    "timestampMs": 14420,
+    "confidence": 0.989678
+  },
+  {
+    "text": " of",
+    "startMs": 14240,
+    "endMs": 14560,
+    "timestampMs": 14860,
+    "confidence": 0.990203
+  },
+  {
+    "text": " every",
+    "startMs": 14560,
+    "endMs": 15020,
+    "timestampMs": 15460,
+    "confidence": 0.991874
+  },
+  {
+    "text": " dollar",
+    "startMs": 15020,
+    "endMs": 15690,
+    "timestampMs": 15880,
+    "confidence": 0.99031
+  },
+  {
+    "text": " spent",
+    "startMs": 15690,
+    "endMs": 16250,
+    "timestampMs": 16460,
+    "confidence": 0.994488
+  },
+  {
+    "text": " advertising",
+    "startMs": 16250,
+    "endMs": 17490,
+    "timestampMs": 17480,
+    "confidence": 0.989759
+  },
+  {
+    "text": " on",
+    "startMs": 17490,
+    "endMs": 17720,
+    "timestampMs": 17860,
+    "confidence": 0.99771
+  },
+  {
+    "text": " a",
+    "startMs": 17720,
+    "endMs": 17820,
+    "timestampMs": 18040,
+    "confidence": 0.995459
+  },
+  {
+    "text": " phone",
+    "startMs": 17820,
+    "endMs": 18530,
+    "timestampMs": 18400,
+    "confidence": 0.9991
+  },
+  {
+    "text": " at",
+    "startMs": 18530,
+    "endMs": 18680,
+    "timestampMs": 18740,
+    "confidence": 0.955775
+  },
+  {
+    "text": " all",
+    "startMs": 18680,
+    "endMs": 18880,
+    "timestampMs": 19460,
+    "confidence": 0.998753
+  },
+  {
+    "text": ".",
+    "startMs": 18880,
+    "endMs": 18880,
+    "timestampMs": 20420,
+    "confidence": 0.931388
+  },
+  {
+    "text": " Almost",
+    "startMs": 18880,
+    "endMs": 19820,
+    "timestampMs": 20940,
+    "confidence": 0.965329
+  },
+  {
+    "text": " none",
+    "startMs": 19820,
+    "endMs": 20560,
+    "timestampMs": 21280,
+    "confidence": 0.998677
+  },
+  {
+    "text": " of",
+    "startMs": 20560,
+    "endMs": 20750,
+    "timestampMs": 21500,
+    "confidence": 0.999413
+  },
+  {
+    "text": " it",
+    "startMs": 20750,
+    "endMs": 21060,
+    "timestampMs": 21740,
+    "confidence": 0.998872
+  },
+  {
+    "text": " is",
+    "startMs": 21060,
+    "endMs": 21370,
+    "timestampMs": 22280,
+    "confidence": 0.995923
+  },
+  {
+    "text": " one",
+    "startMs": 21370,
+    "endMs": 22080,
+    "timestampMs": 22640,
+    "confidence": 0.992502
+  },
+  {
+    "text": " big",
+    "startMs": 22080,
+    "endMs": 22370,
+    "timestampMs": 23040,
+    "confidence": 0.996242
+  },
+  {
+    "text": " sale",
+    "startMs": 22370,
+    "endMs": 22930,
+    "timestampMs": 23560,
+    "confidence": 0.996818
+  },
+  {
+    "text": ".",
+    "startMs": 22930,
+    "endMs": 23440,
+    "timestampMs": 23940,
+    "confidence": 0.900699
+  },
+  {
+    "text": " It",
+    "startMs": 23440,
+    "endMs": 23900,
+    "timestampMs": 24640,
+    "confidence": 0.933821
+  },
+  {
+    "text": " is",
+    "startMs": 23900,
+    "endMs": 23900,
+    "timestampMs": 24880,
+    "confidence": 0.997626
+  },
+  {
+    "text": " that",
+    "startMs": 23900,
+    "endMs": 24520,
+    "timestampMs": 25120,
+    "confidence": 0.997193
+  },
+  {
+    "text": " half",
+    "startMs": 24520,
+    "endMs": 24930,
+    "timestampMs": 25500,
+    "confidence": 0.986764
+  },
+  {
+    "text": "-",
+    "startMs": 24930,
+    "endMs": 24930,
+    "timestampMs": 25520,
+    "confidence": 0.459976
+  },
+  {
+    "text": "second",
+    "startMs": 24930,
+    "endMs": 25660,
+    "timestampMs": 25980,
+    "confidence": 0.993257
+  },
+  {
+    "text": " auction",
+    "startMs": 25660,
+    "endMs": 26480,
+    "timestampMs": 26600,
+    "confidence": 0.987892
+  },
+  {
+    "text": " running",
+    "startMs": 26480,
+    "endMs": 27720,
+    "timestampMs": 27540,
+    "confidence": 0.320422
+  },
+  {
+    "text": " a",
+    "startMs": 27720,
+    "endMs": 28000,
+    "timestampMs": 27920,
+    "confidence": 0.925903
+  },
+  {
+    "text": " few",
+    "startMs": 28000,
+    "endMs": 28240,
+    "timestampMs": 28200,
+    "confidence": 0.904097
+  },
+  {
+    "text": " billion",
+    "startMs": 28240,
+    "endMs": 28720,
+    "timestampMs": 28660,
+    "confidence": 0.780069
+  },
+  {
+    "text": " times",
+    "startMs": 28720,
+    "endMs": 29200,
+    "timestampMs": 29180,
+    "confidence": 0.863085
+  },
+  {
+    "text": " an",
+    "startMs": 29220,
+    "endMs": 29460,
+    "timestampMs": 29420,
+    "confidence": 0.98961
+  },
+  {
+    "text": " hour",
+    "startMs": 29460,
+    "endMs": 30250,
+    "timestampMs": 29840,
+    "confidence": 0.999832
+  },
+  {
+    "text": " in",
+    "startMs": 30250,
+    "endMs": 30340,
+    "timestampMs": 30480,
+    "confidence": 0.972789
+  },
+  {
+    "text": " fractions",
+    "startMs": 30340,
+    "endMs": 31440,
+    "timestampMs": 31060,
+    "confidence": 0.997817
+  },
+  {
+    "text": " of",
+    "startMs": 31440,
+    "endMs": 31750,
+    "timestampMs": 31580,
+    "confidence": 0.997463
+  },
+  {
+    "text": " a",
+    "startMs": 31750,
+    "endMs": 31830,
+    "timestampMs": 31780,
+    "confidence": 0.98937
+  },
+  {
+    "text": " cent",
+    "startMs": 31830,
+    "endMs": 32350,
+    "timestampMs": 32100,
+    "confidence": 0.999537
+  },
+  {
+    "text": ".",
+    "startMs": 32350,
+    "endMs": 32750,
+    "timestampMs": 33640,
+    "confidence": 0.967025
+  },
+  {
+    "text": " You",
+    "startMs": 32750,
+    "endMs": 33140,
+    "timestampMs": 34000,
+    "confidence": 0.968365
+  },
+  {
+    "text": " are",
+    "startMs": 33140,
+    "endMs": 33660,
+    "timestampMs": 34400,
+    "confidence": 0.998711
+  },
+  {
+    "text": " a",
+    "startMs": 33660,
+    "endMs": 33670,
+    "timestampMs": 34600,
+    "confidence": 0.995809
+  },
+  {
+    "text": " rounding",
+    "startMs": 33670,
+    "endMs": 34720,
+    "timestampMs": 34940,
+    "confidence": 0.999253
+  },
+  {
+    "text": " error",
+    "startMs": 34720,
+    "endMs": 35370,
+    "timestampMs": 35380,
+    "confidence": 0.999275
+  },
+  {
+    "text": " that",
+    "startMs": 35370,
+    "endMs": 35990,
+    "timestampMs": 36200,
+    "confidence": 0.995399
+  },
+  {
+    "text": " happens",
+    "startMs": 35990,
+    "endMs": 36870,
+    "timestampMs": 36700,
+    "confidence": 0.99971
+  },
+  {
+    "text": " constantly",
+    "startMs": 36870,
+    "endMs": 37670,
+    "timestampMs": 37560,
+    "confidence": 0.995556
+  },
+  {
+    "text": ".",
+    "startMs": 37670,
+    "endMs": 38400,
+    "timestampMs": 37600,
+    "confidence": 0.910002
+  }
+]

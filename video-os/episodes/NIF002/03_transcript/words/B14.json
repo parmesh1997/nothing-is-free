@@ -1,0 +1,590 @@
+[
+  {
+    "text": "Where",
+    "startMs": 170,
+    "endMs": 540,
+    "timestampMs": 440,
+    "confidence": 0.890607
+  },
+  {
+    "text": " does",
+    "startMs": 540,
+    "endMs": 970,
+    "timestampMs": 640,
+    "confidence": 0.991174
+  },
+  {
+    "text": " the",
+    "startMs": 970,
+    "endMs": 1290,
+    "timestampMs": 780,
+    "confidence": 0.980587
+  },
+  {
+    "text": " wasted",
+    "startMs": 1290,
+    "endMs": 1880,
+    "timestampMs": 1140,
+    "confidence": 0.976662
+  },
+  {
+    "text": " part",
+    "startMs": 1880,
+    "endMs": 2370,
+    "timestampMs": 1440,
+    "confidence": 0.992212
+  },
+  {
+    "text": " go",
+    "startMs": 2370,
+    "endMs": 2890,
+    "timestampMs": 1840,
+    "confidence": 0.997101
+  },
+  {
+    "text": "?",
+    "startMs": 2890,
+    "endMs": 2940,
+    "timestampMs": 2840,
+    "confidence": 0.970636
+  },
+  {
+    "text": " Some",
+    "startMs": 2940,
+    "endMs": 3340,
+    "timestampMs": 3040,
+    "confidence": 0.983354
+  },
+  {
+    "text": " of",
+    "startMs": 3340,
+    "endMs": 3620,
+    "timestampMs": 3180,
+    "confidence": 0.996831
+  },
+  {
+    "text": " it",
+    "startMs": 3620,
+    "endMs": 3660,
+    "timestampMs": 3400,
+    "confidence": 0.996903
+  },
+  {
+    "text": " to",
+    "startMs": 3660,
+    "endMs": 3840,
+    "timestampMs": 3720,
+    "confidence": 0.899329
+  },
+  {
+    "text": " websites",
+    "startMs": 3840,
+    "endMs": 4630,
+    "timestampMs": 4180,
+    "confidence": 0.983969
+  },
+  {
+    "text": " built",
+    "startMs": 4630,
+    "endMs": 5080,
+    "timestampMs": 4500,
+    "confidence": 0.945799
+  },
+  {
+    "text": " for",
+    "startMs": 5080,
+    "endMs": 5280,
+    "timestampMs": 4840,
+    "confidence": 0.993293
+  },
+  {
+    "text": " nothing",
+    "startMs": 5280,
+    "endMs": 5910,
+    "timestampMs": 5200,
+    "confidence": 0.939005
+  },
+  {
+    "text": " but",
+    "startMs": 5910,
+    "endMs": 6180,
+    "timestampMs": 5580,
+    "confidence": 0.955713
+  },
+  {
+    "text": " carrying",
+    "startMs": 6180,
+    "endMs": 7200,
+    "timestampMs": 6040,
+    "confidence": 0.976112
+  },
+  {
+    "text": " ads",
+    "startMs": 7200,
+    "endMs": 7300,
+    "timestampMs": 6460,
+    "confidence": 0.992987
+  },
+  {
+    "text": ".",
+    "startMs": 7300,
+    "endMs": 7380,
+    "timestampMs": 7380,
+    "confidence": 0.770277
+  },
+  {
+    "text": " No",
+    "startMs": 7380,
+    "endMs": 7580,
+    "timestampMs": 7520,
+    "confidence": 0.993229
+  },
+  {
+    "text": " real",
+    "startMs": 7580,
+    "endMs": 7990,
+    "timestampMs": 7840,
+    "confidence": 0.996681
+  },
+  {
+    "text": " readers",
+    "startMs": 7990,
+    "endMs": 8720,
+    "timestampMs": 8300,
+    "confidence": 0.997265
+  },
+  {
+    "text": ",",
+    "startMs": 8720,
+    "endMs": 8920,
+    "timestampMs": 8720,
+    "confidence": 0.699301
+  },
+  {
+    "text": " no",
+    "startMs": 8920,
+    "endMs": 9110,
+    "timestampMs": 8820,
+    "confidence": 0.974213
+  },
+  {
+    "text": " real",
+    "startMs": 9110,
+    "endMs": 9530,
+    "timestampMs": 9120,
+    "confidence": 0.990244
+  },
+  {
+    "text": " articles",
+    "startMs": 9530,
+    "endMs": 10360,
+    "timestampMs": 9580,
+    "confidence": 0.998449
+  },
+  {
+    "text": ",",
+    "startMs": 10360,
+    "endMs": 10690,
+    "timestampMs": 10240,
+    "confidence": 0.316697
+  },
+  {
+    "text": " just",
+    "startMs": 10690,
+    "endMs": 11290,
+    "timestampMs": 10640,
+    "confidence": 0.949034
+  },
+  {
+    "text": " a",
+    "startMs": 11290,
+    "endMs": 11350,
+    "timestampMs": 10840,
+    "confidence": 0.99609
+  },
+  {
+    "text": " page",
+    "startMs": 11350,
+    "endMs": 11830,
+    "timestampMs": 11180,
+    "confidence": 0.997369
+  },
+  {
+    "text": " wrapped",
+    "startMs": 11830,
+    "endMs": 12760,
+    "timestampMs": 11660,
+    "confidence": 0.983429
+  },
+  {
+    "text": " in",
+    "startMs": 12760,
+    "endMs": 13050,
+    "timestampMs": 11940,
+    "confidence": 0.993635
+  },
+  {
+    "text": " ad",
+    "startMs": 13050,
+    "endMs": 13960,
+    "timestampMs": 12140,
+    "confidence": 0.977482
+  },
+  {
+    "text": " slots",
+    "startMs": 13960,
+    "endMs": 14020,
+    "timestampMs": 12540,
+    "confidence": 0.979585
+  },
+  {
+    "text": ".",
+    "startMs": 14020,
+    "endMs": 14020,
+    "timestampMs": 13960,
+    "confidence": 0.962006
+  },
+  {
+    "text": " In",
+    "startMs": 14020,
+    "endMs": 14380,
+    "timestampMs": 14080,
+    "confidence": 0.996546
+  },
+  {
+    "text": " that",
+    "startMs": 14380,
+    "endMs": 14720,
+    "timestampMs": 14280,
+    "confidence": 0.980842
+  },
+  {
+    "text": " 20",
+    "startMs": 14720,
+    "endMs": 15430,
+    "timestampMs": 14620,
+    "confidence": 0.971638
+  },
+  {
+    "text": "23",
+    "startMs": 15430,
+    "endMs": 16140,
+    "timestampMs": 15080,
+    "confidence": 0.991083
+  },
+  {
+    "text": " study",
+    "startMs": 16140,
+    "endMs": 16730,
+    "timestampMs": 15620,
+    "confidence": 0.979305
+  },
+  {
+    "text": ",",
+    "startMs": 16730,
+    "endMs": 16960,
+    "timestampMs": 16280,
+    "confidence": 0.929432
+  },
+  {
+    "text": " about",
+    "startMs": 16960,
+    "endMs": 17550,
+    "timestampMs": 16420,
+    "confidence": 0.976913
+  },
+  {
+    "text": " one",
+    "startMs": 17550,
+    "endMs": 17980,
+    "timestampMs": 16800,
+    "confidence": 0.607914
+  },
+  {
+    "text": " ad",
+    "startMs": 17980,
+    "endMs": 18130,
+    "timestampMs": 17140,
+    "confidence": 0.991176
+  },
+  {
+    "text": " in",
+    "startMs": 18130,
+    "endMs": 18360,
+    "timestampMs": 17360,
+    "confidence": 0.991227
+  },
+  {
+    "text": " five",
+    "startMs": 18360,
+    "endMs": 18820,
+    "timestampMs": 17760,
+    "confidence": 0.705787
+  },
+  {
+    "text": " ran",
+    "startMs": 18820,
+    "endMs": 19200,
+    "timestampMs": 18260,
+    "confidence": 0.940772
+  },
+  {
+    "text": " on",
+    "startMs": 19200,
+    "endMs": 19490,
+    "timestampMs": 18520,
+    "confidence": 0.994761
+  },
+  {
+    "text": " a",
+    "startMs": 19490,
+    "endMs": 19510,
+    "timestampMs": 18680,
+    "confidence": 0.987441
+  },
+  {
+    "text": " site",
+    "startMs": 19510,
+    "endMs": 19990,
+    "timestampMs": 18900,
+    "confidence": 0.997366
+  },
+  {
+    "text": " like",
+    "startMs": 19990,
+    "endMs": 20470,
+    "timestampMs": 19140,
+    "confidence": 0.993278
+  },
+  {
+    "text": " that",
+    "startMs": 20470,
+    "endMs": 21400,
+    "timestampMs": 19900,
+    "confidence": 0.99598
+  },
+  {
+    "text": ".",
+    "startMs": 21400,
+    "endMs": 21440,
+    "timestampMs": 21260,
+    "confidence": 0.972516
+  },
+  {
+    "text": " The",
+    "startMs": 21440,
+    "endMs": 21690,
+    "timestampMs": 21580,
+    "confidence": 0.993055
+  },
+  {
+    "text": " buying",
+    "startMs": 21690,
+    "endMs": 22290,
+    "timestampMs": 21840,
+    "confidence": 0.991787
+  },
+  {
+    "text": " software",
+    "startMs": 22290,
+    "endMs": 23010,
+    "timestampMs": 22420,
+    "confidence": 0.996995
+  },
+  {
+    "text": " chased",
+    "startMs": 23010,
+    "endMs": 23420,
+    "timestampMs": 22800,
+    "confidence": 0.961078
+  },
+  {
+    "text": " the",
+    "startMs": 23420,
+    "endMs": 23670,
+    "timestampMs": 23200,
+    "confidence": 0.996896
+  },
+  {
+    "text": " cheapest",
+    "startMs": 23670,
+    "endMs": 24260,
+    "timestampMs": 23540,
+    "confidence": 0.995778
+  },
+  {
+    "text": " views",
+    "startMs": 24260,
+    "endMs": 24670,
+    "timestampMs": 23940,
+    "confidence": 0.994685
+  },
+  {
+    "text": " it",
+    "startMs": 24670,
+    "endMs": 25240,
+    "timestampMs": 24180,
+    "confidence": 0.993741
+  },
+  {
+    "text": " could",
+    "startMs": 25240,
+    "endMs": 25460,
+    "timestampMs": 24360,
+    "confidence": 0.997782
+  },
+  {
+    "text": " find",
+    "startMs": 25460,
+    "endMs": 25700,
+    "timestampMs": 24800,
+    "confidence": 0.998772
+  },
+  {
+    "text": ",",
+    "startMs": 25700,
+    "endMs": 25800,
+    "timestampMs": 25500,
+    "confidence": 0.404913
+  },
+  {
+    "text": " and",
+    "startMs": 25800,
+    "endMs": 26060,
+    "timestampMs": 25860,
+    "confidence": 0.899829
+  },
+  {
+    "text": " the",
+    "startMs": 26060,
+    "endMs": 26270,
+    "timestampMs": 26040,
+    "confidence": 0.992191
+  },
+  {
+    "text": " cheapest",
+    "startMs": 26270,
+    "endMs": 26740,
+    "timestampMs": 26340,
+    "confidence": 0.993799
+  },
+  {
+    "text": " views",
+    "startMs": 26740,
+    "endMs": 27250,
+    "timestampMs": 26860,
+    "confidence": 0.993695
+  },
+  {
+    "text": " are",
+    "startMs": 27250,
+    "endMs": 27300,
+    "timestampMs": 27420,
+    "confidence": 0.979053
+  },
+  {
+    "text": " the",
+    "startMs": 27300,
+    "endMs": 27850,
+    "timestampMs": 27560,
+    "confidence": 0.912002
+  },
+  {
+    "text": " fake",
+    "startMs": 27850,
+    "endMs": 28440,
+    "timestampMs": 27760,
+    "confidence": 0.991242
+  },
+  {
+    "text": " ones",
+    "startMs": 28440,
+    "endMs": 29570,
+    "timestampMs": 28280,
+    "confidence": 0.99846
+  },
+  {
+    "text": ".",
+    "startMs": 29570,
+    "endMs": 29740,
+    "timestampMs": 29460,
+    "confidence": 0.989855
+  },
+  {
+    "text": " That",
+    "startMs": 29740,
+    "endMs": 30090,
+    "timestampMs": 29900,
+    "confidence": 0.365106
+  },
+  {
+    "text": " is",
+    "startMs": 30090,
+    "endMs": 30270,
+    "timestampMs": 30220,
+    "confidence": 0.987441
+  },
+  {
+    "text": " the",
+    "startMs": 30270,
+    "endMs": 30500,
+    "timestampMs": 30400,
+    "confidence": 0.993187
+  },
+  {
+    "text": " advertis",
+    "startMs": 30500,
+    "endMs": 31240,
+    "timestampMs": 30760,
+    "confidence": 0.694953
+  },
+  {
+    "text": "er",
+    "startMs": 31240,
+    "endMs": 31350,
+    "timestampMs": 31000,
+    "confidence": 0.994609
+  },
+  {
+    "text": "'s",
+    "startMs": 31350,
+    "endMs": 31520,
+    "timestampMs": 31280,
+    "confidence": 0.994408
+  },
+  {
+    "text": " own",
+    "startMs": 31520,
+    "endMs": 31760,
+    "timestampMs": 31500,
+    "confidence": 0.980243
+  },
+  {
+    "text": " money",
+    "startMs": 31760,
+    "endMs": 32320,
+    "timestampMs": 31900,
+    "confidence": 0.997954
+  },
+  {
+    "text": " burning",
+    "startMs": 32320,
+    "endMs": 32940,
+    "timestampMs": 32660,
+    "confidence": 0.939023
+  },
+  {
+    "text": " quietly",
+    "startMs": 32940,
+    "endMs": 33460,
+    "timestampMs": 33400,
+    "confidence": 0.995877
+  },
+  {
+    "text": ".",
+    "startMs": 33460,
+    "endMs": 33500,
+    "timestampMs": 33480,
+    "confidence": 0.916083
+  }
+]

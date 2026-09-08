@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "2.0",
+  "code": "MM",
+  "name": "Mass & Method",
+  "tagline": "Ancient problems. Physical solutions.",
+  "status": "STUB — no episode built yet; rigs and library not started (v2.0 §18 open item 5)",
+  "assetPolicy": {
+    "mode": "hybrid",
+    "generatedImagesAllowed": true,
+    "planeRule": {
+      "bg":   ["asset", "code"],
+      "mid":  ["asset", "code"],
+      "subj": ["code", "asset"],
+      "fg":   ["code"]
+    },
+    "maxGeneratedPlanesPerShot": 3,
+    "maxShotsWithGeneratedAssets": 0.65,
+    "disclosureBlock": "channels/mass-and-method/ON_AI.md"
+  },
+  "runtime": {
+    "floorMinutes": 18,
+    "ceilingMinutes": 60,
+    "bands": { "standard": [18, 26], "deep": [26, 38], "special": [38, 60] }
+  },
+  "video": { "width": 1920, "height": 1080, "fps": 30 },
+  "audio": { "sampleRate": 48000, "channels": 2, "targetLUFS": -14.0, "truePeak": -1.0 },
+  "voice": { "provider": "elevenlabs-v3", "clone": "mm-lower-slower", "calibratedWpm": null, "stability": "natural" },
+  "occupancy": {
+    "paper": "#1C1C1A",
+    "inkFloor": 0.22, "inkTarget": [0.25, 0.30],
+    "bottomThirdFloor": 0.35, "bottomThirdTarget": 0.45,
+    "subjectHeight": [0.45, 0.70],
+    "maxStaticSeconds": 3.0, "maxStaticSecondsOpening": 1.5,
+    "bloomExcluded": true
+  },
+  "motion": {
+    "maxEventIntervalSeconds": 3.5,
+    "eventsPer10s": { "OPENING": 7, "HIGH": 5, "MEDIUM": 4, "REST": 3 },
+    "maxSimultaneousEntries": 2, "staggerFrames": 4,
+    "model": "hybrid"
+  },
+  "palette": {
+    "field": "#1C1C1A",
+    "amber": "#E8A33D",
+    "cyan": "#5FC8D6",
+    "ivory": "#EDE7DA",
+    "rule": "amber = force, cyan = measurement, ivory = structure"
+  },
+  "characters": {
+    "ScaleFigure": { "rig": "svg", "anonymous": true, "faceless": true, "status": "not built" }
+  },
+  "bloom": {
+    "scope": "amber-or-cyan-only",
+    "engine": "@remotion/skia",
+    "usedFor": ["forceVectors", "measurementTicks", "connectionDrawOn", "diagnosticOverlay"],
+    "timeBoxed": true,
+    "countsTowardOccupancy": false
+  },
+  "novelty": { "newComponentsPerEpisode": 2, "maxShellReuse": 0.50 }
+}

@@ -1,0 +1,660 @@
+[
+  {
+    "text": "Here",
+    "startMs": 140,
+    "endMs": 320,
+    "timestampMs": 280,
+    "confidence": 0.935544
+  },
+  {
+    "text": " is",
+    "startMs": 320,
+    "endMs": 490,
+    "timestampMs": 500,
+    "confidence": 0.870348
+  },
+  {
+    "text": " what",
+    "startMs": 490,
+    "endMs": 800,
+    "timestampMs": 720,
+    "confidence": 0.998254
+  },
+  {
+    "text": " nobody",
+    "startMs": 800,
+    "endMs": 1320,
+    "timestampMs": 1180,
+    "confidence": 0.983943
+  },
+  {
+    "text": " tells",
+    "startMs": 1320,
+    "endMs": 1660,
+    "timestampMs": 1520,
+    "confidence": 0.991571
+  },
+  {
+    "text": " you",
+    "startMs": 1660,
+    "endMs": 1940,
+    "timestampMs": 1840,
+    "confidence": 0.997348
+  },
+  {
+    "text": " about",
+    "startMs": 1940,
+    "endMs": 2250,
+    "timestampMs": 2160,
+    "confidence": 0.948097
+  },
+  {
+    "text": " the",
+    "startMs": 2250,
+    "endMs": 2450,
+    "timestampMs": 2420,
+    "confidence": 0.982163
+  },
+  {
+    "text": " television",
+    "startMs": 2450,
+    "endMs": 3140,
+    "timestampMs": 2840,
+    "confidence": 0.977691
+  },
+  {
+    "text": " in",
+    "startMs": 3140,
+    "endMs": 3360,
+    "timestampMs": 3280,
+    "confidence": 0.999218
+  },
+  {
+    "text": " your",
+    "startMs": 3360,
+    "endMs": 3810,
+    "timestampMs": 3460,
+    "confidence": 0.99926
+  },
+  {
+    "text": " living",
+    "startMs": 3810,
+    "endMs": 4470,
+    "timestampMs": 3700,
+    "confidence": 0.999767
+  },
+  {
+    "text": " room",
+    "startMs": 4470,
+    "endMs": 5280,
+    "timestampMs": 4140,
+    "confidence": 0.998986
+  },
+  {
+    "text": ".",
+    "startMs": 5280,
+    "endMs": 5280,
+    "timestampMs": 5320,
+    "confidence": 0.966051
+  },
+  {
+    "text": " Turning",
+    "startMs": 5280,
+    "endMs": 5840,
+    "timestampMs": 5580,
+    "confidence": 0.986194
+  },
+  {
+    "text": " it",
+    "startMs": 5840,
+    "endMs": 6000,
+    "timestampMs": 5820,
+    "confidence": 0.983389
+  },
+  {
+    "text": " on",
+    "startMs": 6000,
+    "endMs": 6290,
+    "timestampMs": 6060,
+    "confidence": 0.991057
+  },
+  {
+    "text": " sets",
+    "startMs": 6290,
+    "endMs": 6480,
+    "timestampMs": 6460,
+    "confidence": 0.989727
+  },
+  {
+    "text": " off",
+    "startMs": 6480,
+    "endMs": 6720,
+    "timestampMs": 6680,
+    "confidence": 0.974449
+  },
+  {
+    "text": " a",
+    "startMs": 6720,
+    "endMs": 6890,
+    "timestampMs": 6900,
+    "confidence": 0.997584
+  },
+  {
+    "text": " chain",
+    "startMs": 6890,
+    "endMs": 7310,
+    "timestampMs": 7040,
+    "confidence": 0.99939
+  },
+  {
+    "text": " of",
+    "startMs": 7310,
+    "endMs": 7360,
+    "timestampMs": 7300,
+    "confidence": 0.999573
+  },
+  {
+    "text": " payments",
+    "startMs": 7360,
+    "endMs": 8060,
+    "timestampMs": 7760,
+    "confidence": 0.998887
+  },
+  {
+    "text": " you",
+    "startMs": 8060,
+    "endMs": 8430,
+    "timestampMs": 8180,
+    "confidence": 0.974282
+  },
+  {
+    "text": " never",
+    "startMs": 8430,
+    "endMs": 9130,
+    "timestampMs": 8420,
+    "confidence": 0.997485
+  },
+  {
+    "text": " see",
+    "startMs": 9130,
+    "endMs": 9980,
+    "timestampMs": 8820,
+    "confidence": 0.996972
+  },
+  {
+    "text": ".",
+    "startMs": 9980,
+    "endMs": 9980,
+    "timestampMs": 10000,
+    "confidence": 0.993074
+  },
+  {
+    "text": " The",
+    "startMs": 9980,
+    "endMs": 10170,
+    "timestampMs": 10120,
+    "confidence": 0.99931
+  },
+  {
+    "text": " network",
+    "startMs": 10170,
+    "endMs": 10810,
+    "timestampMs": 10420,
+    "confidence": 0.998883
+  },
+  {
+    "text": " gets",
+    "startMs": 10810,
+    "endMs": 10870,
+    "timestampMs": 10720,
+    "confidence": 0.998148
+  },
+  {
+    "text": " paid",
+    "startMs": 10870,
+    "endMs": 11340,
+    "timestampMs": 11100,
+    "confidence": 0.997763
+  },
+  {
+    "text": ".",
+    "startMs": 11340,
+    "endMs": 11340,
+    "timestampMs": 11420,
+    "confidence": 0.679614
+  },
+  {
+    "text": " The",
+    "startMs": 11340,
+    "endMs": 11570,
+    "timestampMs": 11500,
+    "confidence": 0.999638
+  },
+  {
+    "text": " local",
+    "startMs": 11570,
+    "endMs": 11960,
+    "timestampMs": 11760,
+    "confidence": 0.998334
+  },
+  {
+    "text": " station",
+    "startMs": 11960,
+    "endMs": 12520,
+    "timestampMs": 12140,
+    "confidence": 0.999539
+  },
+  {
+    "text": " gets",
+    "startMs": 12520,
+    "endMs": 12810,
+    "timestampMs": 12420,
+    "confidence": 0.999363
+  },
+  {
+    "text": " paid",
+    "startMs": 12810,
+    "endMs": 13190,
+    "timestampMs": 12700,
+    "confidence": 0.99902
+  },
+  {
+    "text": " again",
+    "startMs": 13190,
+    "endMs": 13500,
+    "timestampMs": 13040,
+    "confidence": 0.995254
+  },
+  {
+    "text": " separately",
+    "startMs": 13500,
+    "endMs": 14530,
+    "timestampMs": 13620,
+    "confidence": 0.903283
+  },
+  {
+    "text": ".",
+    "startMs": 14530,
+    "endMs": 14540,
+    "timestampMs": 14520,
+    "confidence": 0.998811
+  },
+  {
+    "text": " A",
+    "startMs": 14540,
+    "endMs": 14620,
+    "timestampMs": 14740,
+    "confidence": 0.997721
+  },
+  {
+    "text": " ratings",
+    "startMs": 14620,
+    "endMs": 15240,
+    "timestampMs": 15080,
+    "confidence": 0.997301
+  },
+  {
+    "text": " company",
+    "startMs": 15240,
+    "endMs": 15920,
+    "timestampMs": 15500,
+    "confidence": 0.999748
+  },
+  {
+    "text": " gets",
+    "startMs": 15920,
+    "endMs": 16230,
+    "timestampMs": 15840,
+    "confidence": 0.99939
+  },
+  {
+    "text": " paid",
+    "startMs": 16230,
+    "endMs": 16560,
+    "timestampMs": 16080,
+    "confidence": 0.994537
+  },
+  {
+    "text": " to",
+    "startMs": 16560,
+    "endMs": 16730,
+    "timestampMs": 16340,
+    "confidence": 0.998944
+  },
+  {
+    "text": " count",
+    "startMs": 16730,
+    "endMs": 17160,
+    "timestampMs": 16580,
+    "confidence": 0.997771
+  },
+  {
+    "text": " you",
+    "startMs": 17160,
+    "endMs": 17730,
+    "timestampMs": 16960,
+    "confidence": 0.982411
+  },
+  {
+    "text": ".",
+    "startMs": 17730,
+    "endMs": 17740,
+    "timestampMs": 17760,
+    "confidence": 0.982992
+  },
+  {
+    "text": " An",
+    "startMs": 17740,
+    "endMs": 17990,
+    "timestampMs": 17920,
+    "confidence": 0.983479
+  },
+  {
+    "text": " advertis",
+    "startMs": 17990,
+    "endMs": 19100,
+    "timestampMs": 18320,
+    "confidence": 0.997455
+  },
+  {
+    "text": "er",
+    "startMs": 19100,
+    "endMs": 19260,
+    "timestampMs": 18640,
+    "confidence": 0.999939
+  },
+  {
+    "text": " pays",
+    "startMs": 19260,
+    "endMs": 19770,
+    "timestampMs": 18920,
+    "confidence": 0.997636
+  },
+  {
+    "text": " to",
+    "startMs": 19770,
+    "endMs": 19960,
+    "timestampMs": 19220,
+    "confidence": 0.999428
+  },
+  {
+    "text": " reach",
+    "startMs": 19960,
+    "endMs": 20660,
+    "timestampMs": 19460,
+    "confidence": 0.999539
+  },
+  {
+    "text": " you",
+    "startMs": 20660,
+    "endMs": 21460,
+    "timestampMs": 20200,
+    "confidence": 0.999573
+  },
+  {
+    "text": ".",
+    "startMs": 21460,
+    "endMs": 21460,
+    "timestampMs": 21460,
+    "confidence": 0.999093
+  },
+  {
+    "text": " This",
+    "startMs": 21460,
+    "endMs": 21810,
+    "timestampMs": 21640,
+    "confidence": 0.998868
+  },
+  {
+    "text": " episode",
+    "startMs": 21810,
+    "endMs": 22300,
+    "timestampMs": 22060,
+    "confidence": 0.999516
+  },
+  {
+    "text": " follows",
+    "startMs": 22300,
+    "endMs": 22860,
+    "timestampMs": 22580,
+    "confidence": 0.999527
+  },
+  {
+    "text": " that",
+    "startMs": 22860,
+    "endMs": 23140,
+    "timestampMs": 22800,
+    "confidence": 0.998178
+  },
+  {
+    "text": " chain",
+    "startMs": 23140,
+    "endMs": 23520,
+    "timestampMs": 23200,
+    "confidence": 0.997655
+  },
+  {
+    "text": " link",
+    "startMs": 23520,
+    "endMs": 23910,
+    "timestampMs": 23780,
+    "confidence": 0.663633
+  },
+  {
+    "text": " by",
+    "startMs": 23910,
+    "endMs": 24270,
+    "timestampMs": 24040,
+    "confidence": 0.564174
+  },
+  {
+    "text": " link",
+    "startMs": 24270,
+    "endMs": 25100,
+    "timestampMs": 24480,
+    "confidence": 0.995607
+  },
+  {
+    "text": ",",
+    "startMs": 25100,
+    "endMs": 25100,
+    "timestampMs": 25100,
+    "confidence": 0.634561
+  },
+  {
+    "text": " every",
+    "startMs": 25100,
+    "endMs": 25630,
+    "timestampMs": 25460,
+    "confidence": 0.987754
+  },
+  {
+    "text": " company",
+    "startMs": 25630,
+    "endMs": 26490,
+    "timestampMs": 25880,
+    "confidence": 0.999779
+  },
+  {
+    "text": " that",
+    "startMs": 26490,
+    "endMs": 26800,
+    "timestampMs": 26100,
+    "confidence": 0.999748
+  },
+  {
+    "text": " gets",
+    "startMs": 26800,
+    "endMs": 27210,
+    "timestampMs": 26380,
+    "confidence": 0.99942
+  },
+  {
+    "text": " paid",
+    "startMs": 27210,
+    "endMs": 27700,
+    "timestampMs": 26820,
+    "confidence": 0.998494
+  },
+  {
+    "text": ",",
+    "startMs": 27700,
+    "endMs": 27860,
+    "timestampMs": 27020,
+    "confidence": 0.476162
+  },
+  {
+    "text": " and",
+    "startMs": 27860,
+    "endMs": 28150,
+    "timestampMs": 27280,
+    "confidence": 0.99931
+  },
+  {
+    "text": " in",
+    "startMs": 28150,
+    "endMs": 28790,
+    "timestampMs": 27420,
+    "confidence": 0.999359
+  },
+  {
+    "text": " what",
+    "startMs": 28790,
+    "endMs": 28790,
+    "timestampMs": 27700,
+    "confidence": 0.999333
+  },
+  {
+    "text": " order",
+    "startMs": 28790,
+    "endMs": 29700,
+    "timestampMs": 28260,
+    "confidence": 0.999882
+  },
+  {
+    "text": ".",
+    "startMs": 29700,
+    "endMs": 29700,
+    "timestampMs": 29560,
+    "confidence": 0.857062
+  },
+  {
+    "text": " And",
+    "startMs": 29730,
+    "endMs": 29950,
+    "timestampMs": 29880,
+    "confidence": 0.978069
+  },
+  {
+    "text": " why",
+    "startMs": 29950,
+    "endMs": 30200,
+    "timestampMs": 30180,
+    "confidence": 0.984391
+  },
+  {
+    "text": " the",
+    "startMs": 30200,
+    "endMs": 30450,
+    "timestampMs": 30420,
+    "confidence": 0.996003
+  },
+  {
+    "text": " bill",
+    "startMs": 30450,
+    "endMs": 30790,
+    "timestampMs": 30580,
+    "confidence": 0.997579
+  },
+  {
+    "text": " keeps",
+    "startMs": 30790,
+    "endMs": 31210,
+    "timestampMs": 30940,
+    "confidence": 0.999428
+  },
+  {
+    "text": " climbing",
+    "startMs": 31210,
+    "endMs": 32100,
+    "timestampMs": 31440,
+    "confidence": 0.998997
+  },
+  {
+    "text": ",",
+    "startMs": 32100,
+    "endMs": 32130,
+    "timestampMs": 32000,
+    "confidence": 0.659688
+  },
+  {
+    "text": " even",
+    "startMs": 32130,
+    "endMs": 32460,
+    "timestampMs": 32420,
+    "confidence": 0.968036
+  },
+  {
+    "text": " as",
+    "startMs": 32460,
+    "endMs": 32640,
+    "timestampMs": 32720,
+    "confidence": 0.973528
+  },
+  {
+    "text": " millions",
+    "startMs": 32640,
+    "endMs": 33180,
+    "timestampMs": 33040,
+    "confidence": 0.996748
+  },
+  {
+    "text": " of",
+    "startMs": 33180,
+    "endMs": 33370,
+    "timestampMs": 33340,
+    "confidence": 0.96147
+  },
+  {
+    "text": " people",
+    "startMs": 33370,
+    "endMs": 33820,
+    "timestampMs": 33780,
+    "confidence": 0.995778
+  },
+  {
+    "text": " quit",
+    "startMs": 33820,
+    "endMs": 34270,
+    "timestampMs": 34120,
+    "confidence": 0.997402
+  },
+  {
+    "text": " paying",
+    "startMs": 34270,
+    "endMs": 34950,
+    "timestampMs": 34460,
+    "confidence": 0.732859
+  },
+  {
+    "text": " it",
+    "startMs": 34950,
+    "endMs": 35180,
+    "timestampMs": 34820,
+    "confidence": 0.999336
+  },
+  {
+    "text": " entirely",
+    "startMs": 35180,
+    "endMs": 35470,
+    "timestampMs": 35440,
+    "confidence": 0.997733
+  },
+  {
+    "text": ".",
+    "startMs": 35470,
+    "endMs": 36460,
+    "timestampMs": 35440,
+    "confidence": 0.975465
+  }
+]
