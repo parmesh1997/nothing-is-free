@@ -125,14 +125,16 @@ const B00Content: React.FC<CProps> = ({ vo, d }) => {
   const meter = ramp(f, 20, d - 24, 0, 4.4);
   const flipped = f > flipAt;
   return (
-    <GlideScene push="in" spanFrames={Math.round(d * 0.92)} drift={1}>
-      <Layer plane="deepMid"><DrivePOV recalcAt={recalcAt} pinAt={recalcAt - 26} /></Layer>
-      {/* HUD — outside the parallax layer so it never drifts off-frame */}
-      <GlideIn at={16} style={{ position: "absolute", right: 120, top: 64, textAlign: "right" }}>
+    <>
+      <GlideScene push="in" spanFrames={Math.round(d * 0.92)} drift={1}>
+        <Layer plane="deepMid"><DrivePOV recalcAt={recalcAt} pinAt={recalcAt - 26} /></Layer>
+      </GlideScene>
+      {/* HUD — a true overlay, drawn after the scene so the sky/road never covers it */}
+      <GlideIn at={16} style={{ position: "absolute", right: 120, top: 64, textAlign: "right", zIndex: 50 }}>
         <div style={{ fontFamily: SANS, fontWeight: 700, fontSize: 20, letterSpacing: "0.14em", color: COLOR.grey }}>METER</div>
         <div style={{ fontFamily: SANS, fontWeight: 800, fontSize: 82, lineHeight: 1, color: COLOR.orange }}>${meter.toFixed(2)}</div>
       </GlideIn>
-      <GlideIn at={flipAt} style={{ position: "absolute", left: 120, top: 66 }}>
+      <GlideIn at={flipAt} style={{ position: "absolute", left: 120, top: 66, zIndex: 50 }}>
         <div style={{ fontFamily: SANS, fontWeight: 800, fontSize: 30, letterSpacing: "0.05em", color: COLOR.grey, textDecoration: flipped ? "line-through" : "none" }}>FREE TO YOU</div>
         {flipped && (
           <div style={{ marginTop: 8, fontFamily: SANS, fontWeight: 800, fontSize: 62, lineHeight: 1, color: COLOR.ink, transform: `scale(${0.8 + grow(f, flipAt) * 0.2})`, transformOrigin: "left" }}>
@@ -140,7 +142,7 @@ const B00Content: React.FC<CProps> = ({ vo, d }) => {
           </div>
         )}
       </GlideIn>
-    </GlideScene>
+    </>
   );
 };
 
@@ -841,7 +843,7 @@ const B19Content: React.FC<CProps> = ({ vo, d }) => {
   const f = useCurrentFrame();
   const s = sched(d);
   const chartAt = s(0.36);
-  const bars = [0.3, 0.55, 0.95, 0.72, 0.46, 0.84];
+  const bars = [0.28, 0.46, 0.64, 0.98, 0.6, 0.82]; // peak at the "6" column
   return (
     <>
       <Head text="The trail becomes a timeline — and everyone's little facts" />
@@ -850,7 +852,7 @@ const B19Content: React.FC<CProps> = ({ vo, d }) => {
         <line x1={600} y1={762} x2={1560} y2={762} stroke={COLOR.ink} strokeWidth={4} opacity={grow(f, chartAt)} />
         {bars.map((b, i) => {
           const h = b * 380 * grow(f, chartAt + i * 6);
-          return <rect key={i} x={632 + i * 150} y={760 - h} width={110} height={h} fill={i === 2 ? COLOR.orange : tint(COLOR.grey, 0.35)} stroke={COLOR.ink} strokeWidth={4} />;
+          return <rect key={i} x={632 + i * 150} y={760 - h} width={110} height={h} fill={i === 3 ? COLOR.orange : tint(COLOR.grey, 0.35)} stroke={COLOR.ink} strokeWidth={4} />;
         })}
         {["12", "2", "4", "6", "8", "10"].map((lbl, i) => (
           <text key={i} x={687 + i * 150} y={796} textAnchor="middle" fontFamily={SANS} fontWeight={700} fontSize={22} fill={COLOR.grey} opacity={grow(f, chartAt + 20)}>{lbl}</text>
