@@ -1196,7 +1196,7 @@ const B28Content: React.FC<CProps> = ({ vo, d }) => {
         {layers.map((l, i) => {
           const t = grow(f, s(0.06) + (layers.length - i) * 16);
           return (
-            <g key={i} opacity={t} transform={`translate(${960 + shift * (i + 1) * 0.55} ${540 - i * 118})`}>
+            <g key={i} opacity={t} transform={`translate(${960 + shift * (i + 1) * 0.55} ${566 - i * 118})`}>
               <rect x={-340} y={-48} width={680} height={96} rx={10} fill={COLOR.cardWhite} stroke={COLOR.ink} strokeWidth={4} />
               <text x={0} y={12} textAnchor="middle" fontFamily={SANS} fontWeight={800} fontSize={32} fill={COLOR.ink}>{l}</text>
             </g>
@@ -1388,7 +1388,7 @@ const B32Content: React.FC<CProps> = ({ vo, d }) => {
       <div style={{ position: "absolute", left: 0, right: 0, top: 120, textAlign: "center", fontFamily: SANS, fontWeight: 800, fontSize: 42, color: L, opacity: grow(f, 8) }}>Next time — the game on your phone</div>
       <svg width="100%" height="100%" viewBox={`0 0 ${WIDTH} ${HEIGHT}`} style={{ position: "absolute", inset: 0, overflow: "visible" }}>
         <rect x={740} y={260} width={440} height={540} rx={48} fill="none" stroke={L} strokeWidth={6} opacity={grow(f, s(0.14))} />
-        <g transform={`translate(960 500) scale(${pulse * 2.4})`}>
+        <g transform={`translate(960 470) scale(${pulse * 2.4})`}>
           <path
             d="M -60 -14 Q -82 -14 -86 18 Q -90 46 -64 46 Q -46 46 -38 28 L 38 28 Q 46 46 64 46 Q 90 46 86 18 Q 82 -14 60 -14 Z"
             fill={draw > 0.99 ? COLOR.orange : "none"} stroke={L} strokeWidth={4}
