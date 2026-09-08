@@ -1800,10 +1800,10 @@ ElevenLabs API key; Step 2 VO is no longer a manual record-and-return.
 - **The 134-wpm calibration holds.** v3 on "NIF JUJU v2" measured **~132 wpm**
   on the B00 + B30 test passage — within noise of the §6.1 calibrated 134. No
   recalibration; every word-budget and EST in the runbook stands.
-- **Settings:** voice `zLWsrQYpIfTgCZ3GXmUr` ("NIF JUJU v2"), `model_id:
-  eleven_v3`, `voice_settings { stability: 0.5 (Natural), use_speaker_boost:
-  true }`, `output_format: mp3_44100_192`. (Confirm once the creator has
-  listened; adjust stability only on a specific note.)
+- **Settings (locked, creator-confirmed 2026-09-09 after hearing the B00 + B30
+  test — "emotion and natural pauses"):** voice `zLWsrQYpIfTgCZ3GXmUr` ("NIF
+  JUJU v2"), `model_id: eleven_v3`, `voice_settings { stability: 0.5 (Natural),
+  use_speaker_boost: true }`, `output_format: mp3_44100_192`.
 - **ONE generation per beat. No regeneration.** This **overrides §6.2's**
   "generate two or three takes of anything that matters, keep the best" — the
   creator's standing rule from 2026-09-09 is one take, accept it, move on.
