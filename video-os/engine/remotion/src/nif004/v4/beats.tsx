@@ -10,8 +10,9 @@ import { MapField, DrivePOV } from "./MapField";
 import { Meter, ThreeMeters, MeterRack } from "./Meter";
 import {
   Head, Stamp, HeroNum, PinAuction, AppTileWall, RankedList, ContenderPlates,
-  Road, DevDesk, IconWarrant, IconTimeline, IconBadge, IconPin,
+  DevDesk, IconWarrant, IconTimeline, IconBadge, IconPin,
 } from "./kit";
+import { Figure, FIG, Walker, EXPR } from "../../nif002/v4/Figure";
 import { GlideScene, GlideIn, Layer } from "../../motion/glide";
 
 /**
@@ -29,6 +30,11 @@ import { GlideScene, GlideIn, Layer } from "../../motion/glide";
  *    full background (drive / desk / road / dark) pass `bed={false}`.
  *  · Head lives at y≈52; content stays clear of it; one Stamp max, low.
  *  · elements that state a fact PERSIST — they do not fade back out.
+ *  · Lucky (orange tee, ponytail, OverSimplified) carries the "you" beats —
+ *    B02 searches / B16 taps Book / B18 walks + parks / B24 feeds both meters /
+ *    B25 stands on the road → one reading. She acts the script out, never faces
+ *    camera. Generic figures (SUPPORT tee, no hair) for companies: B09 leavers,
+ *    B27 the developer.
  *
  * Motion register (runbook §22.10): Glide on B00 + B30; Punch elsewhere.
  * Every beat: audioDir="nif004" noTransition. Transitions / subtitles / kinetic
@@ -215,29 +221,32 @@ const B02Content: React.FC<CProps> = ({ vo, d }) => {
   return (
     <>
       <Head text="One of the hardest things ever built. The question is who pays." />
-      <PhoneMap at={pinsAt - 20} x={560} y={148} w={432}>
+      {/* Lucky opens the map and searches — the one meter you can see right now */}
+      <Figure pose="tap" hair="ponytail" tee={COLOR.orange} h={FIG.hero} x={296} baseline={806} facing={1} />
+      {/* her screen, magnified beside her */}
+      <PhoneMap at={pinsAt - 20} x={598} y={158} w={346}>
         {pins.map((p, i) => {
           const t = grow(f, pinsAt + i * 6);
           if (t <= 0) return null;
           return (
             <div key={i} style={{ position: "absolute", left: `${p.x * 100}%`, top: `${p.y * 100}%`, transform: `translate(-50%,-100%) scale(${t})` }}>
-              <IconPin size={p.top ? 60 : p.near ? 44 : 38} filled={!!p.top} />
+              <IconPin size={p.top ? 52 : p.near ? 40 : 34} filled={!!p.top} />
               {p.near && f > pinsAt + 24 && (
-                <div style={{ position: "absolute", left: "50%", top: "56%", width: 78, height: 78, border: `3px solid ${SUPPORT.sky}`, borderRadius: "50%", transform: `translate(-50%,-50%) scale(${1 + Math.sin(f / 8) * 0.1})` }} />
+                <div style={{ position: "absolute", left: "50%", top: "50%", width: 70, height: 70, border: `3px solid ${SUPPORT.sky}`, borderRadius: "50%", transform: `translate(-50%,-50%) scale(${1 + Math.sin(f / 8) * 0.1})` }} />
               )}
-              {p.near && f > pinsAt + 24 && <div style={{ position: "absolute", left: "50%", top: "70%", transform: "translateX(-50%)", fontFamily: SANS, fontWeight: 700, fontSize: 16, color: SUPPORT.sky, whiteSpace: "nowrap" }}>the closest</div>}
-              {p.top && f > pinsAt + 24 && <div style={{ position: "absolute", left: "50%", top: "-34%", transform: "translateX(-50%)", fontFamily: SANS, fontWeight: 800, fontSize: 16, color: "#fff", background: COLOR.orange, borderRadius: 6, padding: "3px 8px", whiteSpace: "nowrap" }}>#1 RESULT</div>}
+              {p.near && f > pinsAt + 24 && <div style={{ position: "absolute", left: "50%", top: "118%", transform: "translateX(-50%)", fontFamily: SANS, fontWeight: 800, fontSize: 15, color: "#fff", background: COLOR.ink, borderRadius: 5, padding: "2px 7px", whiteSpace: "nowrap" }}>the closest</div>}
+              {p.top && f > pinsAt + 24 && <div style={{ position: "absolute", left: "50%", top: "-40%", transform: "translateX(-50%)", fontFamily: SANS, fontWeight: 800, fontSize: 15, color: "#fff", background: COLOR.orange, borderRadius: 6, padding: "3px 8px", whiteSpace: "nowrap" }}>#1 RESULT</div>}
             </div>
           );
         })}
       </PhoneMap>
-      <Wire x1={786} y1={320} x2={1150} y2={400} on={paidAt} />
+      <Wire x1={775} y1={320} x2={1180} y2={392} on={paidAt} />
       {f > paidAt && (
-        <div style={{ position: "absolute", left: 1150, top: 320, width: 640, opacity: grow(f, paidAt) }}>
+        <div style={{ position: "absolute", left: 1180, top: 312, width: 620, opacity: grow(f, paidAt) }}>
           <div style={{ background: COLOR.cardWhite, border: `4px solid ${COLOR.ink}`, borderRadius: 16, padding: "20px 26px", filter: softShadow(1.1, 0.22) }}>
             <div style={{ fontFamily: SANS, fontSize: 20, color: COLOR.grey, fontWeight: 800, letterSpacing: "0.06em", transform: `scale(${1 + ramp(f, paidAt + 18, paidAt + 44, 0, 0.8)})`, transformOrigin: "left" }}>SPONSORED</div>
-            <div style={{ fontFamily: SANS, fontWeight: 800, fontSize: 44, color: COLOR.ink, marginTop: 4 }}>Bru's Coffee &amp; Co.</div>
-            <div style={{ fontFamily: SANS, fontSize: 24, color: COLOR.grey }}>1.4 mi away &nbsp;·&nbsp; not the closest one</div>
+            <div style={{ fontFamily: SANS, fontWeight: 800, fontSize: 42, color: COLOR.ink, marginTop: 4 }}>Bru's Coffee &amp; Co.</div>
+            <div style={{ fontFamily: SANS, fontSize: 23, color: COLOR.grey }}>1.4 mi away &nbsp;·&nbsp; not the closest one</div>
             <div style={{ marginTop: 10, fontFamily: SANS, fontWeight: 800, fontSize: 22, color: COLOR.orange }}>somebody paid to put it there</div>
           </div>
         </div>
@@ -357,12 +366,25 @@ const B05Content: React.FC<CProps> = ({ vo, d }) => {
           </g>
         ))}
       </svg>
+      {/* the meter is on now — a pip runs through the three APIs, counting */}
+      {fold > 0.92 && (
+        <svg width="100%" height="100%" viewBox={`0 0 ${WIDTH} ${HEIGHT}`} style={{ position: "absolute", inset: 0, overflow: "visible" }}>
+          {survivors.map((_, i) => {
+            const active = Math.floor((f - foldAt - s(0.12)) / 20) % 3 === i;
+            return <circle key={i} cx={560 + i * 400 + 96} cy={214} r={7} fill={active ? COLOR.orange : "none"} stroke={COLOR.orange} strokeWidth={2.5} opacity={0.9} />;
+          })}
+        </svg>
+      )}
       {/* before → after */}
       {f > creditAt && (
-        <div style={{ position: "absolute", left: 0, right: 0, top: 420, textAlign: "center", opacity: grow(f, creditAt) }}>
-          <div style={{ fontFamily: SANS, fontWeight: 800, fontSize: 46, color: COLOR.grey, textDecoration: "line-through" }}>25,000 map loads a day — at no cost</div>
-          <div style={{ marginTop: 22, fontFamily: SANS, fontWeight: 800, fontSize: 84, lineHeight: 1.05, color: COLOR.orange }}>$200 / month credit,<br />then the meter charges you</div>
+        <div style={{ position: "absolute", left: 0, right: 0, top: 330, textAlign: "center", opacity: grow(f, creditAt) }}>
+          <div style={{ fontFamily: SANS, fontWeight: 800, fontSize: 38, color: COLOR.grey, textDecoration: "line-through" }}>25,000 map loads a day — at no cost</div>
+          <div style={{ marginTop: 12, fontFamily: SANS, fontWeight: 800, fontSize: 46, lineHeight: 1.1, color: COLOR.orange }}>$200 / month credit — then the meter charges</div>
         </div>
+      )}
+      {/* the meter itself — turns on with the date, free bar draining */}
+      {f > creditAt + 12 && (
+        <Meter at={creditAt + 12} x={960} y={632} r={104} label="the meter" active drain={ramp(f, creditAt + 24, cardAt, 0.06, 0.97)} value={`$${(Math.max(0, f - creditAt - 24) * 0.021).toFixed(2)}`} />
       )}
       {f > cardAt && <Stamp at={cardAt} y={892} text="AND A VALID CARD ON FILE — NOW REQUIRED" kind="ink" size={34} />}
     </>
@@ -496,41 +518,42 @@ export const B09v4: React.FC<BeatProps> = (props) => {
 const B09Content: React.FC<CProps> = ({ vo, d }) => {
   const f = useCurrentFrame();
   const s = sched(d);
+  const BASE = 812, fromX = 286;
   const leavers = [
-    { at: s(0.1), sign: "UBER — $500M on its own camera cars", y: 300 },
-    { at: s(0.3), sign: "FOURSQUARE + SNAP — moved to a rival", y: 470 },
-    { at: s(0.5), sign: "SMALLER SHOPS — rebuilt on OpenStreetMap", y: 640 },
+    { at: s(0.06), sign: "UBER — $500M building its own", cost: "expensive", toX: 1560, tee: SUPPORT.clay, labelY: 244 },
+    { at: s(0.24), sign: "FOURSQUARE + SNAP — moved to a rival", cost: "a migration", toX: 1080, tee: SUPPORT.teal, labelY: 340 },
+    { at: s(0.42), sign: "SMALLER SHOPS — OpenStreetMap", cost: "slower, patchier", toX: 660, tee: SUPPORT.mustard, labelY: 436 },
   ];
-  const powerAt = s(0.76);
+  const walkDur = s(0.44);
+  const powerAt = s(0.82);
   return (
     <>
       <Head text="So people tried to leave" />
       <svg width="100%" height="100%" viewBox={`0 0 ${WIDTH} ${HEIGHT}`} style={{ position: "absolute", inset: 0, overflow: "visible", opacity: grow(f, 10) }}>
-        <rect x={140} y={220} width={230} height={640} fill={COLOR.ink} />
-        <rect x={158} y={240} width={194} height={600} fill={shade(SUPPORT.clay, 0.18)} />
-        <rect x={150} y={430} width={210} height={30} fill={COLOR.paper} />
-        <text x={255} y={200} textAnchor="middle" fontFamily={SANS} fontWeight={800} fontSize={24} fill={COLOR.ink}>THE PLATFORM</text>
+        {/* the platform — a doorway on the left they walk out of */}
+        <rect x={88} y={244} width={218} height={578} rx={6} fill={COLOR.ink} />
+        <rect x={108} y={264} width={178} height={538} rx={4} fill={shade(SUPPORT.clay, 0.2)} />
+        <rect x={100} y={528} width={196} height={30} fill={COLOR.paper} />
+        <text x={197} y={222} textAnchor="middle" fontFamily={SANS} fontWeight={800} fontSize={24} fill={COLOR.ink}>THE PLATFORM</text>
+        <line x1={0} y1={BASE + 6} x2={WIDTH} y2={BASE + 6} stroke={tint(COLOR.grey, 0.4)} strokeWidth={4} />
       </svg>
       {leavers.map((l, i) => {
-        const go = ramp(f, l.at, l.at + s(0.14));
+        const go = ramp(f, l.at, l.at + s(0.16));
         if (go <= 0) return null;
-        const step = Math.sin((f + i * 20) / 6) * 8;
-        const x = 380 + go * (1180 + i * 30);
+        const t = ramp(f, l.at, l.at + walkDur);
+        const x = fromX + t * (l.toX - fromX);
+        const arrived = f > l.at + walkDur;
         return (
           <React.Fragment key={i}>
-            <svg width="100%" height="100%" viewBox={`0 0 ${WIDTH} ${HEIGHT}`} style={{ position: "absolute", inset: 0, overflow: "visible" }}>
-              <g transform={`translate(${x} ${l.y})`}>
-                <circle cx={0} cy={-92} r={24} fill={COLOR.grey} stroke={COLOR.ink} strokeWidth={4} />
-                <path d="M -26 44 q 0 -96 26 -96 q 26 0 26 96 z" fill={i === 0 ? COLOR.orange : COLOR.grey} stroke={COLOR.ink} strokeWidth={4} />
-                <line x1={-9} y1={40} x2={-9 - step} y2={92} stroke={COLOR.ink} strokeWidth={8} strokeLinecap="round" />
-                <line x1={9} y1={40} x2={9 + step} y2={92} stroke={COLOR.ink} strokeWidth={8} strokeLinecap="round" />
-              </g>
-            </svg>
-            <div style={{ position: "absolute", left: Math.min(x + 40, 1180), top: l.y - 40, fontFamily: SANS, fontWeight: 800, fontSize: 24, color: COLOR.ink, background: COLOR.cardWhite, border: `3px solid ${COLOR.ink}`, borderRadius: 8, padding: "8px 14px", whiteSpace: "nowrap" }}>{l.sign}</div>
+            <Walker at={l.at} dur={walkDur} fromX={fromX} toX={l.toX} baseline={BASE} h={252} tee={l.tee} />
+            <div style={{ position: "absolute", left: Math.max(288, Math.min(x - 168, 1392)), top: l.labelY, width: 336, textAlign: "center", fontFamily: SANS, fontWeight: 800, fontSize: 22, color: COLOR.ink, background: COLOR.cardWhite, border: `3px solid ${COLOR.ink}`, borderRadius: 8, padding: "8px 12px", opacity: go, filter: softShadow(0.7, 0.16) }}>{l.sign}</div>
+            {arrived && (
+              <div style={{ position: "absolute", left: Math.max(300, Math.min(x - 90, 1520)), top: BASE - 250, width: 180, textAlign: "center", fontFamily: SANS, fontWeight: 800, fontSize: 20, color: "#fff", background: COLOR.orange, borderRadius: 8, padding: "5px 8px", opacity: grow(f, l.at + walkDur) }}>{l.cost}</div>
+            )}
           </React.Fragment>
         );
       })}
-      {f > powerAt && <Stamp at={powerAt} y={912} text="EXPENSIVE, SLOWER, OR A DOWNGRADE — WHO HOLDS THE POWER" kind="ink" size={26} />}
+      {f > powerAt && <Stamp at={powerAt} y={912} text="LEAVING IS POSSIBLE — EXPENSIVE, SLOWER, OR A DOWNGRADE" kind="ink" size={26} />}
     </>
   );
 };
@@ -758,16 +781,23 @@ export const B16v4: React.FC<BeatProps> = (props) => {
 const B16Content: React.FC<CProps> = ({ vo, d }) => {
   const f = useCurrentFrame();
   const s = sched(d);
+  const tapAt = s(0.32);
+  const press = f >= tapAt && f < tapAt + 9 ? 0.93 : 1;
   return (
     <>
       <Head text="Tap a hotel. The button that says “Book” is an auction too." />
-      <PhoneMap at={s(0.05)} x={540} y={150} w={410}>
-        <div style={{ position: "absolute", left: "50%", top: "30%", transform: "translate(-50%,-100%)" }}><IconPin size={60} /></div>
-        <div style={{ position: "absolute", left: "8%", right: "8%", bottom: "8%", background: COLOR.orange, color: "#fff", textAlign: "center", fontFamily: SANS, fontWeight: 800, fontSize: 24, borderRadius: 10, padding: "12px 0" }}>BOOK</div>
+      {/* Lucky, about to book */}
+      <Figure pose="tap" hair="ponytail" tee={COLOR.orange} h={FIG.hero} x={296} baseline={806} facing={1} />
+      <PhoneMap at={s(0.05)} x={598} y={158} w={346}>
+        <div style={{ position: "absolute", left: "50%", top: "30%", transform: "translate(-50%,-100%)" }}><IconPin size={54} /></div>
+        <div style={{ position: "absolute", left: "8%", right: "8%", bottom: "8%", background: COLOR.orange, color: "#fff", textAlign: "center", fontFamily: SANS, fontWeight: 800, fontSize: 22, borderRadius: 10, padding: "12px 0", transform: `scale(${press})` }}>BOOK</div>
+        {f >= tapAt && f < tapAt + 18 && (
+          <div style={{ position: "absolute", left: "50%", bottom: "6%", width: 110, height: 110, border: `4px solid ${COLOR.ink}`, borderRadius: "50%", transform: `translate(-50%,35%) scale(${ramp(f, tapAt, tapAt + 18, 0.25, 1.5)})`, opacity: ramp(f, tapAt, tapAt + 18, 0.85, 0) }} />
+        )}
       </PhoneMap>
-      <Wire x1={745} y1={620} x2={1130} y2={440} on={s(0.28)} />
-      <PinAuction at={s(0.32)} x={1410} y={440} slotLabel="THE DEFAULT “BOOK”" bids={[6, 11, 9]} />
-      {f > s(0.78) && <Stamp at={s(0.78)} y={904} text="NOT THE CHEAPEST ROOM — WHOEVER PAID MOST FOR THE SLOT" kind="ink" size={28} />}
+      <Wire x1={775} y1={560} x2={1150} y2={440} on={s(0.46)} />
+      <PinAuction at={s(0.48)} x={1430} y={442} slotLabel="THE DEFAULT “BOOK”" bids={[6, 11, 9]} />
+      {f > s(0.8) && <Stamp at={s(0.8)} y={904} text="NOT THE CHEAPEST ROOM — WHOEVER PAID MOST FOR THE SLOT" kind="ink" size={28} />}
     </>
   );
 };
@@ -817,15 +847,52 @@ export const B18v4: React.FC<BeatProps> = (props) => {
 const B18Content: React.FC<CProps> = ({ vo, d }) => {
   const f = useCurrentFrame();
   const s = sched(d);
-  const routeAt = s(0.14);
-  const parkAt = s(0.62);
-  const prog = ramp(f, routeAt, parkAt, 0, 0.82);
+  const walkAt = s(0.12);
+  const parkAt = s(0.5);
+  const BASE = 812, START = 240, PARK = 1150;
+  const lx = interpolate(f, [walkAt, parkAt], [START, PARK], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  const parked = f > parkAt;
+  const chestY = BASE - 150;
+  const node: [number, number] = [1560, 210];
+  const fill = ramp(f, walkAt + 20, d - 40, 0, 1);
   return (
     <>
       <Head text="The third meter is you" />
-      <MapField at={6} routeAt={routeAt} routeDur={Math.round(d * 0.42)} progress={prog} trail />
-      <div style={{ position: "absolute", left: 1760, top: 140 }}><IconPin size={64} filled={false} /></div>
-      {f > parkAt && <Stamp at={parkAt} y={906} text="THE SIGNAL DOES NOT STOP WHEN YOU PARK" kind="orange" size={32} />}
+      <MapField at={6} dim={0.4} />
+      <svg width="100%" height="100%" viewBox={`0 0 ${WIDTH} ${HEIGHT}`} style={{ position: "absolute", inset: 0, overflow: "visible" }}>
+        {/* the trail she leaves behind her as she moves */}
+        {f > walkAt && <line x1={START} y1={BASE + 4} x2={lx} y2={BASE + 4} stroke={COLOR.orange} strokeWidth={6} strokeLinecap="round" strokeDasharray="3 14" strokeDashoffset={-(f * 1.2) % 120} />}
+        {/* the pipe carrying her signal up to Google — dots stream non-stop */}
+        {f > walkAt + 10 && (
+          <>
+            <path d={`M ${lx} ${chestY} C ${lx + 120} ${chestY - 180} ${node[0] - 220} ${node[1] + 220} ${node[0]} ${node[1] + 70}`} fill="none" stroke={tint(COLOR.grey, 0.35)} strokeWidth={10} strokeLinecap="round" />
+            {Array.from({ length: 9 }).map((_, k) => {
+              const p = (((f - walkAt) / 34 - k / 9) % 1 + 1) % 1;
+              const bx = lx + (node[0] - lx) * p;
+              const by = chestY + (node[1] + 70 - chestY) * p - Math.sin(p * Math.PI) * 150;
+              return <circle key={k} cx={bx} cy={by} r={7} fill={SUPPORT.sky} opacity={0.9 - p * 0.5} />;
+            })}
+          </>
+        )}
+        {/* the Google receiver, filling */}
+        {f > walkAt + 10 && (
+          <g transform={`translate(${node[0]} ${node[1]})`}>
+            <rect x={-150} y={-64} width={300} height={128} rx={14} fill={COLOR.cardWhite} stroke={COLOR.ink} strokeWidth={5} />
+            <rect x={-150} y={64 - 128 * fill} width={300} height={128 * fill} rx={0} fill={tint(COLOR.orange, 0.5)} />
+            <text x={0} y={-4} textAnchor="middle" fontFamily={SANS} fontWeight={800} fontSize={30} fill={COLOR.ink}>GOOGLE</text>
+            <text x={0} y={34} textAnchor="middle" fontFamily={SANS} fontWeight={700} fontSize={18} fill={COLOR.grey}>the pooled live feed</text>
+          </g>
+        )}
+        {/* parked — the pulse keeps going */}
+        {parked && [0, 1, 2].map((k) => {
+          const p = (((f - parkAt) - k * 14) % 42) / 42;
+          if (p < 0) return null;
+          return <circle key={`r${k}`} cx={lx} cy={chestY} r={20 + p * 74} fill="none" stroke={SUPPORT.sky} strokeWidth={3} opacity={(1 - p) * 0.7} />;
+        })}
+        <circle cx={lx} cy={chestY} r={9} fill={SUPPORT.sky} stroke={COLOR.ink} strokeWidth={3} opacity={f > walkAt ? 1 : 0} />
+      </svg>
+      <Walker at={walkAt} dur={parkAt - walkAt} fromX={START} toX={PARK} baseline={BASE} h={FIG.hero} tee={COLOR.orange} hair="ponytail" />
+      {parked && <Stamp at={parkAt} y={906} text="THE SIGNAL DOES NOT STOP WHEN YOU PARK" kind="orange" size={32} />}
     </>
   );
 };
@@ -963,13 +1030,28 @@ const B22Content: React.FC<CProps> = ({ vo, d }) => {
   const numAt = s(0.24);
   const gainAt = s(0.56);
   const n = ramp(f, numAt, numAt + 40, 0, 93_000_000);
+  const total = 391_500_000 + Math.round(n);
   return (
     <>
       <Head text="September 2023 · then California settled the same case, alone" />
-      <HeroNum at={numAt} value={`$${Math.round(n).toLocaleString()}`} label="more" align="center" y={260} size={160} />
+      {/* the first settlement, parked as reference so "again" is visible */}
+      <div style={{ position: "absolute", left: 150, top: 210, width: 470, opacity: grow(f, 10) }}>
+        <div style={{ background: COLOR.cardWhite, border: `3px solid ${COLOR.grey}`, borderRadius: 12, padding: "16px 22px", filter: softShadow(0.8, 0.16) }}>
+          <div style={{ fontFamily: SANS, fontWeight: 700, fontSize: 17, letterSpacing: "0.04em", color: COLOR.grey }}>NOV 2022 · 40 STATES</div>
+          <div style={{ fontFamily: SANS, fontWeight: 800, fontSize: 42, color: COLOR.grey }}>$391,500,000</div>
+        </div>
+      </div>
+      <HeroNum at={numAt} value={`$${Math.round(n).toLocaleString()}`} label="California — on its own" align="center" y={250} size={138} />
+      {f > numAt + 4 && <Stamp at={numAt + 4} x={1500} y={196} text="STRIKE TWO" kind="orange" size={38} rot={-5} />}
       {f > gainAt && (
-        <div style={{ position: "absolute", left: 240, right: 240, top: 560, background: COLOR.cardWhite, border: `4px solid ${COLOR.ink}`, borderRadius: 14, padding: "30px 38px", fontFamily: SANS, fontWeight: 700, fontSize: 32, color: COLOR.ink, opacity: grow(f, gainAt), filter: softShadow(1, 0.2) }}>
+        <div style={{ position: "absolute", left: 240, right: 240, top: 536, background: COLOR.cardWhite, border: `4px solid ${COLOR.ink}`, borderRadius: 14, padding: "28px 36px", fontFamily: SANS, fontWeight: 700, fontSize: 30, color: COLOR.ink, opacity: grow(f, gainAt), filter: softShadow(1, 0.2), overflow: "hidden" }}>
           “…telling users it would not track their location once they opted out, and doing the opposite, for its own <span style={{ color: COLOR.orange, fontWeight: 800 }}>commercial gain</span>.”
+          <div style={{ position: "absolute", top: 0, bottom: 0, width: 130, background: `linear-gradient(90deg, transparent, ${tint(COLOR.orange, 0.7)}, transparent)`, left: `${ramp((f - gainAt) % 108, 0, 108, -14, 110)}%`, opacity: 0.45 }} />
+        </div>
+      )}
+      {f > gainAt + 28 && (
+        <div style={{ position: "absolute", left: 0, right: 0, top: 754, textAlign: "center", fontFamily: SANS, fontWeight: 800, fontSize: 32, color: COLOR.ink, opacity: grow(f, gainAt + 28) }}>
+          two settlements, one finding &nbsp;·&nbsp; <span style={{ color: COLOR.orange }}>${total.toLocaleString()}</span>
         </div>
       )}
     </>
@@ -988,26 +1070,45 @@ export const B23v4: React.FC<BeatProps> = (props) => {
 const B23Content: React.FC<CProps> = ({ vo, d }) => {
   const f = useCurrentFrame();
   const s = sched(d);
-  const boxAt = s(0.24);
-  const climbAt = s(0.42);
-  const moveAt = s(0.8);
-  const yr = interpolate(f, [climbAt, climbAt + 22, climbAt + 46], [982, 982, 11554], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  const boxAt = s(0.12);
+  const sweepAt = s(0.32);
+  const climbAt = s(0.5);
+  const oneAt = s(0.7);
+  const moveAt = s(0.84);
+  const yr = interpolate(f, [climbAt, climbAt + 18, climbAt + 42], [982, 982, 11554], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  // once the count starts, the geofence box shrinks + parks top-left
+  const bx = f > climbAt ? ramp(f, climbAt, climbAt + 20, 0, -486) : 0;
+  const by = f > climbAt ? ramp(f, climbAt, climbAt + 20, 0, -232) : 0;
+  const bs = f > climbAt ? ramp(f, climbAt, climbAt + 20, 1, 0.42) : 1;
   return (
     <>
       <Head text="One more party wants your trail. It asks a judge." />
       <MapField at={6} routeAt={20} routeDur={40} progress={0.85} trail dim={0.5} />
+      {/* 1 — the geofence box drawn over the map */}
       {f > boxAt && (
-        <div style={{ position: "absolute", left: 640, top: 320, width: 560, height: 320, border: `5px dashed ${COLOR.orange}`, borderRadius: 8, background: "rgba(226,77,40,0.08)", opacity: grow(f, boxAt) }}>
-          {Array.from({ length: 10 }).map((_, i) => <div key={i} style={{ position: "absolute", left: 44 + (i % 5) * 108, top: 90 + Math.floor(i / 5) * 150, width: 12, height: 12, borderRadius: "50%", background: COLOR.orange }} />)}
-          <div style={{ position: "absolute", left: 0, right: 0, top: -36, textAlign: "center", fontFamily: SANS, fontWeight: 800, fontSize: 22, color: COLOR.orange, letterSpacing: "0.06em" }}>GEOFENCE WARRANT · from “Sensorvault”</div>
+        <div style={{ position: "absolute", left: 700, top: 316, width: 540, height: 300, border: `5px dashed ${COLOR.orange}`, borderRadius: 8, background: "rgba(226,77,40,0.08)", opacity: grow(f, boxAt), transform: `translate(${bx}px, ${by}px) scale(${bs})`, transformOrigin: "top left" }}>
+          {Array.from({ length: 10 }).map((_, i) => {
+            const swept = f > sweepAt && ((f - sweepAt) % 66) / 66 > i / 10;
+            return <div key={i} style={{ position: "absolute", left: 42 + (i % 5) * 100, top: 82 + Math.floor(i / 5) * 132, width: 14, height: 14, borderRadius: "50%", background: swept ? COLOR.ink : COLOR.orange, transform: `scale(${swept ? 1.4 : 1})` }} />;
+          })}
+          <div style={{ position: "absolute", left: 0, right: 0, top: -36, textAlign: "center", fontFamily: SANS, fontWeight: 800, fontSize: 21, color: COLOR.orange, letterSpacing: "0.05em" }}>GEOFENCE WARRANT · “Sensorvault”</div>
         </div>
       )}
-      {f > boxAt && <div style={{ position: "absolute", left: 1270, top: 340 }}><IconWarrant size={130} /></div>}
-      {f > climbAt && <HeroNum at={climbAt} value={Math.round(yr).toLocaleString()} label="geofence warrants / year · 2018→2020" align="left" x={130} y={200} size={124} />}
-      {f > climbAt + 60 && <Stamp at={climbAt + 60} x={130} y={430} text="1 IN 4 LAW-ENFORCEMENT WARRANTS GOOGLE GOT" kind="ink" size={24} rot={-3} />}
+      {/* 2 — the warrant asks for everyone in the box */}
+      {f > sweepAt && f < climbAt + 46 && <div style={{ position: "absolute", left: 1290, top: 348, opacity: grow(f, sweepAt) }}><IconWarrant size={150} /></div>}
+      {/* 3 — the climb (box has parked) */}
+      {f > climbAt && (
+        <div style={{ position: "absolute", left: 0, right: 0, top: 312, textAlign: "center", opacity: grow(f, climbAt) }}>
+          <div style={{ fontFamily: SANS, fontWeight: 800, fontSize: 148, lineHeight: 1, color: COLOR.orange }}>{Math.round(yr).toLocaleString()}</div>
+          <div style={{ fontFamily: SANS, fontWeight: 700, fontSize: 26, color: COLOR.grey }}>geofence warrants a year &nbsp;·&nbsp; 2018 → 2020</div>
+        </div>
+      )}
+      {/* 4 — one in four */}
+      {f > oneAt && <Stamp at={oneAt} y={568} text="1 IN 4 LAW-ENFORCEMENT WARRANTS GOOGLE RECEIVED" kind="ink" size={26} />}
+      {/* 5 — moved onto your phone, kept the feed */}
       {f > moveAt && (
-        <div style={{ position: "absolute", left: 0, right: 0, bottom: 76, textAlign: "center", fontFamily: SANS, fontWeight: 800, fontSize: 28, color: COLOR.ink, opacity: grow(f, moveAt) }}>
-          2023 · moved the history onto your phone &nbsp;→&nbsp; <span style={{ color: COLOR.orange }}>kept the pooled feed that runs the ad meter</span>
+        <div style={{ position: "absolute", left: 0, right: 0, top: 672, textAlign: "center", fontFamily: SANS, fontWeight: 800, fontSize: 30, color: COLOR.ink, opacity: grow(f, moveAt) }}>
+          2023 — moved onto your phone <span style={{ color: COLOR.grey, fontWeight: 700 }}>(can’t hand it over)</span> &nbsp;·&nbsp; <span style={{ color: COLOR.orange }}>kept the pooled feed</span>
         </div>
       )}
     </>
@@ -1026,25 +1127,35 @@ export const B24v4: React.FC<BeatProps> = (props) => {
 const B24Content: React.FC<CProps> = ({ vo, d }) => {
   const f = useCurrentFrame();
   const s = sched(d);
-  const you: [number, number] = [960, 640], ads: [number, number] = [380, 320], apps: [number, number] = [1540, 320];
-  const flowAt = s(0.34);
+  const flowAt = s(0.32);
   const workAt = s(0.66);
-  const p = ((f - flowAt) % 52) / 52;
-  const lerp = (a: [number, number], b: [number, number]): [number, number] => [a[0] + (b[0] - a[0]) * p, a[1] + (b[1] - a[1]) * p];
-  const [t1x, t1y] = lerp(you, ads);
-  const [t2x, t2y] = lerp(you, apps);
+  const src: [number, number] = [960, 632];
+  const mApps: [number, number] = [430, 306];
+  const mBiz: [number, number] = [1490, 306];
+  const N = 4;
+  const stream = (to: [number, number], base: number) =>
+    Array.from({ length: N }).map((_, k) => {
+      if (f < flowAt) return null;
+      const p = (((f - flowAt) / 44 - k / N) % 1 + 1) % 1;
+      return { x: src[0] + (to[0] - src[0]) * p, y: src[1] + (to[1] - src[1]) * p, o: Math.sin(p * Math.PI), key: base + k };
+    });
   return (
     <>
       <Head text="Here is where the three meters meet" />
+      <div style={{ position: "absolute", left: 0, right: 0, top: 150, textAlign: "center", fontFamily: SANS, fontWeight: 700, fontSize: 26, color: COLOR.grey, opacity: grow(f, 12) }}>
+        the free thing you do &nbsp;→&nbsp; powers the meter on the apps <span style={{ color: COLOR.ink }}>and</span> the meter on the businesses
+      </div>
+      <Meter at={s(0.08)} x={mApps[0]} y={mApps[1]} r={104} label="APPS" active drain={0.5} value={`$${((Math.max(0, f - s(0.08))) * 0.014).toFixed(2)}`} />
+      <Meter at={s(0.16)} x={mBiz[0]} y={mBiz[1]} r={104} label="BUSINESSES" active drain={0.5} value={`$${((Math.max(0, f - s(0.16))) * 0.011).toFixed(2)}`} />
       <svg width="100%" height="100%" viewBox={`0 0 ${WIDTH} ${HEIGHT}`} style={{ position: "absolute", inset: 0, overflow: "visible" }}>
-        <path d={`M ${you[0]} ${you[1]} L ${ads[0]} ${ads[1]} M ${you[0]} ${you[1]} L ${apps[0]} ${apps[1]}`} stroke={COLOR.ink} strokeWidth={4} fill="none" opacity={grow(f, s(0.08))} />
-        {f > flowAt && <><circle cx={t1x} cy={t1y} r={9} fill={COLOR.orange} /><circle cx={t2x} cy={t2y} r={9} fill={COLOR.orange} /></>}
-        {f > workAt && <circle cx={960} cy={510} r={ramp(f, workAt, workAt + 22, 0, 520)} fill="none" stroke={COLOR.orange} strokeWidth={6} opacity={ramp(f, workAt, workAt + 46, 0.6, 0)} />}
+        <path d={`M ${src[0]} ${src[1]} L ${mApps[0]} ${mApps[1]} M ${src[0]} ${src[1]} L ${mBiz[0]} ${mBiz[1]}`} stroke={COLOR.grey} strokeWidth={3} strokeDasharray="2 12" fill="none" opacity={grow(f, s(0.04))} />
+        {[...stream(mApps, 0), ...stream(mBiz, 100)].map((t) => t && <circle key={t.key} cx={t.x} cy={t.y} r={8} fill={COLOR.orange} opacity={t.o} />)}
+        {f > workAt && <circle cx={src[0]} cy={src[1] - 30} r={ramp(f, workAt, workAt + 22, 0, 520)} fill="none" stroke={COLOR.orange} strokeWidth={6} opacity={ramp(f, workAt, workAt + 46, 0.6, 0)} />}
       </svg>
-      {([["YOU — walking around, free", you, true], ["the paid pin (ADS)", ads, false], ["the app that rents the map", apps, false]] as [string, [number, number], boolean][]).map(([l, pt, hot], i) => (
-        <div key={i} style={{ position: "absolute", left: pt[0] - 200, top: pt[1] - 44, width: 400, textAlign: "center", opacity: grow(f, s(0.04) + i * 12), fontFamily: SANS, fontWeight: 800, fontSize: 28, color: "#fff", background: hot ? COLOR.orange : COLOR.ink, borderRadius: 14, padding: "16px 10px" }}>{l}</div>
-      ))}
-      {f > workAt && <Stamp at={workAt} y={912} text="YOU ARE THE REASON BOTH OF THEM WORK" kind="orange" size={34} />}
+      {/* YOU — Lucky, walking around with the map open, for free */}
+      <Figure pose="tap" hair="ponytail" tee={COLOR.orange} h={FIG.hero} x={src[0]} baseline={800} facing={1} expr={f > workAt ? EXPR.neutral : undefined} />
+      <div style={{ position: "absolute", left: src[0] - 180, top: 810, width: 360, textAlign: "center", fontFamily: SANS, fontWeight: 800, fontSize: 24, color: "#fff", background: COLOR.orange, borderRadius: 12, padding: "9px 8px", opacity: grow(f, s(0.04)) }}>YOU — walking around, free</div>
+      {f > workAt && <Stamp at={workAt} y={904} text="YOU ARE THE REASON BOTH OF THEM WORK" kind="orange" size={34} />}
     </>
   );
 };
@@ -1070,9 +1181,21 @@ const B25Content: React.FC<CProps> = ({ vo, d }) => {
   return (
     <>
       {roadFade > 0.01 && (
-        <div style={{ opacity: roadFade }}>
-          <Road reveal={grow(f, 8)} />
-          <div style={{ position: "absolute", left: 0, right: 0, top: 130, textAlign: "center", fontFamily: SANS, fontWeight: 800, fontSize: 42, color: COLOR.ink }}>All you wanted was the fast way home.</div>
+        <div style={{ opacity: roadFade, position: "absolute", inset: 0 }}>
+          <svg width="100%" height="100%" viewBox={`0 0 ${WIDTH} ${HEIGHT}`} style={{ position: "absolute", inset: 0, overflow: "visible" }}>
+            {/* a flat road strip she stands on */}
+            <rect x={0} y={806} width={WIDTH} height={92} fill={shade(SUPPORT.clay, 0.42)} />
+            <line x1={0} y1={852} x2={WIDTH} y2={852} stroke={COLOR.cardWhite} strokeWidth={5} strokeDasharray="52 44" strokeDashoffset={-(f * 5) % 96} opacity={0.7} />
+            {/* the route she wants — dotted, toward home */}
+            <line x1={880} y1={720} x2={1560} y2={720} stroke={SUPPORT.sky} strokeWidth={5} strokeDasharray="3 12" strokeDashoffset={-(f * 1.6) % 90} />
+            <g transform="translate(1636 720)">
+              <rect x={-32} y={-26} width={64} height={52} fill={COLOR.cardWhite} stroke={COLOR.ink} strokeWidth={5} />
+              <path d="M -42 -26 L 0 -64 L 42 -26 Z" fill={tint(COLOR.orange, 0.3)} stroke={COLOR.ink} strokeWidth={5} />
+            </g>
+            <text x={1636} y={772} textAnchor="middle" fontFamily={SANS} fontWeight={700} fontSize={22} fill={COLOR.grey}>home</text>
+          </svg>
+          <Figure pose="stand" hair="ponytail" tee={COLOR.orange} h={FIG.hero} x={760} baseline={804} facing={1} />
+          <div style={{ position: "absolute", left: 0, right: 0, top: 160, textAlign: "center", fontFamily: SANS, fontWeight: 800, fontSize: 42, color: COLOR.ink }}>All you wanted was the fast way home.</div>
         </div>
       )}
       <svg width="100%" height="100%" viewBox={`0 0 ${WIDTH} ${HEIGHT}`} style={{ position: "absolute", inset: 0, overflow: "visible", opacity: 1 - roadFade }}>
@@ -1152,21 +1275,19 @@ const B27Content: React.FC<CProps> = ({ vo, d }) => {
   const f = useCurrentFrame();
   const s = sched(d);
   const reflexAt = s(0.56);
-  const reach = ramp(f, reflexAt, reflexAt + s(0.1), 0, 1);
+  const draw = ramp(f, reflexAt, reflexAt + 22);
   return (
     <>
       <Head text="The alternatives are real. Reflex still points one way." />
       <ContenderPlates at={s(0.08)} pickAt={reflexAt} />
+      {/* an app developer — the same size as the viewer — weighs them, and reflex pulls to Google */}
+      {f > reflexAt - 26 && (
+        <Figure pose="look" tee={SUPPORT.teal} h={FIG.adult} x={880} baseline={884} facing={1} />
+      )}
       {f > reflexAt && (
         <svg width="100%" height="100%" viewBox={`0 0 ${WIDTH} ${HEIGHT}`} style={{ position: "absolute", inset: 0, overflow: "visible" }}>
-          {/* an arm + hand reaching up from below toward the Google plate (rightmost) */}
-          <g transform={`translate(${interpolate(reach, [0, 1], [960, 1560])} ${interpolate(reach, [0, 1], [1080, 560])})`}>
-            <path d="M -34 300 L -18 40 Q -14 6 14 4 L 60 2" fill="none" stroke={tint(COLOR.tan, 0.05)} strokeWidth={64} strokeLinecap="round" />
-            <path d="M -34 300 L -18 40 Q -14 6 14 4 L 60 2" fill="none" stroke={COLOR.ink} strokeWidth={5} />
-            {/* fingers */}
-            {[0, 1, 2, 3].map((k) => <path key={k} d={`M ${44 + k * 6} ${-6 - k * 3} q 26 -2 30 16 q 2 14 -14 16`} fill={tint(COLOR.tan, 0.05)} stroke={COLOR.ink} strokeWidth={4} />)}
-            <path d="M 8 8 q -20 4 -22 26 q 0 16 16 16" fill={tint(COLOR.tan, 0.05)} stroke={COLOR.ink} strokeWidth={4} />
-          </g>
+          <path d="M 936 600 C 1110 486 1360 452 1548 452" fill="none" stroke={COLOR.orange} strokeWidth={5} strokeDasharray={900} strokeDashoffset={900 * (1 - draw)} />
+          {draw > 0.9 && <path d="M 1548 452 l -34 -12 M 1548 452 l -28 18" fill="none" stroke={COLOR.orange} strokeWidth={5} strokeLinecap="round" />}
         </svg>
       )}
       {f > s(0.82) && <Stamp at={s(0.82)} y={912} text="REFLEX IS WHAT A STANDARD IS MADE OF" kind="ink" size={30} />}

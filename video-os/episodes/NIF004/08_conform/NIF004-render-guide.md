@@ -48,19 +48,43 @@ Fairlight track if wanted).
 
 ## Resolve conform
 
-1. Import the 34 `NIF004-B##.mov` clips (or the single `NIF004-EPISODE.mov`).
-2. If using per-beat clips: lay them end-to-end in id order, hard cuts, at
-   30fps 1920×1080. Boundaries are in `NIF004-markers.csv` (import as timeline
-   markers).
-3. Select all clips → **Add Cross Dissolve** (default length is fine).
-4. **Subtitles:** auto-transcribe → correct against `01_script/script.md` PLAIN.
-5. **Music:** one bed, ducked under VO. Swell into the B30 reversal
-   (15:48.2), lift on the B33 CTA
-   (17:15.3), fade the last ~2s.
-6. **SFX:** already baked per beat. To ride the level separately, mute the beat
-   audio's SFX and drop the `NIF004-SFX` stem on its own track.
-7. Grade: warm, gentle corner vignette (removed from the Remotion picture since
-   Ep3 — it's a hand grade now).
+**A built timeline already exists** — project `NIF004`, timeline `NIF004 assembly`
+(assembled by MCP, 2026-09-09). It has:
+
+- **V1** — 34 beat clips in order, with a **tiered dip-to-black gap** between each
+  (0.27s inside tight argument runs, 0.5s default, 1.0s at the 5 act breaks +
+  the B29→B30 reversal). Total 17:53.
+- **A1** — the beat audio (VO + baked SFX), gaps matching V1.
+- **A2** — the **music bed**, continuous, rotating per act, pre-lowered −15 dB
+  (`07_audio/music/bed/`):
+  | act | beats | track |
+  |---|---|---|
+  | 1 | B00–B03 | Lifting Dreams — Aakash Gandhi |
+  | 2 | B04–B11 | Meridian — National Sweetheart (loops once) |
+  | 3 | B12–B19 | September Pass — Asher Fulero |
+  | 4 | B20–B25 | Simmering — Asher Fulero |
+  | 5 | B26–B33 | Sleeplessness — The Brothers Records (loops once) |
+- A flat 17:53 H.264 render sits at `out/review-nif004/NIF004-RESOLVE-CUT.mp4`.
+
+**Still to do by hand in Resolve** (the API can't do these):
+
+1. **Cross-dissolves / fades** — the gaps are hard-cut to black. For a soft dip,
+   select all V1 clips → drag the fade handles (6f in / 6f out) or add Dip to
+   Color. The API cannot add transitions.
+2. **Music level / ducking** — the bed is a fixed −15 dB. Add a track compressor
+   on A2 keyed off the VO bus for real ducking; ride the A2 fader to taste.
+   Swell A2 +4 dB into the B30 reversal (15:48), warm lift on the B33 CTA
+   (17:15), full fade over the last ~4 s.
+3. **Subtitles** — auto-transcribe → correct against `01_script/script.md` PLAIN.
+   (`NIF004-text-timing.md` lists the baked Stamps so the SRT doesn't double them.)
+4. **Grade** — warm, gentle corner vignette (a hand grade since Ep3).
+
+If rebuilding the timeline from scratch: import the 34 `NIF004-B##.mp4` from
+`out/review-nif004/`, lay them at the record-frames in `NIF004-markers.csv`,
+music from `07_audio/music/bed/`.
+
+- **SFX stem:** to ride SFX separately, render `NIF004-SFX` to a `.wav` and drop
+  it on its own Fairlight track (mute the A1 SFX).
 
 ## FAST-flagged beats (VO came in above the 134 wpm calibration)
 

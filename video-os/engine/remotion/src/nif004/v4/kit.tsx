@@ -200,8 +200,9 @@ export const RankedList: React.FC<{ at: number; rows?: { label: string; paid?: b
 // ── prop-locations (locked field + 2-4 props, never a built room) ───────────
 
 /** on the road / walking — asphalt strip + lane dashes + a walking figure + a
- *  lamp post. `reveal` builds it in. */
-export const Road: React.FC<{ reveal?: number }> = ({ reveal = 1 }) => {
+ *  lamp post. `reveal` builds it in. `noFigure` drops the built-in walker when
+ *  the beat places its own (B25 — Lucky stands on the road). */
+export const Road: React.FC<{ reveal?: number; noFigure?: boolean }> = ({ reveal = 1, noFigure = false }) => {
   const frame = useCurrentFrame();
   const step = Math.sin(frame / 6) * 8;
   const walkX = 300 + ((frame * 2) % 1400);
@@ -217,12 +218,14 @@ export const Road: React.FC<{ reveal?: number }> = ({ reveal = 1 }) => {
         <ellipse cx={-44} cy={HEIGHT * 0.24 - 16} rx={16} ry={20} fill="#F6ECC9" stroke={COLOR.ink} strokeWidth={4} />
       </g>
       {/* walking figure */}
-      <g transform={`translate(${walkX} ${HEIGHT - 150})`}>
-        <circle cx={0} cy={-150} r={26} fill={COLOR.grey} stroke={COLOR.ink} strokeWidth={4} />
-        <path d="M -28 -6 q 0 -100 28 -100 q 28 0 28 100 z" fill={COLOR.grey} stroke={COLOR.ink} strokeWidth={4} />
-        <line x1={-10} y1={-6} x2={-10 - step} y2={44} stroke={COLOR.ink} strokeWidth={9} strokeLinecap="round" />
-        <line x1={10} y1={-6} x2={10 + step} y2={44} stroke={COLOR.ink} strokeWidth={9} strokeLinecap="round" />
-      </g>
+      {!noFigure && (
+        <g transform={`translate(${walkX} ${HEIGHT - 150})`}>
+          <circle cx={0} cy={-150} r={26} fill={COLOR.grey} stroke={COLOR.ink} strokeWidth={4} />
+          <path d="M -28 -6 q 0 -100 28 -100 q 28 0 28 100 z" fill={COLOR.grey} stroke={COLOR.ink} strokeWidth={4} />
+          <line x1={-10} y1={-6} x2={-10 - step} y2={44} stroke={COLOR.ink} strokeWidth={9} strokeLinecap="round" />
+          <line x1={10} y1={-6} x2={10 + step} y2={44} stroke={COLOR.ink} strokeWidth={9} strokeLinecap="round" />
+        </g>
+      )}
     </svg>
   );
 };
