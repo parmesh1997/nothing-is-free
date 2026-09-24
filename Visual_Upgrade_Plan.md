@@ -161,6 +161,24 @@ the right one.
 
 ---
 
+## Measured in the demo (`engine/remotion/lab/sap-upgrade-demo/`)
+
+The before/after stills and the 10-second glide were built with `scene.py` and
+`post.py`. On Blender 5.0, that build turned up four facts:
+
+- **Grease Pencil radii are world-space.** Perspective alone thins far lines far too
+  much (4:1 between 4 m and 16 m). A5 is therefore a **Geometry Nodes modifier after
+  Line Art** that sets each point's radius from the pixel weight it should read at:
+  a continuous curve, and simpler than the three-band version described above.
+- **Line Art's material-mask filter dropped every line** in this build, even on a
+  match, so per-band Line Art modifiers are not an option. Use the Geometry Nodes
+  route.
+- **EEVEE renders no Object Index pass.** The practicals mask for A3 is a **shader AOV**
+  (`practical` = 1) in the lamp, board and screen materials. It is saved by the
+  compositor beside the mist pass.
+- **Line Art writes only into a drawing that already holds a stroke.** Create the
+  layer's frame with one zero-radius stroke far off camera, or the render has no ink.
+
 ## Suggested order
 
 1. **A1 + A2** together, in one lab, on the pilot's B00 shots. This is the biggest
