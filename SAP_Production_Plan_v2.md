@@ -6,6 +6,8 @@ Everything about *how the episode is made*, in one place: the visual system, the
 
 This consolidates `Visual_Upgrade_Plan.md`, `Step3_Step4_Options.md` and
 `Runbook_Changes_2026-09-24.md`. Once it is approved, those three move to `archive/`.
+It has been through the QA audit (`SAP_QA_Audit.md`, findings P1–P8), and the tools
+for every step are in `SAP_Toolchain.md`.
 
 ---
 
@@ -59,7 +61,7 @@ All in Remotion, using the passes each L2 plate already has:
 
 | Trick | How | Why it sells depth |
 | --- | --- | --- |
-| **Multiplane parallax** | Each plate renders as three layers (background, midground, foreground occluders), split by the mist pass or by view layers. Remotion moves them at different speeds under one camera move | The Disney multiplane idea. The single strongest "this is 3D" signal there is |
+| **Multiplane parallax** | Each plate renders as three **separate** layers: the background *with the foreground collection excluded* (so it is complete behind the foreground), the midground, and the foreground alone with alpha. Remotion moves them at different speeds under one camera move, **under 8% of frame width**. Splitting one render by depth does not work: the background has holes where the foreground was (QA P1) | The Disney multiplane idea. The single strongest "this is 3D" signal there is |
 | **Push-in with foreground wipe** | Camera pushes 5–10% while a foreground object (a pillar, a plant, a shoulder) slides past the lens faster | Hides the cut, and reads as a dolly |
 | **Rack focus** | Blur levels per layer from the mist pass (A4). Focus moves from the foreground to the cast on a word | The camera "decides" what matters |
 | **Handheld breath** | `@remotion/noise` at 1–2 px on the camera, varying slowly | A still plate reads as filmed, not placed |
@@ -80,7 +82,7 @@ All in Remotion, using the passes each L2 plate already has:
 
 ---
 
-## 4 · The cold open (the Job, 0:00–0:15)
+## 4 · The cold open (the Crime, 0:00–0:15)
 
 **It is the most valuable 15 seconds of the episode, so it gets 20% of the build
 budget and is built first.**
@@ -106,7 +108,7 @@ the hook doesn't work, it's fixed while it is 15 seconds of work, not 12 minutes
 | **3a · Library** | New locations from the modular kit, plus **the angle kit**: twelve angles, each with a layered plate, fg matte, mist and practicals passes, measured floor marks (`marks.py`), and a contact sheet checked once | Opus for a new location; Sonnet for the kit render | ~1 h per new location, 0 for kitted ones |
 | **3b-0 · Cold open** | Built first, proxy watched (the gate above) | Sonnet, high | ~45 min |
 | **3b · Shots** | Each L2 shot is data: an angle, a mark for each character, a camera move. `place-check.mjs` validates it with numbers and writes `place-<shot>.json`. Batches of eight; two fix attempts, then the ladder (§9.8.2) | Sonnet, medium | ~1–1.5 h for 20 shots |
-| **3c · Scenes** | L1 scenes, the heist board, crew cards, the replay overlay, inserts, text | Sonnet, high | Unchanged |
+| **3c · Scenes** | L1 scenes, the three case devices this episode uses (strategy §6.2), the reconstruction overlay, inserts, text | Sonnet, high | Unchanged |
 | **Audit** | Scripts first, then contact sheets, then `motion-check.mjs` on the proxy (§9.5) | Sonnet, medium | ~30 min |
 
 **What stops the 10-hour loop, specifically:** no Blender render in 3b except the one
@@ -143,7 +145,7 @@ The first episode on this flow does one probe of the OTIO import on
 | A5 line weight by distance | Geometry Nodes after Line Art | Demo built |
 | B1 crayon grain in the shade band | Toon material | Demo built |
 | **New · multiplane parallax** | Three plate layers per angle | To build in `kit.py` |
-| **New · heist devices** | Loot counter, crew cards, heist board, replay overlay (strategy §4.2) | To build once, then vary |
+| **New · case devices** | Money meter, lineup, suspect cards, evidence board, reconstruction overlay, stamps (strategy §6.2). The reconstruction reuses the cold open's own compositions with an overlay layer; it is not re-staged (QA P5) | To build once, then vary |
 | B3 Blender 5.3 NPR nodes | Test on the beta; production stays on 5.2 LTS | Wait |
 
 ---
@@ -153,7 +155,7 @@ The first episode on this flow does one probe of the OTIO import on
 Already on the branch (Stage & Marks, the ladder, the scripted timeline):
 §9.0, §9.8, §9.8.1, §9.8.2, §10.5, §12.3.
 
-Still to apply, once this plan and the sub-niche are approved:
+Applied in this pass, as one separate commit (so it can be reverted in one step):
 
 | Section | Edit |
 | --- | --- |
@@ -161,21 +163,51 @@ Still to apply, once this plan and the sub-niche are approved:
 | §4.1 and §12.1 | The cold open spec (§4 here) and the **Cold open first** gate |
 | §9.0 | 3b-0 · Cold open, before all other shots |
 | §9.8.1 | Plates render as three layers (bg/mid/fg) for multiplane parallax |
-| §2.8 | The heist devices (strategy §4.2) |
+| §2.8 | The case devices (strategy §6.2) |
 | §5.2 | Budgets per step, as in §5 and §6 above, recorded against actual minutes |
 
 ---
 
 ## 9 · Getting from episode 9 to episode 10
 
-1. **Finish episode 9 cheaply:** the prompt in `Step3_Step4_Options.md` §2. No new
-   plates; failing shots go down the ladder.
-2. **Choose the sub-niche** (`SAP_Subniche_Strategy.md` §3), and say yes or no to
-   this plan.
-3. **Apply the runbook edits** (strategy §6 and §8 here): one session, Opus.
-4. **Promote the tools:** `marks.py` into `lib25d.py`; write `kit.py`, which renders
-   twelve angles × layered plates, passes, marks and a contact sheet.
-5. **Kit the existing locations** (the SB stand, the counter kiosk, the deli) overnight
-   on the GPU. After that, episode 10's 3b is mostly data.
-6. **Episode 10: Step 0** with the evidence gate on the popcorn heist (or whichever
-   topic the gate prefers).
+### 9.1 · Episode 9: don't restart Step 3
+
+Episode 9's script, VO, plates and 3a library are done and paid for. Restarting Step 3
+throws that away. **Finish it on the ladder, keep its format, and ship it.** The new
+sub-niche starts at episode 10, where the script can be written for it.
+
+| # | What | How | Agent time (estimate) | Model |
+| --- | --- | --- | --- | --- |
+| 1 | **Close 3b** | The prompt in `Step3_Step4_Options.md` §2: passing shots stay, twice-failed shots go down the ladder, and no new plates are rendered | 1–2 h | Sonnet, medium |
+| 2 | **3c in batches of ~12 shots** | Each batch ends with a progress file (§9.0), so a new session can resume after a usage reset without re-reading anything | 4–8 h, depending on how many 2D beats there are | Sonnet, high |
+| 3 | **Audit and proxy** | Scripts, then contact sheets, then `motion-check.mjs`, then you watch the proxy (§9.5, §11.2) | ~1 h + your watch | Sonnet, medium |
+| 4 | **Full render** | After your go. GPU time, not agent time | ~0 agent time | — |
+| 5 | **Step 4** | Timeline file, one import, grade, encode, mix, mux, QC (§10) | 0.5–1 h | Sonnet or Haiku |
+| 6 | **Step 5** | Pre-publish vidIQ check, *Test & compare*, publish (you), then the 48-hour and 7-day reviews (§14) | ~20 min, then ~15 min each review | Sonnet, medium |
+
+**Total, roughly 7–12 agent hours from where 3b stands.** That is an estimate, with 3c
+the big unknown. If the week's usage runs out mid-3c, stop at a batch boundary and
+resume after the reset from the progress file. Nothing is lost. **What flexes is scope,
+never a gate (§1.4):** cutting a few 2D beats' extra detail is fine; skipping the proxy
+watch is not.
+
+**Packaging episode 9:** the script is locked, but the title and thumbnail aren't. If
+its reversal names who pays, test a whodunit-style title with *Test & compare* (§14.1).
+That's free evidence for episode 10.
+
+### 9.2 · Between episodes 9 and 10 (one week, mostly GPU time)
+
+1. **Choose the sub-niche.** The whodunit is applied in the runbook as one commit;
+   revert that commit if you choose otherwise.
+2. **Promote the tools:** `marks.py` into `lib25d.py`; write `kit.py` (twelve angles ×
+   three layers + passes + marks + contact sheet).
+3. **Kit the existing locations overnight:** the SB stand, the counter kiosk and the
+   deli. After that, their shots in any later episode are data.
+4. **Build the case devices once:** a money meter, a lineup, suspect cards and stamps
+   as Remotion components with swappable staging.
+
+### 9.3 · Episode 10
+
+Step 0 with sub-steps 0a–0e (runbook §6), with the popcorn case as the starting
+candidate. The case test decides; if popcorn fails it, the next slate topic that passes
+goes instead.

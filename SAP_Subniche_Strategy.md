@@ -1,201 +1,188 @@
 # Someone Always Pays: the new sub-niche (from episode 10)
 
-Written 2026-09-24. A proposal for the creator's decision (§13.5). Nothing in the
-runbook changes until one option is chosen. §6 of this document lists every edit
-the choice triggers.
+Final version, after the QA audit (`SAP_QA_Audit.md`). **The recommendation changed from
+"The Legal Heist" to "The Money Whodunit"**: finding S1 in the audit explains why.
+The runbook changes are applied on this branch as one separate commit, so they can be
+reverted in one step if you choose a different option.
 
 ---
 
-## 1 · Why episodes 1–9 feel flat
+## 1 · In one word: **Whodunit**
 
-It isn't the animation. It's the **promise**.
+> **Every episode, someone takes your money, legally. By the end, you know who.**
 
-Every title so far promises an *explanation*: "why X costs Y", "how X makes money".
-That has three problems:
-
-1. **The answer feels guessable.** "Because they profit from it" is what the viewer
-   assumes before clicking. Your own runbook names this failure (§6.0): *a topic a
-   chatbot answers in four seconds is not a video.*
-2. **Nobody is at stake.** The company is the main character, and a company can't
-   lose anything the viewer cares about.
-3. **Nothing can happen next.** An explanation has no plot, so there is no twist to
-   wait for. The only reason to keep watching is "more facts", and that is what
-   retention punishes.
-
-The other session's diagnosis ("company-first") was right. Its fix ("The Catch", the
-POV of deals you accept) moves the viewer into the story but keeps the *explanation*
-engine: the offer, the room, the fine print. It still ends up as consumer education,
-and it keeps pulling toward "don't fall for this", which is advice. **That pull is
-now a monetisation risk**: YouTube's July 16, 2026 clarification put *AI personas
-giving advice on money* in its non-monetisable list, and the channel narrates with a
-synthetic voice.
-
-**What binge-worthy needs:** a character with something to lose, someone on the
-other side who planned it, a plan the viewer gets to watch unfold, and a twist that is
-coming. That is a genre, and it's one of the oldest proven ones.
+The channel's name and sign-off already are a whodunit: *"Someone always pays. Now you
+know who."* The episodes have been explainers wearing that line. From episode 10, they
+are mysteries that earn it.
 
 ---
 
-## 2 · The proven formats this builds on
+## 2 · Why episodes 1–9 had no curiosity
 
-| Proven format | Where it has demand | What we take | What we leave |
+Every title promised an **explanation** ("why X costs Y", "how X makes money"). The
+viewer assumes the answer before clicking ("they profit from it"), nobody in the story
+has anything to lose, and an explanation has no twist to wait for.
+
+**The first fix I proposed (the heist) still had this problem.** A heist introduces
+the crew early and keeps *how they did it* as the open question, and "how does it
+work?" is the explainer question in costume. **A whodunit keeps *who* open until the
+end.** That question can't be answered by assumption, only by the reveal.
+
+| Frame | The question held open | Where it's answered | Verdict |
 | --- | --- | --- | --- |
-| **The heist / con story** | Heist films and "how they pulled it off" retellings: one of the most durable story shapes there is | The structure: the mark, the crew, the plan, the job, the twist, the getaway | Crime. Our heists are **legal**, and that is the joke |
-| **The scam exposé with receipts** (Coffeezilla) | Long-form exposés that feel like a documentary built for the feed: calm, sarcastic, with contracts and calls as evidence | Receipts on screen (§9.9 real documents), polite disbelief, the calm narrator | Accusations. We never call a named company a scammer |
-| **"Why they're hated"** (Ticketmaster, Spirit Airlines videos) | Company-villain stories with steady search demand | A clear antagonist the viewer already resents | Rants. Our antagonist is a *design*, told with some admiration |
-| **Comedic animated history** (Oversimplified) | Your own reference (§2) | Real people as characters, true jokes | Pure history. Every story ends in the viewer's wallet |
-
-The **evidence gate (§6.2) still decides every topic** on views per hour and the outlier
-multiple. What this section establishes is that the *shape* is proven. Each
-episode's topic still has to prove its own demand.
+| Explainer (episodes 1–9) | "Why is it expensive?" | Guessed before clicking | No curiosity |
+| The Catch (the other session's) | "What's in the fine print?" | Piecemeal, as a list | Educational; pulls toward advice |
+| The Legal Heist (my first answer) | "How did they do it?" | Through the whole middle | The explainer engine in costume |
+| **The Money Whodunit** ⭐ | **"Who actually took it?"** | **At ~85%, by name** | **Held to the end; matches the tagline** |
 
 ---
 
-## 3 · Three options
+## 3 · Why a viewer would watch ours when the topic is already on YouTube
 
-### Option 1 · **The Legal Heist** ⭐ recommended
+This is the question every episode must answer at Step 0, and the whodunit answers it
+by design:
 
-> Every price you pay was planned by someone. Each episode is that plan, told as a
-> heist film. You are the mark, and it is perfectly legal.
-
-- **The bend:** heist-film storytelling (proven for decades), moved onto *ordinary
-  prices*, a market nobody tells as heists. The mark is the viewer. The crew are real
-  historical people. The loot is real money, sourced.
-- **Why it's binge-worthy:** a heist has a plan to follow, a crew to meet, and a
-  twist everybody knows is coming. Leaving before the twist costs the viewer the best
-  part, and the genre has trained that instinct for decades.
-- **Why it's ours:** the channel's name *is* a heist line. "Someone always pays. Now
-  you know who." is already the getaway reveal. Lucky becomes **the mark**, the
-  recurring victim of a different legal heist every week. That is a series
-  character, not a stand-in.
-- **The 70/30 split happens by itself:** the story (the mark, the crew, the job, the
-  replay, the twist) is the 70%. The mechanism is the *plan*, and the plan is the
-  30%. It is taught as plot, never as a lecture.
-
-### Option 2 · The Catch (the other session's)
-
-The viewer's POV at the moment they accept an offer. Strong, relatable hooks. But:
-- it leans educational ("the fine print")
-- it pulls toward advice, which is now a monetisation risk (above)
-- five fixed sections (offer, room, fine print, what-if, reversal) repeat identically
-  every episode, which is what YouTube's July 2026 "template-based content" category
-  targets
-
-**Its best part survives inside Option 1:** "you said yes" becomes the cold open, *the
-job*.
-
-### Option 3 · Villain Origin Stories
-
-"The man who invented the checkout fee." It's biography-first and close to
-Oversimplified. It has great characters but a weaker hook to the viewer's own money,
-and history pulls it toward documentary. **Its best part also survives inside Option
-1:** the villains become *the crew*.
-
-**Recommendation: Option 1, with Option 2's POV as the cold open and Option 3's
-villains as the crew.** One umbrella that keeps what worked in each.
+1. **Their answer is our red herring.** The popular videos on a topic give the obvious
+   answer ("airports are greedy"). In our episode that's **suspect number one, and it
+   gets cleared on screen.** A viewer who already watched those videos gets a twist,
+   not a repeat. *If the popular answer is the whole story, the topic fails Step 0.*
+2. **They explain; we solve.** The same sourced facts, run through a mystery engine: a
+   crime, suspects, clues and a reveal.
+3. **You're in it.** Lucky, the recurring victim (and sometimes the culprit), stands in
+   for the viewer. Explainers talk about companies; we follow a person.
+4. **Receipts in a drawn world.** Real documents on screen (§9.9): the scam-exposé
+   channels' strongest device, in a format none of them use.
+5. **A series, not a feed of topics.** The same detective voice, the same victim, and
+   case devices that return. Viewers binge characters, not subjects.
 
 ---
 
-## 4 · The Legal Heist: the format bible
+## 4 · The formats this stands on (and the bend)
 
-### 4.1 · The six movements (runtime shares are targets, not fixed times)
+| Proven format | Evidence | What we take |
+| --- | --- | --- |
+| **Mystery and true crime** | One of YouTube's most durable genres. Documentary-style, faceless, voiced channels lead it, and the brain-teaser pull is the reason people stay | The whodunit structure: crime, suspects, clues, red herring, reveal |
+| **Scam exposé with receipts** (Coffeezilla) | Long documentary-style exposés, calm and sarcastic, built on calls and documents | Receipts on screen; the calm, amused narrator |
+| **"Why they're hated"** (Ticketmaster, Spirit Airlines) | Recurring, steady search demand | An antagonist the viewer already suspects: perfect as the red herring |
+| **Comedic animated history** (Oversimplified) | Your own reference | Real people as characters, true jokes |
+
+**The bend:** mystery storytelling moved onto **everyday prices**, a market nobody tells
+as mysteries, where the crime is legal and the victim is the viewer. The genre is
+proven; the market is ours.
+
+---
+
+## 5 · The four options, after the audit
+
+| | Open question | Binge engine | Why-ours | Risk | Verdict |
+| --- | --- | --- | --- | --- | --- |
+| **1 · The Money Whodunit** | Who took it? | The reveal at 85% | Their answer is our red herring | Low (legal premise, sourced) | ⭐ **Recommended** |
+| 2 · The Legal Heist | How did they do it? | The plan and the twist | The crew | Medium (accusatory, and explanation-driven) | Its devices live on inside option 1 |
+| 3 · The Catch | What's in the fine print? | Relatability | POV | Advice pull; template shape | Its POV lives on as the cold open |
+| 4 · Villain Origins | Who invented this? | Characters | Comedic history | Drifts to documentary | Its villains become suspects |
+
+---
+
+## 6 · The format bible
+
+### 6.1 · The case spine (proportions, not fixed times)
 
 | # | Movement | Share | What happens | Mode |
 | --- | --- | --- | --- | --- |
-| 1 | **The Job** | 0:00–0:15 | Lucky gets robbed in plain sight, and it's funny. She's happy. The loot counter ticks up somewhere she can't see. It ends on the number and the title question, landing in the world (§4.1) | Story |
-| 2 | **The Mark** | to ~10% | Why Lucky, and you, were the perfect target. The stakes in one number: what this costs a person a year | Story |
-| 3 | **The Crew** | ~10–35% | The real people who designed the play, introduced heist-film style: freeze frame, name card, role ("THE INVENTOR", "THE INSIDE MAN", "THE FIXER"). The history spine lives here, with Oversimplified-style jokes that are true | Story + comedy |
-| 4 | **The Plan** | ~35–60% | The mechanism, drawn on the crew's heist board in phases. **The first payoff lands here by 40%** (§4.2) | Mechanism (the 30%) |
-| 5 | **The Replay** | ~60–80% | The cold open plays again, and now the viewer sees every hidden move in it. It is the heist genre's own payoff ("here's how it was done") | Story |
-| 6 | **The Twist and the Getaway** | ~80–100% | The reversal (§2.6): the mark was not who we thought, or someone else paid for Lucky. Then where the loot is now, by name. Sign-off | Story |
+| 1 | **The Crime** | 0:00–0:15 | Lucky pays, happily. Something small and wrong is visible in the picture. It ends on the number and the title's question in the world | Story |
+| 2 | **The Case** | to ~10% | What was taken, from how many people, every year. The stakes as one sourced number | Story |
+| 3 | **The Suspects** | ~10–25% | The lineup: 3–5 parties who each could have taken it. The first is **the popular answer** | Story + comedy |
+| 4 | **The Alibis** | ~25–60% | Each suspect's story, told as history with real people and dates. Clues pile up (this is where the mechanism lives). **The red herring is cleared by ~40%**: the first payoff (§4.2) | Story + mechanism |
+| 5 | **The Reconstruction** | ~60–80% | The crime replayed with what we now know drawn over it: every hidden hand in the transaction | Story |
+| 6 | **The Reveal** | ~80–95% | The culprit, by name. Often a rule, a structure, or another customer, and sometimes Lucky herself. The runbook's reversal (§2.6) lands here | Story |
+| 7 | **The Close** | last ~5% | What you'll notice now (never advice). The callback. *"Someone always pays. Now you know who."* | Story |
 
-### 4.2 · The recurring devices (the series identity)
+**Mode target:** STORY and COMEDY ≥ 65%, MECHANISM ≤ 35% of runtime, and no MECHANISM run
+longer than 45 s without a story cut. That is the creator's 70/30 as a gate.
 
-| Device | What it is | Rule |
-| --- | --- | --- |
-| **The loot counter** | A running total of what the heist has taken, living in the world (a till screen, a scoreboard, a receipt printing) | The accent colour, since it is money (§2.2). One per episode, and its home changes every episode |
-| **Crew cards** | A freeze frame, a name, a role and the year, set on a real document where one exists (§9.9) | Their entrance changes every episode (§4.7) |
-| **The heist board** | The crew's plan with red string, pinned photos and phases | Only in movement 4. Different every episode: a corkboard, a napkin, a blueprint, a whiteboard |
-| **The replay** | The cold open again with the hidden moves drawn over it | Every episode, but staged differently every time (§4.8) |
-| **Lucky, the mark** | Always the one it happens to. Never stupid, always a little too trusting | She never gives advice and never speaks it (§1.1, and the July 2026 rule) |
+### 6.2 · The case devices: three per episode, rotating
 
-**One constant, varied surfaces:** the six movements are the skeleton. The titles, the
-hiding place of the loot counter, the heist board, the crew roles and how the replay is
-staged change every episode. That keeps the channel clear of "template-based".
-
-### 4.3 · The safety rules
-
-- **"Legal" is the premise, and it's also the protection.** Never allege a crime.
-  The words are *the play*, *the design*, *the plan*, never *scam* or *fraud* about a
-  named company. Every claim is sourced (§7.2).
-- **No advice.** The close says what the viewer can now *see*, never what they should
-  *do*. The runbook's "here's what you keep" line becomes "here's what you'll notice
-  now".
-- **Admiration, not outrage.** Polite disbelief (§0): the crew are clever, and that
-  is the uncomfortable part.
-
-### 4.4 · Titles and thumbnails
-
-The title never says "heist" as a formula. It is a curiosity gap with a planned
-villain in it:
-
-| Instead of (flat) | Heist shape |
+| Device | What it is |
 | --- | --- |
-| Why printer ink is so expensive | Printer Ink Costs More Than Champagne. It Was Designed That Way. |
-| How gyms make money | Your Gym Is Counting On You Not Showing Up |
-| Why airport food is expensive | The $15 Sandwich Was Planned 30 Years Ago |
-| How credit card rewards work | Your Free Flight Was Paid For By Someone Using Cash |
+| **The money meter** | A running count of what was taken, living in the world: a till screen, a scoreboard, a receipt printing (the accent colour) |
+| **The lineup** | The suspects side by side: a police lineup, a dinner table, a courtroom bench, a jury box. The staging changes every episode |
+| **Suspect cards** | A freeze frame with a name, a role and a year, on a real document when one exists |
+| **The evidence board** | Red string, photos, a receipt pinned in the middle |
+| **The reconstruction overlay** | The cold open replayed with hands, cuts and arrows drawn over it |
+| **Cleared / guilty stamps** | A rubber stamp landing on a suspect card, with its sound |
 
-**Thumbnail system:** Lucky, smiling and unaware, with the object, and **one** accent
-element: the loot, or the hand reaching into her pocket. Readable at 10% size (§9.10).
+**Each episode uses three, never the same three twice in a row** (§4.8's uniqueness
+quota). The case spine is the constant; the surfaces change.
+
+### 6.3 · The rules that keep it safe and fresh
+
+- **Legal is the premise.** "Nobody broke a law. Somebody still took it." Never allege
+  a crime; the words are *culprit*, *suspect* and *took*, never *scam* or *fraud*
+  about a named company. Every claim is sourced (§7.2).
+- **No advice.** The close says what the viewer will *notice*, never what they should
+  *do* (YouTube's July 2026 rule on AI personas and money advice).
+- **The victim rotates.** Lucky is usually the victim. Sometimes she is the unwitting
+  culprit, and sometimes the victim is someone the viewer never thought about.
+- **Polite disbelief, not outrage** (§0).
+
+### 6.4 · Titles
+
+The title poses the *who* or clears the obvious suspect. It never uses the same
+template twice in a row.
+
+| Flat (episodes 1–9 style) | Whodunit |
+| --- | --- |
+| Why airport food is so expensive | Who Took $6 From Your Airport Sandwich? |
+| Why movie theater popcorn costs so much | Your Popcorn Costs $9. The Cinema Didn't Take It. |
+| How credit card rewards work | Someone Paid for Your Free Flight. They Used Cash. |
+| How free games make money | Your Free Game Was Paid For by One Stranger |
+
+**Thumbnail:** Lucky mid-purchase, and **one** accent element: the missing money, or a
+single suspect with a question mark. Readable at 10% size (§9.10).
 
 ---
 
-## 5 · The slate: twelve legal heists
+## 7 · The case slate: twelve episodes
 
-Each still has to pass the evidence gate (§6.2), and every number is sourced at Step 1.
-The *reversal* column is what makes an episode worth making.
+Every topic still passes the evidence gate and the case test (runbook §6.2, §6.2.1).
+Every number is sourced at Step 1. The suspects and culprits below are hypotheses for
+research, not findings.
 
-| # | Working title | The crew (real people) | The reversal |
+| # | Working title | Suspects (the first is the red herring) | Hypothesis for the culprit |
 | --- | --- | --- | --- |
-| 1 | **Movie Theaters Don't Sell Movies** ⭐ suggested for episode 10 | The theatre owners who banned popcorn, then built lobbies around it during the Depression | The ticket money mostly goes to the studio. The popcorn is the theatre's business |
-| 2 | **Your Free Flight Was Paid For By Someone Using Cash** | Card networks, merchants, the rewards designers | Swipe fees go into prices for everyone, so cash payers help fund card rewards (Federal Reserve Bank of Boston research, 2010) |
-| 3 | Your Gym Is Counting On You Not Showing Up | The low-price gym model's founders | The members who never come pay for the ones who do |
-| 4 | Printer Ink Costs More Than Champagne. It Was Designed That Way. | King C. Gillette's razor-and-blades play, then the printer makers | The printer is the bait |
-| 5 | The $60 Ticket That Became $94 | Ticketing platforms and venues | The fee isn't only the platform's; the venue shares it |
-| 6 | The Game Was Free. One Player Paid for Everyone. | The free-to-play designers | A tiny share of players pays for all the rest |
-| 7 | You Won a Free Vacation. You Were the Prize. | Timeshare sales rooms | The vacation was the cheapest part of the sale |
-| 8 | The Most Profitable Thing in the Store Isn't the TV | Extended-warranty sellers | The warranty is the store's profit, not the TV |
-| 9 | The $15 Sandwich Was Planned 30 Years Ago | Airport concession rules (your cold-open example, §4.1) | The rule meant to protect you set the price |
-| 10 | The Minibar Isn't For You | Hotel revenue designers | The minibar exists to be refused |
-| 11 | The Free App Auctioned You in 0.1 Seconds | Ad-exchange builders (reuses NIF002's research) | You weren't the customer or the product. You were the lot |
-| 12 | "Pizza Near Me" Paid Three Companies | Maps and listings (reuses NIF004's research) | The pizzeria paid to be found |
+| 1 | **Your Popcorn Costs $9. The Cinema Didn't Take It.** ⭐ episode 10 | The greedy cinema · the popcorn supplier · the studio · the audience | The studio's share of the ticket; the cinema lives on the popcorn |
+| 2 | Someone Paid for Your Free Flight. They Used Cash. | The bank · the airline · the shop · the cash payer | Swipe fees go into prices for everyone (Boston Fed research, 2010) |
+| 3 | Who Took $6 From Your Airport Sandwich? | The airport · the vendor · the concession operator · the pricing rule | The rule meant to protect you (§4.1's example) |
+| 4 | Who Pays for the Gym You Actually Use? | You · the gym · the equipment makers · the members who never come | The members who never come |
+| 5 | Your Ink Costs More Than Champagne. Who Decided? | The ink makers · the retailers · chemistry · the printer's price tag | The printer sold cheap by design |
+| 6 | Who Took $34 From Your $60 Ticket? | The ticketing site · the artist · the venue · the promoter | The fee is shared |
+| 7 | Your Free Game Was Paid For by One Stranger | The ads · the developer · the app store · the "whales" | A tiny share of players |
+| 8 | Who's Paying for Your Hotel's "Free" Wi-Fi? | The hotel · the booking site · the resort fee | The fee split |
+| 9 | Who Profits When Your TV Breaks? | The maker · the store · the insurer | The extended warranty |
+| 10 | Who Bought You in 0.1 Seconds? | The app · the advertiser · the exchange | The auction (reuses NIF002's research) |
+| 11 | Who Got Paid When You Searched "Pizza Near Me"? | The map · the pizzeria · the listing sites | The pizzeria paid to be found (reuses NIF004) |
+| 12 | You Won a Free Vacation. Who Paid for It? | The resort · the marketer · the other buyers | The buyers who signed |
 
-**Episodes 1–8 already shipped:** don't rebuild them. When a later episode calls
-back to one (§6.5), test a heist-shaped title and thumbnail on it with Test & compare
-(§14.1). That is cheap, and it says how much of the old catalogue the new frame can
-lift.
-
-**Why popcorn for episode 10:** it has a true, funny history (theatres refusing
-popcorn, then saving themselves with it), one place (a cinema lobby, one new location),
-an object everybody knows, a clean reversal, and it is evergreen and advertiser-safe.
-It is also a good pilot for the new structure: the cold open is the lobby, the crew is
-1930s theatre owners, and the replay is the same lobby with the hidden moves drawn in.
+**Why popcorn opens the new format:** the red herring (the "greedy cinema") is what
+almost every viewer believes. The history is true and funny: cinemas first refused
+popcorn, then the Depression made it their business. It needs one new location, has a
+single object everybody knows, and its twist clears the obvious suspect.
 
 ---
 
-## 6 · What the runbook changes (once Option 1 is chosen)
+## 8 · How the runbook changed (applied on this branch)
 
 | Section | Change |
 | --- | --- |
-| §1.1 Positioning | "Hidden Economics, from the payer's point of view" becomes **"The Legal Heist: every price was planned by someone, and you were the mark."** The payer-POV test stays |
-| §1.2 Formats | The three formats become **one format, the Legal Heist**, with three kinds of job: *the bait* (free or cheap things), *the fee* (one payment followed), *the rule* (one decision everyone lives under). Origin, Economics and Decision map onto these |
-| §4.2 The spine | Replaced by the six movements (§4.1 here). The front-loading law, the first payoff by 40% and the reversal all stay |
-| §4.6 The mix | **40/60 becomes 30/70.** New gate: beats tagged STORY, COMEDY or MECHANISM in `beats.md`; MECHANISM at most 35% of runtime; no MECHANISM run longer than 45 s without a story cut |
-| §2.8 Inserts | Adds the loot counter, crew cards, the heist board and the replay overlay |
-| §4.1 Cold open | Becomes *the Job*. See the production plan: built first, and watched as a proxy before anything else is built |
-| §6.2 Evidence gate | vidIQ searches also cover "why X is hated", "the X scam/heist" and "how X tricks you" outliers, to find the format demand. The topic still needs its own outlier |
-| §6.3 vidIQ prompt | Adds: "which topics would work as a *legal heist*: a real crew, a plan, a reversal?" |
-| §7.3 Retention devices | Forward-promise ordering becomes the crew roll-call ("four people built this, and the fourth is the one you'll hate"). The replay is a new device |
-| Close (§4.2) | "Here's what you keep" becomes "here's what you'll notice now": no advice |
-| §12 Gates | New: Story ratio (MECHANISM ≤ 35%), Crew (≥ 2 real named people, sourced), Replay (the cold open replayed with the hidden moves), No advice |
+| §0 | The sub-niche, in one word and one line |
+| §1.1 Positioning | The Money Whodunit; the payer-POV test stays |
+| §1.2 Formats | Three case types (*the bait*, *the fee*, *the rule*); the history spine stays |
+| §2.8 Inserts | The six case devices |
+| §4 intro, §4.2 | The case spine replaces the old spine; the first payoff by 40% and the reversal at 85% stay |
+| §4.5 The why test | A new row: *why ours?* |
+| §4.6 The mix | 40/60 becomes **30/70**, with mode tags and a gate |
+| §4.8 | Three devices per episode, rotating |
+| §6 | Step 0 sub-steps **0a–0e**; new **§6.2.1 The case test**; Round 1 card and vidIQ prompt updated |
+| §7.3, §7.5 | New devices (the lineup, the reconstruction); `Mode:` in the beat sheet |
+| §9.0, §9.7 | Cold open first; the L1/L2/L3 tier mix |
+| §12 | New gates: Case test, Cold answer, Why ours, Story ratio, Suspects sourced, No advice, Cold open first |
