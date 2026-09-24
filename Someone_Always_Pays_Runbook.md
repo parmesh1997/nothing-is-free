@@ -1,10 +1,12 @@
 # Someone Always Pays — Runbook
 
-The single source of truth. Steps 0–4 and the laws that govern them.
+The single source of truth. Steps 0–5 and the laws that govern them.
 
 This file contains no episode status, no dated change log, and no history. Where
 an episode stands lives in that episode's own `project.json`. Everything this
 document replaced is in `archive/2026-09-19-runbook-reset/`.
+
+**A session reads the sections for its step, not the whole file** (§0.1).
 
 ---
 
@@ -28,6 +30,27 @@ at whoever is hiding, never at the viewer for not having known.
 
 **The fixed sign-off, verbatim, every episode:** *"Someone always pays. Now you
 know who."*
+
+### 0.1 · Reading this file
+
+This file is about 53,000 tokens. A session that reads all of it before starting
+work has used a large share of its context on rules it will never apply. So every
+session reads **§0, §3, and then only the sections for its step**, which comes to
+between 5,000 tokens (Step 2) and 21,000 (Step 3 build):
+
+| Step | Read | Skip |
+| --- | --- | --- |
+| 0 · Intake | §1, §4.1–4.5, §5.4, §6, §12 (Step 0 block), §14.3 | §2, §7–§11 |
+| 1 · Script | §1.1–1.3, §2.5–2.8, §4, §7, §12 (Step 1 block) | §8–§11 |
+| 2 · VO | §8, §12 (Step 2 block) | everything else |
+| 3 · Build | §2, §9, §11, §12 (Step 3 block) | §6–§8 |
+| 3 · Audit | §2.1, §3, §9.5–9.6, §12 (Step 3 block) | everything else |
+| 4 · Resolve | §10, §11, §12 (Step 4 block), §13.3 | §4–§9 |
+| 5 · Publish and learn | §1.3, §13.3, §14, §12 (Step 5 block) | §2, §7–§11 |
+
+The `nif-sec-*` skills (§13.6) already paste in only an agent's own sections. A
+fresh session that is handed this whole file follows the same table and does not
+read it again later in the session. The rest of the token rules are in §5.4.
 
 ---
 
@@ -86,6 +109,17 @@ days per video:
 Everything in this runbook exists to move those two numbers. A packaging or
 pacing decision that cannot be argued to move one of them does not go in.
 
+**Diagnostics are tracked but not gated.** They explain *why* one of the two numbers
+moved, and Step 5 (§14) records them for every episode:
+
+| Diagnostic | Where it is read | What it points at |
+| --- | --- | --- |
+| Average view duration | Studio → Engagement | Runtime vs attention (§1.4) |
+| % still watching at 0:30 | Studio → Audience retention → key moments | The cold open (§4.1) |
+| The top dips and spikes, with timestamps | Same card, mapped to beats by `dip-map.mjs` | Which beat lost people, and which device held them |
+| Traffic sources (Browse, Suggested, Search) | Studio → Reach | Packaging vs topic vs keyword |
+| vidIQ content score /100 and its Review issues | vidIQ Optimize tab | Metadata the channel keeps getting wrong |
+
 **The test happens in the first 24–48 hours.** Every video is shown to a seed
 audience regardless of channel size, and what that audience does decides whether
 distribution expands. A video that does not perform in the first day or two
@@ -107,7 +141,8 @@ arrived is a good outcome; leaving because the episode stalled is not.
   reach a number and never cut something that earns its place.
 
   **Length is earned by the previous episode's retention.** Going longer than the
-  last episode requires the last episode to have held ≥45% (§1.3). A
+  last episode requires the last episode to have held ≥45% (§1.3), as recorded
+  in its `10_review/review.md` (§14). A
   thirty-minute video at 20% is worth less than a thirteen-minute video at 45%,
   to the viewer and to the algorithm, and the channel's current weak number is
   retention — so length is a reward for holding attention, not a bid for it.
@@ -628,18 +663,23 @@ structure matters as much as varying content.
 ## 5 · The pipeline
 
 ```
-STEP 0   INTAKE          → evidence gate, topic, shape. Creator decides
-STEP 1   SCRIPT + BEATS  → and nothing else. Full stop
+STEP 0   INTAKE          → 0a postmortem of the last two episodes · 0b evidence
+                            and keywords in vidIQ · 0c topic and shape. Creator decides
+STEP 1   SCRIPT + BEATS  → and nothing else. Full stop. Starts from the lessons
    ↓     ── PRE-VO LOCK: script, citations, runtime, cold open all final ──
-STEP 2   VO + RECONCILE  → ElevenLabs per beat, whisper timing, real durations
+STEP 2   VO + RECONCILE  → ElevenLabs per beat, whisper timing, real durations,
+                            Rhubarb mouth cues, chapters
 STEP 3   BUILD           → 3a library · 3b plates · 3c scenes. Audited on stills,
-                            proxy watched BEFORE any full render
-STEP 4   RESOLVE         → assembly, grade, audio, delivery, upload
+                            proxy machine-checked and watched BEFORE any full render
+STEP 4   RESOLVE         → assembly, grade, audio, delivery
+STEP 5   PUBLISH + LEARN → pre-publish vidIQ check, upload, 48-hour and 7-day
+                            review → the lessons the next Step 0 starts from
+   ↺     back to STEP 0
 
 Packaging runs through the steps rather than being one. Claude recommends it
 first: the title and a thumbnail concept at Step 0, and the thumbnail built at
 Step 3 from the episode's own set and cast. The creator then checks it in vidIQ
-and has the final say (§6.5, §9.10).
+and has the final say (§6.6, §9.10, §14.1).
 ```
 
 **Nothing is built against estimated durations.** Every frame range downstream of
@@ -650,6 +690,7 @@ Step 2 depends on measured audio. This is why the pipeline is shaped this way.
 ```
 video-os/episodes/NIF0NN/
   project.json          ← intake, approvals, and where this episode stands
+  00_intake/            ← postmortem.md, evidence.md, vidiq-prompt.md, vidiq-answer.md (§6)
   01_script/            ← script.md, beats.md, shots.json (the shot list, §7.5)
   02_narration/         ← B00.mp3 … B##.mp3
   03_transcript/        ← transcript.json, timing.json, reconcile.json, chapters.md
@@ -661,7 +702,17 @@ video-os/episodes/NIF0NN/
   07_packaging/         ← thumbnail stills and the title recommendation (§9.10)
   08_conform/           ← stills-audit.json, sfx cues, text timing, resolve notes
   09_master/            ← the upload file
+  10_review/            ← review.md at 48 hours and 7 days (§14)
 ```
+
+Three library files carry what one episode teaches the next. Each is short on
+purpose, because every Step 0 and Step 1 reads it:
+
+| File | Holds | Cap |
+| --- | --- | --- |
+| `video-os/library/shipped.md` | One line per published episode: code, title, date, CTR, APV | — |
+| `video-os/library/lessons.md` | The standing "do not repeat" list (§14.3) | 40 lines |
+| `video-os/library/INDEX.md` | One line per location, angle used, cast parameter, template and prop, with the episode that used it | — |
 
 ### 5.2 · Model routing
 
@@ -679,14 +730,16 @@ downgrade.
 
 | Step | Agent | Model | Why |
 | --- | --- | --- | --- |
-| 0 · Intake | `nif-researcher` | Opus 5, medium | Judgment-heavy, short |
-| 1 · Script | `nif-scriptwriter` | **Opus 5, high** | Highest leverage in the pipeline. Retention is written here, not edited in later |
-| 2 · VO + reconcile | `nif-voice` | Sonnet 5, low | Mechanical |
-| 3a · Library | `nif-builder` | **Opus 5, high** | A new location, a new cast parameter or a new shot template. Built once, reused for every episode after |
+| 0a–0b · Collect (browser) | a subagent of `nif-researcher` | Sonnet 5, medium | Reading Studio and vidIQ pages is mechanical, and page text is bulky. It returns the fixed tables of §6.1–6.2 and nothing else |
+| 0c · Decide | `nif-researcher` | Opus 5.5, medium | Judgment-heavy, short. It works only from the collected tables |
+| 1 · Script | `nif-scriptwriter` | **Opus 5.5, high** | Highest leverage in the pipeline. Retention is written here, not edited in later |
+| 2 · VO + reconcile | `nif-voice` | Haiku 4.5 (Sonnet 5, low, if it stumbles) | Four fixed commands and a check of their output |
+| 3a · Library | `nif-builder` | **Opus 5.5, high** | A new location, a new cast parameter or a new shot template. Built once, reused for every episode after |
 | 3b–3c · Plates and scenes | `nif-builder` | Sonnet 5, high | Filling `shots.json`, cameras, plates and scene composition from the library. Opus only to unpick a structural bug |
 | 3 · Stills audit | `nif-auditor` | Sonnet 5, medium | Independent of the builder; measures, never fixes |
-| 4 · Resolve | `nif-finisher` | Sonnet 5, medium | Opus 5 medium for grade and look decisions, and first-time Fusion authoring |
-| Runbook changes | — | Opus 5, high | Rare, high-consequence |
+| 4 · Resolve | `nif-finisher` | Sonnet 5, medium | Opus 5.5 medium for grade and look decisions, and first-time Fusion authoring |
+| 5 · Publish and learn | `nif-researcher` | Sonnet 5, medium | Reading numbers and writing the review. Opus only when a lesson changes the runbook |
+| Runbook changes | — | Opus 5.5, high | Rare, high-consequence |
 
 Maximum effort is reserved for one bounded, genuinely hard thing — a bug that has
 already resisted two attempts, or restructuring an episode's spine. Never routine
@@ -718,6 +771,23 @@ Every handoff prompt states, explicitly:
 **The creator should never have to explain the project to a new session.** If a
 handoff needs them to fill in a blank, the handoff was written wrong.
 
+### 5.4 · Token discipline
+
+Context is the budget that runs out first, and a full context makes every later
+answer worse, not only more expensive. These rules apply in every step:
+
+| Rule | Why |
+| --- | --- |
+| **Hand over paths, not contents.** A handoff names `00_intake/postmortem.md`; it does not paste it | The next session reads it once, when it needs it |
+| **Browser: text before pixels.** Read a page with the page-text and find tools first. Take a screenshot only for something that has no text, such as a chart, and crop or zoom to that element | A full-page screenshot costs more than the whole page's text, and it gives the model less to work with |
+| **Collectors return a fixed table.** A browsing subagent (§5.2) returns the tables in §6.1–6.2, filled in, and nothing else. No narration of its clicks | The deciding model never sees the raw pages |
+| **Scripts print summaries.** `vph.mjs`, `dip-map.mjs`, `motion-check.mjs` and the audit scripts print a short table. Full logs go to a file and are read only on failure. Blender runs with `--quiet`, and renders with Remotion's `--log=error` | A render log can be 50,000 tokens of progress lines |
+| **Transcripts are cleaned before reading.** Competitor auto-subs go through `vtt-clean.mjs` | Raw auto-subs repeat every line about three times |
+| **Stills are audited as contact sheets.** Composition, three-plane and held-state checks read a grid of 12 stills in one image. Full-size stills only for a frame that fails, or for text | One image instead of twelve |
+| **Measured facts come from scripts, not from eyes.** Word counts, VPH, shot lengths, frozen frames, loudness and durations are computed | A model counting words or estimating a timestamp is slower, costlier and wrong more often |
+| **Nothing is researched twice.** Step 0 writes what it read to `00_intake/`. Step 5 writes `10_review/`. A later step reads those files and does not browse again | The same page read twice is paid for twice |
+| **One step per session** (§5.2) | Session length costs more than model tier |
+
 ---
 
 ## 6 · Step 0 · Intake
@@ -727,6 +797,39 @@ handoff needs them to fill in a blank, the handoff was written wrong.
 Step 0 is a conversation, not an autorun. Claude researches, then stops and puts
 decisions to the creator. Claude does not ask how many beats, what visual
 treatment to use, or how much research is needed — those are this runbook's job.
+
+**What a fresh session does, in order**, with no other instruction:
+
+| # | Does | Writes | Stops for the creator? |
+| --- | --- | --- | --- |
+| 1 | Reads §0.1's Step 0 sections, `library/shipped.md`, `library/lessons.md`, and the `10_review/` of the two latest published episodes | — | No |
+| 2 | **0a** · The postmortem of the last two episodes (§6.1) | `00_intake/postmortem.md` | Only for a login |
+| 3 | **0b** · Evidence and keywords in vidIQ Research, then `vph.mjs` on the shortlist (§6.2) | `00_intake/evidence.md` | Only for a login |
+| 4 | Writes the vidIQ prompt, with Claude's own recommendation in it (§6.3) | `00_intake/vidiq-prompt.md` | **Yes.** The creator runs it in vidIQ and pastes the answer back |
+| 5 | **0c** · Round 1, topic (§6.5) | — | **Yes** |
+| 6 | The full research pass, then Round 2, shape (§6.5) | — | **Yes** |
+| 7 | The intake output (§6.6) and the Step 1 handoff prompt (§5.3) | `project.json` | Done |
+
+Rows 2 and 3 run in a browsing subagent on Sonnet (§5.2), which hands back the
+filled-in tables of §6.1 and §6.2 and nothing else (§5.4).
+
+**The browser rules.** Claude reads YouTube Studio and vidIQ in Chrome, in the
+**Rama** profile (the channel's own account; the other connected Chrome is a
+different channel). If the browser tools are not connected, Claude says so and
+asks for them. It never fills a number in from memory.
+
+| Allowed: reading | Never: spends credits or changes the channel |
+| --- | --- |
+| Opening pages and tabs, scrolling, hovering a chart, changing a date range, typing a search, sorting and filtering | Anything labelled Generate, Regenerate, AI, Coach, chat or deep research. Apply, Save, Save Changes, Publish, Upgrade. Anything that shows a credit cost |
+
+Claude never calls a vidIQ tool itself and never states a score vidIQ did not
+return. A page that asks for a login or shows a credit cost stops the step and
+goes to the creator.
+
+Competitor transcripts come from `yt-dlp --skip-download --write-auto-subs` and
+are cleaned with `vtt-clean.mjs` before they are read (§5.4). A competitor video
+is watched with the `watch` skill (captions first; its Whisper fallback uploads
+audio to Groq or OpenAI only if a key is set, and none is).
 
 ### 6.0 · The idea is the job
 
@@ -766,83 +869,186 @@ authority being beaten, a curiosity gap, and a promised payoff. "The man who mad
 everything on the internet free." Test the working title against that shape at
 intake, not at the end.
 
-### 6.1 · The evidence gate
+### 6.1 · The postmortem: the last two episodes
 
-**No topic enters Step 1 without a proven outlier behind it.** The creator runs
-the research prompt below in vidIQ and pastes the result back. Claude never calls
-a vidIQ tool itself and never states a score vidIQ did not return.
+**The next episode starts from what the last two got wrong.** Before any new
+topic is looked at, Claude reads the two latest published episodes. The numbers
+are read at seven days (§1.3). A video younger than that is read as it stands and
+marked with its age.
 
-Claude may **read** YouTube Studio and vidIQ pages in the Chrome **Rama** profile
-(the channel's own account — the other connected Chrome is a different channel).
-Reading is free; Regenerate, new package, deep chat and Save Changes spend credits
-or change the channel and are never clicked. Competitor transcripts come from
-`yt-dlp --skip-download --write-auto-subs`, and a competitor video is watched with
-the `watch` skill (captions first; its Whisper fallback uploads audio to Groq or
-OpenAI only if a key is set, and none is).
+If an episode's `10_review/review.md` already exists at seven days (§14.2), it is
+read instead, and nothing is browsed for that episode.
+
+Per episode, from **YouTube Studio → Analytics** for that video:
+
+| Read | Where |
+| --- | --- |
+| Impressions and impressions click-through rate | Reach |
+| Traffic sources (Browse, Suggested, Search) and the top search terms | Reach |
+| Views, average view duration, average percentage viewed | Engagement |
+| Key moments for audience retention: % still watching at 0:30, the dips and the spikes, each with its timestamp | Engagement → Audience retention |
+
+Then from the **vidIQ Optimize tab** for the same video: either the Optimize tab
+vidIQ adds to the video's page in Studio, or vidIQ → Optimize → the video.
+
+| Read | Where |
+| --- | --- |
+| The content score, out of 100 | Optimize |
+| Every issue it lists, verbatim | Optimize → Review |
+
+**Timestamps become beats.** `dip-map.mjs` puts every key moment on the beat and
+the words being spoken there, from that episode's `timing.json`:
+
+```bash
+node scripts/dip-map.mjs ../../episodes/NIF009 0:30 3:12 7:45 9:02
+```
+
+With `--csv` it reads the retention curve itself (`elapsedVideoTimeRatio,
+audienceWatchRatio` rows, as the YouTube Analytics API returns them) and finds the
+dips and spikes on its own.
+
+Written to `00_intake/postmortem.md`, per episode, in this shape and no longer:
+
+```
+NIF009 · "title"                                  day 7
+  CTR 4.8% (gate 6%) · APV 38% (gate 45%) · AVD 5:02 of 13:14
+  At 0:30: 71% still watching
+  Traffic: Browse 52% · Suggested 31% · Search 9% (top term "…")
+  vidIQ 62/100. Issues: [verbatim, one per line]
+  Dips    3:12  B06 "…words…"   → [cause, one line]
+          7:45  B14 "…words…"   → …
+  Spikes  5:30  B10 "…words…"   → [what held them]
+  DO NOT REPEAT  [one to three rules, each checkable at Step 1 or Step 3]
+  KEEP           [what the spikes say worked]
+```
+
+**A cause is one the runbook names**, not a mood: a cold open past 30 seconds
+(§4.1), a stat run (§4.3), a promise held past 40% (§7.8), a beat that resolved and
+opened nothing (§4.4), a held frame (§3 law 11), a section card before its payoff
+(§4.7), a drift out of the payer's lane (§1.1), or packaging (low CTR with healthy
+retention). A drop in the last 10% is the sign-off leaving, and is not diagnosed.
+
+**One episode is noise; the same cause in both is a signal** (§1.3). A cause found
+in both goes into `library/lessons.md` (§14.3). The postmortem also settles §1.4:
+whether the last episode held 45% and so has earned a longer runtime.
+
+### 6.2 · The evidence gate
+
+**No topic enters Step 1 without a proven outlier behind it.**
 
 An outlier qualifies on **velocity relative to its own channel's baseline**,
-never on lifetime views:
+never on lifetime views. This is a hard rule:
 
-| Age | Floor |
-| --- | --- |
-| ~3 months | ≥ 100 views/hour lifetime average |
-| ~1 year | ≥ 20 views/hour, and still unusual for its channel |
+| Age of the video | Floor, lifetime views per hour | And |
+| --- | --- | --- |
+| Up to 3 months | **≥ 80 VPH** (100 or more is strong) | ≥ 3× its channel's baseline |
+| 3 to 12 months | **≥ 20 VPH** | ≥ 3× its channel's baseline |
+| Over 12 months | **≥ 20 VPH** | ≥ 3× its channel's baseline, and still unusual for that channel |
 
 A video with huge lifetime views and weak current velocity does not qualify. A
 smaller video strongly outperforming its own channel does.
+
+**Where to look: vidIQ → Research**, reading only (the browser rules above):
+
+| # | Tab | Read | Keep |
+| --- | --- | --- | --- |
+| 1 | **For you** | *Outliers for me* and *Rising keywords*, at the bottom of the page | Every outlier with title, channel, age, views and outlier score. Every rising keyword near the payer lane |
+| 2 | **Keywords** | Three to five seed terms per candidate topic | Search volume, competition and overall score, and the best related terms. **One primary keyword per candidate** |
+| 3 | **Videos** | Each primary keyword, sorted by views per hour or outlier score, over the last 3 months and then the last year | The outliers *For you* missed |
+| 4 | **Channels** | The channel behind each outlier | Whether it serves a similar audience. An outlier from an unrelated audience is not evidence |
+| 5 | **Thumbnails** | The primary keyword | What the winning thumbnails share, in one line. Read so ours can differ, never copied (§9.10) |
+
+What vidIQ shows depends on the plan. Claude uses what is shown and never upgrades.
+
+**Then the numbers are measured by us.** The shortlist, at most eight videos,
+goes through `vph.mjs`. It computes views per hour from the publish time and the
+multiple from the channel's own recent uploads:
+
+```bash
+node scripts/vph.mjs <url> <url> … --out ../../episodes/NIF0NN/00_intake/evidence.md
+```
+
+Where our number and vidIQ's badge disagree, both are reported and the gate uses
+ours. A baseline `vph.mjs` could not read falls back to vidIQ's outlier score,
+marked as vidIQ's.
+
+`00_intake/evidence.md` holds the `vph.mjs` table, then one line per candidate
+topic with its primary keyword, volume and competition, then the rising keywords
+worth noting.
 
 If no candidate clears the floor, Claude says so plainly rather than lowering the
 bar. Three consecutive failures to clear it means the floor itself gets
 re-examined — small-niche channels may not clear a flat number.
 
-### 6.2 · The research prompt
+### 6.3 · The vidIQ prompt
 
-Claude fills every `[...]` from current state and hands it to the creator:
+**Claude brings its own answer to vidIQ and asks vidIQ to beat it.** The prompt
+carries the postmortem, the measured evidence and Claude's recommendation, so
+vidIQ starts from this channel's data rather than from nothing. The creator runs
+it in vidIQ, because it spends vidIQ credits, and pastes the answer into
+`00_intake/vidiq-answer.md`.
+
+Claude fills every `[...]` from `00_intake/` and `library/shipped.md`, saves it as
+`00_intake/vidiq-prompt.md` and hands it over:
 
 ```
 You are the research and competitive-intelligence analyst for my YouTube
-channel, Someone Always Pays — documentary explainers on hidden economics, told
-from the point of view of the person paying.
+channel, Someone Always Pays: documentary explainers on hidden economics, told
+from the point of view of the person paying. The promise: when something looks
+free or cheap, the channel shows you who actually paid, by name.
 
-Published so far:
-[shipped episodes: "title" — one-line topic]
+Published so far. Do NOT re-suggest any of these:
+[shipped.md: "title" — one-line topic — CTR — APV]
 
-Do NOT re-suggest anything in that list.
+What my last two episodes taught me:
+[postmortem.md: numbers against the gates, the dips and their causes,
+ DO NOT REPEAT, KEEP]
 
-1. ANALYSE MY CHANNEL. Diagnose the actual evidence. Separate packaging
-   problems, topic-demand problems, audience-fit problems, competition
-   problems, retention problems, positioning problems, and insufficient data.
+My evidence (views per hour measured from publish time; multiple against the
+channel's median upload):
+[evidence.md: the table, and the primary keywords with volume and competition]
+
+MY RECOMMENDATION
+  Topic:        [topic]
+  Angle:        [the payer-POV angle, one sentence]
+  Outlier:      [video · channel · VPH · multiple]
+  Keyword:      [primary keyword · volume · competition]
+  Title:        [working title]
+  Why it wins:  [one or two lines]
+ALTERNATES
+  [two more, one line each]
+
+1. ANALYSE MY CHANNEL. Diagnose the actual evidence: packaging, topic demand,
+   audience fit, competition, retention, positioning, or insufficient data.
    Do not assume the channel is suppressed. Do not invent evidence.
-
-2. ANALYSE COMPETITORS. Check whether each actually targets a similar
-   audience before treating it as relevant.
-
-3. FIND PROVEN OUTLIERS. Videos significantly outperforming their own
-   channel's baseline. Recent (~3mo): 100+ VPH. Older (~1yr): 20+ VPH and
-   still unusual. Never judge on total views alone.
-
-4. CHECK ALL RELEVANT COMPETITORS before selecting. Do not stop at the first
-   good result.
-
-5. SELECT EXACTLY ONE. Not a ranked list. The one giving the strongest
-   combination of proven demand, outlier performance, audience relevance,
-   packaging, hook, retention architecture, storytelling, and room for a new
-   interpretation.
-
-6. DECONSTRUCT IT: topic, title, thumbnail, hook, retention architecture,
-   engagement mechanics, story structure, transcript mechanics. Extract the
-   CONTENT MECHANISM, not words to copy.
-
-7. NICHE BENDING. What proven FORMAT does it use, and which market has that
+2. CHALLENGE MY RECOMMENDATION with your data: demand, competition, keyword,
+   audience fit. Say specifically where it is weak.
+3. FIND PROVEN OUTLIERS I MISSED. Videos significantly outperforming their own
+   channel's baseline. Up to 3 months old: 80+ views per hour. 3 to 12 months:
+   20+ views per hour and still unusual. Never judge on total views alone.
+4. CHECK ALL RELEVANT COMPETITORS before selecting, and confirm each one serves
+   a similar audience.
+5. SELECT EXACTLY ONE: mine, an alternate, or a better one you found. Not a
+   ranked list. Choose on proven demand, outlier strength, audience fit,
+   packaging, hook, retention architecture and room for a new interpretation.
+6. DECONSTRUCT THE OUTLIER BEHIND IT: topic, title, thumbnail, hook, retention
+   architecture, story structure. Extract the content mechanism, not words to
+   copy.
+7. NICHE BENDING. What proven format does it use, and which market has that
    format never been used in? Do not force a bend that weakens the concept.
-
 8. WHY WOULD A VIEWER WHO ALREADY SAW IT WATCH MINE? Be specific. "Make it
    better" is not an answer.
+9. KEYWORD AND TITLE. The primary keyword you would build the title on, and
+   three titles in the shape: an outlier subject, a curiosity gap, a promised
+   payoff.
 
 If data is unavailable, say DATA NOT AVAILABLE rather than guessing.
 ```
 
-### 6.3 · Niche bending
+**Claude reconciles the two answers and defers to neither.** Where vidIQ picks a
+different topic, Round 1 shows both, each with its evidence.
+
+### 6.4 · Niche bending
 
 The rule: take a proven **format** and move it to a **market** where it has not
 been used. Never copy a video; copy the structural reason it worked.
@@ -851,14 +1057,17 @@ This channel's standing bend is **owner POV → payer POV**. Any further bend mu
 strengthen clarity, curiosity or storytelling — a bend that weakens the concept
 is rejected.
 
-### 6.4 · The intake gate — two rounds
+### 6.5 · The intake gate — two rounds
 
-**Round 1 — Topic.** Claude presents the outlier evidence and three angles on it,
-ranked with a recommendation, plus the standing option for the creator to name
-their own. Each as:
+**Round 1 — Topic.** Claude presents the outlier evidence, vidIQ's answer beside
+its own, and three angles, ranked with a recommendation, plus the standing option
+for the creator to name their own. Each as:
 
 ```
 [Angle]
+  The outlier:    [video · channel · age · VPH · multiple, ours and vidIQ's]
+  The keyword:    [primary keyword · volume · competition]
+  The lessons:    [how this angle avoids each DO NOT REPEAT in postmortem.md]
   The mechanism:  [one line]
   The number:     [the figure that carries it, and whether it is sourceable]
   The reversal:   [the flip, in one sentence]
@@ -882,12 +1091,13 @@ their own. Each as:
    hook shape, and a thumbnail concept described as one frame of one scene: the
    location, the cast and the one object. The title's question is the one the narrator
    asks at the end of the cold open (§4.1), so the script is written toward that promise. The
-   creator checks both in vidIQ and decides. The thumbnail itself is built at Step 3
-   (§9.10).
+   title carries the primary keyword where it reads naturally, and never at the cost
+   of the hook. The creator checks both in vidIQ and decides. The thumbnail itself is
+   built at Step 3 (§9.10).
 
 Step 1 starts only once Round 2 is answered.
 
-### 6.5 · Intake output
+### 6.6 · Intake output
 
 **The word budget is the single most consequential number set at intake**, and
 it is arithmetic, not judgement: **target minutes × 175 wpm** (§8.1). Ten to
@@ -909,6 +1119,8 @@ TOPIC             [chosen]
 FORMAT            [Origin of the Ordinary / Economics of Paying / Decision]
 EPISODE           NIF0NN
 OUTLIER           [channel · video · VPH · multiple vs baseline]
+PRIMARY KEYWORD   [keyword · volume · competition]
+LESSONS           [the DO NOT REPEAT lines this episode must pass (§7.0)]
 THE OBJECT        [the one concrete thing]
 THE PAYER         [who pays — the POV anchor]
 TARGET RUNTIME    [n] min
@@ -933,6 +1145,29 @@ No assets, no prompts, no scene briefs — every duration in them would be wrong
 generates (§8.1), the read-aloud reference, the subtitle source, and what the word
 count and `reconcile.mjs` are computed from. Delivery is written into it with
 punctuation and sentence length; there are no audio tags.
+
+**The narration lives in `script.md` and nowhere else.** `beats.md` and
+`shots.json` point at a beat by its ID and quote at most the few words a cue lands
+on. A second copy of the narration drifts from the first, and every later step
+pays to read it twice.
+
+### 7.0 · Start from the lessons
+
+Before the first line is written, the scriptwriter reads `00_intake/postmortem.md`
+and `library/lessons.md`. Those two files are the reason this episode should
+retain better than the last one.
+
+- **Every DO NOT REPEAT line gets an answer in `beats.md`**, under a `Lessons`
+  heading: the rule, and the beat and line where this script meets it. A lesson
+  with no answer fails the Lessons gate (§12).
+- **Every KEEP line is used again**, in a new form. What held viewers last time is
+  the evidence for what holds them now.
+- **Where the last two episodes lost people, this one plans a re-hook.** If both
+  dipped at about the same share of runtime, the beat at that share of this
+  episode carries one of the §7.3 devices or the §7.4 staged character moment.
+- **The intro number sets the cold open's job.** If fewer than about seven in ten
+  viewers were still there at 0:30 last time, the story's first line is rewritten
+  until it is an image, not a premise.
 
 ### 7.1 · Beat IDs
 
@@ -1049,8 +1284,8 @@ cut. Anywhere the tongue trips is where the viewer leaves.
 
 ```
 B07   "The counter keeps four fifths"        EST 42s        HIGH
-      Narration:      [the line]
-      Words:          118
+      Narration:      script.md B07 (never copied here)
+      Words:          118   ← counted by script from the PLAIN block, never by eye
       The object:     [what persists from the previous beat]
       Tier:           2.5D
       Location:       deli (library) · angle: new, low over the till
@@ -1224,7 +1459,7 @@ could animate against a word.**
 
 **Always dry-run first.** `tts-nif.mjs NIF0NN --dry-run` lists the beats and the
 credit estimate and generates nothing. Voice generation is the point of no cheap
-return (§7.5), so the dry run is where a bad script is still free to fix.
+return (§7.7), so the dry run is where a bad script is still free to fix.
 
 ```bash
 for f in B*.mp3; do
@@ -1258,7 +1493,23 @@ They are exact — never estimated, never rounded to a tidy number.
 side of the player, and a label is not a hook.
 
 Written to `03_transcript/chapters.md` at the end of Step 2, ready to paste at
-upload.
+upload. The timestamps are computed from `reconcile.json`, never typed.
+
+### 8.4 · Mouth cues
+
+Rhubarb runs here, at the end of Step 2, on every beat where Lucky speaks to
+camera. It needs only the measured audio and the PLAIN block, so it is mechanical
+work, and doing it here keeps it out of the build session's context.
+
+```bash
+ffmpeg -i 02_narration/B07.mp3 -ac 1 -ar 16000 B07.wav
+C:\tools\rhubarb\Rhubarb-Lip-Sync-1.14.0-Windows\rhubarb.exe -f json \
+  --dialogFile B07.txt -o 03_transcript/mouth/B07.json B07.wav
+```
+
+`--dialogFile` takes the beat's PLAIN block from `script.md`, saved as a scratch
+`.txt`, and makes the shapes follow the real words. The WAV and the `.txt` are
+scratch files. The mp3 is never modified (§13.4).
 
 ---
 
@@ -1277,7 +1528,10 @@ approved cast pilot, and until then only its easing, typography and anti-fatigue
 rules apply. `animation-principles`, `shot-composition`, `motion-art-direction`,
 `kinetic-typography` and `remotion-video` still apply.
 
-**1 · Inventory what already exists. Build nothing yet.**
+**1 · Inventory what already exists. Build nothing yet.** Start from
+`video-os/library/INDEX.md` (§5.1), which answers most of this table in one file.
+Open a folder or a contact sheet only to check a specific angle or part. Anything
+3a adds to the library gets its line in `INDEX.md` in the same change.
 
 | Check | Where |
 | --- | --- |
@@ -1496,10 +1750,31 @@ episode:
 | **Cast** | Any character that is not Lucky's rig with parameters (§2.5) |
 | **Three planes** | Any frame has fewer than background, midground, foreground |
 
-**Then render the proxy and stop.** When the audit passes, report it with
-screenshots, render the review proxy, and put it in front of the creator. The
-creator says go, or returns every fix in one message. Claude never starts a
-full-quality render on its own judgement.
+**How the auditor looks, cheapest first** (§5.4):
+
+1. **Scripts first.** `ep-audit.mjs` and `ep-textaudit.mjs` measure contrast,
+   title-safe, overlap and text timing. The auditor reads their summary.
+2. **Contact sheets second.** Each beat's stills go into one grid image, three
+   across and four down, taken a second apart. That is enough to judge
+   composition, three planes, one subject, repetition and whether anything moves.
+3. **Full-size stills last**, and only for a frame the grid or a script flagged,
+   or for a §2.1 check that needs detail, such as line weight or contact shadow.
+
+**Then render the proxy, machine-check it, and stop.** When the audit passes,
+render the review proxy (§11.2) and run `motion-check.mjs` on it before grain is
+applied:
+
+```bash
+node scripts/motion-check.mjs <proxy.mp4> --episode ../../episodes/NIF0NN
+```
+
+It measures two laws on every frame of the episode instead of on samples: any
+stretch visually unchanged for 3 seconds or more (§3 law 11), and every shot
+outside 2–9 seconds (§3 law 2), each mapped to its beat. A held state is a
+failure and goes back to 3c. A long shot passes only if it is a continuous flow
+shot declared in `shots.json` (§10.7). Then report it with screenshots and put
+the proxy in front of the creator. The creator says go, or returns every fix in
+one message. Claude never starts a full-quality render on its own judgement.
 
 ### 9.6 · The clean-frame check
 
@@ -1635,19 +1910,23 @@ Any fix that moves a character or a camera on such a shot re-runs the gate.
 **The cast is always the 2D rig in Remotion** (§2.5), in every tier. There is no
 3D Lucky until a modelled, rigged 3D character is approved on its own pilot.
 
-**Lip sync comes from Rhubarb**, run after Step 2 on every beat where Lucky
-speaks to camera, never on estimated audio:
+**Lip sync comes from Rhubarb** mouth cues made at Step 2 (§8.4). Step 3 reads
+`03_transcript/mouth/B##.json` and never runs Rhubarb itself. The nine shapes
+(A–H, X) drive the mouth frame by frame.
 
-```bash
-ffmpeg -i 02_narration/B07.mp3 -ac 1 -ar 16000 B07.wav
-C:\tools\rhubarb\Rhubarb-Lip-Sync-1.14.0-Windows\rhubarb.exe -f json \
-  --dialogFile B07.txt -o 03_transcript/mouth/B07.json B07.wav
-```
+**Render only what moves.** Most plates cost far more than they need to:
 
-`--dialogFile` takes the beat's PLAIN block from `script.md`, saved as a scratch
-`.txt`, and makes the shapes follow the real words. The WAV and the `.txt` are
-scratch files. The mp3 is never modified (§13.4). The nine shapes (A–H, X) drive
-the mouth frame by frame.
+- **A locked-off camera with no character inside the plate (§2.5, the exception)
+  renders one plate frame.** The ambient life (a fan, a
+  flap board, steam) renders as its own small alpha pass, one loop long, and
+  Remotion loops it from `globalStartFrame + frame` (§9.3). A 9-second held shot
+  becomes one frame and a two-second loop instead of 216 full frames.
+- **Plates render in parallel.** Each Blender process takes its own frame range
+  (`-s` / `-e`), as many at once as GPU memory allows.
+- **EEVEE samples stay low.** A toon ramp has no soft falloff to clean up, so the
+  sample count that removes the ink's aliasing is the right one. It is set once
+  per location, on stills, and written into the location's build file.
+- **Blender runs with `--quiet`.** Its progress lines are not read by anyone.
 
 ### 9.9 · Archival and free sources
 
@@ -1677,7 +1956,7 @@ An item whose licence cannot be established does not go in the episode.
 ### 9.10 · The thumbnail
 
 **Built from the episode's own world, never generated** (§3 law 12). The
-thumbnail concept is agreed at Step 0 as one frame of one scene (§6.4). At Step 3
+thumbnail concept is agreed at Step 0 as one frame of one scene (§6.5). At Step 3
 it is built as a real shot: the location from a thumbnail-only angle, the cast
 posed with the expression pushed one step further than in the episode, the one
 object, and at most three words of typeset text. It is rendered as a 1920×1080
@@ -1865,31 +2144,23 @@ Two standing checks on anything filed:
 
 ### 10.6 · Motion in Resolve
 
-> **Superseded by §9.2.** Camera movement, element entrances and transitions are
-> now authored in **Remotion**, where they can be synced to `timing.json` words
-> and reproduced on every render. Resolve's remaining motion job is fade in and
-> fade out.
->
-> What follows is kept as the vocabulary of moves the camera should make. **Build
-> these in Remotion**, using `@remotion/paths`, `@remotion/noise` and
-> `@remotion/motion-blur` (§9.2.1), not as Fusion comps.
+Resolve's only motion job is the fade in and the fade out. Every other move is
+built in Remotion (§9.2), with `@remotion/paths`, `@remotion/noise` and
+`@remotion/motion-blur` (§9.2.1), because there it is synced to `timing.json` words
+and reproduced on every render. The vocabulary the camera works from:
 
-The vocabulary of moves the camera should make:
-
-- **2.5D parallax** — layers on separate `Transform` nodes under one camera move.
-  Background moves least, foreground most
-- **Elements entering** — left, right, top or bottom, with overshoot and settle.
-  Never linear, never a one-second opacity fade
-- **Motion blur** — on every moving element. This is what separates it from a
-  PowerPoint transition
-- **Depth ordering** — `Merge` node order. Elements arrive back-to-front
-- **Text, arrows, lines** — `TextPlus` and shape tools, animated on
+- **2.5D parallax.** One camera move over the layers: the background moves least,
+  the foreground most
+- **Elements entering** from left, right, top or bottom, with overshoot and
+  settle. Never linear, never a one-second opacity fade
+- **Motion blur** on every moving element
+- **Depth ordering.** Elements arrive back to front
+- **Text, arrows and lines** animate on; they never pop
 
 ### 10.7 · Transitions
 
-> **Built in Remotion now** (§9.2), with `@remotion/transitions`. The rules
-> below are unchanged; only the tool moved. Resolve still owns the fade in and
-> the fade out.
+Built in Remotion (§9.2), with `@remotion/transitions`. Resolve owns only the
+fade in and the fade out.
 
 **A cut is the default.** Beat-to-beat is a hard cut or a match cut on a shared
 object.
@@ -1901,7 +2172,9 @@ thing the scene system exists to prevent.
 
 **Continuous flow shots** — a single camera move carrying across three or four
 beats without a cut, with the scene changing around it — are the strongest tool
-available and should be used at least twice per episode.
+available and should be used at least twice per episode. Each one is declared in
+`shots.json` with `"flow": true`, which is what lets it run past nine seconds
+through the motion check (§9.5).
 
 ### 10.8 · Audio
 
@@ -2049,7 +2322,12 @@ are tuned for speed and the difference shows on flat colour.
 
 **QC before upload.** Measure and report: duration, resolution, frame rate,
 integrated LUFS, true peak, and completeness. A file that fails QC is not
-delivered.
+delivered. The numbers come from two commands, never from a player's info panel:
+
+```bash
+ffprobe -v error -show_entries format=duration:stream=codec_name,profile,width,height,r_frame_rate,pix_fmt,bit_rate -of compact 09_master/NIF0NN.mp4
+ffmpeg -hide_banner -nostats -i 09_master/NIF0NN.mp4 -map 0:a -af ebur128=peak=true -f null - 2>&1 | tail -n 12
+```
 
 ## 11 · Render discipline
 
@@ -2077,6 +2355,10 @@ what unlocks it:
 - ~540p — Remotion `--scale=0.25` to `0.5`
 - the grade applied with ffmpeg `lut3d`
 - **the real, final mixed audio**
+- hardware-encoded, since nobody archives it (§10.10)
+
+`motion-check.mjs` runs on it before the creator sees it (§9.5), so the watch is
+spent on pacing, music and look, not on finding frozen frames.
 
 The creator watches the whole episode once, with sound, and returns **every fix
 in one message** — or says go, which is recorded as `creatorGo` in
@@ -2123,60 +2405,98 @@ and then ask. This is CLAUDE.md rule 4 and it is not optional.
 
 ## 12 · Gates
 
-Every gate is pass/fail. A failure stops the step.
+Every gate is pass/fail. A failure stops the step. Gates are grouped by the step
+that checks them first, so a session reads only its own block (§0.1). A gate that
+is checked again later lists every step in its Step column.
+
+### 12.0 · Step 0 · Intake
 
 | Gate | Step | Test |
 | --- | --- | --- |
-| Evidence | 0 | A proven outlier clears the VPH floor |
+| Evidence | 0 | A proven outlier clears the §6.2 floor for its age and is ≥ 3× its channel's baseline, measured by `vph.mjs` |
 | POV | 0 | The viewer is the one paying |
 | Object | 0 | One concrete object carries the episode |
 | Why | 0, 1 | Every §4.5 row answered in writing, none answered with the topic |
+| Location cap | 0, 3 | At most two new locations; no camera angle reused within or across episodes |
+| Postmortem | 0 | `00_intake/postmortem.md` covers the last two episodes: both numbers against the gates, every dip mapped to a beat with a named cause (§6.1) |
+| Keyword | 0 | One primary keyword per candidate, with volume and competition read in vidIQ |
+| No spend | 0, 5 | No vidIQ credit spent and nothing on the channel changed by Claude (§6, browser rules) |
+
+### 12.1 · Step 1 · Script
+
+| Gate | Step | Test |
+| --- | --- | --- |
 | Front-loading | 1 | Mechanism starts by B04; never 3+ consecutive stat beats |
 | Humanizer | 1 | `humanizer` run on the script and beats; no fact added; read-aloud passed |
 | Object carries it | 1 | Every beat demonstrable with the object; sound-off test passed (§4.6) |
-| Voice | 2 | SAP Narrator on `eleven_multilingual_v2`, PLAIN block, speed 1.00, fixed seed; dry run before generation |
 | First payoff | 1 | Delivered and closed by ~40% |
 | Beat loops | 1 | No beat resolves without opening the next |
 | Stageable | 1 | Every beat names a place and a thing a scene can stage; `shots.json` written |
 | Cold-open story | 1 | 15–30 s, true, the payer in it, one laugh in the picture, ends on the weird fact; nothing before it |
 | Pre-VO lock | 1 | Script, citations, runtime, cold open all final |
+| Uniqueness quota | 1, 3 | 2–3 net-new visible mechanisms, named at Step 1, built at Step 3 |
+| Promise delivery | 1 | The promise lands by ~40% |
+| Lessons | 1 | Every DO NOT REPEAT line from the postmortem and `lessons.md` answered in `beats.md` with a beat and a line (§7.0) |
+
+### 12.2 · Step 2 · VO
+
+| Gate | Step | Test |
+| --- | --- | --- |
+| Voice | 2 | SAP Narrator on `eleven_multilingual_v2`, PLAIN block, speed 1.00, fixed seed; dry run before generation |
 | Reconcile | 2 | Every EST replaced by a measured duration |
 | FPS | 2 | `--fps 24` passed to transcribe, build-timing and reconcile |
 | Word timing | 2 | `timing.json` written; every beat has word-level entries |
 | WPM | 2 | Every beat inside its band, or logged for Resolve correction. Never re-generated |
 | One render | 2 | Zero beats generated twice. `--force` used only on a broken file, never on pace |
+| Chapters | 2 | Exact starts from `timing.json`, phrased as answers not labels |
+| Mouth cues | 2 | `03_transcript/mouth/B##.json` for every beat where Lucky speaks, `--dialogFile` used (§8.4) |
+
+### 12.3 · Step 3 · Build
+
+| Gate | Step | Test |
+| --- | --- | --- |
 | Stills review | 3 | Every beat passes on stills; `stills-audit.json` verdict PASS, written by `nif-auditor` |
 | Clean frame | 3 | Every row of §9.6 passes on every beat |
-| Lip sync | 3 | Lucky's mouth driven by Rhubarb cues from the measured VO, `--dialogFile` used |
+| Lip sync | 3 | Lucky's mouth driven by the Step 2 Rhubarb cues (§8.4) |
 | Licence | 3 | Every archival and 3D item's licence, source URL and credit in `stock-ledger.json` |
 | Foot lock | 3 | Every shot with feet on screen measured by `footlock_check.py` on 10 stills; max ≤1 px |
 | One drawing | 3 | Every §2.1 row passes on every shot: line, shading, light, contact shadow, focus, motion, occlusion |
 | Cast | 3 | Every character is Lucky's rig with parameters; no second rig |
-| Location cap | 0, 3 | At most two new locations; no camera angle reused within or across episodes |
 | Three planes | 3 | Every frame has background, midground, foreground |
 | Layer alpha | 3 | Element passes are `yuva444p10le` |
-| Uniqueness quota | 1, 3 | 2–3 net-new visible mechanisms, named at Step 1, built at Step 3 |
 | Title question | 3 | Nothing before the story and no channel card; the title's question spoken at the story's end (~0:15–0:35) and landing in the world, never on a blank field |
 | Section cards | 3 | A 1–3 word card after each mini-payoff; entrance varies per episode |
 | No stock | 3 | Zero stock footage or photos; archival only as real documents inside a scene |
 | Review proxy | 3, 4 | Full-length ~540p pass with final audio watched before any full-quality render |
-| Silent picture | 4 | Picture rendered without audio; mix muxed last |
 | Render go | 3, 4 | Proxy only after audit PASS; full-quality renders only with `creatorGo` recorded at the proxy watch |
-| Audio provenance | 4 | Every music track’s title, artist and attribution recorded |
-| No held state | 3 | No composition visually unchanged for more than ~3s; nothing mounts fully formed |
+| No held state | 3 | No composition visually unchanged for more than ~3s, measured on the proxy by `motion-check.mjs`; nothing mounts fully formed |
 | Word-driven | 3 | Beats animate against `timing.json` words, not against total duration |
 | Layer render | 3 | Passes at 1920×1080 ProRes 4444; kept permanently |
-| Look unchanged | 4 | Show LUT, location balance, grain and vignette taken from the library, not re-tuned |
 | Thumbnail | 3 | Built from the episode's own set and cast, readable at 10%, shows something the episode delivers |
 | Cost recorded | 3 | Agent minutes per finished second, split 3a/3b/3c, in `project.json` |
-| Delivery format | 4 | 1920×1080 @ 24fps, 10-bit Main10, ~20 Mbps, one file |
 | No AI imagery | 3 | Zero AI-generated video, images, textures or words anywhere on screen |
+| Motion check | 3 | `motion-check.mjs` on the proxy: zero held states; every shot 2–9 s or a declared flow shot |
+
+### 12.4 · Step 4 · Resolve
+
+| Gate | Step | Test |
+| --- | --- | --- |
+| Silent picture | 4 | Picture rendered without audio; mix muxed last |
+| Audio provenance | 4 | Every music track’s title, artist and attribution recorded |
+| Look unchanged | 4 | Show LUT, location balance, grain and vignette taken from the library, not re-tuned |
+| Delivery format | 4 | 1920×1080 @ 24fps, 10-bit Main10, ~20 Mbps, one file |
 | Stub read | 4 | Every new Resolve method’s TypedDict read before it is called |
 | Capability probe | 4 | Anything outside the verified table probed on a disposable project first |
 | Loudness | 4 | −14 LUFS integrated, −1.5 dBTP, music −22 dB |
 | Delivery QC | 4 | Rendered file passes spec |
-| Promise delivery | 1 | The promise lands by ~40% |
-| Chapters | 2 | Exact starts from `timing.json`, phrased as answers not labels |
+
+### 12.5 · Step 5 · Publish and learn
+
+| Gate | Step | Test |
+| --- | --- | --- |
+| Pre-publish check | 5 | vidIQ content score and Review issues read on the uploaded, unpublished video; every free fix handed to the creator (§14.1) |
+| Description | 5 | The four obligations of §13.3 are in the published description |
+| Review | 5 | `10_review/review.md` written at 48 hours and 7 days; `lessons.md` updated and within 40 lines (§14.2–14.3) |
 
 ---
 
@@ -2187,7 +2507,9 @@ Every gate is pass/fail. A failure stops the step.
 | Layer | Tool |
 | --- | --- |
 | Script, beats | Claude; `humanizer` skill; MarkItDown CLI for source documents |
-| Research | YouTube Studio and vidIQ read in Chrome (Rama); `yt-dlp` for transcripts; `watch` skill for videos |
+| Research | YouTube Studio and vidIQ read in Chrome (Rama); `yt-dlp` for transcripts, cleaned by `vtt-clean.mjs`; `watch` skill for videos |
+| Evidence and review | `vph.mjs` (views per hour and outlier multiple), `dip-map.mjs` (retention moments onto beats), in `engine/remotion/scripts/` |
+| Motion audit | `motion-check.mjs`: ffmpeg `freezedetect` and scene cuts on the proxy |
 | Voice | ElevenLabs, SAP Narrator (Voice Design) on `eleven_multilingual_v2`, one take per beat |
 | Timing | whisper.cpp, local, word-level |
 | Graphics | Remotion 4.0.526+, with Remotion Agent Skills installed |
@@ -2255,7 +2577,9 @@ and approves it first.
 pastes in its own section of this runbook at start.
 
 **Those skills find their section by its heading.** Every top-level heading in
-this file keeps the form `## N · Title`, and §9.5 and §9.7 keep theirs. A change
+this file keeps the form `## N · Title`, and §9.5 and §9.7 keep theirs. §12 is
+split into one block per step (`### 12.N`), so a skill can paste in only its own
+step's gates. `nif-researcher` loads §6 and §14, and §12.0 and §12.5. A change
 that renumbers or renames a heading updates the `sed` patterns in the six
 `nif-sec-*` skills in the same change, or the agents start with the wrong rules.
 
@@ -2267,3 +2591,59 @@ the creator has seen its file.
 **MCP servers are scoped to the agent that needs them.** The archive MCPs load
 only inside `nif-builder`, Resolve only inside `nif-finisher`, so the orchestrator
 carries neither.
+
+---
+
+## 14 · Step 5 · Publish and learn
+
+**What one episode teaches reaches the next one as a file, not as a memory.** This
+step closes the loop: it checks the upload before it goes public, reads how the
+episode did, and writes down what the next Step 0 and Step 1 must not repeat.
+
+### 14.1 · Before publish
+
+The creator uploads the delivered file as private or scheduled. Claude never
+uploads and never clicks Save in Studio or vidIQ (§6, browser rules).
+
+1. **Read the vidIQ Optimize tab for the uploaded video**: the content score and
+   every issue on its Review tab. Claude lists each free fix, such as the primary
+   keyword missing from the description's first lines, missing chapters, or a
+   title that truncates, and marks any that `lessons.md` has seen before. The
+   creator makes the edits.
+2. **Check the four obligations of §13.3** against the description as it stands:
+   the AI block, the credits, the sources with years, and the chapters from
+   `03_transcript/chapters.md`.
+3. **Test the thumbnail rather than guess it.** The two or three variants built at
+   Step 3 (§9.10) go into Studio's *Test & compare*, and the title too where the
+   account offers it. The creator sets it up.
+4. **Add the episode to `library/shipped.md`**: code, title, publish date. Its
+   numbers are filled in at 7 days.
+
+### 14.2 · The 48-hour and 7-day reviews
+
+**At 48 hours** (§1.3, the seed test): impressions, click-through rate and views,
+read in Studio. A click-through rate under 6% on a healthy number of impressions
+is a packaging problem, and packaging is the only lever still open. Claude
+recommends one change, a thumbnail or a title, and the creator decides.
+
+**At 7 days**: the full read of §6.1, the same tables, the same `dip-map.mjs`
+mapping and the same shape, written to the episode's own `10_review/review.md`.
+The next Step 0 reads this file instead of browsing (§6.1). If no session runs the
+7-day review, the next Step 0 does it.
+
+`library/shipped.md` gets the episode's CTR and APV on the same day.
+
+### 14.3 · The lessons file
+
+`library/lessons.md` is the channel's standing "do not repeat" list. Step 1 must
+answer every line in it (§7.0), so it stays short and exact.
+
+- **One line per lesson:** the rule, the cause it prevents, the episodes it was
+  seen in, and the step that checks it. *"The mechanism starts by 1:30 — B05 stat
+  run lost 9 points — NIF008, NIF009 — Step 1."*
+- **A cause goes in when it appears in two episodes.** One episode is noise (§1.3).
+- **A lesson comes out** after three episodes in a row pass without it, or when it
+  is promoted into this runbook as a permanent rule through §13.5.
+- **40 lines at most.** Over that, the oldest lessons are promoted or retired first.
+- **A vidIQ Review issue that returns** becomes a line, checked in §14.1.
+
