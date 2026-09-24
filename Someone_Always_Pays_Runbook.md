@@ -23,6 +23,11 @@ costs money, needs a login, or cannot be undone. Nothing runs past a failed gate
 **The channel's promise:** when something looks free or cheap, this channel shows
 you who actually paid, by name.
 
+**The sub-niche, in one word: Whodunit.** *Every episode, someone takes your money,
+legally. By the end, you know who.* Each episode is a mystery with a crime, suspects,
+clues, a red herring and a reveal, and the culprit is named at the end, never assumed
+at the start (§4.2).
+
 **The narrator's stance:** polite disbelief. Not angry, not conspiratorial —
 quietly unwilling to leave "it's free" as a complete sentence, and a little
 amused, every time, that this needs saying out loud. The reveal is always aimed
@@ -33,10 +38,10 @@ know who."*
 
 ### 0.1 · Reading this file
 
-This file is about 53,000 tokens. A session that reads all of it before starting
+This file is about 59,000 tokens. A session that reads all of it before starting
 work has used a large share of its context on rules it will never apply. So every
 session reads **§0, §3, and then only the sections for its step**, which comes to
-between 5,000 tokens (Step 2) and 21,000 (Step 3 build):
+between 5,500 tokens (Step 2) and 24,000 (Step 3 build):
 
 | Step | Read | Skip |
 | --- | --- | --- |
@@ -58,7 +63,15 @@ read it again later in the session. The rest of the token rules are in §5.4.
 
 ### 1.1 · Positioning
 
-**Hidden Economics, from the payer's point of view.**
+**The Money Whodunit: hidden economics, from the payer's point of view, told as a
+mystery.**
+
+The mystery is the engine and the payer's point of view is the lane. An explainer
+keeps *why* open, and the viewer guesses it before clicking. A whodunit keeps *who*
+open, and that can't be guessed, only revealed. **The popular answer to a topic (what
+other channels say) is this channel's first suspect, and it gets cleared on screen.**
+That is why a viewer who has already seen the explainers still has a reason to watch
+ours (§6.2.1).
 
 The distinction is the whole channel. The saturated lane is owner POV — "so you
 want to own X, here's every cost that kills your margin." The lane this channel
@@ -71,24 +84,24 @@ wrong lane and gets rewritten before Step 1 ends.
 
 ### 1.2 · Formats
 
-Three formats. **Every one of them runs on a history spine**: the episode is told
-as a story in time, with real people making real decisions, in the way
-Oversimplified tells a war. The economics is the payoff the story arrives at.
+One format, the case (§4.2), and three kinds of case. **Every one of them runs on
+a history spine**: the suspects' alibis are told as stories in time, with real people
+making real decisions, the way Oversimplified tells a war. The economics is the clue
+the story leaves behind.
 
-| Format | Shape | Example |
+| Case type | The crime | Example |
 | --- | --- | --- |
-| **The Origin of the Ordinary** (flagship) | How an everyday thing's business model was *invented*. The story runs from the first person who sold it to the price the viewer pays today | Why printer ink costs more than champagne |
-| **The Economics of Paying** (flagship) | One payment, followed to every place it lands. The history is where each cut of it came from: who wrote the rule, and when | Why airport food is so expensive |
-| **The Decision That Changed Everything** | One turning-point decision, the story around it, and the rules everyone has lived under since | The day airlines started charging for bags |
+| **The bait** | Something is free or cheap, and someone else is paying for it. Who? | Your free game was paid for by one stranger |
+| **The fee** | One payment, and a cut of it is gone. Who took it? | Who took $6 from your airport sandwich? |
+| **The rule** | A decision everyone lives under, and who it quietly pays | The rule that set the price of cinema popcorn |
 
-"How is a free or cheap thing funded" is not a separate format. It is the
-question an Economics of Paying episode answers when the price is zero.
+"How is a free or cheap thing funded" is not a separate format. It is a bait case.
 
 **An episode earns its history by ending somewhere the viewer's own money is.**
 A story that never arrives at the viewer's wallet is a history video, and this is
 not a history channel.
 
-The Origin of the Ordinary is the format with a bottomless well. Every story
+The history spine is what gives the cases a bottomless well. Every story
 brings its own characters, hook and twist, so it never tires the viewer the way a
 list or a countdown does.
 
@@ -428,6 +441,18 @@ the inserts it uses at Step 1, and the mix changes between episodes (§4.8):
 | **Archival case file** | A real document in a character's hand, pinned to a wall or lying on a desk (§9.9) |
 | **Numbers** | A price tag, a till display, a chalkboard, a stamped receipt |
 
+**The case devices.** Each episode uses **three of these six, never the same three
+twice in a row**, and stages each one differently every time (§4.8):
+
+| Device | Lives in the world as |
+| --- | --- |
+| **The money meter** | A running count of what was taken: a till screen, a scoreboard, a receipt printing. Accent colour, because it is money |
+| **The lineup** | The suspects side by side: a police lineup, a dinner table, a courtroom bench, a jury box |
+| **Suspect cards** | A freeze frame with a name, a role and a year, on a real document when one exists |
+| **The evidence board** | Red string, photos, the receipt pinned in the middle |
+| **The reconstruction overlay** | The cold open replayed with the hidden hands, cuts and arrows drawn over it. It reuses the cold open's own compositions plus one overlay layer, and is never re-staged |
+| **Cleared / guilty stamps** | A rubber stamp landing on a suspect card, with its sound |
+
 Type on a 3D surface rides that surface through the camera move, through the
 shot's anchors (§9.8). A foreground set piece never crosses typeset text unless
 the occlusion matte covers it.
@@ -491,7 +516,7 @@ These are checkable, and they are checked. A frame that breaks one does not ship
 ## 4 · The format doctrine
 
 **One episode = one concrete object carrying one abstract mechanism, structured
-as a withheld answer.**
+as a whodunit: the withheld answer is *who*.**
 
 ### 4.1 · The cold open
 
@@ -537,18 +562,21 @@ does (§4.8).
 
 ### 4.2 · The spine
 
-| Position | What happens |
-| --- | --- |
-| 0:00–0:30 | The story (§4.1). It ends on the weird fact |
-| ~0:15–0:35 | The title's question, landing in the world. The promise is stated, not answered |
-| by ~5% | The history starts: the first person, the first decision, the date |
-| by ~10% | The promise restated as a question the viewer wants answered |
-| by ~15% | The mechanism starts. **No stat block before this point** |
-| by ~40% | **First payoff** — one surprising fact delivered *and closed* |
-| ~40–70% | Escalation. Each beat ends on a question the next answers |
-| ~70% | A new question opens — who is actually behind this |
-| ~85% | The reversal. Recontextualises the first payoff |
-| close | Answers the cold open's question in the cold open's own words, plus one "here's what you keep" line, then the sign-off |
+| Position | Movement | What happens |
+| --- | --- | --- |
+| 0:00–0:30 | **The Crime** | The story (§4.1): Lucky pays, and something small and wrong is visible in the picture. It ends on the weird fact |
+| ~0:15–0:35 | | The title's question, landing in the world. The promise is stated, not answered |
+| by ~10% | **The Case** | What was taken, from how many people, every year: one sourced number. The promise restated as *who* |
+| ~10–25% | **The Suspects** | Three to five parties who each could have taken it, introduced. **The first is the popular answer** (§6.2.1) |
+| by ~15% | | The mechanism starts, as the first alibi. **No stat block before this point** |
+| ~25–60% | **The Alibis** | Each suspect's story as history: the first person, the decision, the date. Clues accumulate. Each alibi ends on a question the next answers |
+| by ~40% | | **First payoff: the red herring is cleared**, one surprising fact delivered *and closed* |
+| ~60–80% | **The Reconstruction** | The crime replayed with what we now know drawn over it. A new question opens: if not them, then who? |
+| ~85% | **The Reveal** | The culprit, by name. Often a rule, a structure or another customer. This is the reversal (§2.6), and it recontextualises the first payoff |
+| close | **The Close** | Answers the cold open's question in the cold open's own words, one "here's what you'll notice now" line (never advice), then the sign-off |
+
+**The mix is enforced here, not hoped for (§4.6):** the Crime, Case, Suspects,
+Reconstruction and Reveal are story. The mechanism lives inside the Alibis.
 
 ### 4.3 · The front-loading law
 
@@ -574,6 +602,7 @@ does not ship.
 | Asked of | The question | Fails when |
 | --- | --- | --- |
 | The title and thumbnail | **Why would a stranger click this instead of scrolling?** | The answer is "because it is about printer ink." That is a subject, not a reason |
+| The topic | **Why would someone who already watched the other videos on this watch ours?** | The answer is "ours is better made." It has to be *their answer is our red herring* (§6.2.1) |
 | The cold open | **Why would they still be here at the title's question?** | The story was funny but opened nothing they need closed |
 | Every beat | **Why does the viewer want the next beat?** | The beat answered everything it raised. See §4.4 |
 | The payoff | **Why is this surprising?** | It confirms what they already assumed |
@@ -587,7 +616,10 @@ never the reason anybody watches.
 
 ### 4.6 · Show it with the object, never define it
 
-**The mix is 40% education, 60% entertainment.** This is a cinematic
+**The mix is 30% education, 70% entertainment, and it is measured.** Every beat in
+`beats.md` carries a mode: STORY, COMEDY or MECHANISM. MECHANISM stays at or under
+35% of runtime, and no run of MECHANISM beats lasts longer than 45 seconds without a
+story cut (§12.1). This is a cinematic
 documentary, not a lecture. The target is bingeability: somebody finishes this
 one and wants the next one. An episode that teaches perfectly and entertains
 nobody has failed at the only job that moves §1.3's two numbers.
@@ -648,7 +680,8 @@ the cheapest possible tell that it is a template with the nouns swapped, and it
 is the single failure the creator has flagged most often.
 
 The constants are the cast rig, the channel palette, the accent, the progress
-rule and the sign-off (§2.7). A location may return, but only
+rule, the sign-off and the case spine (§4.2). The case devices rotate: three of six
+per episode, never the same three twice in a row (§2.8). A location may return, but only
 from a new angle. **Everything else is rebuilt.**
 
 **This is a monetisation rule, not a taste rule.** The platform judges a channel
@@ -664,7 +697,8 @@ structure matters as much as varying content.
 
 ```
 STEP 0   INTAKE          → 0a postmortem of the last two episodes · 0b evidence
-                            and keywords in vidIQ · 0c topic and shape. Creator decides
+                            and keywords in vidIQ · 0c the case test · 0d topic
+                            · 0e shape. Creator decides
 STEP 1   SCRIPT + BEATS  → and nothing else. Full stop. Starts from the lessons
    ↓     ── PRE-VO LOCK: script, citations, runtime, cold open all final ──
 STEP 2   VO + RECONCILE  → ElevenLabs per beat, whisper timing, real durations,
@@ -731,7 +765,7 @@ downgrade.
 | Step | Agent | Model | Why |
 | --- | --- | --- | --- |
 | 0a–0b · Collect (browser) | a subagent of `nif-researcher` | Sonnet 5, medium | Reading Studio and vidIQ pages is mechanical, and page text is bulky. It returns the fixed tables of §6.1–6.2 and nothing else |
-| 0c · Decide | `nif-researcher` | Opus 5.5, medium | Judgment-heavy, short. It works only from the collected tables |
+| 0c–0e · Case test and decide | `nif-researcher` | Opus 5.5, medium | Judgment-heavy, short. It works only from the collected tables; the cold-answer test runs in a separate Haiku call on purpose |
 | 1 · Script | `nif-scriptwriter` | **Opus 5.5, high** | Highest leverage in the pipeline. Retention is written here, not edited in later |
 | 2 · VO + reconcile | `nif-voice` | Haiku 4.5 (Sonnet 5, low, if it stumbles) | Four fixed commands and a check of their output |
 | 3a · Library | `nif-builder` | **Opus 5.5, high** | A new location, a new cast parameter or a new shot template. Built once, reused for every episode after |
@@ -807,9 +841,10 @@ treatment to use, or how much research is needed — those are this runbook's jo
 | 1 | Reads §0.1's Step 0 sections, `library/shipped.md`, `library/lessons.md`, and the `10_review/` of the two latest published episodes | — | No |
 | 2 | **0a** · The postmortem of the last two episodes (§6.1) | `00_intake/postmortem.md` | Only for a login |
 | 3 | **0b** · Evidence and keywords in vidIQ Research, then `vph.mjs` on the shortlist (§6.2) | `00_intake/evidence.md` | Only for a login |
+| 3½ | **0c** · The case test on every shortlisted topic (§6.2.1): suspects, red herring, cold answer, why ours | `00_intake/case-test.md` | No |
 | 4 | Writes the vidIQ prompt, with Claude's own recommendation in it (§6.3) | `00_intake/vidiq-prompt.md` | **Yes.** The creator runs it in vidIQ and pastes the answer back |
-| 5 | **0c** · Round 1, topic (§6.5) | — | **Yes** |
-| 6 | The full research pass, then Round 2, shape (§6.5) | — | **Yes** |
+| 5 | **0d** · Round 1, topic, with the case test results (§6.5) | — | **Yes** |
+| 6 | **0e** · The full research pass, then Round 2, shape and packaging (§6.5) | — | **Yes** |
 | 7 | The intake output (§6.6) and the Step 1 handoff prompt (§5.3) | `project.json` | Done |
 
 Rows 2 and 3 run in a browsing subagent on Sonnet (§5.2), which hands back the
@@ -982,6 +1017,27 @@ If no candidate clears the floor, Claude says so plainly rather than lowering th
 bar. Three consecutive failures to clear it means the floor itself gets
 re-examined — small-niche channels may not clear a flat number.
 
+### 6.2.1 · The case test
+
+**Demand proves people want the topic. The case test proves it can be a mystery.**
+Every shortlisted topic passes all nine rows before it goes to Round 1, written to
+`00_intake/case-test.md`:
+
+| # | Test | Passes when | How |
+| --- | --- | --- | --- |
+| 1 | **Demand** | The evidence gate passed (§6.2) | `vph.mjs`, vidIQ |
+| 2 | **The victim** | A person paying, and one sourced number for what it costs them a year | Research |
+| 3 | **The suspects** | Three or more parties who plausibly take a cut, each sourceable | Research |
+| 4 | **The red herring** | The answer the top three competitor videos give is incomplete or wrong, and our research shows why | Their transcripts through `vtt-clean.mjs` |
+| 5 | **The cold answer** | A fresh model, given only the title's question, does **not** name our culprit | `claude -p --model haiku "Answer in one line: <question>"` |
+| 6 | **The culprit** | Named, sourced, surprising, and legal: no crime is alleged | Research |
+| 7 | **Why ours** | Three specific things ours has that each of the top three videos lacks, in a table. "Better animation" doesn't count | vidIQ Videos tab, transcripts |
+| 8 | **Stageable** | One object, at most two new locations (§2.4) | Library `INDEX.md` |
+| 9 | **Safe and evergreen** | No news peg, advertiser-safe, and no advice needed to close it | Judgment |
+
+A topic that fails row 4 or 5 is an explainer, not a mystery. It goes back to the
+shortlist whatever its demand.
+
 ### 6.3 · The vidIQ prompt
 
 **Claude brings its own answer to vidIQ and asks vidIQ to beat it.** The prompt
@@ -1039,7 +1095,9 @@ ALTERNATES
 7. NICHE BENDING. What proven format does it use, and which market has that
    format never been used in? Do not force a bend that weakens the concept.
 8. WHY WOULD A VIEWER WHO ALREADY SAW IT WATCH MINE? Be specific. "Make it
-   better" is not an answer.
+   better" is not an answer. My channel tells each topic as a whodunit: what
+   answer do the popular videos give (my red herring), and what would the
+   surprising real answer be?
 9. KEYWORD AND TITLE. The primary keyword you would build the title on, and
    three titles in the shape: an outlier subject, a curiosity gap, a promised
    payoff.
@@ -1070,6 +1128,9 @@ for the creator to name their own. Each as:
   The outlier:    [video · channel · age · VPH · multiple, ours and vidIQ's]
   The keyword:    [primary keyword · volume · competition]
   The lessons:    [how this angle avoids each DO NOT REPEAT in postmortem.md]
+  The case:       [victim · suspects (red herring first) · culprit hypothesis]
+  Cold answer:    [what a fresh model says, and that it isn't our culprit]
+  Why ours:       [the three things the top videos lack]
   The mechanism:  [one line]
   The number:     [the figure that carries it, and whether it is sourceable]
   The reversal:   [the flip, in one sentence]
@@ -1118,7 +1179,9 @@ Written to `project.json`:
 
 ```
 TOPIC             [chosen]
-FORMAT            [Origin of the Ordinary / Economics of Paying / Decision]
+CASE TYPE         [the bait / the fee / the rule]
+THE CASE          [victim · suspects (red herring first) · culprit, all sourced]
+CASE DEVICES      [the three of six this episode uses (§2.8)]
 EPISODE           NIF0NN
 OUTLIER           [channel · video · VPH · multiple vs baseline]
 PRIMARY KEYWORD   [keyword · volume · competition]
@@ -1240,6 +1303,14 @@ happens to the number"* — pull a drifting viewer back into the room.
 **7 · Spoken signposts.** The section card (§4.7) has an audio half. The card
 lands and the narration names it in the same breath.
 
+**8 · The lineup.** The suspects named in one breath, early, with the promise that
+one of them is lying: *"Four suspects. One of them has your six dollars. It isn't
+the one you think."* It is forward-promise ordering (device 1) in the case's own
+language.
+
+**9 · The reconstruction.** The cold open played again with the hidden hands drawn in
+(§2.8). The viewer rewatches something they already saw and sees it differently.
+
 **Satisfaction, not watch time.** The platform optimises for whether the viewer
 left satisfied, not for how long they stayed. A viewer leaving because they got
 the answer is a good outcome. A viewer leaving because the episode stalled is
@@ -1299,6 +1370,7 @@ B07   "The counter keeps four fifths"        EST 42s        HIGH
       Camera:         pull, medium → wide. Reason: reveal who else is paid
       Loop:           opens "so where does the rest go" — B08 answers
       Peak:           on "four fifths"
+      Mode:           MECHANISM   ← STORY · COMEDY · MECHANISM (§4.6)
 ```
 
 **Every duration at this step is marked `EST` and is wrong.** It exists only so
@@ -1575,6 +1647,14 @@ that needs an angle the kit lacks gets one new kit angle, made by the same scrip
 new session picks up from that file (§5.4). **A shot gets two fix attempts, then it
 goes down the ladder (§9.8.2).** It never gets a third.
 
+**3b-0 · The cold open first.** Before any other shot, the cold open (§4.1) is
+built and rendered as a proxy with its real VO and sound, and the creator watches it.
+It gets the episode's one moving 3D shot if there is one, 4–6 shots in 15 s, and 3+
+specific sounds. If the hook doesn't work, it is fixed while it is 15 seconds of work.
+
+**Step 1 writes intent; 3b writes placement.** `shots.json` from Step 1 names the
+location, the framing and who stands where. 3b fills `angle` and `mark` from the kit.
+
 **4 · 3c Scenes (Sonnet).** Remotion composes every shot from `shots.json`
 against `timing.json` words (§9.1). It builds the 2D sets, places the cast
 and applies the one-drawing rule (§2.1), then adds the inserts and the text.
@@ -1827,10 +1907,14 @@ Per ten minutes of runtime:
 
 | Tier | Share of runtime | Built by |
 | --- | --- | --- |
-| **2D scenes**: drawn sets and the cast | ~55% | Remotion |
-| **2.5D scenes**: a Blender location plate with the cast pinned in | ~25% | Blender plate + Remotion |
-| **3D hero shots**: two or three per episode, 6–10 s each | ~5% | Blender |
-| **In-world inserts**: type, maps, documents, numbers (§2.8) | ~15% | Remotion, inside a scene |
+| **L2 · Painted plates**: a Blender still from a kit angle (§9.8.1), rendered in three layers, with the cast, camera and light in Remotion | ~50% | Blender still + Remotion |
+| **L1 · Drawn 2D**: SVG sets, history scenes, the case devices | ~35% | Remotion |
+| **In-world inserts**: type, maps, documents, numbers, the money meter (§2.8) | ~12% | Remotion, inside a scene |
+| **L3 · Moving 3D**: a Blender camera move through the space | ≤ 3%: one shot, in the cold open | Blender |
+
+**The camera belongs to Remotion** on every L1 and L2 shot: push, drift, pan and rack
+focus over the plate's three layers, under 8% of frame width (§9.8.1). L3 is the only
+shot where Blender moves the camera.
 
 The mix moves between episodes (§4.8). A story set mostly in one real place leans
 2.5D, and a story that jumps across centuries leans 2D.
@@ -2509,6 +2593,9 @@ is checked again later lists every step in its Step column.
 | Gate | Step | Test |
 | --- | --- | --- |
 | Evidence | 0 | A proven outlier clears the §6.2 floor for its age and is ≥ 3× its channel's baseline, measured by `vph.mjs` |
+| Case test | 0 | All nine rows of §6.2.1 pass, written to `00_intake/case-test.md` |
+| Cold answer | 0 | A fresh model given only the title's question does not name the culprit |
+| Why ours | 0 | Three specific things ours has that each of the top three videos lacks |
 | POV | 0 | The viewer is the one paying |
 | Object | 0 | One concrete object carries the episode |
 | Why | 0, 1 | Every §4.5 row answered in writing, none answered with the topic |
@@ -2530,7 +2617,11 @@ is checked again later lists every step in its Step column.
 | Cold-open story | 1 | 15–30 s, true, the payer in it, one laugh in the picture, ends on the weird fact; nothing before it |
 | Pre-VO lock | 1 | Script, citations, runtime, cold open all final |
 | Uniqueness quota | 1, 3 | 2–3 net-new visible mechanisms, named at Step 1, built at Step 3 |
-| Promise delivery | 1 | The promise lands by ~40% |
+| Promise delivery | 1 | The promise lands by ~40%: the red herring is cleared |
+| Story ratio | 1 | Every beat has a mode; MECHANISM ≤ 35% of runtime; no MECHANISM run over 45 s (§4.6) |
+| Suspects sourced | 1 | Every suspect and the culprit named with a source; no crime alleged |
+| No advice | 1 | The close says what the viewer will notice, never what they should do |
+| Case devices | 1, 3 | Three of the six devices, not the same three as the last episode (§2.8) |
 | Lessons | 1 | Every DO NOT REPEAT line from the postmortem and `lessons.md` answered in `beats.md` with a beat and a line (§7.0) |
 
 ### 12.2 · Step 2 · VO
@@ -2550,6 +2641,7 @@ is checked again later lists every step in its Step column.
 
 | Gate | Step | Test |
 | --- | --- | --- |
+| Cold open first | 3 | The cold open built and its proxy watched by the creator before any other shot is built |
 | Stills review | 3 | Every beat passes on stills; `stills-audit.json` verdict PASS, written by `nif-auditor` |
 | Clean frame | 3 | Every row of §9.6 passes on every beat |
 | Lip sync | 3 | Lucky's mouth driven by the Step 2 Rhubarb cues (§8.4) |
