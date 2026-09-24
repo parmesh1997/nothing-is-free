@@ -26,11 +26,12 @@ from bpy_extras.object_utils import world_to_camera_view
 from mathutils import Matrix, Vector
 
 argv = sys.argv[sys.argv.index("--") + 1:] if "--" in sys.argv else sys.argv[1:]
-out = os.path.abspath(argv[0] if argv else "styleframe_match.png")
+out = os.path.abspath(argv[0] if argv else "styleframe_match.png") + ("/" if (argv and argv[0].endswith("/")) else "")
 opt = {argv[i]: argv[i + 1] for i in range(1, len(argv) - 1, 2)}
 W, H = map(int, opt.get("--res", "1920x1080").split("x"))
 SAMPLES = int(opt.get("--samples", "64"))
 ENGINE = opt.get("--engine", "CYCLES")
+ANIM = int(opt.get("--anim", "0"))   # >0: render an N-frame shot instead of a still; out = frame prefix
 
 # ── reset ────────────────────────────────────────────────────────────────────
 bpy.ops.wm.read_factory_settings(use_empty=True)
@@ -254,24 +255,63 @@ box("splint", (0, -S, -S), (L - 1.25, 0.0, S), M["wood"], M["wood_cut"], "y", ma
 box("splint_wax", (L - 1.25, -S, -S), (L - 0.48, 0.004, S), M["wood"], M["wax_cut"], "y", matrix=MW)
 half_ellipsoid("head", (L - 0.3, 0, 0), (0.33, 0.2, 0.21), M["head"], M["head_cut"], MW)
 
+rig = bpy.data.objects.new("match_rig", None)
+scene.collection.objects.link(rig)
+for name in ("splint", "splint_wax", "head"):
+    bpy.data.objects[name].parent = rig
+
+
+def key(obj, path, frame, value):
+    setattr(obj, path, value)
+    obj.keyframe_insert(data_path=path, frame=frame)
+
+
+if ANIM:
+    # the strike: the head drags along the striker and stops at the contact point
+    key(rig, "location", 1, -along * 1.1)
+    key(rig, "location", 22, Vector((0, 0, 0)))
+
 # sparks where the head meets the striker
 import random
 
 random.seed(7)
 contact = tip + Vector((-0.04, 0.02, 0.0))
-for i in range(26):
-    a = random.uniform(-0.15, 0.85) * math.pi
-    e = random.uniform(0.1, 0.9)
-    dist = random.uniform(0.12, 0.95) ** 1.3
-    dirv = Vector((-abs(math.cos(a)) * 0.9, math.sin(a) * 0.5 - 0.15, e * 0.7)).normalized()
-    p = contact + dirv * dist
+def streak(i, dirv, dist, mat):
     length = 0.05 + 0.14 * dist
     r = random.uniform(0.006, 0.011)
     bm = bmesh.new()
     bmesh.ops.create_cone(bm, cap_ends=True, segments=8, radius1=r, radius2=r * 0.35, depth=length)
     rot = dirv.to_track_quat("Z", "Y").to_matrix().to_4x4()
-    bmesh.ops.transform(bm, matrix=Matrix.Translation(p) @ rot, verts=bm.verts)
-    obj_from_bm(f"spark{i}", bm, [M["spark_hot"] if dist < 0.2 else M["spark"]])
+    bmesh.ops.transform(bm, matrix=rot, verts=bm.verts)
+    return obj_from_bm(f"spark{i}", bm, [mat])
+
+
+def spark_dir():
+    a = random.uniform(-0.15, 0.85) * math.pi
+    e = random.uniform(0.1, 0.9)
+    return Vector((-abs(math.cos(a)) * 0.9, math.sin(a) * 0.5 - 0.15, e * 0.7)).normalized()
+
+
+if not ANIM:
+    for i in range(26):
+        dirv = spark_dir()
+        dist = random.uniform(0.12, 0.95) ** 1.3
+        o = streak(i, dirv, dist, M["spark_hot"] if dist < 0.2 else M["spark"])
+        o.location = contact + dirv * dist
+else:
+    # a spray that starts when the head bites and keeps coming, each streak living ~10 frames
+    for i in range(70):
+        dirv = spark_dir()
+        dist = random.uniform(0.3, 1.0) ** 1.2
+        o = streak(i, dirv, dist, M["spark_hot"] if i % 3 == 0 else M["spark"])
+        f0 = random.randint(16, ANIM - 4)
+        life = random.randint(7, 12)
+        for f, loc, sc in ((f0 - 1, contact, 0.0), (f0, contact, 0.001), (f0 + 1, contact + dirv * 0.08, 1.0),
+                           (f0 + life, contact + dirv * dist, 0.35), (f0 + life + 1, contact + dirv * dist, 0.0)):
+            o.location = loc
+            o.scale = (sc, sc, sc)
+            o.keyframe_insert("location", frame=f)
+            o.keyframe_insert("scale", frame=f)
 flash = bpy.data.lights.new("contact", "POINT")
 flash.color = hexrgb("#FFB25A")[:3]
 flash.energy = 6
@@ -279,6 +319,10 @@ flash.shadow_soft_size = 0.15
 fo = bpy.data.objects.new("contact", flash)
 fo.location = contact + Vector((-0.12, -0.12, 0.12))
 scene.collection.objects.link(fo)
+if ANIM:
+    for f, e in [(1, 0.0), (15, 0.0), (19, 9.0)] + [(f, random.uniform(4.5, 8.5)) for f in range(22, ANIM + 1, 3)]:
+        flash.energy = e
+        flash.keyframe_insert("energy", frame=f)
 
 # ── light: cool studio, one warm story light ─────────────────────────────────
 def area(name, loc, size, energy, color, aim=target):
@@ -317,6 +361,22 @@ focus = bpy.data.objects.new("focus", None)
 focus.location = tail + d * (L - 0.45)
 scene.collection.objects.link(focus)
 cd.dof.focus_object = focus
+focus.parent = rig
+if ANIM:
+    aim = bpy.data.objects.new("aim", None)
+    aim.location = target
+    scene.collection.objects.link(aim)
+    tc = cam.constraints.new("TRACK_TO")
+    tc.target = aim
+    tc.track_axis, tc.up_axis = "TRACK_NEGATIVE_Z", "UP_Y"
+    off = cam_loc - target
+    start = Matrix.Rotation(math.radians(-7), 3, "Z") @ (off * 1.18)
+    cam.location = target + start
+    cam.keyframe_insert("location", frame=1)
+    cam.location = target + off * 0.92
+    cam.keyframe_insert("location", frame=ANIM)
+    scene.frame_start, scene.frame_end = 1, ANIM
+    scene.render.fps = 24
 
 # ── render ───────────────────────────────────────────────────────────────────
 r = scene.render
@@ -343,15 +403,30 @@ def px(p):
     return [round(c.x * W, 1), round((1 - c.y) * H, 1)]
 
 
-anchors = {
-    "head_cut": px(MW @ Vector((L - 0.33, 0.0, 0.03))),
-    "wax_cut": px(MW @ Vector((L - 0.85, 0.004, 0.0))),
-    "wood_cut": px(MW @ Vector((L - 2.4, 0.0, 0.0))),
-    "striker": px(BOX_ROT @ Vector((-0.03, -1.7, 0.5))),
-    "sparks": px(contact + Vector((-0.25, -0.05, 0.25))),
-}
-with open(out.rsplit(".", 1)[0] + ".anchors.json", "w") as f:
-    json.dump({"width": W, "height": H, "anchors": anchors}, f, indent=1)
+def anchor_set():
+    R = rig.matrix_world
+    return {
+        "head_cut": px(R @ MW @ Vector((L - 0.33, 0.0, 0.03))),
+        "wax_cut": px(R @ MW @ Vector((L - 0.85, 0.004, 0.0))),
+        "wood_cut": px(R @ MW @ Vector((L - 2.4, 0.0, 0.0))),
+        "striker": px(BOX_ROT @ Vector((-0.03, -1.7, 0.5))),
+        "sparks": px(contact + Vector((-0.25, -0.05, 0.25))),
+    }
 
-bpy.ops.render.render(write_still=True)
-print("wrote", out)
+
+if not ANIM:
+    with open(out.rsplit(".", 1)[0] + ".anchors.json", "w") as f:
+        json.dump({"width": W, "height": H, "anchors": anchor_set()}, f, indent=1)
+    bpy.ops.render.render(write_still=True)
+    print("wrote", out)
+else:
+    frames = {}
+    for fr in range(1, ANIM + 1):
+        scene.frame_set(fr)
+        frames[fr] = anchor_set()
+    with open(out + "anchors.json", "w") as f:
+        json.dump({"width": W, "height": H, "fps": 24, "frames": frames}, f)
+    r.filepath = out + "####"
+    r.use_persistent_data = True
+    bpy.ops.render.render(animation=True)
+    print("wrote", ANIM, "frames to", out)
