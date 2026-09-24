@@ -27,7 +27,7 @@ from mathutils import Matrix, Vector
 
 argv = sys.argv[sys.argv.index("--") + 1:] if "--" in sys.argv else sys.argv[1:]
 OUT = os.path.abspath(argv[0]) + "/"
-opt = {argv[i]: argv[i + 1] for i in range(1, len(argv) - 1, 2)}
+opt = {argv[i]: argv[i + 1] for i in range(1, len(argv) - 1) if argv[i].startswith("--") and not argv[i + 1].startswith("--")}
 MODE = opt.get("--mode", "after")
 AFTER = MODE == "after"
 W, H = map(int, opt.get("--res", "1920x1080").split("x"))
@@ -483,4 +483,11 @@ else:
     scene.frame_set(1)
     r.filepath = f"{OUT}{MODE}_0001"
     bpy.ops.render.render(write_still=True)
+    if "--marks" in argv:   # Stage & Marks: measure this angle's floor once (§9.8)
+        sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        import marks
+        marks.export(scene, cam, [o for o in scene.objects if o.name.startswith("tile")],
+                     f"{OUT}{MODE}_marks.json", plate_png=f"{OUT}{MODE}_0001.png",
+                     bounds=(-6, 6, -4.5, 4.2), spacing=0.5, floor_lit_luma=0.78, floor_shade_luma=0.52,
+                     lights=[(a, b, 2.57) for a, b in PENDANTS])
 print("done", MODE, OUT)

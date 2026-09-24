@@ -58,3 +58,4 @@ tmp.json
 **/tmp.json
 *.tmp.wav
 03_transcript/tmp*
+__pycache__/

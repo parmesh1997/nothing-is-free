@@ -735,7 +735,9 @@ downgrade.
 | 1 · Script | `nif-scriptwriter` | **Opus 5.5, high** | Highest leverage in the pipeline. Retention is written here, not edited in later |
 | 2 · VO + reconcile | `nif-voice` | Haiku 4.5 (Sonnet 5, low, if it stumbles) | Four fixed commands and a check of their output |
 | 3a · Library | `nif-builder` | **Opus 5.5, high** | A new location, a new cast parameter or a new shot template. Built once, reused for every episode after |
-| 3b–3c · Plates and scenes | `nif-builder` | Sonnet 5, high | Filling `shots.json`, cameras, plates and scene composition from the library. Opus only to unpick a structural bug |
+| 3a · Angle kits | `nif-builder` | Sonnet 5, high | Twelve angles per new location, by script, plus one contact-sheet check |
+| 3b · Kit shots | `nif-builder` | Sonnet 5, medium | Picking angles and marks, running `place-check`. It is data entry against measured numbers. Batches of eight (§9.0) |
+| 3b · Hero shots, 3c · Scenes | `nif-builder` | Sonnet 5, high | Two or three moving Blender shots, and Remotion composition. Opus only to unpick a structural bug |
 | 3 · Stills audit | `nif-auditor` | Sonnet 5, medium | Independent of the builder; measures, never fixes |
 | 4 · Resolve | `nif-finisher` | Sonnet 5, medium | Opus 5.5 medium for grade and look decisions, and first-time Fusion authoring |
 | 5 · Publish and learn | `nif-researcher` | Sonnet 5, medium | Reading numbers and writing the review. Opus only when a lesson changes the runbook |
@@ -1547,14 +1549,31 @@ lacks: at most two new locations (§2.4), plus any new cast parameter, template 
 prop. Each is checked on a contact sheet of stills, and new work goes into
 `video-os/library/`, never into the episode, so the next episode inherits it.
 
-**3 · 3b Plates (Sonnet).** For every 2.5D and 3D shot in `shots.json`, the
-Blender pass (§9.8) produces:
-- a camera block
-- the plate
-- the occlusion matte
-- `05_layers/cams/cam-<shot>.json`, carrying the floor match, the anchors and the light
+**A new location is not finished until its angle kit is** (§9.8.1). 3a renders
+twelve locked-off angles for it. Each angle gets its plate layers, its passes and its
+measured floor marks. That is the Blender work 3b used to repeat for every shot.
 
-Every shot where a character's feet are on screen passes the foot-lock gate.
+**3 · 3b Shots (Sonnet, medium).** A 2.5D shot is **data, not a build**. For each
+one, `shots.json` names an unused angle from the location's kit and a mark for every
+character (§9.8.1). Then:
+
+```bash
+node scripts/place-check.mjs ../../episodes/NIF0NN --kits ../../library/locations --write
+```
+
+It checks every placement with numbers: the mark is free, in title-safe, the head is
+visible, the feet are visible (or declared hidden), nobody stands closer than 0.6 m
+to anyone else, no walk crosses furniture, no shot is bare, and no angle is used
+twice. Then it writes `05_layers/cams/place-<shot>.json`, which Remotion renders
+from. **No Blender run, no stills, no foot-lock measurement** for a locked-off shot.
+
+Blender runs in 3b only for the two or three moving hero shots (§9.8), and a shot
+that needs an angle the kit lacks gets one new kit angle, made by the same script.
+
+**3b works in batches of eight shots.** Each batch ends by writing
+`08_conform/3b-progress.json` (shots done, shots failed, the failure reasons), and a
+new session picks up from that file (§5.4). **A shot gets two fix attempts, then it
+goes down the ladder (§9.8.2).** It never gets a third.
 
 **4 · 3c Scenes (Sonnet).** Remotion composes every shot from `shots.json`
 against `timing.json` words (§9.1). It builds the 2D sets, places the cast
@@ -1899,7 +1918,8 @@ so a pillar can pass in front of Lucky. A shot without a matte keeps the
 fallback rule: nothing may cross in front of the character, and nothing may
 cross typeset text.
 
-**The foot-lock gate.** On every shot where a character's feet are on screen:
+**The foot-lock gate** applies to walks in a **moving** Blender shot (a hero shot).
+A kit shot is exact by construction (§9.8.1). On a moving shot with feet on screen:
 1. Blender draws a red pin at every planned footfall (`debug`).
 2. Remotion draws a cyan cross on each planted ankle (the `Pins-<shot>` composition).
 3. `footlock_check.py` measures the distance between them on 10 stills.
@@ -1927,6 +1947,65 @@ Any fix that moves a character or a camera on such a shot re-runs the gate.
   sample count that removes the ink's aliasing is the right one. It is set once
   per location, on stills, and written into the location's build file.
 - **Blender runs with `--quiet`.** Its progress lines are not read by anyone.
+
+### 9.8.1 · Stage & Marks
+
+**A location is a stage with measured marks, the way a theatre floor is taped.** The
+expensive part of a 2.5D shot was never the render. It was finding, one shot at a time,
+where a character can stand: inside a table or not, feet hidden or not, lit or not,
+and then proving foot lock on stills. All of that is a property of the angle, not of
+the shot, so it is measured once per angle in 3a.
+
+**The angle kit** lives in `video-os/library/locations/<name>/kit/`. Per angle `Ann`:
+
+| File | What it is |
+| --- | --- |
+| `Ann.plate.png` | The locked-off plate, with the ambient-life loop beside it when there is one (§9.8, render only what moves) |
+| `Ann.fg.png` | The foreground occluders only, with alpha: the matte, rendered once. Remotion stacks plate, cast, fg |
+| `Ann.mist.png`, `Ann.practical.png` | Depth for the blur (A4), and the practicals mask for bloom (A3) |
+| `Ann.marks.json` | Every floor mark (a 0.5 m grid): screen foot point, pixels per metre, `free`, `feet_visible`, `head_visible`, `in_frame`, `lit` (sampled from the plate itself), the nearest light's screen x, distance |
+| `Ann.cam.json` | The camera and the anchors: board corners, counter edges, the surfaces type rides on |
+
+`marks.export()` (`engine/remotion/lab/sap-upgrade-demo/marks.py`, promoted into
+`lib25d.py`) writes the marks after the plate renders. A kit of twelve angles is one
+script run and a contact sheet with the marks drawn on it, so it is checked once, by eye,
+in 3a.
+
+**What this buys, rule by rule:**
+
+| Rule | Before | With marks |
+| --- | --- | --- |
+| Foot lock (§9.8) | Pins, crosses, 10 stills, `footlock_check.py`, a re-run after every fix | Exact by construction: the rig's feet sit on a projected floor point of the same locked camera. **The gate applies only to walks in a moving Blender shot** |
+| Same ground (§2.1) | Judged per shot | `lit` comes from the plate at that exact spot. A character is lit if and only if the floor under it is |
+| Occlusion (§9.8) | A matte pass per shot | `Ann.fg.png` once per angle |
+| Empty slots, bare shots, a figure inside furniture | Found on stills, fixed, re-rendered | `place-check.mjs` fails them before anything renders |
+| Anti-repetition (§9.7) | Checked from memory | An angle is marked used in `INDEX.md` once an episode ships, and `place-check` refuses a reused one |
+
+**Camera movement on a kit shot happens in Remotion**: a push, a drift or a pan across
+the plate layers with parallax (background slow, cast and foreground faster), about
+3–8% of frame width. It reads as a camera and costs nothing. A real move through the
+space stays a Blender hero shot, two or three per episode (§9.7).
+
+**A walk on a kit shot** goes in a straight line between two marks. `place-check`
+refuses one that crosses furniture. The walk cycle's planted foot follows the projected
+line, which is exact because the camera does not move.
+
+### 9.8.2 · The shot ladder
+
+**A shot that fails a gate twice goes down a rung. It never gets a third attempt.**
+Ten hours of 3b is what a fix-and-rerender loop with no floor costs.
+
+| Rung | The shot becomes | Cost |
+| --- | --- | --- |
+| 1 · Hero | A moving Blender shot with the cast pinned in | Highest. Two or three an episode |
+| 2 · Kit | A locked-off kit angle, marks, a Remotion camera drift | Data plus one Remotion render |
+| 3 · Kit, feet out | The same, framed or cropped so no feet are on screen (a counter, a foreground crop) | Removes foot lock and most placement failures |
+| 4 · 2D | A 2D scene in Remotion (§2.3) | The cheapest shot the channel makes |
+
+The rung each shot lands on is recorded in `project.json`, next to the cost (§9.0
+step 7). An episode where more than a quarter of its 2.5D shots fell two rungs is a
+3a problem: the kit's angles do not fit how the channel stages scenes, and the next
+kit is planned differently.
 
 ### 9.9 · Archival and free sources
 
@@ -2084,6 +2163,22 @@ chain. Real archival documents are placed inside their scene in Remotion at nati
 size (§9.9) and never reach Resolve on their own.
 
 ### 10.5 · Timeline structure
+
+**The timeline is a file, not a session of clicks.** `make-timeline.mjs` writes the
+whole timeline as one OpenTimelineIO file from `timing.json`, with every clip on its
+beat's first frame. Resolve imports it in one MCP call:
+
+```bash
+node scripts/make-timeline.mjs ../../episodes/NIF0NN     # → 08_conform/timeline.otio
+```
+```python
+project.GetMediaPool().ImportTimelineFromFile(
+    r"<episode>\08_conform\timeline.otio", {"timelineName": "NIF0NN", "importSourceClips": True})
+```
+
+A changed beat is a re-run of the script and a re-import, never a hand edit.
+Missing layers are listed and placed as gaps, so a partial build still assembles.
+First use on this machine is a capability probe (§10.3) on `_NIF_CAPABILITY_PROBE`.
 
 ```
 V1 — scene base passes (plate or 2D set with the cast composited)
@@ -2459,7 +2554,10 @@ is checked again later lists every step in its Step column.
 | Clean frame | 3 | Every row of §9.6 passes on every beat |
 | Lip sync | 3 | Lucky's mouth driven by the Step 2 Rhubarb cues (§8.4) |
 | Licence | 3 | Every archival and 3D item's licence, source URL and credit in `stock-ledger.json` |
-| Foot lock | 3 | Every shot with feet on screen measured by `footlock_check.py` on 10 stills; max ≤1 px |
+| Placement | 3 | `place-check.mjs` PASS on every 2.5D kit shot: marks free, in title-safe, heads visible, feet visible or declared hidden, no bare shot, no reused angle (§9.8.1) |
+| Foot lock | 3 | Walks in a **moving** Blender shot only: measured by `footlock_check.py` on 10 stills, max ≤1 px. Kit shots are exact by construction |
+| Fix cap | 3 | No shot fixed more than twice. The third failure moves it down the ladder (§9.8.2), recorded in `project.json` |
+| Angle kit | 3 | A new location ships with twelve kit angles: plate, fg matte, passes, marks, contact sheet (§9.8.1) |
 | One drawing | 3 | Every §2.1 row passes on every shot: line, shading, light, contact shadow, focus, motion, occlusion |
 | Cast | 3 | Every character is Lucky's rig with parameters; no second rig |
 | Three planes | 3 | Every frame has background, midground, foreground |
