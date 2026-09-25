@@ -179,7 +179,12 @@ arrived is a good outcome; leaving because the episode stalled is not.
   (§10.10). Nothing is upscaled at any point. Real archival documents enter at
   their native size and are scaled down (§9.9).
 - **A fixed slot, never missed.** The public promise is **one case a week, on the same
-  day at the same time**. Two a week stays the target: the second slot opens once four
+  day at the same time: Saturday, 21:30 IST** (Saturday midday in the US east, morning
+  in the US west; an hour earlier in US time once US clocks go back in November). The
+  channel's two best-reached episodes went out on a weekend at about this hour, and
+  every weekday upload did worse. With five episodes that is a lead, not proof, which
+  is why the slot is fixed: from episode 10 the day stops varying, so the topic and the
+  packaging can be read on their own. Two a week stays the target: the second slot opens once four
   episodes in a row have shipped on time, with Step 3's agent time (recorded in
   `project.json`, §9.0) inside the production plan's budget. The slot is kept for
   the audience, who learn the day and come back on it. YouTube found no consistent
@@ -943,6 +948,15 @@ authority being beaten, a curiosity gap, and a promised payoff. "The man who mad
 everything on the internet free." Test the working title against that shape at
 intake, not at the end.
 
+**The viewer is the payer, and the title says so.** The channel's first episodes are
+the evidence: the two titles built on an object the viewer has paid for, with an
+absurd number or comparison attached ($9 popcorn; ink dearer than blood), were shown
+about twice as often as the titles about how a company earns its money (a map app's
+billions, how free TV is paid for). The episodes were of different ages, so it is a
+lead, not a law. A company's business model has no victim in
+it, so the viewer has no stake. Every title names the object the viewer pays for, or
+the viewer ("you", "your"), or both.
+
 ### 6.1 · The postmortem: the last two episodes
 
 **The next episode starts from what the last two got wrong.** Before any new
@@ -1001,6 +1015,15 @@ NIF009 · "title"                                  day 7
 opened nothing (§4.4), a held frame (§3 law 11), a section card before its payoff
 (§4.7), a drift out of the payer's lane (§1.1), or packaging (low CTR with healthy
 retention). A drop in the last 10% is the sign-off leaving, and is not diagnosed.
+
+**The channel's own outliers are read too.** Besides the last two episodes, Step 0a
+lists every published episode's impressions, impressions CTR, views and average
+percentage viewed **at the same age**: Studio → Analytics → Advanced mode → *Compare
+to* → *First 7 days*. Older videos keep collecting impressions for weeks, so an
+all-time total rewards age, not the idea. The two best episodes at equal age are the
+channel's outliers, and the postmortem says in one line each what their topic, title
+and thumbnail had that the others lacked. Views divided by impressions is not CTR;
+only Studio's impressions CTR is.
 
 **One episode is noise; the same cause in both is a signal** (§1.3). A cause found
 in both goes into `library/lessons.md` (§14.3). The postmortem also settles §1.4:
@@ -2259,6 +2282,24 @@ The rules:
   downscaled still before it is shown.
 - **It shows something the episode delivers.** A thumbnail that promises a scene
   that does not exist is a retention failure dressed up as a CTR win.
+- **A scene still is not a thumbnail.** A frame from the episode at full size can
+  look rich and read as clutter at feed size: too many figures, no face, no single
+  object. The thumbnail is composed for the feed, not lifted from the edit.
+- **The feed test.** Each variant is seen where the viewer meets it, next to the
+  videos YouTube would show beside it, before the creator chooses:
+
+  ```bash
+  node scripts/feed-mock.mjs "why is movie theater popcorn so expensive" \
+    --ours ../../episodes/NIF0NN/07_packaging/thumb_a.png,../../episodes/NIF0NN/07_packaging/thumb_b.png \
+    --title "<working title>" --dur 8:10 --pos random \
+    --out ../../episodes/NIF0NN/07_packaging/feed.html
+  ```
+
+  It writes one page with three views per variant (the mobile home feed, the suggested
+  sidebar at about 10% size, and search), with a *Squint* button. Two questions, answered
+  in `07_packaging/feed-test.md`: is ours the first thumbnail the eye lands on, and does
+  it promise something none of the others do? A thumbnail that looks like the rest of
+  the row is a copy of their promise, however well it is drawn.
 - **Claude recommends and the creator decides**, checking title and thumbnail in
   vidIQ before upload.
 
@@ -2722,6 +2763,7 @@ is checked again later lists every step in its Step column.
 | Gate | Step | Test |
 | --- | --- | --- |
 | Evidence | 0 | A proven outlier clears the §6.2 floor for its age and is ≥ 3× its channel's baseline, measured by `vph.mjs` |
+| Payer in the title | 0 | The working title names the object the viewer pays for, or the viewer, or both (§6.0) |
 | Case test | 0 | All eleven rows of §6.2.1 pass, written to `00_intake/case-test.md` with the case score (§6.2.2), and `saturation.md` beside it |
 | Cold answer | 0 | A fresh model given only the title's question does not name the culprit |
 | Why ours | 0 | Three specific things ours has that each of the top three videos lacks |
@@ -2795,6 +2837,7 @@ is checked again later lists every step in its Step column.
 | Word-driven | 3 | Beats animate against `timing.json` words, not against total duration |
 | Layer render | 3 | Passes at 1920×1080 ProRes 4444; kept permanently |
 | Thumbnail | 3 | Built from the episode's own set and cast, readable at 10%, shows something the episode delivers |
+| Feed test | 3 | Every thumbnail variant seen in `feed-mock.mjs`'s three views beside the topic's top results; `feed-test.md` answers both questions (§9.10) |
 | Cost recorded | 3 | Agent minutes per finished second, split 3a/3b/3c, in `project.json` |
 | No AI imagery | 3 | Zero AI-generated video, images, textures or words anywhere on screen |
 | Motion check | 3 | `motion-check.mjs` on the proxy: zero held states; every shot 2–9 s or a declared flow shot |
@@ -2969,7 +3012,9 @@ mapping and the same shape, written to the episode's own `10_review/review.md`.
 The next Step 0 reads this file instead of browsing (§6.1). If no session runs the
 7-day review, the next Step 0 does it.
 
-`library/shipped.md` gets the episode's CTR and APV on the same day.
+`library/shipped.md` gets the episode's CTR and APV on the same day, **with the
+first-7-days impressions** from Studio's *Compare to* view, so every episode in the
+file is compared at the same age (§6.1).
 
 ### 14.3 · The lessons file
 

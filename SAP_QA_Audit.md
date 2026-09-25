@@ -1,6 +1,6 @@
 # QA audit: sub-niche strategy and production plan
 
-Written 2026-09-24, with second and third passes on 2026-09-25. An adversarial review
+Written 2026-09-24, with further passes on 2026-09-25 (§5–§9). An adversarial review
 of `SAP_Subniche_Strategy.md` and `SAP_Production_Plan_v2.md` as first written. Each finding has a severity, a fix, and
 where the fix now lives. **The biggest finding changes the recommendation.**
 
@@ -12,13 +12,13 @@ Severity: 🔴 changes a decision · 🟠 would cost real time or money · 🟡 
 
 | # | Finding | Sev | Fix | Where |
 | --- | --- | --- | --- | --- |
-| S1 | **The heist frame keeps the explainer engine.** A heist reveals *who* early (the crew, at ~10–35%) and leaves *how* as the open question. "How does it work?" is the educational question in costume, the exact thing the creator is trying to leave. The viewer's curiosity is spent on the mechanism again | 🔴 | Switch the open question from **how** to **who**. A **whodunit** keeps *who* open until ~85%. The channel's tagline is already a whodunit reveal ("Now you know who"), and the runbook's own spine already has "who is actually behind this" at ~70% and the reversal at ~85% | Strategy §2–§4, recommendation changed |
+| S1 | **The heist frame keeps the explainer engine.** A heist reveals *who* early (the crew, at ~10–35%) and leaves *how* as the open question. "How does it work?" is the educational question in costume, the exact thing the creator is trying to leave. The viewer's curiosity is spent on the mechanism again | 🔴 | Switch the open question from **how** to **who**. A **whodunit** keeps *who* open until ~85%. The channel's tagline is already a whodunit reveal ("Now you know who"), and the runbook's own spine already has "who is actually behind this" at ~70% and the reversal at ~85% | Strategy §2, §5; recommendation changed |
 | S2 | **"Why watch ours?" had no hard answer.** Other channels already make videos on these topics | 🔴 | The whodunit turns that into our advantage: **the answer the popular videos give is our red herring**, cleared on screen. A viewer who has seen the explainers gets a twist, not a repeat. It becomes a Step 0 test: if the popular answer is already the full story, the topic fails | Strategy §3; runbook §6.2.1 |
-| S3 | **Template risk in my own format.** I criticised "The Catch" for five fixed sections, then gave the heist six fixed movements and an "every episode" replay | 🟠 | The skeleton stays (crime → suspects → reveal); the *devices rotate*. Each episode uses three of the six case devices, and never the same three twice in a row. The staging of each device changes every time | Strategy §4.2; runbook §4.8 |
+| S3 | **Template risk in my own format.** I criticised "The Catch" for five fixed sections, then gave the heist six fixed movements and an "every episode" replay | 🟠 | The skeleton stays (crime → suspects → reveal); the *devices rotate*. Each episode uses three of the six case devices, and never the same three twice in a row. The staging of each device changes every time | Strategy §6.2; runbook §4.8 |
 | S4 | **"Proven format" was asserted, not measured.** Web search cannot give views per hour | 🟠 | The mystery/true-crime shape is proven at genre level. Each *topic* must still pass the §6.2 evidence gate, and the whodunit fitness is checked by the case test (S5) | Runbook §6.2.1 |
 | S5 | **No test for curiosity itself.** The runbook says "a topic an AI chatbot answers in four seconds is not a video", but nothing actually checks it | 🟠 | **The cold-answer test:** a fresh model with no context answers the title's question in one line (`claude -p --model haiku`). If it names our culprit, the mystery is dead: pick another topic or angle | Runbook §6.2.1 |
-| S6 | **The heist framing is legally sharper:** "you were robbed" by a named company, every week | 🟠 | A whodunit's "culprit" is often a *rule*, a *structure* or another *customer*, not a company. The safety rules stay: legal is the premise, no accusations, sourced facts | Strategy §4.3 |
-| S7 | **Viewer fatigue:** "you were robbed" every week reads cynical | 🟡 | The victim is not always Lucky. Sometimes Lucky is the unwitting culprit (the twist in the credit-card case). Polite disbelief, not outrage | Strategy §4.3 |
+| S6 | **The heist framing is legally sharper:** "you were robbed" by a named company, every week | 🟠 | A whodunit's "culprit" is often a *rule*, a *structure* or another *customer*, not a company. The safety rules stay: legal is the premise, no accusations, sourced facts | Strategy §6.3 |
+| S7 | **Viewer fatigue:** "you were robbed" every week reads cynical | 🟡 | The victim is not always Lucky. Sometimes Lucky is the unwitting culprit (the twist in the credit-card case). Polite disbelief, not outrage | Strategy §6.3 |
 | S8 | **The sub-niche had no one-word name** | 🟡 | **Whodunit.** One line: *"Every episode, someone takes your money, legally. By the end, you know who."* | Strategy §1; runbook §0 |
 | S9 | **Idea selection had no scoring.** Step 0 picks on evidence and taste | 🟠 | Step 0 gains named sub-steps, **0a–0e**, and a nine-row case test that every idea passes before Round 1 | Runbook §6 |
 
@@ -37,8 +37,8 @@ Severity: 🔴 changes a decision · 🟠 would cost real time or money · 🟡 
 
 ## 3 · What survived the audit unchanged
 
-- **2D-first with Blender-painted plates (L2)** as the default, and one moving 3D shot
-  at most, in the cold open.
+- **2D-first with Blender-painted plates (L2)** as the default. (Moving 3D shots were
+  later set at two at most: the cold open's and one orbit, P10.)
 - **Stage & Marks, the shot ladder, `place-check`, the scripted timeline.** These are
   independent of the sub-niche and already in the runbook.
 - **The 70/30 split and the no-advice rule**, which hold for any frame.
@@ -140,3 +140,27 @@ YouTube's own words; the rest are unsourced or misapplied.
 
 **Also fixed:** §6.2.1 still said "nine rows" after row 10 and row 11 were added. It
 now says eleven.
+
+## 9 · Fifth pass: our own numbers, and a whole-set audit (2026-09-25)
+
+The creator's figures for five episodes (strategy §2.1), read against every document.
+
+| # | Finding | Sev | Fix | Where |
+| --- | --- | --- | --- | --- |
+| D1 | **Episode 10 was popcorn, and episode 1 already was popcorn.** The slate's culprit for it (the studio's share of the ticket) is episode 1's own answer and what a fresh model says cold, so it would have failed the cold-answer test | 🔴 | Keep popcorn as a **deliberate remake**: the best-reached topic, and the cleanest test of the format. Episode 1's answer becomes suspect two; the culprit hypothesis moves to metering (Gil & Hartmann, 2009). If the case test still fails, the next topic goes | Strategy §7; Production §9.3 |
+| D2 | **Slate #5 (ink) had shipped too**, and its culprit is the popular answer | 🟠 | Marked shipped; a remake only after popcorn's remake is read, and only with a culprit beyond razor-and-blades | Strategy §7 |
+| D3 | **Retention is the ceiling**: about 25% on the two best-reached episodes. Clicks earned a few hundred impressions; early exits stopped the test | 🔴 | No new rule: this is what the whodunit, the 8-minute start, the cold open and the title echo are for. Episode 10 is read against episode 1 at equal age | Strategy §2.1; Production §9.3 |
+| D4 | **Totals compared at different ages.** Older videos keep collecting impressions, so the oldest looks best | 🟠 | Every episode compared on Studio's *First 7 days*; `shipped.md` records it | Runbook §6.1, §14.2 |
+| D5 | **Views ÷ impressions was being read as CTR** | 🟡 | Only Studio's impressions CTR counts | Runbook §6.1 |
+| D6 | **The weaker titles had no payer in them** (a company's income; free TV) | 🟠 | New Step 0 gate: the title names the object the viewer pays for, or the viewer | Runbook §6.0, §12.0 |
+| D7 | **Upload day varied**, and the weekend-evening (IST) uploads did best | 🟡 | One fixed slot, Saturday 21:30 IST, so the day stops being a variable | Runbook §1.4 |
+| D8 | **Nothing checked a thumbnail beside its competition.** Rendering `sap_after.jpg` into the feed mock-up showed a busy scene still vanishing among the competitors' thumbnails | 🟠 | `feed-mock.mjs` and the feed test gate; "a scene still is not a thumbnail" | Runbook §9.10, §12.3; Toolchain |
+| D9 | **The old content plan still says Monday + Friday and a "Free X" slate** | 🟡 | A note at its top: superseded from episode 10 by the strategy and runbook §1.4 | `NIF_CONTENT_PLAN_Sept-Dec_2026.md` |
+| D10 | **Stale cross-references:** QA rows pointing at strategy §4 for things now in §6; "one moving 3D shot" in §3 here; "findings P1–P8" and "choose the sub-niche" in the production plan; "revert if you choose otherwise" in the strategy | 🟡 | All corrected; the sub-niche is recorded as chosen | This file; Production; Strategy |
+| D11 | **`Visual_Upgrade_Plan.md` and `Runbook_Changes_2026-09-24.md`** were superseded but still at the top level | 🟡 | Moved to `archive/` | README |
+| D12 | **`video-os/engine/remotion/CLAUDE.md` describes an older pipeline** (30 fps, FFmpeg as the master, NIF002 as current). An agent working in that folder loads it, and it conflicts with this runbook (24 fps, Resolve finishing) | 🟠 | **Not changed**: that file says changes to it are "stop and ask". Flagged to the creator | Creator's decision |
+
+**Checked and consistent:** the case test is eleven rows everywhere; the case devices are
+seven everywhere; moving 3D shots are "at most two" everywhere; the far / set / near
+layers and the 2880×1620 overscan match between the runbook and the production plan;
+every tool in the runbook is in the toolchain.

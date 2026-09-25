@@ -1,7 +1,7 @@
 # Someone Always Pays: the toolchain
 
 Every step, the tool, what it costs, whether commercial use is allowed, and how Claude
-runs it. **Free** means free at this channel's scale. The runbook's §18-era rule stands:
+runs it. **Free** means free at this channel's scale. The licence rule stands (runbook §13):
 *a licence you can't name is a tool you don't use.*
 
 Legend for "Claude runs it": **CLI** (a command in the terminal) · **MCP** (a connected
@@ -56,6 +56,7 @@ a key) · **You** (a creator decision point by design).
 | 3D assets and textures | Poly Haven, Kenney, Quaternius, ambientCG | Free · CC0 | CLI (download script with ledger) |
 | Fonts | Google Fonts | Free · OFL | `@remotion/google-fonts` |
 | Held-frame and shot-length audit | `motion-check.mjs` + ffmpeg | Free | CLI |
+| **The feed test** for thumbnails and titles | `feed-mock.mjs` + yt-dlp search: our variants beside the topic's top results, in home, sidebar and search views | Ours | CLI, opened in a browser |
 | Diorama orbit | The location's orbit template (`--shot orbit`) + floating labels | Ours | CLI, headless Blender |
 | 3c setups | `08_conform/3c-setups.json` + one parameterised component per setup | Ours | Session |
 
@@ -77,6 +78,7 @@ a key) · **You** (a creator decision point by design).
 | Pre-publish check | vidIQ Optimize | Your plan | Browser (read-only) |
 | Thumbnail test | Studio *Test & compare* | Free | **You** set it up |
 | 48-hour and 7-day review | Studio + `dip-map.mjs` | Free | Browser / API |
+| Compare episodes at equal age | Studio → Advanced mode → *Compare to* → *First 7 days* | Free | Browser (read-only) |
 
 ---
 

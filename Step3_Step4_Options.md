@@ -1,9 +1,11 @@
 # Steps 3 and 4: where the hours go, and the options
 
 Written 2026-09-24, while the current episode was 10+ hours into 3b with most of the
-week's usage spent. This is a proposal: once you approve it, move it to `archive/`
-(§13.5). The recommended option is already written into the runbook on this branch
-(§9.0, §9.8.1, §9.8.2, §10.5, §12.3), so it can be read in place.
+week's usage spent. **The path chosen is Option A (Stage & Marks) inside the
+production plan's 2D-first mix, and the current numbers are in
+`SAP_Production_Plan_v2.md`** (for example, at most two moving 3D shots per episode,
+not the "two or three" below). This file stays at the top level only for **§2, the
+prompt that finishes episode 9's 3b**; move it to `archive/` once episode 9 ships.
 
 ---
 

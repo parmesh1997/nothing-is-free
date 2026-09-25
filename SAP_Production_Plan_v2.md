@@ -4,9 +4,10 @@ Everything about *how the episode is made*, in one place: the visual system, the
 2D-only question, cheap depth, the cold open, Steps 3 and 4, and the runbook edits.
 *What the episode is about* is in `SAP_Subniche_Strategy.md`.
 
-This consolidates `Visual_Upgrade_Plan.md`, `Step3_Step4_Options.md` and
-`Runbook_Changes_2026-09-24.md`. Once it is approved, those three move to `archive/`.
-It has been through the QA audit (`SAP_QA_Audit.md`, findings P1–P8), and the tools
+This consolidates `Visual_Upgrade_Plan.md` and `Runbook_Changes_2026-09-24.md`, now
+in `archive/`, and `Step3_Step4_Options.md`, which stays at the top level only for its
+§2 prompt (finishing episode 9's 3b).
+It has been through the QA audit (`SAP_QA_Audit.md`: P1–P10 and the camera pass C1–C5), and the tools
 for every step are in `SAP_Toolchain.md`.
 
 ---
@@ -38,9 +39,9 @@ most two L3 shots on top.
 | **L3 · Moving 3D** | A Blender camera move through the space | High | The one thing L2 can't do: the camera travelling *through* the room |
 
 **What you lose going from L3 to L2:** the camera can't travel *through* a space or
-orbit it. It can push, drift, pan and rack focus, and the layers give parallax. In a
-12-minute episode, viewers feel the lack of travel only in establishing shots, and
-that is what the one L3 shot in the cold open is for.
+orbit it. It can push, drift, pan and rack focus, and the layers give parallax. In an
+8-minute case, viewers feel the lack of travel only in establishing moments, and that
+is what the two L3 shots are for: the cold open's moving shot and one diorama orbit.
 
 **What you lose going from L2 to L1:** a sense of place. Light pools, occlusion and
 perspective have to be faked by hand for every drawing. L1 is right for history
@@ -254,8 +255,7 @@ That's free evidence for episode 10.
 
 ### 9.2 · Between episodes 9 and 10 (one week, mostly GPU time)
 
-1. **Choose the sub-niche.** The whodunit is applied in the runbook as one commit;
-   revert that commit if you choose otherwise.
+1. **The sub-niche is chosen: the whodunit** (creator, 2026-09-25). Nothing to revert.
 2. **Promote the tools:** `marks.py` into `lib25d.py`; write `kit.py` (twelve angles ×
    three layers (far / set / near) at 2880×1620 + passes + marks + contact sheet).
 3. **Kit the existing locations overnight:** the SB stand, the counter kiosk and the
@@ -266,5 +266,13 @@ That's free evidence for episode 10.
 ### 9.3 · Episode 10
 
 Step 0 with sub-steps 0a–0e (runbook §6), with the popcorn case as the starting
-candidate. The case test decides; if popcorn fails it, the next slate topic that passes
-goes instead.
+candidate: a deliberate remake of episode 1, the channel's best-reached topic, told as
+a whodunit with a culprit past episode 1's own answer (strategy §7). The case test and
+the case score decide; if popcorn fails, the next slate topic that passes goes instead.
+
+- **Upload:** Saturday, 21:30 IST, the fixed slot (runbook §1.4).
+- **Packaging:** two or three thumbnail variants through the feed test (`feed-mock.mjs`,
+  runbook §9.10), then *Test & compare* at publish.
+- **Read it against episode 1 at equal age** (first 7 days): CTR, 30-second retention
+  and average percentage viewed. The question is whether the format lifted retention
+  from about 25% toward the 45% gate.

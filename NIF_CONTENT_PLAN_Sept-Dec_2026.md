@@ -1,3 +1,8 @@
+> **Superseded from episode 10 (2026-09-25).** The channel moves to the Money Whodunit
+> format. Topics come from `SAP_Subniche_Strategy.md` §7 through runbook Step 0, and the
+> upload slot is Saturday 21:30 IST (`Someone_Always_Pays_Runbook.md` §1.4). This plan
+> stays as the record of episodes 1–9.
+
 # Nothing Is Free — 90-Day Content Plan
 
 **Adopted:** 8 September 2026. Decisions applied inline (see §7).

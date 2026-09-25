@@ -2,8 +2,7 @@
 
 Final version, after the QA audit (`SAP_QA_Audit.md`). **The recommendation changed from
 "The Legal Heist" to "The Money Whodunit"**: finding S1 in the audit explains why.
-The runbook changes are applied on this branch as one separate commit, so they can be
-reverted in one step if you choose a different option.
+**Chosen by the creator on 2026-09-25.** The runbook applies it throughout.
 
 ---
 
@@ -34,6 +33,39 @@ end.** That question can't be answered by assumption, only by the reveal.
 | The Catch (the other session's) | "What's in the fine print?" | Piecemeal, as a list | Educational; pulls toward advice |
 | The Legal Heist (my first answer) | "How did they do it?" | Through the whole middle | The explainer engine in costume |
 | **The Money Whodunit** ⭐ | **"Who actually took it?"** | **At ~85%, by name** | **Held to the end; matches the tagline** |
+
+### 2.1 · What our own numbers say (read 2026-09-25, creator's figures)
+
+| Episode | Uploaded (IST) | Impressions | Views | Avg view duration | Viewer is the payer? |
+| --- | --- | --- | --- | --- | --- |
+| $9 popcorn saves the cinemas | Saturday night | ~600–700 (3 weeks) | ~100 | ~2:00 of ~8:00 (≈25%) | **Yes**: your popcorn |
+| Printer ink dearer than blood | Sunday night | ~450 | 57 | ~3:30 of ~13:00 (≈27%) | **Yes**: your ink |
+| Google Maps' $11B a year | Weekday | ~300–400 | ~32 | — | No: a company's income |
+| How free local TV gets paid | Weekday | ~200 | ~30 | — | Half: free to you |
+| Latest (1 day old) | Weekday | 56 | 4 | CTR ~3% | Too young to read |
+
+**Three readings, in order of confidence:**
+
+1. **Retention is the ceiling, not clicks.** Both of the best-reached episodes kept
+   about a quarter of the video. YouTube showed them to a few hundred people, the
+   people who clicked mostly left early, and the test stopped there. Clicks earn the
+   test; what viewers do after the click decides whether it grows. This is the
+   problem the whodunit exists to fix: a question held to 85% instead of an answer
+   guessed before the click.
+2. **The payer in the title wins.** The two best titles put the viewer's own
+   purchase and an absurd number in front ("$9 popcorn", "ink dearer than blood").
+   The weaker ones were about how a company earns money, where the viewer has no
+   stake. It matches case test row 2 (the victim) and is now a Step 0 gate (runbook
+   §6.0).
+3. **Weekend evenings (IST) did better, but it isn't proven.** The popcorn episode is
+   also the oldest, and old videos keep collecting impressions. From now on,
+   episodes are compared at the same age (Studio's *First 7 days*), and the upload
+   slot is fixed on Saturday at 21:30 IST so the day stops being a variable (runbook
+   §1.4, §6.1).
+
+**Figures this small swing a lot.** Five episodes with a few hundred impressions each
+point the way, and the next three cases confirm it or don't (§1.3's rule: one episode
+is noise, three in a row are a signal).
 
 ---
 
@@ -225,11 +257,11 @@ research, not findings.
 
 | # | Working title | Suspects (the first is the red herring) | Hypothesis for the culprit |
 | --- | --- | --- | --- |
-| 1 | **Your Popcorn Costs $9. The Cinema Didn't Take It.** ⭐ episode 10 | The greedy cinema · the popcorn supplier · the studio · the audience | The studio's share of the ticket; the cinema lives on the popcorn |
+| 1 | **Your Popcorn Costs $9. The Cinema Didn't Take It.** ⭐ episode 10, a deliberate remake of episode 1 (below) | The greedy cinema · **the studio (episode 1's own answer)** · the popcorn supplier · the other people in the room | **Metering:** the fans who buy snacks pay more so the casual viewer's ticket stays cheap. The research lead is Gil & Hartmann, *Marketing Science*, 2009 |
 | 2 | Someone Paid for Your Free Flight. They Used Cash. | The bank · the airline · the shop · the cash payer | Swipe fees go into prices for everyone (Boston Fed research, 2010) |
 | 3 | Who Took $6 From Your Airport Sandwich? | The airport · the vendor · the concession operator · the pricing rule | The rule meant to protect you (§4.1's example) |
 | 4 | Who Pays for the Gym You Actually Use? | You · the gym · the equipment makers · the members who never come | The members who never come |
-| 5 | Your Ink Costs More Than Champagne. Who Decided? | The ink makers · the retailers · chemistry · the printer's price tag | The printer sold cheap by design |
+| 5 | Your Ink Costs More Than Champagne. Who Decided? *(shipped as an explainer; a remake only after popcorn's remake has been read)* | The ink makers · the retailers · chemistry · the printer's price tag | "The printer is sold cheap" is the popular answer, so it fails the cold-answer test. It needs a culprit beyond razor-and-blades before it can be a case |
 | 6 | Who Took $34 From Your $60 Ticket? | The ticketing site · the artist · the venue · the promoter | The fee is shared |
 | 7 | Your Free Game Was Paid For by One Stranger | The ads · the developer · the app store · the "whales" | A tiny share of players |
 | 8 | Who's Paying for Your Hotel's "Free" Wi-Fi? | The hotel · the booking site · the resort fee | The fee split |
@@ -238,10 +270,28 @@ research, not findings.
 | 11 | Who Got Paid When You Searched "Pizza Near Me"? | The map · the pizzeria · the listing sites | The pizzeria paid to be found (reuses NIF004) |
 | 12 | You Won a Free Vacation. Who Paid for It? | The resort · the marketer · the other buyers | The buyers who signed |
 
-**Why popcorn opens the new format:** the red herring (the "greedy cinema") is what
-almost every viewer believes. The history is true and funny: cinemas first refused
-popcorn, then the Depression made it their business. It needs one new location, has a
-single object everybody knows, and its twist clears the obvious suspect.
+**Why popcorn opens the new format, even though episode 1 was popcorn:**
+
+- **It's the channel's best-reached topic.** YouTube already knows who clicks on it
+  from us.
+- **It's the cleanest test of the format.** Same topic, new format: if the remake holds
+  45% where episode 1 held 25%, the format did it. That is "change one thing at a
+  time" (runbook §14.3) applied to the biggest change we'll make.
+- **Its best red herring is our own old answer.** Episode 1 said the studio takes the
+  ticket money and popcorn keeps the cinema alive. That's also what most popcorn
+  videos say, and what a fresh model says cold. So it's suspect two, cleared on screen,
+  and the case goes past it. A title variant says so outright: *"We Blamed the Studio
+  for Your $9 Popcorn. We Were Wrong."*
+- **The twist has a source.** Two economists studied a cinema chain's snack sales and
+  argued that snack prices are a way of charging the keenest fans more (Gil &
+  Hartmann, *Marketing Science*, 2009, whose working paper was titled *"Why Does
+  Popcorn Cost So Much at the Movies?"*). Step 1 checks it and finds the numbers. The
+  history stays true and funny: cinemas first refused popcorn, then the Depression made
+  it their business.
+- **Conditions.** It still passes all eleven rows of the case test and gets a case
+  score. If the cold-answer test names metering, popcorn doesn't open the format, and
+  the next slate topic that passes does. Episode 1 stays up; the remake is a new video,
+  not a re-upload.
 
 ---
 
@@ -252,7 +302,7 @@ single object everybody knows, and its twist clears the obvious suspect.
 | §0 | The sub-niche, in one word and one line |
 | §1.1 Positioning | The Money Whodunit; the payer-POV test stays |
 | §1.2 Formats | Three case types (*the bait*, *the fee*, *the rule*); the history spine stays |
-| §2.8 Inserts | The six case devices |
+| §2.8 Inserts | The case devices (six; the seventh, the challenge, came in the trust-score pass) |
 | §4 intro, §4.2 | The case spine replaces the old spine; the first payoff by 40% and the reversal at 85% stay |
 | §4.5 The why test | A new row: *why ours?* |
 | §4.6 The mix | 40/60 becomes **30/70**, with mode tags and a gate |
@@ -264,3 +314,6 @@ single object everybody knows, and its twist clears the obvious suspect.
 | §1.1, §1.4, §4.1 (second pass) | The transfer; saturated topic vs saturated angle; one viewer, one format; an 8-minute start; the title echo |
 | §6.2.1 (second pass) | Row 10 (the transfer) and row 11 (first mover, `saturation.mjs`): eleven rows in total |
 | §9.8.3, §9.8.4, §14 (second pass) | The diorama orbit; setups, not shots; the backward end screen; change one thing at a time |
+| §1.4, §6.1, §6.0, §9.10, §12, §14.2 (own-data pass) | The Saturday 21:30 IST slot; the channel's own outliers read at equal age; the payer in the title; the feed test; equal-age numbers in `shipped.md` |
+| §2.8, §6.2.2, §14 (trust-score pass) | The seventh device (the challenge); the case score; the pinned case question; CTR read with retention |
+| §2.4 (locations pass) | A new scene of the crime every case; returning locations re-dressed and earned |
