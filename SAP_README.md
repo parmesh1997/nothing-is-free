@@ -111,3 +111,24 @@ per episode: the cold open's moving shot and the diorama orbit. The camera audit
 5. **The cast in an orbit** is drawn from per-frame anchors and kept small, so the
    figures read as figures on a model.
 
+
+## What changed from the "trust score" video (2026-09-25)
+
+The video's big claim, a hidden 1–100 channel score, isn't confirmed by YouTube, which
+says each video is judged on its own. Its useful parts are YouTube's own advice.
+Details and sources are in QA §8.
+
+1. **The case score** (runbook §6.2.2). Ideas that pass the eleven-row case test are
+   ranked out of 100: demand 25, open angle 15, red herring 15, packaging 15, cold
+   answer 10, the victim's number 10, build cost 10. Every point cites its evidence.
+   It's our answer to "virality score" tools, except every number can be checked.
+2. **A fixed slot, never missed** (§1.4). The promise is one case a week, same day and
+   time. Two a week stays the target, and it opens after four on-time episodes. *This
+   changes the old "two per week" rule; revert it if you'd rather keep that promise.*
+3. **Read CTR and retention together** (§14.2). High CTR with weak 30-second retention
+   means the packaging overpromised: make it more accurate, not louder.
+4. **The challenge**, a seventh case device (§2.8): the picture freezes before the
+   reveal, "You know what we know. Who took it?"
+5. **A pinned "Who did you suspect?" comment** and replies in the first two hours; the
+   **Case files** playlist on the end screen (§14.1).
+6. **Fixed:** §6.2.1 said "nine rows"; it's eleven.

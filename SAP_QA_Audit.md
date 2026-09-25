@@ -114,3 +114,29 @@ orbit is the Imperial moment on top.
 **Not changed:** the 8% parallax cap, rack focus from the mist pass, the handheld
 breath, and the one L3 shot in the cold open. **Not a video:** the orbit was checked on
 its start, middle and end frames. The full clip wasn't needed and wasn't kept.
+
+## 8 · Fourth pass: the "trust score" video (2026-09-25)
+
+A video claiming YouTube gives every channel a hidden trust score, ending in an
+advert for a free "virality score" idea tool. **How far to trust it:** YouTube has
+never said a trust score exists, and the video admits it. YouTube's growth lead says
+each video is judged on its own, and past performance counts only where it predicts
+the next video. What the video calls a trust score is mostly YouTube predicting from
+how your earlier viewers responded, which §1.1 already covers. Half its claims are
+YouTube's own words; the rest are unsourced or misapplied.
+
+| # | Claim | True? | What we do | Where |
+| --- | --- | --- | --- | --- |
+| V1 | A hidden channel score, 1–100 | **Not confirmed.** YouTube says videos are judged one at a time | Nothing new: one viewer, one format (§1.1) | — |
+| V2 | Upload on a predictable schedule | **Half.** YouTube studied thousands of breaks and found no consistent penalty. A fixed day helps the *audience* build a habit | One fixed weekly slot, never missed; the second slot is earned (four on-time episodes) | Runbook §1.4; strategy §6.6 |
+| V3 | Satisfaction is measured by surveys and what viewers do next | **True** (YouTube's recommendation blog: star-rating surveys, "valued watchtime") | Already the binge rule. Added the **Case files** playlist to the end screen | Runbook §14.1 |
+| V4 | High CTR with low retention hurts more than low CTR | **True** (YouTube Help: clickbait has low view duration and is recommended less) | Read CTR and 30-second retention together; fix overpromising packaging by making it *more accurate* | Runbook §14.2 |
+| V5 | "Half of channels have CTR between 2% and 10%" | **True** (YouTube Help) | No change: §14.2 already reads CTR against impressions | — |
+| V6 | Strikes suppress reach; 3 strikes in 90 days ends a channel; policy training clears a warning | **True** for the rules; the "months of suppression" is anecdote | Already covered: licence ledger, sourced claims, no accusations (§6.3 of the strategy) | — |
+| V7 | Engagement: ask real questions, reply early | **Reasonable** (the 3.87% benchmark is unsourced) | **The challenge**, a seventh case device ("Who took it?" before the reveal), and a pinned *"Who did you suspect?"* comment with replies in the first two hours | Runbook §2.8, §14.1; strategy §6.2 |
+| V8 | Old, verified brand channels dominate the top | **True for search only.** The study (Adilo, via Search Engine Journal) looked at the top three *search* results for competitive keywords | We grow through Browse and Suggested, not search. `saturation.mjs` already warns when a few channels own a search | — |
+| V9 | "Ideas decide everything"; pick the idea with the top virality score | **The first half is right**; the score is a sales funnel with no method shown | **The case score:** seven measured parts, 100 points, each with its evidence, ranking only the ideas that passed the case test | Runbook §6.2.2 |
+| V10 | EAT and "your money, your life" | **Misapplied.** EAT comes from Google Search's rater guidelines, not a documented YouTube ranking | Already covered by sourced figures and the no-advice rule | — |
+
+**Also fixed:** §6.2.1 still said "nine rows" after row 10 and row 11 were added. It
+now says eleven.

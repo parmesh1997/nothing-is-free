@@ -178,9 +178,15 @@ arrived is a good outcome; leaving because the episode stalled is not.
   1080p (§9.4), the Resolve timeline is 1080p (§10.4) and the upload is 1080p
   (§10.10). Nothing is upscaled at any point. Real archival documents enter at
   their native size and are scaled down (§9.9).
-- **Two per week.** That is the standing cadence, not an aspiration.
+- **A fixed slot, never missed.** The public promise is **one case a week, on the same
+  day at the same time**. Two a week stays the target: the second slot opens once four
+  episodes in a row have shipped on time, with Step 3's agent time (recorded in
+  `project.json`, §9.0) inside the production plan's budget. The slot is kept for
+  the audience, who learn the day and come back on it. YouTube found no consistent
+  penalty for gaps between uploads, but a promise the channel breaks costs more than a
+  modest one it keeps.
 
-  **What flexes is scope, never a gate.** Every gate in §12 holds at two a week —
+  **What flexes is scope, never a gate.** Every gate in §12 holds at any cadence —
   the pre-VO lock, the foot lock, the stills audit, the proxy watch, the delivery
   QC. When an episode cannot make the week, the answer is fewer shots, a returning
   location or a shorter runtime, and never a skipped audit or an unwatched proxy.
@@ -455,7 +461,7 @@ the inserts it uses at Step 1, and the mix changes between episodes (§4.8):
 | **Archival case file** | A real document in a character's hand, pinned to a wall or lying on a desk (§9.9) |
 | **Numbers** | A price tag, a till display, a chalkboard, a stamped receipt |
 
-**The case devices.** Each episode uses **three of these six, never the same three
+**The case devices.** Each episode uses **three of these seven, never the same three
 twice in a row**, and stages each one differently every time (§4.8):
 
 | Device | Lives in the world as |
@@ -466,6 +472,7 @@ twice in a row**, and stages each one differently every time (§4.8):
 | **The evidence board** | Red string, photos, the receipt pinned in the middle |
 | **The reconstruction overlay** | The cold open replayed with the hidden hands, cuts and arrows drawn over it. It reuses the cold open's own compositions plus one overlay layer, and is never re-staged |
 | **Cleared / guilty stamps** | A rubber stamp landing on a suspect card, with its sound |
+| **The challenge** | Just before the reveal the picture freezes on the lineup and the narrator hands the case over: *"Every suspect, every alibi. You know what we know. Who took it?"* Two seconds of held silence, then the reveal. It is the mystery writer's old challenge to the reader, and it is the question the pinned comment asks (§14.1) |
 
 Type on a 3D surface rides that surface through the camera move, through the
 shot's anchors (§9.8). A foreground set piece never crosses typeset text unless
@@ -699,7 +706,7 @@ the cheapest possible tell that it is a template with the nouns swapped, and it
 is the single failure the creator has flagged most often.
 
 The constants are the cast rig, the channel palette, the accent, the progress
-rule, the sign-off and the case spine (§4.2). The case devices rotate: three of six
+rule, the sign-off and the case spine (§4.2). The case devices rotate: three of seven
 per episode, never the same three twice in a row (§2.8). A location may return, but only
 from a new angle. **Everything else is rebuilt.**
 
@@ -1039,7 +1046,7 @@ re-examined — small-niche channels may not clear a flat number.
 ### 6.2.1 · The case test
 
 **Demand proves people want the topic. The case test proves it can be a mystery.**
-Every shortlisted topic passes all nine rows before it goes to Round 1, written to
+Every shortlisted topic passes all eleven rows before it goes to Round 1, written to
 `00_intake/case-test.md`:
 
 | # | Test | Passes when | How |
@@ -1071,6 +1078,34 @@ be a copy: drop it).
 
 A topic that fails row 4, 5 or 11 is an explainer or a copy, not our mystery. It goes back to the
 shortlist whatever its demand.
+
+### 6.2.2 · The case score
+
+**The case test says which ideas can be episodes. The case score says which one to make
+first.** Every topic that passed all eleven rows gets a score out of 100, written under
+its case test in `00_intake/case-test.md`:
+
+| Part | Points | How it is scored |
+| --- | --- | --- |
+| **Demand** | 25 | The outlier's multiple over its own channel's median (`vph.mjs`): 10× or more = 25, 5–10× = 18, 3–5× = 10, under 3× = 0 |
+| **Open angle** | 15 | `saturation.md`: *topic crowded, angle open* = 15 (the red herring is ready-made), *open* = 10 |
+| **The red herring** | 15 | How many of the top three competitor videos give the popular answer: three = 15, two = 10, one = 5 |
+| **The cold answer** | 10 | The fresh model names our red herring = 10; it gives a vague answer = 5 |
+| **The victim's number** | 10 | Sourced, per person per year, and something a viewer would repeat = 10; sourced but abstract (only a national total) = 5 |
+| **The packaging** | 15 | A title in the §6.0 shape and a thumbnail as one frame of one object, both drafted before scoring. Clickable *and* true to the video = 15; true but flat = 5. If it can't be packaged, it isn't an idea yet: back to the shortlist |
+| **Build cost** | 10 | New locations: none = 10, one = 5, two = 0 (§2.4) |
+
+- **A score ranks; it never rescues.** Only topics that passed every row are scored.
+- **Every point cites its evidence** (a number, a file, a title). A part without
+  evidence scores 0.
+- **Round 1 shows the angles in score order.** Claude may recommend a lower-scored one
+  only by saying which part the score misjudges.
+- **The weights are checked once, after ten cases:** scores against the 7-day CTR and
+  APV in `library/shipped.md`. A part that predicted nothing loses its points, through
+  §13.5.
+
+Unlike a tool's "virality score", every point here is a number someone can check, so a
+wrong score can be traced to the part that was wrong.
 
 ### 6.3 · The vidIQ prompt
 
@@ -1164,6 +1199,7 @@ for the creator to name their own. Each as:
   The lessons:    [how this angle avoids each DO NOT REPEAT in postmortem.md]
   The case:       [victim · suspects (red herring first) · culprit hypothesis]
   Cold answer:    [what a fresh model says, and that it isn't our culprit]
+  Case score:     [NN/100, and the part that cost the most points (§6.2.2)]
   Why ours:       [the three things the top videos lack]
   The mechanism:  [one line]
   The number:     [the figure that carries it, and whether it is sourceable]
@@ -1215,7 +1251,7 @@ Written to `project.json`:
 TOPIC             [chosen]
 CASE TYPE         [the bait / the fee / the rule]
 THE CASE          [victim · suspects (red herring first) · culprit, all sourced]
-CASE DEVICES      [the three of six this episode uses (§2.8)]
+CASE DEVICES      [the three of seven this episode uses (§2.8)]
 EPISODE           NIF0NN
 OUTLIER           [channel · video · VPH · multiple vs baseline]
 PRIMARY KEYWORD   [keyword · volume · competition]
@@ -2675,7 +2711,7 @@ is checked again later lists every step in its Step column.
 | Gate | Step | Test |
 | --- | --- | --- |
 | Evidence | 0 | A proven outlier clears the §6.2 floor for its age and is ≥ 3× its channel's baseline, measured by `vph.mjs` |
-| Case test | 0 | All eleven rows of §6.2.1 pass, written to `00_intake/case-test.md`, with `saturation.md` beside it |
+| Case test | 0 | All eleven rows of §6.2.1 pass, written to `00_intake/case-test.md` with the case score (§6.2.2), and `saturation.md` beside it |
 | Cold answer | 0 | A fresh model given only the title's question does not name the culprit |
 | Why ours | 0 | Three specific things ours has that each of the top three videos lacks |
 | POV | 0 | The viewer is the one paying |
@@ -2703,7 +2739,7 @@ is checked again later lists every step in its Step column.
 | Story ratio | 1 | Every beat has a mode; MECHANISM ≤ 35% of runtime; no MECHANISM run over 45 s (§4.6) |
 | Suspects sourced | 1 | Every suspect and the culprit named with a source; no crime alleged |
 | No advice | 1 | The close says what the viewer will notice, never what they should do |
-| Case devices | 1, 3 | Three of the six devices, not the same three as the last episode (§2.8) |
+| Case devices | 1, 3 | Three of the seven devices, not the same three as the last episode (§2.8) |
 | Lessons | 1 | Every DO NOT REPEAT line from the postmortem and `lessons.md` answered in `beats.md` with a beat and a line (§7.0) |
 
 ### 12.2 · Step 2 · VO
@@ -2894,8 +2930,14 @@ uploads and never clicks Save in Studio or vidIQ (§6, browser rules).
 4. **Add the episode to `library/shipped.md`**: code, title, publish date. Its
    numbers are filled in at 7 days.
 5. **The end screen points backward:** the last 10–15 seconds after the sign-off carry
-   an end screen to the previous case (the closing callback, §6.5). A viewer who
-   finishes one case is offered another straight away. That is the binge.
+   an end screen to the previous case (the closing callback, §6.5). Its second element
+   is the **Case files** playlist, every case in order, which the creator keeps. A
+   viewer who finishes one case is offered another straight away. That is the binge.
+6. **Pin the case question.** At publish, the creator pins one comment: *"Who did you
+   suspect before the reveal?"* A whodunit makes people want to say who they
+   suspected; the pinned question gives them a place to say it. The creator replies to
+   comments in the first two hours. The pinned comment never asks for likes or
+   subscriptions.
 
 ### 14.2 · The 48-hour and 7-day reviews
 
@@ -2903,6 +2945,13 @@ uploads and never clicks Save in Studio or vidIQ (§6, browser rules).
 read in Studio. A click-through rate under 6% on a healthy number of impressions
 is a packaging problem, and packaging is the only lever still open. Claude
 recommends one change, a thumbnail or a title, and the creator decides.
+
+**Read CTR and retention together, never CTR alone.** A CTR above the channel's median
+with 30-second retention below its median means the packaging promised something the
+opening didn't show. The fix is a *more accurate* thumbnail or title, not a louder one,
+even if CTR falls. YouTube's own help says clickbait gets low view duration and is
+recommended less. A low CTR with strong retention is the opposite: the video works and
+the packaging undersells it.
 
 **At 7 days**: the full read of §6.1, the same tables, the same `dip-map.mjs`
 mapping and the same shape, written to the episode's own `10_review/review.md`.

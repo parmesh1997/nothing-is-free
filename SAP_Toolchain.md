@@ -24,6 +24,7 @@ a key) · **You** (a creator decision point by design).
 | Competitor transcripts, the red-herring source | yt-dlp auto-subs → `vtt-clean.mjs` | Free | CLI |
 | **Saturation and first mover** | `saturation.mjs` + yt-dlp search: near-copies, channels, mystery-framed titles, recency | Free | CLI |
 | The **cold-answer test** | `claude -p --model haiku "Answer in one line: <title question>"` | Your plan | CLI (fresh context on purpose) |
+| The **case score** (ranks the ideas that passed) | A table under `case-test.md`: seven parts, 100 points, each with its evidence (runbook §6.2.2) | Free | Session |
 | The vidIQ prompt | vidIQ chat | Spends vidIQ credits | **You** |
 
 ### Step 1 · Script

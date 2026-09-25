@@ -146,8 +146,9 @@ longer than 45 s without a story cut. That is the creator's 70/30 as a gate.
 | **The evidence board** | Red string, photos, a receipt pinned in the middle |
 | **The reconstruction overlay** | The cold open replayed with hands, cuts and arrows drawn over it |
 | **Cleared / guilty stamps** | A rubber stamp landing on a suspect card, with its sound |
+| **The challenge** | Just before the reveal the picture freezes on the lineup: *"You know what we know. Who took it?"* Two seconds of silence, then the reveal. The mystery writer's challenge to the reader, and the question the pinned comment asks |
 
-**Each episode uses three, never the same three twice in a row** (§4.8's uniqueness
+**Each episode uses three of the seven, never the same three twice in a row** (§4.8's uniqueness
 quota). The case spine is the constant; the surfaces change.
 
 ### 6.3 · The rules that keep it safe and fresh
