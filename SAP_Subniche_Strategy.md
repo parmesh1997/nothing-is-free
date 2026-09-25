@@ -189,6 +189,33 @@ single suspect with a question mark. Readable at 10% size (§9.10).
 
 ---
 
+### 6.6 · The channel description (from episode 10)
+
+The old description keeps its first and last lines, which were already a whodunit. The
+middle promised three kinds of episode told as history, which is the educational
+channel the whodunit replaces, and it breaks "one viewer, one format, every upload"
+(runbook §1.1). History stays inside every case, as the alibis and the reconstruction.
+
+```
+Nothing is free. Someone always pays. This channel finds out who.
+
+Every episode is a case. Something ordinary takes your money, and the answer
+everyone gives for who's behind it is wrong. We line up the suspects, check
+their alibis, rebuild what happened, and name who actually takes it. Legally,
+every time. Not the boardroom view. The receipt view.
+
+Real people, real decisions, real dates. Every figure is sourced, with years,
+in the description.
+
+New cases every week.
+
+Nothing is free. Now you know who's paying.
+```
+
+Say "every week" until two a week is proven sustainable; a promise the channel breaks
+costs more than a vague one. Update the description when episode 10 publishes, not
+before, so episode 9 isn't sold as something it isn't.
+
 ## 7 · The case slate: twelve episodes
 
 Every topic still passes the evidence gate and the case test (runbook §6.2, §6.2.1).
