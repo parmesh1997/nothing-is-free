@@ -1,7 +1,7 @@
 # QA audit: sub-niche strategy and production plan
 
-Written 2026-09-24. An adversarial review of `SAP_Subniche_Strategy.md` and
-`SAP_Production_Plan_v2.md` as first written. Each finding has a severity, a fix, and
+Written 2026-09-24, with second and third passes on 2026-09-25. An adversarial review
+of `SAP_Subniche_Strategy.md` and `SAP_Production_Plan_v2.md` as first written. Each finding has a severity, a fix, and
 where the fix now lives. **The biggest finding changes the recommendation.**
 
 Severity: 🔴 changes a decision · 🟠 would cost real time or money · 🟡 a gap to close
@@ -26,7 +26,7 @@ Severity: 🔴 changes a decision · 🟠 would cost real time or money · 🟡 
 
 | # | Finding | Sev | Fix | Where |
 | --- | --- | --- | --- | --- |
-| P1 | **Multiplane parallax from the mist pass leaves holes.** Splitting one render by depth means that when the foreground slides, there is no background behind it | 🟠 | Render the layers separately: the background *with the foreground collection excluded* (so it is complete behind), then the midground, then the foreground alone with alpha. Parallax stays under 8% of frame width | Production §3; runbook §9.8.1 |
+| P1 | **Multiplane parallax from the mist pass leaves holes.** Splitting one render by depth means that when the foreground slides, there is no background behind it | 🟠 | Render the layers separately: the background *with the foreground collection excluded* (so it is complete behind), then the midground, then the foreground alone with alpha. Parallax stays under 8% of frame width. (Layers renamed far / set / near in the camera pass, C2) | Production §3; runbook §9.8.1 |
 | P2 | **Agent-time numbers were estimates presented next to measurements** | 🟡 | Every budget is marked as an estimate. §9.0 step 7 records actual minutes, and those replace the estimates after one episode | Production §5 |
 | P3 | **`place-check` needs `angle` and `mark` in `shots.json`, but Step 1 cannot know the kit angles** | 🟡 | Step 1 writes intent (location, framing, who is where). 3b fills `angle` and `mark` from the kit. Stated explicitly | Runbook §9.0 |
 | P4 | **The cold-open-first gate could stall on missing VO** | 🟡 | Not an issue: Step 2 generates all beats. The cold-open proxy uses the real VO from Step 2 | Production §4 |
@@ -90,3 +90,27 @@ that. Row 11 now checks that nobody else is telling it as a mystery first.
 | --- | --- | --- | --- | --- |
 | P9 | **3c is the new bottleneck.** Episode 9's 3c composes 98 shots one by one: "several hours", and it hits the usage limit | 🔴 | Setups, not shots: 15–20 parameterised setups, with shots as data rows, built in batches with a progress file. For episode 9, a paste-ready prompt | Runbook §9.8.4; Production §9.1 |
 | P10 | **Imperial's orbit wasn't in the plan** | 🟡 | The diorama orbit: one template per location, 5–10 s, roof off, miniature focus, floating labels. At most one per episode. Demo rendered | Runbook §9.8.3; Production §3.1 |
+
+## 7 · Third pass: the camera (2026-09-25)
+
+The question: is the Remotion camera good enough, and is the plan consistent about it?
+
+**The verdict: keep it.** A camera moved in Remotion costs no render, can be changed
+without touching Blender, lives in the same place as the cast and the type, and fits
+3c's setups, where camera moves are props. What it can't do is travel through a space
+or turn around it. That is what the two L3 shots per episode are for, and in a
+12-minute case they are where the viewer feels travel: the opening and one
+establishing moment. L2 with a Remotion camera is the look of `sap_after.jpg`; the
+orbit is the Imperial moment on top.
+
+| # | Finding | Sev | Fix | Where |
+| --- | --- | --- | --- | --- |
+| C1 | **"The camera always belongs to Remotion"** and "Blender never renders a moving shot" contradicted the L3 shots and the orbit in the same document | 🟡 | It now says every shot except at most two, and names them | Production §1, §2 |
+| C2 | **Parallax would slide the feet.** §9.8.1 said the background moves slowest and the cast faster, but the cast stands on the background's floor. Every drift would have undone the foot lock that the marks guarantee | 🟠 | Three layers, far / set / near. The cast and the set layer share one transform; only far (beyond the action) and near (the occluders) move at other speeds | Runbook §9.8.1, §2.3, the camera vocabulary; Production §3 |
+| C3 | **No overscan.** A 1920×1080 plate shows its edge on an 8% drift and softens the ink on a 10% push | 🟠 | Kit plates render at 2880×1620: 10% more field on every side, at 1.25× density. Marks and anchors are in plate pixels and move with the plate | Runbook §9.8; Production §3, §7, §9.2 |
+| C4 | **The hero-shot count disagreed.** §2.3, §9.8 and three other places still said "two or three per episode", against §9.7's "at most two", and §2.3 still had the old 55/25/5/15 tiers that Production §8 said were replaced | 🟡 | Every count now says at most two, and §2.3 uses L1/L2/L3 | Runbook §2.3, §5.2, §9.0, §9.8, §9.8.1, §9.8.2 |
+| C5 | **The cast in an orbit was underspecified.** The camera moves, so a cutout on a fixed mark would drift off the floor | 🟡 | The 2D rig is drawn at foot points projected every frame from the orbit's anchors (as the demo does), and kept under about a tenth of the frame's height | Runbook §9.8.3; Production §3.1 |
+
+**Not changed:** the 8% parallax cap, rack focus from the mist pass, the handheld
+breath, and the one L3 shot in the cold open. **Not a video:** the orbit was checked on
+its start, middle and end frames. The full clip wasn't needed and wasn't kept.

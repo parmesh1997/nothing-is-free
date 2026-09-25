@@ -14,10 +14,11 @@ for every step are in `SAP_Toolchain.md`.
 ## 1 · The one-line answer
 
 **Go 2D-first, and let Blender paint backgrounds instead of building shots.**
-The camera always belongs to Remotion. Blender renders still plates of each location,
-once, from twelve angles. Remotion does everything that moves: the cast, the camera,
-the light, the type. Moving 3D shots drop to **at most two per episode**: one in the cold open and one
-diorama orbit (§3.1), and only when they earn it.
+The camera belongs to Remotion on every shot except at most two. Blender renders still
+plates of each location, once, from twelve angles. Remotion does everything that moves:
+the cast, the camera, the light, the type. The two exceptions are moving 3D shots (L3),
+where Blender moves the camera: one in the cold open and one diorama orbit (§3.1), and
+only when they earn it.
 
 This keeps about 85–90% of the current look (the `sap_after.jpg` still *is* this
 pipeline) and removes the per-shot Blender loop that cost ten hours in 3b.
@@ -27,7 +28,8 @@ pipeline) and removes the per-shot Blender loop that cost ten hours in 3b.
 ## 2 · "Only 2D": what you actually lose
 
 Three levels, cheapest first. **"2D-only" in the sense you mean is Levels 1 + 2**:
-Blender never renders a moving shot, and the camera is always Remotion's.
+Blender renders no moving shot, and the camera is always Remotion's. The plan adds at
+most two L3 shots on top.
 
 | Level | What it is | Build cost | What it looks like |
 | --- | --- | --- | --- |
@@ -61,8 +63,8 @@ All in Remotion, using the passes each L2 plate already has:
 
 | Trick | How | Why it sells depth |
 | --- | --- | --- |
-| **Multiplane parallax** | Each plate renders as three **separate** layers: the background *with the foreground collection excluded* (so it is complete behind the foreground), the midground, and the foreground alone with alpha. Remotion moves them at different speeds under one camera move, **under 8% of frame width**. Splitting one render by depth does not work: the background has holes where the foreground was (QA P1) | The Disney multiplane idea. The single strongest "this is 3D" signal there is |
-| **Push-in with foreground wipe** | Camera pushes 5–10% while a foreground object (a pillar, a plant, a shoulder) slides past the lens faster | Hides the cut, and reads as a dolly |
+| **Multiplane parallax** | Each plate renders as three **separate** layers: **far** (beyond the action, rendered with the others excluded so it is whole), **set** (the floor and the action's depth) and **near** (the foreground occluders, with alpha). Remotion moves them at different speeds under one camera move, **under 8% of frame width**. **The cast moves with the set layer**, because it stands on that floor; if it moved faster, its feet would slide (QA C2). Splitting one render by depth does not work: the far layer has holes where the set was (QA P1) | The Disney multiplane idea. The single strongest "this is 3D" signal there is |
+| **Push-in with foreground wipe** | Camera pushes 5–10% while a foreground object (a pillar, a plant, a shoulder) slides past the lens faster. The plate is overscanned (2880×1620), so the push stays sharp (QA C3) | Hides the cut, and reads as a dolly |
 | **Rack focus** | Blur levels per layer from the mist pass (A4). Focus moves from the foreground to the cast on a word | The camera "decides" what matters |
 | **Handheld breath** | `@remotion/noise` at 1–2 px on the camera, varying slowly | A still plate reads as filmed, not placed |
 | **Light that lives** | The practicals mask (A3) drives a slow flicker or sway on bloom and pools | The room is on, not printed |
@@ -81,8 +83,13 @@ building. Runbook §9.8.3 has the spec.
   point, a radius, a start and end angle, a height, and a smoothstep ease. The camera is
   keyed on the arc every four frames and aimed at a target that drifts slightly. The
   roof comes off. Labels read anchors exported per frame.
-- **The demo:** `sap_orbit_8s.mp4`, 8 seconds of the deli at gate B12 with the cast,
-  the lamp pools, the depth falloff and a "GATE B DELI" label.
+- **Tested:** the start, middle and end frames of an 8-second arc around the deli at
+  gate B12 rendered correctly: roof off, the lamp pools on, the deli held in the arc.
+  No video was kept; the same command renders one whenever it's wanted.
+- **The cast in an orbit** is the 2D rig, drawn at foot points projected every frame
+  from the orbit's anchors, and kept small (under about a tenth of the frame's height).
+  The figures don't turn with the camera, and at that size they read as figures on a
+  model.
 - **Three uses (at most one per episode):** the cold open's establishing shot, a new
   location's reveal, or **the frozen moment**: the crime stopped in time, the camera
   circling it, and each suspect labelled where they stand. That is the reconstruction
@@ -164,7 +171,7 @@ The first episode on this flow does one probe of the OTIO import on
 | A4 depth blur | Mist pass per plate, blur levels per layer in Remotion | Demo built |
 | A5 line weight by distance | Geometry Nodes after Line Art | Demo built |
 | B1 crayon grain in the shade band | Toon material | Demo built |
-| **New · multiplane parallax** | Three plate layers per angle | To build in `kit.py` |
+| **New · multiplane parallax** | Three plate layers per angle (far / set / near), overscanned to 2880×1620 | To build in `kit.py` |
 | **New · case devices** | Money meter, lineup, suspect cards, evidence board, reconstruction overlay, stamps (strategy §6.2). The reconstruction reuses the cold open's own compositions with an overlay layer; it is not re-staged (QA P5) | To build once, then vary |
 | B3 Blender 5.3 NPR nodes | Test on the beta; production stays on 5.2 LTS | Wait |
 
@@ -179,10 +186,10 @@ Applied in this pass, as one separate commit (so it can be reverted in one step)
 
 | Section | Edit |
 | --- | --- |
-| §2.3 Tiers and §9.7 Media budget | The L1/L2/L3 mix above replaces 2D 55 / 2.5D 25 / 3D 5 / inserts 15 |
+| §2.3 Tiers and §9.7 Media budget | The L1/L2/L3 mix above replaces 2D 55 / 2.5D 25 / 3D 5 / inserts 15 (§2.3 completed in the camera pass) |
 | §4.1 and §12.1 | The cold open spec (§4 here) and the **Cold open first** gate |
 | §9.0 | 3b-0 · Cold open, before all other shots |
-| §9.8.1 | Plates render as three layers (bg/mid/fg) for multiplane parallax |
+| §9.8.1 | Plates render as three layers (far / set / near) for multiplane parallax; the cast moves with the set layer; plates are overscanned |
 | §2.8 | The case devices (strategy §6.2) |
 | §5.2 | Budgets per step, as in §5 and §6 above, recorded against actual minutes |
 
@@ -250,7 +257,7 @@ That's free evidence for episode 10.
 1. **Choose the sub-niche.** The whodunit is applied in the runbook as one commit;
    revert that commit if you choose otherwise.
 2. **Promote the tools:** `marks.py` into `lib25d.py`; write `kit.py` (twelve angles ×
-   three layers + passes + marks + contact sheet).
+   three layers (far / set / near) at 2880×1620 + passes + marks + contact sheet).
 3. **Kit the existing locations overnight:** the SB stand, the counter kiosk and the
    deli. After that, their shots in any later episode are data.
 4. **Build the case devices once:** a money meter, a lineup, suspect cards and stamps

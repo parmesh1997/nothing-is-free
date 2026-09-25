@@ -81,10 +81,33 @@ data rows, in batches with a progress file. It is the 3c version of Stage & Mark
 **Episode 9's 3c has a paste-ready prompt** in Production Plan §9.1.
 
 **7 · The diorama orbit** (§9.8.3, Production §3.1): Imperial's move, built from the
-location that already exists. At most one per episode; the demo is `sap_orbit_8s.mp4`.
+location that already exists. At most one per episode. The recipe is tested on
+the deli (start, middle and end frames); no video file was kept.
 
 **8 · Also:** a backward end screen (§14.1), and change one thing at a time after
 episode 10 (§14.3).
 
 **Every runbook change is in commit `fd033a6`**, separate from the whodunit commit
 `3c72857`.
+
+---
+
+## What changed in the camera pass (2026-09-25)
+
+**The decision stands: the camera is Remotion's** on every L1 and L2 shot, which is
+about 97% of the runtime. Blender moves the camera only in the L3 shots, at most two
+per episode: the cold open's moving shot and the diorama orbit. The camera audit (QA
+§7) found five things to fix, and they're now in the runbook and the production plan:
+
+1. **Feet would have slid in parallax.** The runbook said the cast moves faster than
+   the background, but the cast stands on the background's floor. Now the layers are
+   far / set / near, and the cast moves with the set layer.
+2. **Plates had no overscan.** A 1080p plate shows its edge on an 8% drift and goes
+   soft on a 10% push. Kit plates now render at 2880×1620.
+3. **The hero-shot count disagreed with itself.** Six places still said "two or three";
+   they all say "at most two" now, and the §2.3 tier table uses L1/L2/L3.
+4. **"The camera always belongs to Remotion"** contradicted the L3 shots. It now names
+   the two exceptions.
+5. **The cast in an orbit** is drawn from per-frame anchors and kept small, so the
+   figures read as figures on a model.
+

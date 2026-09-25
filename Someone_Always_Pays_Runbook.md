@@ -298,10 +298,10 @@ shot rather than set once per location.
 
 | Tier | What it is | Share (§9.7) |
 | --- | --- | --- |
-| **2D scene** | A drawn set in Remotion (SVG), with the cast rig in it | ~55% |
-| **2.5D scene** | A Blender location plate (EEVEE toon shading plus Grease Pencil Line Art), with a 2D character pinned into it through the shot's camera JSON | ~25% |
-| **3D hero shot** | A full Blender shot, 6–10 s, where real depth sells the mechanism. Two or three per episode. Characters in it are still the 2D rig; there is no 3D Lucky until a modelled rig exists | ~5% |
-| **In-world insert** | A graphic shown inside the world (§2.8) | ~15% |
+| **L2 · Painted plate** | A Blender still from a kit angle (EEVEE toon shading plus Grease Pencil Line Art), in layers, with the cast on measured marks and the camera moved in Remotion (§9.8.1) | ~50% |
+| **L1 · Drawn 2D** | A drawn set in Remotion (SVG), with the cast rig in it: history, the case devices | ~35% |
+| **In-world insert** | A graphic shown inside the world (§2.8) | ~12% |
+| **L3 · Moving 3D** | A Blender camera move, 5–10 s: the cold open's one moving shot, or the diorama orbit (§9.8.3). **At most two per episode.** Characters in it are still the 2D rig, placed per frame from the shot's anchors; there is no 3D Lucky until a modelled rig exists | ≤3% |
 
 **Every frame has three planes**: background (the set), midground (the counter,
 the board, the furniture) and foreground (the character, the prop in hand, the
@@ -790,7 +790,7 @@ downgrade.
 | 3a · Library | `nif-builder` | **Opus 5.5, high** | A new location, a new cast parameter or a new shot template. Built once, reused for every episode after |
 | 3a · Angle kits | `nif-builder` | Sonnet 5, high | Twelve angles per new location, by script, plus one contact-sheet check |
 | 3b · Kit shots | `nif-builder` | Sonnet 5, medium | Picking angles and marks, running `place-check`. It is data entry against measured numbers. Batches of eight (§9.0) |
-| 3b · Hero shots, 3c · Scenes | `nif-builder` | Sonnet 5, high | Two or three moving Blender shots, and Remotion composition. Opus only to unpick a structural bug |
+| 3b · Hero shots, 3c · Scenes | `nif-builder` | Sonnet 5, high | At most two moving Blender shots (§9.7), and Remotion composition by setups (§9.8.4). Opus only to unpick a structural bug |
 | 3 · Stills audit | `nif-auditor` | Sonnet 5, medium | Independent of the builder; measures, never fixes |
 | 4 · Resolve | `nif-finisher` | Sonnet 5, medium | Opus 5.5 medium for grade and look decisions, and first-time Fusion authoring |
 | 5 · Publish and learn | `nif-researcher` | Sonnet 5, medium | Reading numbers and writing the review. Opus only when a lesson changes the runbook |
@@ -1673,7 +1673,7 @@ to anyone else, no walk crosses furniture, no shot is bare, and no angle is used
 twice. Then it writes `05_layers/cams/place-<shot>.json`, which Remotion renders
 from. **No Blender run, no stills, no foot-lock measurement** for a locked-off shot.
 
-Blender runs in 3b only for the two or three moving hero shots (§9.8), and a shot
+Blender runs in 3b only for the L3 shots, at most two (§9.7), and a shot
 that needs an angle the kit lacks gets one new kit angle, made by the same script.
 
 **3b works in batches of eight shots.** Each batch ends by writing
@@ -1995,9 +1995,10 @@ control, so a Blender shot is as reproducible as a Remotion shot.
 | --- | --- |
 | Look | EEVEE toon, one cel band, Grease Pencil Line Art in ink at the cast's line weight (§2.1). The location palette (§2.2). No photoreal materials, no chromatic aberration |
 | Output | 1920×1080 @ 24fps. Plates as ProRes 4444; occlusion mattes with alpha; into `05_layers/` |
+| Kit plates: overscan | **2880×1620**: the composed 1080p frame, plus 10% more field on every side, at 1.25× pixel density. The Remotion camera then drifts up to 8% without showing an edge and pushes in 10% without softening the ink. Marks and anchors are exported in plate pixels, and Remotion moves them with the same transform as the plate. Check the ink weight once on the contact sheet, at a 1:1 crop |
 | Defocused plates | May render at 50% and be blurred. They are out of focus, so the loss is invisible |
 | Timing | Frame ranges from `timing.json` words, the same as a Remotion shot |
-| Hero shots | Two or three per episode, 6–10 s each, where real depth sells the mechanism |
+| L3 shots | At most two per episode, 5–10 s each: the cold open's moving shot and the diorama orbit (§9.7, §9.8.3) |
 | Assets | CC0 only (§9.9): Poly Haven, Kenney, Quaternius, ambientCG. Or built by us |
 
 **What this renderer will and will not do.** Every line below was measured on a
@@ -2078,8 +2079,8 @@ the shot, so it is measured once per angle in 3a.
 
 | File | What it is |
 | --- | --- |
-| `Ann.plate.png` | The locked-off plate, with the ambient-life loop beside it when there is one (§9.8, render only what moves) |
-| `Ann.fg.png` | The foreground occluders only, with alpha: the matte, rendered once. Remotion stacks plate, cast, fg |
+| `Ann.far.png`, `Ann.set.png` | The locked-off plate in two layers, overscanned (§9.8): **far** renders with set and near excluded, so it is whole behind them; **set** has a holdout where far shows through. The ambient-life loop sits beside them when there is one (§9.8, render only what moves) |
+| `Ann.fg.png` | The **near** layer: the foreground occluders only, with alpha, rendered once. Remotion stacks far, set, cast, near |
 | `Ann.mist.png`, `Ann.practical.png` | Depth for the blur (A4), and the practicals mask for bloom (A3) |
 | `Ann.marks.json` | Every floor mark (a 0.5 m grid): screen foot point, pixels per metre, `free`, `feet_visible`, `head_visible`, `in_frame`, `lit` (sampled from the plate itself), the nearest light's screen x, distance |
 | `Ann.cam.json` | The camera and the anchors: board corners, counter edges, the surfaces type rides on |
@@ -2100,9 +2101,17 @@ in 3a.
 | Anti-repetition (§9.7) | Checked from memory | An angle is marked used in `INDEX.md` once an episode ships, and `place-check` refuses a reused one |
 
 **Camera movement on a kit shot happens in Remotion**: a push, a drift or a pan across
-the plate layers with parallax (background slow, cast and foreground faster), about
-3–8% of frame width. It reads as a camera and costs nothing. A real move through the
-space stays a Blender hero shot, two or three per episode (§9.7).
+the plate layers with parallax, about 3–8% of frame width, on an overscanned plate
+(§9.8). It reads as a camera and costs nothing. A real move through the space stays an
+L3 shot, at most two per episode (§9.7).
+
+**The cast moves with the floor it stands on.** The plate renders as three layers:
+**far** (what lies beyond the action: the back wall, the window view, the sky), **set**
+(the floor and everything at the action's depth, with a holdout where far shows
+through) and **near** (the foreground occluders, `Ann.fg.png`, with alpha). The set
+layer and the cast share one transform. Far moves less and near moves more. Moving the
+cast faster than its floor slides the feet across it, the exact foot-lock failure the
+marks removed.
 
 **A walk on a kit shot** goes in a straight line between two marks. `place-check`
 refuses one that crosses furniture. The walk cycle's planted foot follows the projected
@@ -2115,7 +2124,7 @@ Ten hours of 3b is what a fix-and-rerender loop with no floor costs.
 
 | Rung | The shot becomes | Cost |
 | --- | --- | --- |
-| 1 · Hero | A moving Blender shot with the cast pinned in | Highest. Two or three an episode |
+| 1 · Hero | A moving Blender shot with the cast pinned in | Highest. At most two an episode (§9.7) |
 | 2 · Kit | A locked-off kit angle, marks, a Remotion camera drift | Data plus one Remotion render |
 | 3 · Kit, feet out | The same, framed or cropped so no feet are on screen (a counter, a foreground crop) | Removes foot lock and most placement failures |
 | 4 · 2D | A 2D scene in Remotion (§2.3) | The cheapest shot the channel makes |
@@ -2138,7 +2147,7 @@ building.
 | The set | Roof and ceiling off, so the room reads as a model on a table. Pools of light stay on |
 | Focus | Stronger depth falloff than an L2 shot (the mist pass, §9.8.1): the sharp band sits on the scene of the crime, and the near and far edges soften. This is what makes it read as a miniature |
 | Type | Location labels and suspect labels float over the model on exported anchors (§2.8), fading in after the camera settles |
-| Cast | 2D cutouts on their projected marks. At this height and size they read as figures on a model, which is the look |
+| Cast | The 2D rig, drawn at its foot point projected **every frame** from the orbit's anchors, and kept under about a tenth of the frame's height. The figures don't turn with the camera; at that size they read as figures on a model, which is the look |
 | Life | Something moves: a jet taxiing, a door, the lamps |
 
 **Three uses, one per episode at most:** the cold open's establishing shot, the
@@ -2401,8 +2410,8 @@ built in Remotion (§9.2), with `@remotion/paths`, `@remotion/noise` and
 `@remotion/motion-blur` (§9.2.1), because there it is synced to `timing.json` words
 and reproduced on every render. The vocabulary the camera works from:
 
-- **2.5D parallax.** One camera move over the layers: the background moves least,
-  the foreground most
+- **2.5D parallax.** One camera move over the layers: far moves least, near most,
+  and the cast moves with the set layer it stands on (§9.8.1)
 - **Elements entering** from left, right, top or bottom, with overshoot and
   settle. Never linear, never a one-second opacity fade
 - **Motion blur** on every moving element
