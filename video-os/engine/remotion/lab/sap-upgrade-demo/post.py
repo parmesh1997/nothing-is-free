@@ -277,7 +277,8 @@ def composite(f, beauty, mist_p, emit_p):
         base = 255 - (255 - base) * (1 - np.clip(bl, 0, 255) / 255 * 0.55)     # screen
         # A4: depth blur from the mist pass, focused on Lucky — the blur is not Blender's (§9.8)
         focus = A["cast"]["lucky"]["mist"]
-        amt = np.clip((np.abs(mist - focus) - 0.07) * 3.2, 0, 1)
+        tilt = 5.5 if meta.get("shot") == "orbit" else 3.2      # a stronger falloff sells the miniature
+        amt = np.clip((np.abs(mist - focus) - 0.07) * tilt, 0, 1)
         img = Image.fromarray(base.astype(np.uint8))
         levels = [np.asarray(img).astype(np.float32)] + [np.asarray(img.filter(ImageFilter.GaussianBlur(r * K))).astype(np.float32) for r in (1.2, 2.4, 4.0)]
         x = amt * 3
@@ -287,6 +288,24 @@ def composite(f, beauty, mist_p, emit_p):
         hh, ww = np.indices(amt.shape)
         out = stack[i0, hh, ww] * (1 - t) + stack[i0 + 1, hh, ww] * t
         frame = Image.fromarray(np.clip(out, 0, 255).astype(np.uint8)).convert("RGBA")
+
+    # the floating location label (orbit shots): white type over the model, a thin leader down to it
+    if meta.get("shot") == "orbit" and "loc_label" in A:
+        t_in = max(0.0, min(1.0, (f - 30) / 14))
+        if t_in > 0:
+            lx, ly = A["loc_label"][0], A["loc_label"][1]
+            lab = Image.new("RGBA", frame.size, (0, 0, 0, 0))
+            ld = ImageDraw.Draw(lab)
+            fnt = ImageFont.truetype(FONT_B, int(40 * K))
+            txt = "GATE B DELI"
+            tw = ld.textlength(txt, font=fnt)
+            top = ly - 150 * K - (1 - t_in) * 20 * K
+            a8 = int(255 * t_in)
+            ld.line([(lx, ly), (lx, top + 52 * K)], fill=(253, 251, 245, a8), width=max(1, int(2 * K)))
+            ld.ellipse([lx - 4 * K, ly - 4 * K, lx + 4 * K, ly + 4 * K], fill=(253, 251, 245, a8))
+            ld.text((lx - tw / 2 + 2 * K, top + 2 * K), txt, font=fnt, fill=(0, 0, 0, int(110 * t_in)))
+            ld.text((lx - tw / 2, top), txt, font=fnt, fill=(253, 251, 245, a8))
+            frame.alpha_composite(lab)
 
     # the progress rule — accent, 10 px, every frame (§2.2)
     n = len(meta["frames"])

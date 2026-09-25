@@ -3,7 +3,7 @@ SAP visual-upgrade demo — the deli at gate B12 (runbook §4.1's cold-open exam
 built from code in the channel's toon language, rendered BEFORE and AFTER the
 Visual_Upgrade_Plan.md items.
 
-    python3 scene.py <outdir/> --mode before|after [--res 1920x1080] [--anim N] [--shot still|glide]
+    python3 scene.py <outdir/> --mode before|after [--res 1920x1080] [--anim N] [--shot still|glide|orbit]
 
   before : one `day` preset lighting everything, one line weight — the "diagram of a room"
   after  : practicals hung low (§2.2), line weight by depth band (A5), crayon grain in the
@@ -178,7 +178,7 @@ box("wall_back_r", (6.4, 4.6, 2.0), (0.4, 0.2, 4.0), mat("wall", "bg"))
 box("wall_under", (4.15, 4.6, 0.4), (4.1, 0.2, 0.8), mat("wall", "bg"))
 box("wall_over", (4.15, 4.6, 3.72), (4.1, 0.2, 0.56), mat("wall", "bg"))
 box("apron", (4.0, 12.0, -0.05), (30.0, 14.0, 0.1), toon("apron", "#9C9C94", "#6E7075", "bg"))
-if SHOT != "glide":   # the high-angle glide looks into the room like a diorama: no roof
+if SHOT not in ("glide", "orbit"):   # high-angle moves look into the room like a diorama: no roof
     box("ceiling", (0, 0.3, 4.08), (13.2, 9.0, 0.12), toon("ceiling", "#C9C0B0", "#6F6C6E", "bg"))
 box("wall_left", (-6.4, 0.3, 2.0), (0.2, 8.6, 4.0), mat("wall", "bg"))
 # wood slat feature wall, left of the counter — every slat outlined
@@ -324,6 +324,23 @@ if SHOT == "glide" and ANIM:
     jet.keyframe_insert("location", frame=1)
     jet.location.x += 3.5
     jet.keyframe_insert("location", frame=ANIM)
+elif SHOT == "orbit" and ANIM:
+    # the diorama orbit: one built set, the camera arcs around it (Imperial's establishing move).
+    # Front arc only (the room has no front or right wall), eased in and out — never linear (§3 law 8).
+    C = Vector((-0.6, 1.0, 0.0))
+    R, A0, A1 = 11.5, math.radians(-128), math.radians(-58)
+    for f in list(range(1, ANIM + 1, 4)) + [ANIM]:
+        t = (f - 1) / (ANIM - 1)
+        e = t * t * (3 - 2 * t)                      # smoothstep ease
+        a = A0 + (A1 - A0) * e
+        h = 7.6 - 1.4 * e                            # settles a little lower as it arrives
+        cam.location = C + Vector((math.cos(a) * R, math.sin(a) * R, h))
+        aim.location = C + Vector((0.0, 0.6 * e, 0.9))
+        cam.keyframe_insert("location", frame=f)
+        aim.keyframe_insert("location", frame=f)
+    jet.keyframe_insert("location", frame=1)
+    jet.location.x += 3.0
+    jet.keyframe_insert("location", frame=ANIM)
 else:
     cam.location, aim.location = (-1.2, -8.3, 2.9), (-0.6, 1.4, 1.0)
 
@@ -461,6 +478,7 @@ def anchors():
     out["gate"] = [px(gm @ Vector((sx * 0.65, -0.04, sz * 0.25))) for sx, sz in ((-1, 1), (1, 1), (1, -1), (-1, -1))]
     out["counter_edge"] = [px((-3.4, 2.32, 1.16)), px((1.4, 2.32, 1.16))]
     out["price"] = px((-2.14, 2.88, 1.33))
+    out["loc_label"] = px((-1.0, 2.9, 1.2))      # a floating location label rides the set (§2.8)
     return out
 
 
@@ -468,7 +486,7 @@ A = {}
 for f in range(1, max(1, ANIM) + 1):
     scene.frame_set(f)
     A[f] = anchors()
-json.dump({"width": W, "height": H, "fps": 24, "mode": MODE, "frames": A}, open(f"{OUT}{MODE}_anchors.json", "w"))
+json.dump({"width": W, "height": H, "fps": 24, "mode": MODE, "shot": SHOT, "frames": A}, open(f"{OUT}{MODE}_anchors.json", "w"))
 
 r.filepath = f"{OUT}{MODE}_"
 PREVIEW = [int(x) for x in opt["--preview"].split(",")] if "--preview" in opt else None

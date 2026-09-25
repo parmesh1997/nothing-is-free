@@ -73,6 +73,16 @@ other channels say) is this channel's first suspect, and it gets cleared on scre
 That is why a viewer who has already seen the explainers still has a reason to watch
 ours (§6.2.1).
 
+**The whodunit is a transfer, not a copy.** A proven format (the mystery) moved into
+a market that has never had it (everyday prices). A saturated *topic* is fine: its
+crowd supplies the red herring. A saturated *angle* is not: if other channels already
+tell a topic as a mystery, we'd be a copy, and the topic is dropped (§6.2.1 row 11).
+
+**One viewer, one format, every upload.** YouTube estimates who a video is for before
+showing it, partly from how the channel's earlier viewers responded. So from episode
+10, every upload is a case for the same viewer: the person paying. A one-off in another
+format blurs that signal for every episode after it.
+
 The distinction is the whole channel. The saturated lane is owner POV — "so you
 want to own X, here's every cost that kills your margin." The lane this channel
 owns is payer POV: the character is the person who pays, and the question is
@@ -159,6 +169,10 @@ arrived is a good outcome; leaving because the episode stalled is not.
   thirty-minute video at 20% is worth less than a thirteen-minute video at 45%,
   to the viewer and to the algorithm, and the channel's current weak number is
   retention — so length is a reward for holding attention, not a bid for it.
+
+  **The case format starts at about 8 minutes (1,400 words)** and grows only under
+  the rule above. It also keeps a solo production finishable: the build cost grows
+  with the number of setups (§9.0), and a shorter case needs fewer.
 - **Evergreen only.** No news pegs.
 - **Everything is 1920×1080, 24fps, end to end.** Remotion and Blender render at
   1080p (§9.4), the Resolve timeline is 1080p (§10.4) and the upload is 1080p
@@ -528,6 +542,11 @@ is the specific, weird, verifiable fact, and it opens the loop.
 
 **Nothing comes before the story.** No card, no logo, no title in the first
 seconds. The first frame is already inside the location.
+
+**The title echoes within five seconds.** The object in the title is in the first
+image, and the title's key words are heard or seen in the world within the first 15
+seconds. A viewer who clicked for popcorn and sees a lobby with no popcorn in it
+wonders if they are in the wrong video, and leaves.
 
 An example, for an airport food episode:
 
@@ -1034,8 +1053,23 @@ Every shortlisted topic passes all nine rows before it goes to Round 1, written 
 | 7 | **Why ours** | Three specific things ours has that each of the top three videos lacks, in a table. "Better animation" doesn't count | vidIQ Videos tab, transcripts |
 | 8 | **Stageable** | One object, at most two new locations (§2.4) | Library `INDEX.md` |
 | 9 | **Safe and evergreen** | No news peg, advertiser-safe, and no advice needed to close it | Judgment |
+| 10 | **The transfer** | We can name the proven format we move and the market it has never been used in, in one line (§1.1) | Judgment |
+| 11 | **First mover** | Fewer than three of the top 30 search results already frame the topic as a mystery ("who", "culprit", "not who you think") | `saturation.mjs` |
 
-A topic that fails row 4 or 5 is an explainer, not a mystery. It goes back to the
+`saturation.mjs` runs on two or three phrasings of the topic and writes
+`00_intake/saturation.md`:
+
+```bash
+node scripts/saturation.mjs "why is movie theater popcorn so expensive" "cinema popcorn price" --deep 12 \
+  --out ../../episodes/NIF0NN/00_intake/saturation.md
+```
+
+Its verdict reads the market three ways: **low demand** (nobody ranks big for it, so
+the evidence gate will likely fail), **topic crowded, angle open** (many near-copies
+all give the same answer: good, the red herring is ready-made), or **angle taken** (we'd
+be a copy: drop it).
+
+A topic that fails row 4, 5 or 11 is an explainer or a copy, not our mystery. It goes back to the
 shortlist whatever its demand.
 
 ### 6.3 · The vidIQ prompt
@@ -1655,7 +1689,7 @@ specific sounds. If the hook doesn't work, it is fixed while it is 15 seconds of
 **Step 1 writes intent; 3b writes placement.** `shots.json` from Step 1 names the
 location, the framing and who stands where. 3b fills `angle` and `mark` from the kit.
 
-**4 · 3c Scenes (Sonnet).** Remotion composes every shot from `shots.json`
+**4 · 3c Scenes (Sonnet).** Setups first, then shots as rows (§9.8.4). Remotion composes every shot from `shots.json`
 against `timing.json` words (§9.1). It builds the 2D sets, places the cast
 and applies the one-drawing rule (§2.1), then adds the inserts and the text.
 **One or two genuinely new visible mechanisms per episode** (§4.8). Not more and
@@ -1910,7 +1944,7 @@ Per ten minutes of runtime:
 | **L2 · Painted plates**: a Blender still from a kit angle (§9.8.1), rendered in three layers, with the cast, camera and light in Remotion | ~50% | Blender still + Remotion |
 | **L1 · Drawn 2D**: SVG sets, history scenes, the case devices | ~35% | Remotion |
 | **In-world inserts**: type, maps, documents, numbers, the money meter (§2.8) | ~12% | Remotion, inside a scene |
-| **L3 · Moving 3D**: a Blender camera move through the space | ≤ 3%: one shot, in the cold open | Blender |
+| **L3 · Moving 3D**: a Blender camera move, including the diorama orbit (§9.8.3) | ≤ 3%: at most two shots of 5–10 s, one in the cold open | Blender |
 
 **The camera belongs to Remotion** on every L1 and L2 shot: push, drift, pan and rack
 focus over the plate's three layers, under 8% of frame width (§9.8.1). L3 is the only
@@ -2090,6 +2124,45 @@ The rung each shot lands on is recorded in `project.json`, next to the cost (§9
 step 7). An episode where more than a quarter of its 2.5D shots fell two rungs is a
 3a problem: the kit's angles do not fit how the channel stages scenes, and the next
 kit is planned differently.
+
+### 9.8.3 · The diorama orbit
+
+**One built set, the camera arcing around it for 5–10 seconds, roof off, with
+miniature focus.** It is the cheapest spectacular shot the channel has: the location
+already exists for its kit, so the orbit is a camera path and GPU time, not new
+building.
+
+| Part | Spec |
+| --- | --- |
+| Camera | An arc of 50–90° around a centre point, high (6–8 m), easing in and out, settling slightly lower as it arrives. Front arc only, where the set has no wall. It is a parameter set in the location's orbit template (`--shot orbit`), never hand-keyed |
+| The set | Roof and ceiling off, so the room reads as a model on a table. Pools of light stay on |
+| Focus | Stronger depth falloff than an L2 shot (the mist pass, §9.8.1): the sharp band sits on the scene of the crime, and the near and far edges soften. This is what makes it read as a miniature |
+| Type | Location labels and suspect labels float over the model on exported anchors (§2.8), fading in after the camera settles |
+| Cast | 2D cutouts on their projected marks. At this height and size they read as figures on a model, which is the look |
+| Life | Something moves: a jet taxiing, a door, the lamps |
+
+**Three uses, one per episode at most:** the cold open's establishing shot, the
+reveal of a new location, or **the frozen moment**: the reconstruction (§7.3) as an
+orbit around the crime stopped in time, with each suspect labelled where they stand.
+Rendering takes minutes of GPU time. Agent time is one template call.
+
+### 9.8.4 · Setups, not shots (3c)
+
+**A setup is a set, a staging and a camera vocabulary. A shot is a data row inside
+it.** An episode that builds every shot as its own component pays for 98
+compositions. An episode that builds 15–20 setups and lists its shots as rows pays for
+20, and cuts just as often.
+
+- **3c builds setups first.** Group every shot in `shots.json` by location, staging and
+  who is in frame. Each group becomes one parameterised Remotion component with its
+  camera moves (wide, push, close, drift) as props.
+- **Then shots are rows:** setup, camera move, the word it starts on, what arrives.
+  No new component for a shot a setup can already make.
+- **Target: at most one setup per four shots.** §9.7's anti-repetition laws still
+  hold: no two consecutive shots share a location *and* a framing, so a setup's
+  shots are interleaved with other setups, never run back to back.
+- **3c works in batches of setups**, each ending with `08_conform/3c-progress.json`,
+  so a session that hits a usage limit resumes without re-reading anything.
 
 ### 9.9 · Archival and free sources
 
@@ -2593,7 +2666,7 @@ is checked again later lists every step in its Step column.
 | Gate | Step | Test |
 | --- | --- | --- |
 | Evidence | 0 | A proven outlier clears the §6.2 floor for its age and is ≥ 3× its channel's baseline, measured by `vph.mjs` |
-| Case test | 0 | All nine rows of §6.2.1 pass, written to `00_intake/case-test.md` |
+| Case test | 0 | All eleven rows of §6.2.1 pass, written to `00_intake/case-test.md`, with `saturation.md` beside it |
 | Cold answer | 0 | A fresh model given only the title's question does not name the culprit |
 | Why ours | 0 | Three specific things ours has that each of the top three videos lacks |
 | POV | 0 | The viewer is the one paying |
@@ -2642,6 +2715,9 @@ is checked again later lists every step in its Step column.
 | Gate | Step | Test |
 | --- | --- | --- |
 | Cold open first | 3 | The cold open built and its proxy watched by the creator before any other shot is built |
+| Setups | 3 | 3c builds setups, then shots as rows: at most one setup per four shots, with progress written per batch (§9.8.4) |
+| Orbit | 3 | At most one diorama orbit, 5–10 s, from the location's template (§9.8.3) |
+| Title echo | 3 | The title's object is in the first image, and its key words are in the world by 0:15 (§4.1) |
 | Stills review | 3 | Every beat passes on stills; `stills-audit.json` verdict PASS, written by `nif-auditor` |
 | Clean frame | 3 | Every row of §9.6 passes on every beat |
 | Lip sync | 3 | Lucky's mouth driven by the Step 2 Rhubarb cues (§8.4) |
@@ -2808,6 +2884,9 @@ uploads and never clicks Save in Studio or vidIQ (§6, browser rules).
    account offers it. The creator sets it up.
 4. **Add the episode to `library/shipped.md`**: code, title, publish date. Its
    numbers are filled in at 7 days.
+5. **The end screen points backward:** the last 10–15 seconds after the sign-off carry
+   an end screen to the previous case (the closing callback, §6.5). A viewer who
+   finishes one case is offered another straight away. That is the binge.
 
 ### 14.2 · The 48-hour and 7-day reviews
 
@@ -2835,5 +2914,8 @@ answer every line in it (§7.0), so it stays short and exact.
 - **A lesson comes out** after three episodes in a row pass without it, or when it
   is promoted into this runbook as a permanent rule through §13.5.
 - **40 lines at most.** Over that, the oldest lessons are promoted or retired first.
+- **Change one thing at a time.** After episode 10 (the deliberate format change), each
+  episode changes at most one of topic type, packaging style or structure in response
+  to a lesson. Change three at once and the next review can't say which one worked.
 - **A vidIQ Review issue that returns** becomes a line, checked in §14.1.
 
