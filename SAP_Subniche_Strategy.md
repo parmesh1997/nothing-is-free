@@ -55,6 +55,42 @@ by design:
 5. **A series, not a feed of topics.** The same detective voice, the same victim, and
    case devices that return. Viewers binge characters, not subjects.
 
+### 3.1 · "What if the idea is saturated?"
+
+**A saturated topic and a saturated angle are different things**, and only the second
+one is a problem.
+
+- **YouTube doesn't refuse crowded topics.** It shows every video to a small test
+  audience and then asks one question: *is this a better recommendation for this viewer
+  than everything else I could show them?* A tenth identical explainer loses that
+  comparison. A video with **a different reason to watch** can win it, even on a crowded
+  topic.
+- **A crowded topic helps us.** If thirteen videos all say "cinemas are greedy",
+  that's thirteen videos' worth of viewers who hold our red herring. Our twist lands
+  hardest on exactly those people.
+- **A taken angle kills us.** If three channels already tell popcorn as a mystery, we'd
+  be the fourth copy, and the first movers keep the trust. That topic is dropped.
+
+This is now measured, not argued: `saturation.mjs` (case test row 11) reads YouTube's
+top 30 results for the topic and says *low demand*, *topic crowded, angle open* (go)
+or *angle taken* (drop).
+
+### 3.2 · The transfer, stated plainly
+
+The proven way into a crowded platform is to **transfer** a proven thing, not copy
+it. A transfer moves one of four things:
+
+| Axis | Example | Ours |
+| --- | --- | --- |
+| **Angle** | The same subject told a new way | ⭐ **The mystery format moved onto everyday prices.** Nobody tells prices as whodunits |
+| Country | A US-proven concept made about another country | Not used: the cases are mostly universal |
+| Length | Short content made long, or the reverse | Not used |
+| Language | A proven English format in another language | **A later lever**: once ten English cases have proven retention, the same cases dubbed with ElevenLabs into a large, under-served language |
+
+The channel's production (hand-built sets, a drawn cast, sourced documents) is also a
+**high barrier to entry**. A transfer that is easy to copy gets copied within months;
+one that takes this much craft doesn't.
+
 ---
 
 ## 4 · The formats this stands on (and the bend)
@@ -125,7 +161,18 @@ quota). The case spine is the constant; the surfaces change.
   culprit, and sometimes the victim is someone the viewer never thought about.
 - **Polite disbelief, not outrage** (§0).
 
-### 6.4 · Titles
+### 6.4 · Runtime, the opening seconds, and the end
+
+- **Start at about 8 minutes (1,400 words).** It grows only when an episode holds 45%
+  (runbook §1.4). Shorter also means fewer setups, which is what makes a solo channel
+  finishable every week.
+- **The title echoes within five seconds:** the title's object is in the first image,
+  and its words are in the world by 0:15. A viewer who can't see what they clicked for
+  leaves.
+- **The end screen points to the previous case.** Finishing one case should offer
+  another immediately: that's the binge.
+
+### 6.5 · Titles
 
 The title poses the *who* or clears the obvious suspect. It never uses the same
 template twice in a row.
@@ -186,3 +233,6 @@ single object everybody knows, and its twist clears the obvious suspect.
 | §7.3, §7.5 | New devices (the lineup, the reconstruction); `Mode:` in the beat sheet |
 | §9.0, §9.7 | Cold open first; the L1/L2/L3 tier mix |
 | §12 | New gates: Case test, Cold answer, Why ours, Story ratio, Suspects sourced, No advice, Cold open first |
+| §1.1, §1.4, §4.1 (second pass) | The transfer; saturated topic vs saturated angle; one viewer, one format; an 8-minute start; the title echo |
+| §6.2.1 (second pass) | Row 10 (the transfer) and row 11 (first mover, `saturation.mjs`): eleven rows in total |
+| §9.8.3, §9.8.4, §14 (second pass) | The diorama orbit; setups, not shots; the backward end screen; change one thing at a time |

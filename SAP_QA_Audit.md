@@ -51,3 +51,42 @@ Severity: 🔴 changes a decision · 🟠 would cost real time or money · 🟡 
 - Real agent minutes per step on the new flow. Recorded in `project.json` from
   episode 10.
 - Whether the OTIO import works on Resolve 21.1 on your machine. Probe once.
+
+---
+
+## 5 · Second pass: three reference videos (2026-09-25)
+
+Checked against three videos the creator supplied: a faceless-channel coach on not
+copying channels, a small-channel educator on low impressions, and a storytime
+animator's how-to.
+
+**How far to trust each one.** The first is also a sales funnel for a paid course: its
+student income figures are unverified claims. Its *method* (transfer, don't copy)
+matches the runbook's own niche-bending rule, so the method is used and the numbers are
+ignored. The second matches YouTube's own public explanation of how recommendations are
+tested. The third is craft advice from a working animator.
+
+| # | What the video says | What we had | Sev | Change | Where |
+| --- | --- | --- | --- | --- | --- |
+| T1 | Don't copy; **transfer** a proven concept along one axis (angle, country, length, language), and be first in the new space | The bend was stated, but "first mover" was never checked | 🟠 | Case test row 10 (name the transfer) and row 11 (first mover, measured by `saturation.mjs`) | Runbook §1.1, §6.2.1 |
+| T2 | Before copying, check how many already made it, and how they did | No measurement of crowding | 🟠 | `saturation.mjs`: near-copies, channels, mystery-framed titles, recency | Toolchain; runbook §6.2.1 |
+| T3 | YouTube is a salesman that predicts before showing, partly from how the channel's earlier viewers responded | Nine episodes in a mix of formats | 🟠 | One viewer, one format, every upload, from episode 10 | Runbook §1.1 |
+| T4 | A generic topic loses; the *same* topic with a different reason to watch wins | The why-ours test existed | 🟡 | Stated as the answer to "is it saturated?": a crowded topic is fine, a taken angle is not | Strategy §3.1 |
+| T5 | Don't change everything at once; find the weakest part across uploads | No rule | 🟡 | Change one thing at a time after episode 10, which is itself the one deliberate big change, because the diagnosis is the idea | Runbook §14.3 |
+| T6 | The opening lines must match the title, or viewers feel misled and leave | The title question lands at 0:15–0:35 | 🟡 | The title's object in the first image; its words in the world by 0:15 | Runbook §4.1 |
+| T7 | Solo animators: keep it short enough to finish | No starting length; episode 9 has 98 shots | 🔴 | The case format starts at about 8 minutes, and 3c builds **setups, not shots** (one setup per four or more shots) | Runbook §1.4, §9.8.4 |
+| T8 | An end card, and a reason to watch the next one | A closing callback line only | 🟡 | A backward end screen to the previous case | Runbook §14.1 |
+| T9 | A simple character you can draw fast; jokes and slapstick | Already the rig and the humour spec | — | No change | — |
+
+**The creator's worry, answered:** "if the idea is saturated, YouTube won't take the
+risk." YouTube doesn't refuse crowded topics. It tests every video on a small audience
+and expands the ones viewers choose over the alternatives. The risk is being the tenth
+copy of the same answer, and the whodunit's red herring is built to be the opposite of
+that. Row 11 now checks that nobody else is telling it as a mystery first.
+
+## 6 · Second pass: production
+
+| # | Finding | Sev | Fix | Where |
+| --- | --- | --- | --- | --- |
+| P9 | **3c is the new bottleneck.** Episode 9's 3c composes 98 shots one by one: "several hours", and it hits the usage limit | 🔴 | Setups, not shots: 15–20 parameterised setups, with shots as data rows, built in batches with a progress file. For episode 9, a paste-ready prompt | Runbook §9.8.4; Production §9.1 |
+| P10 | **Imperial's orbit wasn't in the plan** | 🟡 | The diorama orbit: one template per location, 5–10 s, roof off, miniature focus, floating labels. At most one per episode. Demo rendered | Runbook §9.8.3; Production §3.1 |

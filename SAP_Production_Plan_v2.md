@@ -16,8 +16,8 @@ for every step are in `SAP_Toolchain.md`.
 **Go 2D-first, and let Blender paint backgrounds instead of building shots.**
 The camera always belongs to Remotion. Blender renders still plates of each location,
 once, from twelve angles. Remotion does everything that moves: the cast, the camera,
-the light, the type. Moving 3D shots drop to **one per episode, in the cold open**, and
-only when it earns it.
+the light, the type. Moving 3D shots drop to **at most two per episode**: one in the cold open and one
+diorama orbit (§3.1), and only when they earn it.
 
 This keeps about 85–90% of the current look (the `sap_after.jpg` still *is* this
 pipeline) and removes the per-shot Blender loop that cost ten hours in 3b.
@@ -51,7 +51,7 @@ scenes, the heist board, maps and inserts, which are drawn things anyway.
 | L2 painted plates, with the cast | ~50% |
 | L1 drawn 2D (history, the heist board, the crew cards) | ~35% |
 | In-world inserts (the loot counter, documents, prices) | ~12% |
-| L3 moving 3D | ≤ 3%: one shot, in the cold open |
+| L3 moving 3D | ≤ 3%: at most two shots of 5–10 s (the cold open, and one diorama orbit) |
 
 ---
 
@@ -69,6 +69,26 @@ All in Remotion, using the passes each L2 plate already has:
 | **Diorama establishing shot** | One high-angle still of the whole location, roof off, then a Remotion push-in with depth blur | Imperial's opening feel, from one render |
 | **Line wobble and characters on twos** | A1 and A2 from the visual plan | Reads as drawn by hand: the channel's signature |
 | **Cast lit by the floor** | Each standing spot's `lit` value (Stage & Marks) switches the cast between lit and shade tones, with a rim and a contact shadow | The single loudest "one world" signal (§2.1) |
+
+### 3.1 · The diorama orbit (Imperial's move, built cheaply)
+
+One built set, roof off, the camera arcing 50–90° around it for 5–10 seconds, with
+miniature focus and labels floating over the model. **The location already exists for
+its kit, so the orbit is a camera path and a few minutes of GPU time.** It is not new
+building. Runbook §9.8.3 has the spec.
+
+- **How it's built:** `scene.py --shot orbit` (in `lab/sap-upgrade-demo/`): a centre
+  point, a radius, a start and end angle, a height, and a smoothstep ease. The camera is
+  keyed on the arc every four frames and aimed at a target that drifts slightly. The
+  roof comes off. Labels read anchors exported per frame.
+- **The demo:** `sap_orbit_8s.mp4`, 8 seconds of the deli at gate B12 with the cast,
+  the lamp pools, the depth falloff and a "GATE B DELI" label.
+- **Three uses (at most one per episode):** the cold open's establishing shot, a new
+  location's reveal, or **the frozen moment**: the crime stopped in time, the camera
+  circling it, and each suspect labelled where they stand. That is the reconstruction
+  (§6.1 of the strategy) at its most cinematic.
+- **Cost on a 4070 Ti** (estimate): an EEVEE toon frame at 1080p takes seconds, so an
+  8-second orbit is a few minutes of rendering.
 
 **Cheap locations that still look good (3a):**
 - **A modular kit** in Blender: wall and window pieces, a counter, shelving that fills
@@ -108,7 +128,7 @@ the hook doesn't work, it's fixed while it is 15 seconds of work, not 12 minutes
 | **3a · Library** | New locations from the modular kit, plus **the angle kit**: twelve angles, each with a layered plate, fg matte, mist and practicals passes, measured floor marks (`marks.py`), and a contact sheet checked once | Opus for a new location; Sonnet for the kit render | ~1 h per new location, 0 for kitted ones |
 | **3b-0 · Cold open** | Built first, proxy watched (the gate above) | Sonnet, high | ~45 min |
 | **3b · Shots** | Each L2 shot is data: an angle, a mark for each character, a camera move. `place-check.mjs` validates it with numbers and writes `place-<shot>.json`. Batches of eight; two fix attempts, then the ladder (§9.8.2) | Sonnet, medium | ~1–1.5 h for 20 shots |
-| **3c · Scenes** | L1 scenes, the three case devices this episode uses (strategy §6.2), the reconstruction overlay, inserts, text | Sonnet, high | Unchanged |
+| **3c · Scenes** | **Setups first, then shots as data rows** (runbook §9.8.4): 15–20 parameterised setups for an 8-minute case, at most one per four shots. Then the three case devices this episode uses, the reconstruction overlay, inserts and text. Batches with a progress file | Sonnet, high | ~2–4 h for an 8-minute case (estimate) |
 | **Audit** | Scripts first, then contact sheets, then `motion-check.mjs` on the proxy (§9.5) | Sonnet, medium | ~30 min |
 
 **What stops the 10-hour loop, specifically:** no Blender render in 3b except the one
@@ -179,7 +199,7 @@ sub-niche starts at episode 10, where the script can be written for it.
 | # | What | How | Agent time (estimate) | Model |
 | --- | --- | --- | --- | --- |
 | 1 | **Close 3b** | The prompt in `Step3_Step4_Options.md` §2: passing shots stay, twice-failed shots go down the ladder, and no new plates are rendered | 1–2 h | Sonnet, medium |
-| 2 | **3c in batches of ~12 shots** | Each batch ends with a progress file (§9.0), so a new session can resume after a usage reset without re-reading anything | 4–8 h, depending on how many 2D beats there are | Sonnet, high |
+| 2 | **3c, setups first** | The prompt below: group the 98 shots into setups, build each setup once, then write the shots as rows. Batches of setups with a progress file | ~3–5 h, down from several hours per batch of bespoke shots | Sonnet, high |
 | 3 | **Audit and proxy** | Scripts, then contact sheets, then `motion-check.mjs`, then you watch the proxy (§9.5, §11.2) | ~1 h + your watch | Sonnet, medium |
 | 4 | **Full render** | After your go. GPU time, not agent time | ~0 agent time | — |
 | 5 | **Step 4** | Timeline file, one import, grade, encode, mix, mux, QC (§10) | 0.5–1 h | Sonnet or Haiku |
@@ -190,6 +210,36 @@ the big unknown. If the week's usage runs out mid-3c, stop at a batch boundary a
 resume after the reset from the progress file. Nothing is lost. **What flexes is scope,
 never a gate (§1.4):** cutting a few 2D beats' extra detail is fine; skipping the proxy
 watch is not.
+
+**Paste this into the episode 9 3c session** (a fresh session after the usage reset):
+
+```
+Read Someone_Always_Pays_Runbook.md §9.8.4 (setups, not shots) and §9.0 only.
+Episode NIF009 is in 3c. Don't restart anything that 3a/3b produced.
+
+1. Read 01_script/shots.json and 08_conform/3b-progress.json (if present).
+   Group all 98 shots into SETUPS: same location or set + same staging + same
+   people in frame. Target 15–25 setups. Write 08_conform/3c-setups.json:
+   setup id → shots, set, cast, camera moves each shot needs. Don't open
+   any images for this step.
+2. Build one parameterised Remotion component per setup, with its camera
+   moves (wide / push / close / drift) and arrivals as props. The 2.5D
+   setups use their existing plates; don't render any new plate.
+3. Write every shot as a row that uses its setup (setup, move, start word,
+   arrivals). Don't write a new component for a shot a setup can already make.
+4. The four new mechanisms and the 3b open items: build them inside the
+   setups they belong to.
+5. Work in batches of 4–5 setups. After each batch, write
+   08_conform/3c-progress.json (setups done, shots covered, open issues)
+   and check each setup with ONE contact sheet (12 stills in one image),
+   never shot-by-shot stills.
+6. If usage runs low, stop at the end of a batch. The next session resumes
+   from 3c-progress.json.
+7. When all shots are covered, hand the contact sheets to nif-auditor and
+   stop. No proxy and no full render.
+
+Model: Sonnet, high. Record agent minutes per batch in project.json.
+```
 
 **Packaging episode 9:** the script is locked, but the title and thumbnail aren't. If
 its reversal names who pays, test a whodunit-style title with *Test & compare* (§14.1).

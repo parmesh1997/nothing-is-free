@@ -54,3 +54,37 @@ stands (Production Plan §9.1).
   people.
 - The AI image-to-3D options are listed but not recommended: they break law 12, and
   one of them (Hunyuan3D) has a territorial licence.
+
+---
+
+## What changed in the second pass (the three reference videos, 2026-09-25)
+
+**1 · "Is it saturated?" is now measured.** `saturation.mjs` reads YouTube's top 30
+results for a topic and returns *low demand*, *topic crowded, angle open* (go: their
+answer is our red herring) or *angle taken* (drop: we'd be a copy). It is case test row
+11, **First mover**.
+
+**2 · The transfer is named.** Case test row 10: every topic states which proven format
+moves into which new market. Ours is the mystery, moved onto everyday prices. Other
+languages are a later lever, once ten English cases prove retention.
+
+**3 · One viewer, one format, every upload** (runbook §1.1). YouTube predicts partly from
+how your earlier viewers responded, so from episode 10 every upload is a case.
+
+**4 · The case format starts at about 8 minutes** and grows only when an episode holds
+45% (§1.4).
+
+**5 · The title echoes within 5 seconds** (§4.1): the title's object is in the first image.
+
+**6 · 3c builds setups, not shots** (§9.8.4): 15–25 parameterised setups, with shots as
+data rows, in batches with a progress file. It is the 3c version of Stage & Marks.
+**Episode 9's 3c has a paste-ready prompt** in Production Plan §9.1.
+
+**7 · The diorama orbit** (§9.8.3, Production §3.1): Imperial's move, built from the
+location that already exists. At most one per episode; the demo is `sap_orbit_8s.mp4`.
+
+**8 · Also:** a backward end screen (§14.1), and change one thing at a time after
+episode 10 (§14.3).
+
+**Every runbook change is in commit `fd033a6`**, separate from the whodunit commit
+`3c72857`.

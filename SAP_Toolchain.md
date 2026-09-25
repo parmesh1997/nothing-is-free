@@ -22,6 +22,7 @@ a key) · **You** (a creator decision point by design).
 | Views per hour and outlier multiple, measured | `vph.mjs` + yt-dlp | Free · Unlicense | CLI |
 | Public stats at scale (optional) | YouTube Data API v3 | Free: 10,000 units a day; a search costs 100, a video lookup 1 | API |
 | Competitor transcripts, the red-herring source | yt-dlp auto-subs → `vtt-clean.mjs` | Free | CLI |
+| **Saturation and first mover** | `saturation.mjs` + yt-dlp search: near-copies, channels, mystery-framed titles, recency | Free | CLI |
 | The **cold-answer test** | `claude -p --model haiku "Answer in one line: <title question>"` | Your plan | CLI (fresh context on purpose) |
 | The vidIQ prompt | vidIQ chat | Spends vidIQ credits | **You** |
 
@@ -54,6 +55,8 @@ a key) · **You** (a creator decision point by design).
 | 3D assets and textures | Poly Haven, Kenney, Quaternius, ambientCG | Free · CC0 | CLI (download script with ledger) |
 | Fonts | Google Fonts | Free · OFL | `@remotion/google-fonts` |
 | Held-frame and shot-length audit | `motion-check.mjs` + ffmpeg | Free | CLI |
+| Diorama orbit | The location's orbit template (`--shot orbit`) + floating labels | Ours | CLI, headless Blender |
+| 3c setups | `08_conform/3c-setups.json` + one parameterised component per setup | Ours | Session |
 
 ### Step 4 · Finish
 
@@ -75,6 +78,14 @@ a key) · **You** (a creator decision point by design).
 | 48-hour and 7-day review | Studio + `dip-map.mjs` | Free | Browser / API |
 
 ---
+
+### Later · Other languages (not now)
+
+Once ten English cases have proven retention, the same cases could be dubbed into
+another language with ElevenLabs (your plan) as a second audio track or a second
+channel. Check what YouTube Studio offers for multi-language audio on your account
+at that point. It's a transfer along the language axis (strategy §3.2), and it isn't
+worth doing before the English format is proven.
 
 ## 2 · Automation: what can run without you
 
