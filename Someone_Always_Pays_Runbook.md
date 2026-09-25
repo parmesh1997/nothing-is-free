@@ -330,6 +330,17 @@ is something **cut off by the frame edge**, not merely the nearest object (§2.4
   not an episode.
 - **A returning location comes back from a new angle.** No camera angle is reused
   across episodes (§2.7).
+- **Every case has its own scene of the crime.** At least one location in each
+  episode, usually the cold open's, has never been on screen before. It is built from
+  the modular kit's parts (walls, counters, shelving, lamps, chairs) plus one hero prop
+  (the popcorn machine, the check-in kiosk), so it costs about an hour, not a rebuild.
+  **Reuse the parts, never the room.** An episode staged entirely in earlier episodes'
+  rooms fails the case test's row 8.
+- **A returning location has to earn it.** It comes back only when the story really
+  happens there (an airline case returns to the airport), and it comes back
+  re-dressed: new signs, practicals, props and time of day, or another era for a
+  history scene. The location's contact sheet records each dressing with its episode,
+  so the same dressing never returns.
 - **Every location has ambient life.** Something always moves: a fan, a flap board,
   a jet taxiing, steam, a pendant swaying. No shot holds dead (§3 law 11).
 - **A close-up on a small prop inside a location is the most expensive shot**,
@@ -1058,7 +1069,7 @@ Every shortlisted topic passes all eleven rows before it goes to Round 1, writte
 | 5 | **The cold answer** | A fresh model, given only the title's question, does **not** name our culprit | `claude -p --model haiku "Answer in one line: <question>"` |
 | 6 | **The culprit** | Named, sourced, surprising, and legal: no crime is alleged | Research |
 | 7 | **Why ours** | Three specific things ours has that each of the top three videos lacks, in a table. "Better animation" doesn't count | vidIQ Videos tab, transcripts |
-| 8 | **Stageable** | One object, at most two new locations (§2.4) | Library `INDEX.md` |
+| 8 | **Stageable** | One object; one or two new locations, including a scene of the crime never seen before (§2.4) | Library `INDEX.md` |
 | 9 | **Safe and evergreen** | No news peg, advertiser-safe, and no advice needed to close it | Judgment |
 | 10 | **The transfer** | We can name the proven format we move and the market it has never been used in, in one line (§1.1) | Judgment |
 | 11 | **First mover** | Fewer than three of the top 30 search results already frame the topic as a mystery ("who", "culprit", "not who you think") | `saturation.mjs` |
@@ -1093,7 +1104,7 @@ its case test in `00_intake/case-test.md`:
 | **The cold answer** | 10 | The fresh model names our red herring = 10; it gives a vague answer = 5 |
 | **The victim's number** | 10 | Sourced, per person per year, and something a viewer would repeat = 10; sourced but abstract (only a national total) = 5 |
 | **The packaging** | 15 | A title in the §6.0 shape and a thumbnail as one frame of one object, both drafted before scoring. Clickable *and* true to the video = 15; true but flat = 5. If it can't be packaged, it isn't an idea yet: back to the shortlist |
-| **Build cost** | 10 | New locations: none = 10, one = 5, two = 0 (§2.4) |
+| **Build cost** | 10 | New locations: one (the scene of the crime) = 10, two = 5. None fails row 8 (§2.4) |
 
 - **A score ranks; it never rescues.** Only topics that passed every row are scored.
 - **Every point cites its evidence** (a number, a file, a title). A part without

@@ -132,3 +132,17 @@ Details and sources are in QA §8.
 5. **A pinned "Who did you suspect?" comment** and replies in the first two hours; the
    **Case files** playlist on the end screen (§14.1).
 6. **Fixed:** §6.2.1 said "nine rows"; it's eleven.
+
+## Locations: reuse the parts, never the room (2026-09-25)
+
+Runbook §2.4 gained two rules, so the channel never looks like one set with the nouns
+swapped:
+
+1. **Every case has its own scene of the crime:** at least one location per episode
+   that has never been on screen, built from the kit's parts plus one hero prop (about
+   an hour). Case test row 8 now requires it, and the case score's build cost counts
+   one new location as the best case.
+2. **A returning location has to earn it:** only when the story really happens there,
+   and re-dressed (signs, lamps, props, time of day, era). Each dressing is recorded
+   on the location's contact sheet and never repeats.
+
