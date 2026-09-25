@@ -14,7 +14,7 @@ Everything produced in the 2026-09-24 sessions, in the order to read it.
 | — | `video-os/channels/unseen/` | The Unseen channel draft | Parked |
 
 **Tested tools** (`video-os/engine/remotion/scripts/` unless noted): `vph.mjs`,
-`vtt-clean.mjs`, `dip-map.mjs`, `motion-check.mjs`, `place-check.mjs`,
+`vtt-clean.mjs`, `dip-map.mjs`, `motion-check.mjs`, `place-check.mjs`, `saturation.mjs`,
 `make-timeline.mjs`, and `lab/sap-upgrade-demo/marks.py`.
 
 ---
