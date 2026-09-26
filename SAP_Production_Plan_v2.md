@@ -138,6 +138,7 @@ the hook doesn't work, it's fixed while it is 15 seconds of work, not 12 minutes
 | **3b · Shots** | Each L2 shot is data: an angle, a mark for each character, a camera move. `place-check.mjs` validates it with numbers and writes `place-<shot>.json`. Batches of eight; two fix attempts, then the ladder (§9.8.2) | Sonnet, medium | ~1–1.5 h for 20 shots |
 | **3c · Scenes** | **Setups first, then shots as data rows** (runbook §9.8.4): 15–20 parameterised setups for an 8-minute case, at most one per four shots. Then the three case devices this episode uses, the reconstruction overlay, inserts and text. Batches with a progress file | Sonnet, high | ~2–4 h for an 8-minute case (estimate) |
 | **Audit** | Scripts first, then contact sheets, then `motion-check.mjs` on the proxy (§9.5) | Sonnet, medium | ~30 min |
+| **Fix loop** | You watch the proxy and write `issues.csv`; one fresh fix session fixes by class, component first, re-renders only changed clips; two rounds at most (runbook §9.5.1) | Sonnet, medium | ~30–60 min per round (estimate) |
 
 **What stops the 10-hour loop, specifically:** no Blender render in 3b except the one
 cold-open shot; no foot-lock stills (feet stand on measured spots of a locked camera);
@@ -248,6 +249,36 @@ Episode NIF009 is in 3c. Don't restart anything that 3a/3b produced.
 
 Model: Sonnet, high. Record agent minutes per batch in project.json.
 ```
+
+### 9.1.1 · Episode 9 now: 3c is done, QA found 30–40 issues
+
+Don't send the issues one at a time, and don't let a session re-check each fix on
+stills. That loop spent a 5-hour session window in about four hours and roughly 30% of
+the week. Instead:
+
+1. **You** watch the proxy once and write `08_conform/issues.csv` (the columns are in
+   runbook §9.5.1). Put the time, shot and one line per issue. Attach a screenshot only
+   when the line can't say it.
+2. **A fresh session** (after the weekly reset), with this prompt:
+
+```
+Read Someone_Always_Pays_Runbook.md §5.4 and §9.5.1 only. Episode NIF009.
+Read 08_conform/issues.csv. Don't open any stills or the proxy.
+1. Group the rows by class (TEXT, PLACE, MOTION, LOOK, CONTENT, AUDIO), then by
+   setup. Print the groups as a table: class, setup, row ids, the likely single
+   cause.
+2. Fix in this order: the shared component first, then the setup, then single
+   shot rows. One fix per cause, not one per row.
+3. Re-render only the clips that changed (§9.4, §11.4), then render one short
+   proxy of just those clips at --scale=0.5.
+4. Write 08_conform/fix-round-1.md: each row id, fixed or not, and how.
+   Then stop. I'll check those clips and mark the rows.
+Model: Sonnet, medium. Stop and write progress if context passes ~100k.
+```
+
+3. **You** check only the changed clips and mark the rows. A second round takes only
+   the rows still open. After two rounds, a row goes down the ladder, is cut, or you
+   accept it.
 
 **Packaging episode 9:** the script is locked, but the title and thumbnail aren't. If
 its reversal names who pays, test a whodunit-style title with *Test & compare* (§14.1).

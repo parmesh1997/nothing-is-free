@@ -107,6 +107,12 @@ This is now measured, not argued: `saturation.mjs` (case test row 11) reads YouT
 top 30 results for the topic and says *low demand*, *topic crowded, angle open* (go)
 or *angle taken* (drop).
 
+**The neighbours, checked 2026-09-26.** There are channels named for money mysteries
+("Money Mysteries Exposed" covers real frauds and Ponzi schemes; "Weird Finance" calls
+itself economic mysteries and documentaries). None tells everyday prices as legal
+whodunits with a recurring victim. The lane is still ours, and row 11 still checks it
+topic by topic.
+
 ### 3.2 · The transfer, stated plainly
 
 The proven way into a crowded platform is to **transfer** a proven thing, not copy

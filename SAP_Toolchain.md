@@ -56,6 +56,9 @@ a key) · **You** (a creator decision point by design).
 | 3D assets and textures | Poly Haven, Kenney, Quaternius, ambientCG | Free · CC0 | CLI (download script with ledger) |
 | Fonts | Google Fonts | Free · OFL | `@remotion/google-fonts` |
 | Held-frame and shot-length audit | `motion-check.mjs` + ffmpeg | Free | CLI |
+| Text that can't overflow | `fitText` / `measureText` from `@remotion/layout-utils` (installed), inside one shared text component | Free · Remotion licence | Code |
+| Fastest render settings for the PC | `npx remotion benchmark` → `--concurrency` in the config | Free | CLI, once |
+| Creator QA | `08_conform/issues.csv` (runbook §9.5.1) | Free | **You** write it; Claude fixes by class |
 | **The feed test** for thumbnails and titles | `feed-mock.mjs` + yt-dlp search: our variants beside the topic's top results, in home, sidebar and search views | Ours | CLI, opened in a browser |
 | Diorama orbit | The location's orbit template (`--shot orbit`) + floating labels | Ours | CLI, headless Blender |
 | 3c setups | `08_conform/3c-setups.json` + one parameterised component per setup | Ours | Session |
@@ -82,6 +85,12 @@ a key) · **You** (a creator decision point by design).
 
 ---
 
+**Skills already installed** (`video-os/engine/remotion/.claude/skills/`) that match
+the cinematic devices (runbook §4.9): `beat-sync-editing` (J- and L-cuts, match
+cuts), `shot-composition` (framing, safe areas, parallax), `color-motion` (grading
+by section), `kinetic-typography`. Load one only while its device is being built:
+every loaded skill is context.
+
 ### Later · Other languages (not now)
 
 Once ten English cases have proven retention, the same cases could be dubbed into
@@ -98,6 +107,8 @@ worth doing before the English format is proven.
 | **The 7-day review** | Windows Task Scheduler runs `claude -p "Run runbook §14.2 for NIF0NN"` seven days after publish | Your PC: it needs your Chrome profile, or the Analytics API key |
 | **The Monday weekly check** | The same, for `nif-weekly-log.md` | Your PC |
 | **Stopping long renders** | The render-guard hook (§9.5) | Claude Code hooks |
+| **Seeing the context ceiling** | A status line that shows context use (`/statusline` sets it up), so a session is ended near 100k (runbook §5.4) | Claude Code, locally |
+| **The week's cost, by habit** | `/usage`, read once a week; anything flagged at 10% or more gets a rule | Claude Code, locally |
 | **Trimming logs** | The log-trimmer hook (§13.6) | Claude Code hooks |
 
 **Why not cloud routines (claude.ai):** they can't reach Blender, Resolve, your GPU or

@@ -12,13 +12,15 @@ first**: it's the whole plan on one page, and it points to the detail.
 | 5 | `SAP_Toolchain.md` | Every tool by step: licence, cost, how Claude runs it, optional AI (not recommended) | Final |
 | 6 | `SAP_QA_Audit.md` | Every audit finding, pass by pass (§1–§9), and where each fix lives | Final |
 | 7 | `Step3_Step4_Options.md` | Only **§2, the prompt that finishes episode 9's 3b** | Archive once episode 9 ships |
+| 8 | **`SAP_Merge_Pack.md`** + `merge/` | **The prompt and files that merge all of this into the runbook on your PC**, keeping your own edits and showing every conflict with a recommendation | Use after the weekly reset |
 | — | `archive/` | `Visual_Upgrade_Plan.md`, `Runbook_Changes_2026-09-24.md`: earlier rounds, folded into files 3 and 4 | Archived |
 | — | `NIF_CONTENT_PLAN_Sept-Dec_2026.md` | The old 90-day plan: a record of episodes 1–9, superseded from episode 10 (see its first lines) | Record |
 | — | `video-os/channels/unseen/` | The Unseen channel draft | Parked |
 
 **Tested tools** (`video-os/engine/remotion/scripts/` unless noted): `vph.mjs`,
 `vtt-clean.mjs`, `dip-map.mjs`, `motion-check.mjs`, `place-check.mjs`, `saturation.mjs`,
-`feed-mock.mjs`, `make-timeline.mjs`, and `lab/sap-upgrade-demo/marks.py`.
+`feed-mock.mjs`, `make-timeline.mjs`, and `lab/sap-upgrade-demo/marks.py`. The merge
+itself was tested on a simulated local runbook.
 
 **Visual references:** `lab/sap-upgrade-demo/sap_after.jpg` (the look) and
 `sap_compare.jpg` (before and after).
@@ -26,6 +28,27 @@ first**: it's the whole plan on one page, and it points to the detail.
 ---
 
 ## Change history, newest first
+
+### 8 · Story, cinema, cost, and the merge (QA §10)
+
+- **Why eight minutes, not a chatbot:** the value is the case, not the answer (§4.5).
+- **Misconception first** (§4.6): the red herring is staged as believable before it's
+  cleared. Research on learning from video found this roughly doubled what viewers
+  learned.
+- **But / therefore beats** (§4.4), and **every fact is a decision someone makes on
+  screen**.
+- **Cinematic on a budget** (§4.9): colour script, shot sizes, screen direction, match
+  cuts, J/L cuts, letterbox for the past, layer dolly zoom, silhouette reveal.
+- **The fix loop** (§9.5.1): your issue sheet, fixes by class, only changed clips
+  re-rendered, two rounds. Episode 9's prompt is in Production §9.1.1.
+- **Token rules from your `/usage`** (§5.4): a context ceiling near 100k, no
+  hours-long sessions, fewer subagents, `nif-builder` on Sonnet.
+- **Render time** (§9.4): bake blur and glow as images, re-render only what changed,
+  half-size proxies.
+- **vidIQ title and thumbnail scores** are read too (§6.1, §14.1).
+- **Rooms laid out by hand** under a file contract (§9.0).
+- **The merge pack**, and the reference video queued for your PC (YouTube is blocked
+  here).
 
 ### 7 · Our own numbers, and the whole-set audit (QA §9)
 

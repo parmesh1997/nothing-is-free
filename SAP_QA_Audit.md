@@ -164,3 +164,30 @@ The creator's figures for five episodes (strategy §2.1), read against every doc
 seven everywhere; moving 3D shots are "at most two" everywhere; the far / set / near
 layers and the 2880×1620 overscan match between the runbook and the production plan;
 every tool in the runbook is in the toolchain.
+
+## 10 · Sixth pass: story, cinema, cost, and the merge (2026-09-26)
+
+The creator's brief: story-driven and cinematic, learning while watching, cheaper in
+tokens and render time, and one runbook as the only source of truth. The reference
+video (`youtu.be/bCSt0K2kcA4`) couldn't be reached from the review environment
+(YouTube is blocked there), so the merge prompt fetches it on the creator's PC and
+treats it as proposals, not as changes.
+
+| # | Finding | Sev | Fix | Where |
+| --- | --- | --- | --- | --- |
+| F1 | **Nothing answered "why eight minutes, not a chatbot's four seconds?"** for the whole episode | 🟠 | A why-test row: the value is the case (people, the day, the suspects cleared, the reveal), not the answer | Runbook §4.5 |
+| F2 | **The red herring could be waved away in a line.** Research on learning from video: stating the misconception and taking it apart roughly doubled test scores, while clear explanation alone didn't | 🟠 | Misconception first: the red herring is staged as believable before it's cleared; a new gate | Runbook §4.6, §12.1 |
+| F3 | **Beats could follow each other as "and then"** | 🟡 | But / therefore: the beat list is written as one causal chain; a new gate | Runbook §4.4, §12.1 |
+| F4 | **"Cinematic" had no rules that cost nothing** | 🟡 | Cinematic on a budget: colour script, shot sizes, screen direction, match cuts, J/L cuts, letterbox, layer dolly zoom, silhouette | Runbook §4.9 |
+| F5 | **NIF009's QA loop:** 30–40 issues fixed one at a time and re-checked on stills spent a 5-hour window in about four hours and roughly 30% of the week | 🔴 | The fix loop: prevent repeating classes in shared components, the creator's issue sheet, fixes by class, only changed clips re-rendered, two rounds | Runbook §9.5.1; Production §9.1.1 |
+| F6 | **The week's usage:** 93% above 150k context, 57% from sessions of 8+ hours, 23% `nif-builder` | 🔴 | A context ceiling near 100k; no hours-long sessions; subagents only for separate work; `nif-builder` on Sonnet and its helpers on Haiku; weekly `/usage` | Runbook §5.4; merge prompt step 7 |
+| F7 | **Per-frame CSS blur and shadows** are slow to render (Remotion's own performance guide) | 🟠 | Bake them as images; re-render changed clips only; half-size proxies; `remotion benchmark` once | Runbook §9.4 |
+| F8 | **§9.4 said Blender passes are 1920×1080**, while kit plates are 2880×1620 overscan | 🟡 | Split: moving shots at 1080p, kit plates at overscan | Runbook §9.4 |
+| F9 | **§0.1 quoted a token size from before these sessions** | 🟡 | Stated in characters and as a share of the file per step | Runbook §0.1 |
+| F10 | **vidIQ Optimize's title and thumbnail scores weren't read** | 🟡 | Read in the postmortem and before publish | Runbook §6.1, §14.1 |
+| F11 | **Rooms were built by Claude in code**, the most expensive way | 🟠 | The creator may lay out rooms by hand under a file contract; Claude runs the kit script | Runbook §9.0 |
+| F12 | **Two sets of runbook changes, one runbook:** yours on your PC, and these sessions' | 🔴 | A three-way merge pack (base, proposed, prompt, conflict rules, change list), tested on a simulated local copy: local-only edits kept, a shared edit raised as one conflict | `SAP_Merge_Pack.md`, `merge/` |
+
+**Checked and consistent after this pass:** every "§n" in the runbook resolves; the
+case test is eleven rows; there are seven case devices; "at most two" moving 3D shots;
+one upload slot; `merge/runbook_proposed.md` is identical to the runbook.
