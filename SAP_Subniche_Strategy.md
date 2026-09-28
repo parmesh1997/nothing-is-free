@@ -233,6 +233,9 @@ single suspect with a question mark. Readable at 10% size (§9.10).
 
 ### 6.6 · The channel description (from episode 10)
 
+**Superseded (2026-09-28):** the channel description, keywords and upload metadata are in
+`SAP_Master_Plan.md` §12, for the new territory.
+
 The old description keeps its first and last lines, which were already a whodunit. The
 middle promised three kinds of episode told as history, which is the educational
 channel the whodunit replaces, and it breaks "one viewer, one format, every upload"

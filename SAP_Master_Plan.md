@@ -1,10 +1,10 @@
 # Someone Always Pays: the plan
 
 **One file for the whole plan** (v2, 2026-09-28). It covers what the channel is, why
-it's ours, what we build, what changed in the runbook and the workflow, and one episode
-walked through end to end. **The runbook stays the only source of truth.** This file
-explains it, and each line points to the section that holds the rule. The research
-behind it is in `SAP_Subniche_v3.md`.
+it's ours, the channel's metadata and SEO (§12), what we build, what changed in the
+runbook and the workflow, and one episode walked through end to end. **The runbook stays
+the only source of truth.** This file explains it, and each line points to the section
+that holds the rule. The research behind it is in `SAP_Subniche_v3.md`.
 
 | Status | |
 | --- | --- |
@@ -325,3 +325,176 @@ others at the same age.
 | `SAP_Production_Plan_v2.md`, `SAP_Toolchain.md` | How it's made; every tool |
 | `SAP_QA_Audit.md`, `SAP_README.md` | Every audit finding; the index and change history |
 | `SAP_Subniche_Strategy.md` | The whodunit's reasoning (the format). Its everyday-prices slate is superseded by §4 above |
+
+## 12 · Channel metadata and SEO (paste-ready)
+
+vidIQ keyword data, US, 2026-09-28. The format is searches a month · competition
+(0–100, lower is easier). What moves search and suggested traffic, in order: **the
+video title → the first two lines of its description → the spoken words (captions) →
+the channel description.** Tags and channel keywords carry little weight (YouTube says
+so), but they cost nothing.
+
+### 12.1 · The keyword map
+
+| Tier | Keyword | Demand · competition | Where it goes |
+| --- | --- | --- | --- |
+| **Channel core** | historical true crime | 28.7k · 43 | Channel description, channel keywords, playlists |
+| | historical crime | 18.3k · 42 (**+315%** this month) | Channel description, tags |
+| | financial history | 128k · 37 | Channel description |
+| | history of scams | 5.1k · 42 | Channel description, playlists |
+| | greatest con artists in history | 3.9k · 43 | Playlist *The cons* |
+| **Lane** | scam documentary | 50k · 50 (**+148%**) | Episode descriptions |
+| | heists | 26k · 44 (**+125%**) | Playlist *The heists* |
+| | con artist | 12.5k · 55 | Tags |
+| | financial crime | 53k · 29 | Channel description |
+| | biggest scams in history | 6.8k · 44 | Tags |
+| **Per case** (the name people search) | gregor macgregor | 14.2k · 24 | Episode title or first line |
+| | charles ponzi | 26k · 46; *…documentary* 5.0k · 14 | Episode |
+| | south sea bubble | 9.7k · 41; *…explained* 4.0k · 13 | Episode |
+| **Avoid** | true crime (2.8M · 57), scam (279k · 70), ponzi scheme (59k · 68) | Too broad or too contested for a small channel; use only as tags |
+
+### 12.2 · The channel, in YouTube Studio
+
+**Name:** keep **Someone Always Pays**; the name is the promise. **Handle:**
+`@SomeoneAlwaysPays` if it's free; otherwise keep yours. Changing the handle breaks
+old links.
+
+**Description** (Studio → Customisation → Basic info). The first ~125 characters show
+in search, so they carry the keywords. It keeps the old description's first and last
+lines:
+
+```
+History's greatest cons, frauds and heists, told as true crime, and the one question nobody asks: who really paid?
+
+Nothing is free. Someone always pays. This channel finds out who.
+
+Every Sunday, one case from American and British history. A country that never existed, sold on the London market. A bubble that took Isaac Newton's fortune. A scheme that promised 50% in 45 days. You meet the con, you'd have bought in, and then we follow the money to whoever was left holding it. The answer everyone gives is our first suspect. The real one is on the Ledger.
+
+Financial history, told as historical true crime: cons, Ponzi schemes, heists, market bubbles and the tricks that still cost you today.
+
+Hand-built animated worlds. Real court records, bonds and newspapers. Every number is sourced, with its year, in each video's description.
+
+New case every Sunday.
+Nothing is free. Now you know who paid.
+```
+
+**Channel keywords** (Studio → Settings → Channel → Basic info → Keywords):
+
+```
+"Someone Always Pays" "historical true crime" "historical crime" "history of scams" "financial history" "con artists" "greatest con artists in history" "famous heists" "ponzi scheme history" "economic bubbles" "financial crime" "scam documentary" "animated history" "who really paid"
+```
+
+**Country:** set it truthfully. Ad rates follow where the *viewers* are, not the
+channel's country.
+
+**Banner:** keep your art. Change its line to **HISTORY'S GREATEST CONS. WHO REALLY
+PAID? · NEW CASE EVERY SUNDAY**, inside the 1546 × 423 safe area.
+
+**Profile picture:** Lucky's face as the detective, on the money accent colour, readable
+at 98 px.
+
+**Watermark** (Branding): a small Ledger stamp, shown from the end of the video.
+
+**Layout** (Customisation → Layout):
+
+- **Trailer for non-subscribers:** once case 1 ships, its cold open plus the challenge,
+  60 seconds or less. Until then, none.
+- **Featured for returning subscribers:** the latest case.
+- **Sections, in order:** *Case files*, *The cons*, *The bubbles*, *The heists*, *The
+  trick you still pay*.
+
+**Playlists** (the first line of each description is its search text):
+
+| Playlist | Description, first line |
+| --- | --- |
+| **Case files** (every case, in order) | *Every case, in order: history's greatest cons, heists and bubbles, and who really paid.* |
+| **The cons** | *The greatest con artists in history, and the people who paid for their lies.* |
+| **The bubbles** | *Market bubbles and manias from the South Sea Bubble on, and who was left holding them.* |
+| **The heists** | *Famous heists and robberies from history, and who actually carried the loss.* |
+| **The trick you still pay** | *Everyday prices with a history: popcorn, printer ink, airport food, and who takes your money.* The old episodes go here |
+
+**The old episodes:** keep them public, in *The trick you still pay*. Deleting them
+doesn't help ranking, and it loses their watch hours.
+
+### 12.3 · Upload defaults (Studio → Settings → Upload defaults)
+
+| Setting | Value |
+| --- | --- |
+| Category | **Education** |
+| Video language, and title and description language | English |
+| Licence | Standard YouTube |
+| Allow embedding · publish to subscriptions feed | On · On |
+| Comments | On; hold potentially inappropriate |
+| Altered or synthetic content | **Yes** while the narration is synthetic (§2.3) |
+| Tags (default) | `someone always pays, historical true crime, history of scams, financial history, animated history` |
+| Description (default) | The template in §12.4 |
+
+### 12.4 · Every episode: the SEO template
+
+1. **Title**, 60 characters or fewer. It carries a hook, the payer or what they paid
+   for, and the case's searched name where it reads naturally (runbook §6.0). No year
+   of upload. Draft three and score them in vidIQ.
+2. **Description:**
+
+```
+[Line 1: the hook with the primary keyword, e.g. "In 1822, Gregor MacGregor sold London a country that didn't exist."]
+[Line 2: the question, e.g. "250 settlers sailed for Poyais. Who really paid for it?"]
+
+Every Sunday: one case from history's greatest cons, heists and bubbles, and who really paid.
+▶ Case files (every case): [playlist link]
+
+CHAPTERS
+0:00 The crime
+[…the case-file tabs, from 03_transcript/chapters.md]
+
+SOURCES
+[Author, title, year] for every figure, with years
+
+CREDITS
+Music: [title, artist, licence] · Archival: [credit lines]
+
+ABOUT THIS VIDEO
+Narration is a synthetic voice; every picture is made by hand, nothing generated.
+[The disclaimer from runbook §13.3]
+
+#history #truecrime #scam
+```
+
+3. **Tags:** 10–15, under 500 characters. The primary keyword and its variants, the
+   con's name, the era, two channel-core terms, and the channel name.
+4. **Hashtags:** three at most. They show above the title: `#history #truecrime #scam`
+   (swap the third for `#heist` or `#bubble` by case type).
+5. **Captions:** upload the corrected whisper SRT. Accurate captions are words YouTube
+   can index; the auto-captions mangle names like "Poyais".
+6. **File name:** name the upload after the primary keyword (`gregor-macgregor-poyais.mp4`).
+   It's a small signal, but a free one.
+7. **Chapters:** the case-file tab names. Chapter titles are indexed, so put the case's
+   words in them (*"The prince of Poyais"*, not *"Part 2"*).
+8. **Cards:** one card at the red herring cleared, pointing to the previous case.
+   **End screen:** the previous case plus *Case files* (§14.1).
+9. **Pinned comment:** *"Who did you suspect before the reveal?"*
+10. **Thumbnail:** one frame of one object from our own scene, at most two words,
+    painted or toon-lit (§14.1). One at publish; test after about 1,000 impressions.
+
+### 12.5 · Filled in: case 1 (a draft, pending Round 2)
+
+**Title (pick):** `He Sold a Country That Didn't Exist. Who Paid?` (47 characters).
+Alternates: `250 People Paid for a Country That Didn't Exist` ·
+`Gregor MacGregor Sold London a Fake Country`.
+
+**Description, first lines:**
+
+```
+In 1822, Gregor MacGregor sold London a country that didn't exist, and 250 settlers sailed for it.
+Everyone says the investors paid for Poyais. The Ledger says otherwise.
+```
+
+**Tags:**
+
+```
+gregor macgregor, poyais, gregor macgregor poyais, fake country, the land that never was, greatest con artists in history, con artist, historical true crime, historical crime, history of scams, biggest scams in history, 1820s history, british history, financial history, someone always pays
+```
+
+**Hashtags:** `#history #truecrime #scam`. **Chapters:** *The crime · The case · The
+suspects · The prince of Poyais · The bond · The voyage · Black River · Who paid · The
+Ledger*.
