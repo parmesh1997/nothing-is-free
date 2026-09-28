@@ -65,8 +65,10 @@ read it again later in the session. The rest of the token rules are in §5.4.
 
 ### 1.1 · Positioning
 
-**The Money Whodunit: hidden economics, from the payer's point of view, told as a
-mystery.**
+**The Money Whodunit: true money crimes from history, from the payer's point of
+view, told as a case.** The territory is frauds, cons, heists and bubbles from American
+and British history, with one case in three a trick the viewer still pays for (§1.2).
+The creator chose it on 2026-09-28, from the vidIQ research in `SAP_Subniche_v3.md`.
 
 The mystery is the engine and the payer's point of view is the lane. An explainer
 keeps *why* open, and the viewer guesses it before clicking. A whodunit keeps *who*
@@ -76,7 +78,8 @@ That is why a viewer who has already seen the explainers still has a reason to w
 ours (§6.2.1).
 
 **The whodunit is a transfer, not a copy.** A proven format (the mystery) moved into
-a market that has never had it (everyday prices). A saturated *topic* is fine: its
+a market that has never had it. History's money crimes are told everywhere as *how
+he did it*, and never as *who really paid*. A saturated *topic* is fine: its
 crowd supplies the red herring. A saturated *angle* is not: if other channels already
 tell a topic as a mystery, we'd be a copy, and the topic is dropped (§6.2.1 row 11).
 
@@ -90,9 +93,27 @@ want to own X, here's every cost that kills your margin." The lane this channel
 owns is payer POV: the character is the person who pays, and the question is
 always *where did my money actually go*.
 
-Every episode must pass this test: **is the viewer the one paying?** If the
-episode is written for someone considering buying the business, it is in the
-wrong lane and gets rewritten before Step 1 ends.
+Every episode must pass this test: **does the viewer stand where the payer stood?**
+Lucky is the mark in the case's own era, and the close lands where the viewer's money
+is today (§4.2). An episode told from the con man's chair, or written for someone
+considering buying the business, is in the wrong lane and gets rewritten before
+Step 1 ends.
+
+**What makes it ours: six things no channel in the lane has together** (creator,
+2026-09-28; the evidence is in `SAP_Master_Plan.md` §2):
+
+1. **The question.** Others ask how he did it. We follow the money to whoever held it
+   last, and the obvious victim is the first suspect.
+2. **Lucky is the mark.** The cast lives the con in its era, so the viewer watches
+   themselves get played.
+3. **The Ledger.** Every case closes on one ledger page: who paid, how much, then and
+   in today's money (§2.8). It's the channel's signature, in the same place every time.
+4. **The trick today.** The last minute shows the same mechanism where the viewer's
+   money is now, as a pattern. It never accuses a named living person or company.
+5. **A hand-built world with the real documents.** Court records, bonds and newspapers
+   appear on screen, and are listed in the description.
+6. **The challenge.** The viewer is asked who paid before the reveal (§2.8), and the
+   pinned comment asks again.
 
 ### 1.2 · Formats
 
@@ -101,17 +122,20 @@ a history spine**: the suspects' alibis are told as stories in time, with real p
 making real decisions, the way Oversimplified tells a war. The economics is the clue
 the story leaves behind.
 
-| Case type | The crime | Example |
+| Case type | The crime | Example (a hypothesis until Step 0 passes it) |
 | --- | --- | --- |
-| **The bait** | Something is free or cheap, and someone else is paying for it. Who? | Your free game was paid for by one stranger |
-| **The fee** | One payment, and a cut of it is gone. Who took it? | Who took $6 from your airport sandwich? |
-| **The rule** | A decision everyone lives under, and who it quietly pays | The rule that set the price of cinema popcorn |
+| **The con** | Someone sold a lie. Who ended up paying for it? | He sold a country that didn't exist (Poyais, 1822) |
+| **The bubble** | Everyone bought in. Who was left holding it? | Newton lost a fortune in the South Sea Bubble (1720) |
+| **The heist** | It was taken. Who actually carried the loss? | A great robbery, and whose money it really was |
+| **The trick you still pay** | Everyday, with a history spine: *the bait* (free or cheap, someone else pays), *the fee* (a cut of one payment is gone) or *the rule* (a decision that quietly pays someone) | The rule that set the price of cinema popcorn |
 
-"How is a free or cheap thing funded" is not a separate format. It is a bait case.
+**At most one case in three is a trick you still pay.** The other two come from
+history's money crimes, where the demand is (`SAP_Subniche_v3.md` §2). "How is a free or
+cheap thing funded" is not a separate format; it is a bait case.
 
-**An episode earns its history by ending somewhere the viewer's own money is.**
-A story that never arrives at the viewer's wallet is a history video, and this is
-not a history channel.
+**An episode earns its history by ending somewhere the viewer's own money is:**
+the trick today, in the close (§4.2). A story that never arrives at the viewer's wallet
+is a history video. This is a case channel, not a history channel.
 
 The history spine is what gives the cases a bottomless well. Every story
 brings its own characters, hook and twist, so it never tires the viewer the way a
@@ -549,6 +573,12 @@ twice in a row**, and stages each one differently every time (§4.8):
 | **Cleared / guilty stamps** | A rubber stamp landing on a suspect card, with its sound |
 | **The challenge** | Just before the reveal the picture freezes on the lineup and the narrator hands the case over: *"Every suspect, every alibi. You know what we know. Who took it?"* Two seconds of held silence, then the reveal. It is the mystery writer's old challenge to the reader, and it is the question the pinned comment asks (§14.1) |
 
+**The Ledger is not one of the seven.** It closes every case, in the same place in
+the spine (§4.2). It's one ledger page, written on screen line by line: who paid, how
+much at the time and in today's money, with the source under each line. It's the
+channel's signature, so it never rotates. What changes is where the page lies: a desk,
+a courtroom table, the con man's own office.
+
 Type on a 3D surface rides that surface through the camera move, through the
 shot's anchors (§9.8). A foreground set piece never crosses typeset text unless
 the occlusion matte covers it.
@@ -584,7 +614,8 @@ These are checkable, and they are checked. A frame that breaks one does not ship
 
 1. **Nothing is perfectly aligned.** Signs hang slightly off level, props sit at
    angles, papers lie crooked on a desk. Perfect grids read as generated.
-2. **Shot lengths vary between 2 and 9 seconds.** Metronomic pacing is the
+2. **Shot lengths vary between 2 and 6 seconds.** A conflict montage runs 1.5–2.5 s;
+   only a declared flow shot (§10.7) runs longer. Metronomic pacing is the
    loudest tell after text.
 3. **Real specifics on screen.** Real dates, real figures, real document names,
    real company names. Never a generic placeholder.
@@ -672,6 +703,12 @@ An example, for an airport food episode:
 - **15–30 seconds, never more.** Anything past 30 seconds is the episode, not
   the hook.
 - Never "today we'll learn about X."
+- **The first image is an object in a hand, lit and moving** (the coin, the bond, a vial
+  of gold dust), or the move into a place in the table below. Both reference analyses
+  open this way (`SAP_Subniche_v3.md` §6.3).
+- **The hook may speak in the second person**: *"You're in London, 1822, and a prince
+  is selling land…"* The viewer is the mark. **A stakes line may end it** (*"…and the
+  same trick is still running"*); a lesson line may not.
 
 **Then the title's question lands.** There is no channel card, no logo and no
 channel name at the start of an episode. On a beat of silence at the end of the
@@ -705,7 +742,7 @@ as a lesson. The rules:
 
 | Position | Movement | What happens |
 | --- | --- | --- |
-| 0:00–0:30 | **The Crime** | The story (§4.1): Lucky pays, and something small and wrong is visible in the picture. It ends on the weird fact |
+| 0:00–0:30 | **The Crime** | The story (§4.1): Lucky, in the era's clothes, is the mark. She pays, and something small and wrong is visible in the picture. It ends on the weird fact |
 | ~0:15–0:35 | | The title's question, landing in the world. The promise is stated, not answered |
 | by ~10% | **The Case** | What was taken, from how many people, every year: one sourced number. The promise restated as *who* |
 | ~10–25% | **The Suspects** | Three to five parties who each could have taken it, introduced. **The first is the popular answer** (§6.2.1) |
@@ -714,7 +751,7 @@ as a lesson. The rules:
 | by ~40% | | **First payoff: the red herring is cleared**, one surprising fact delivered *and closed* |
 | ~60–80% | **The Reconstruction** | The crime replayed with what we now know drawn over it. A new question opens: if not them, then who? |
 | ~85% | **The Reveal** | The culprit, by name. Often a rule, a structure or another customer. This is the reversal (§2.6), and it recontextualises the first payoff |
-| close | **The Close** | Answers the cold open's question in the cold open's own words, one "here's what you'll notice now" line (never advice), then the sign-off |
+| close | **The Close** | Answers the cold open's question in the cold open's own words. Then **the Ledger** (§2.8), then **the trick today**: the same mechanism where the viewer's money is now, as a pattern that never accuses a named living person or company. One "here's what you'll notice now" line (never advice), then the sign-off. **The last shot rhymes with the first** (§4.9.1) |
 
 **The mix is enforced here, not hoped for (§4.6):** the Crime, Case, Suspects,
 Reconstruction and Reveal are story. The mechanism lives inside the Alibis.
@@ -875,6 +912,36 @@ They're chosen at Step 1 (written in `beats.md`) and built at Step 3.
 
 **One device per movement at most**, rotating between episodes like the case devices
 (§4.8). A cinematic trick used everywhere is a filter, not a choice.
+
+### 4.9.1 · Every scene is directed
+
+**The cold open's standard (§4.1) runs for the whole episode, with slightly looser
+numbers** (creator, 2026-09-28). The reference analyses hold it for 14 minutes
+(`SAP_Subniche_v3.md` §6.3): something changes every 1.5–3 s, shots last 2.5–5 s,
+and no hold is ever fully still.
+
+| Rule | Whole episode | Cold open (§4.1) |
+| --- | --- | --- |
+| **A scene opens with a move into its place** | Every new location or era: a crane, a push through a door or window, or a pan across the map to it | The first image |
+| **The camera never rests** | At least a drift on every shot. A lock-off only for the challenge freeze (§2.8) | A move on every shot |
+| **The world moves** | At least one atmosphere layer per shot (§9.8.5) | Two per shot |
+| **The cast acts** | A physical action in every shot the cast is in | The same |
+| **Activity** | At least 60% active frames overall; no quiet run over 2 s (§9.5) | At least 70% in the first 15 s; no quiet run over 1 s |
+| **Shot length** | 2–6 s; a conflict montage 1.5–2.5 s (§3 law 2) | 5–7 shots in 15 s |
+
+**Five devices, built once, used every episode:**
+
+| Device | How | Cost |
+| --- | --- | --- |
+| **The date and place stamp** | At every jump in time or place: a stamped date, then the place (*MAY 10, 1848* → *SAN FRANCISCO*), with its thump | One component |
+| **Case-file chapter tabs** | At each spine movement (§4.2), the case file's tab slides into frame with the chapter's name, hand-lettered. They match the YouTube chapters (§8.3) | One component |
+| **The hero prop** | One object per case (a bond, a hat, a key) that is in the cold open, comes back through the episode, and is in the last shot | One prop per case |
+| **The rhyming ending** | The last shot rhymes with the first: the same framing, object or move, changed by what we now know | None |
+| **The dark act** | For the act where people are ruined, one change of medium: an ink-wash or charcoal filter over the same plates, grain up, colour drained | One component |
+
+**The mythic shot** is optional, once an episode: the culprit's cut-out, huge, looming
+behind the town plate (a far-layer composite, §9.8.1). None of these needs a Blender
+render.
 
 ---
 
@@ -1061,8 +1128,12 @@ asks for them. It never fills a number in from memory.
 | --- | --- |
 | Opening pages and tabs, scrolling, hovering a chart, changing a date range, typing a search, sorting and filtering | Anything labelled Generate, Regenerate, AI, Coach, chat or deep research. Apply, Save, Save Changes, Publish, Upgrade. Anything that shows a credit cost |
 
-Claude never calls a vidIQ tool itself and never states a score vidIQ did not
-return. A page that asks for a login or shows a credit cost stops the step and
+Through the connector, Claude calls only vidIQ's **read** tools: analytics, outliers,
+keywords, channels, videos, transcripts, comments, and `video_watch` for a reference
+video's shot analysis. It stays within the credit budget: about 40–60 credits per
+Step 0, and at most two `video_watch` analyses (25 credits each) per episode. It never
+calls a tool that generates, updates, uploads or edits (titles, thumbnails, scripts,
+video), and never states a score vidIQ did not return. A page that asks for a login or shows a credit cost stops the step and
 goes to the creator.
 
 Competitor transcripts come from `yt-dlp --skip-download --write-auto-subs` and
@@ -1115,7 +1186,9 @@ about twice as often as the titles about how a company earns its money (a map ap
 billions, how free TV is paid for). The episodes were of different ages, so it is a
 lead, not a law. A company's business model has no victim in
 it, so the viewer has no stake. Every title names the object the viewer pays for, or
-the viewer ("you", "your"), or both.
+the viewer ("you", "your"), or both. In a history case, the payer in the title is the
+mark ("the investors", "the settlers", "you") or the thing they paid for ("a country
+that didn't exist").
 
 ### 6.1 · The postmortem: the last two episodes
 
@@ -1247,14 +1320,14 @@ Every shortlisted topic passes all eleven rows before it goes to Round 1, writte
 | # | Test | Passes when | How |
 | --- | --- | --- | --- |
 | 1 | **Demand** | The evidence gate passed (§6.2) | `vph.mjs`, vidIQ |
-| 2 | **The victim** | A person paying, and one sourced number for what it costs them a year | Research |
+| 2 | **The victim** | A person paying, and one sourced number for what it cost them (a year, or in all), with today's value | Research |
 | 3 | **The suspects** | Three or more parties who plausibly take a cut, each sourceable | Research |
 | 4 | **The red herring** | The answer the top three competitor videos give is incomplete or wrong, and our research shows why | Their transcripts through `vtt-clean.mjs` |
 | 5 | **The cold answer** | A fresh model, given only the title's question, does **not** name our culprit | `claude -p --model haiku "Answer in one line: <question>"` |
-| 6 | **The culprit** | Named, sourced, surprising, and legal: no crime is alleged | Research |
+| 6 | **The culprit** | Named, sourced, surprising, and legal: a crime is stated only where a court or the historical record established it, and no living private person is accused | Research, court records |
 | 7 | **Why ours** | Three specific things ours has that each of the top three videos lacks, in a table. "Better animation" doesn't count | vidIQ Videos tab, transcripts |
 | 8 | **Stageable** | One object; one or two new locations, including a scene of the crime never seen before (§2.4) | Library `INDEX.md` |
-| 9 | **Safe and evergreen** | No news peg, advertiser-safe, and no advice needed to close it | Judgment |
+| 9 | **Safe and evergreen** | No news peg, a closed case (no pending trial), advertiser-safe (violence off screen and never in the thumbnail), and no advice needed to close it | Judgment |
 | 10 | **The transfer** | We can name the proven format we move and the market it has never been used in, in one line (§1.1) | Judgment |
 | 11 | **First mover** | Fewer than three of the top 30 search results already frame the topic as a mystery ("who", "culprit", "not who you think") | `saturation.mjs` |
 
@@ -1377,7 +1450,9 @@ different topic, Round 1 shows both, each with its evidence.
 The rule: take a proven **format** and move it to a **market** where it has not
 been used. Never copy a video; copy the structural reason it worked.
 
-This channel's standing bend is **owner POV → payer POV**. Any further bend must
+This channel's standing bend is **owner POV → payer POV**, applied to history's
+money crimes: others tell them as *how he did it*, and we tell them as *who really
+paid* (§1.1). Any further bend must
 strengthen clarity, curiosity or storytelling — a bend that weakens the concept
 is rejected.
 
@@ -1892,9 +1967,9 @@ with its reason. It is short, and it is where "cinematic" is decided:
 
 | Level | What it names |
 | --- | --- |
-| **The episode** | The colour script (§4.9), the weather and time of day per location, and the one L3 shot and one orbit if any |
+| **The episode** | The colour script (§4.9), the weather and time of day per location, and the one L3 shot and one orbit if any, the hero prop, and how the last shot rhymes with the first (§4.9.1) |
 | **The cold open, per shot** | Size, the camera move (from → to, with its ease), what the cast does, the atmosphere layers (§9.8.5), the key sound, the type |
-| **Each setup** (§9.8.4) | Its camera vocabulary, the light, the atmosphere, and the one cinematic device from §4.9 it carries, if any |
+| **Each setup** (§9.8.4) | Its camera vocabulary, the light, the atmosphere, the one cinematic device from §4.9 it carries (if any), and **a one-line shot list**: per shot, the move (from → to), the action, the atmosphere layer and the key sound (§4.9.1) |
 
 The creator reads the cold open's page before 3b-0 starts. It is the cheapest place to
 fix a flat opening: a line of text, not a render.
@@ -2296,12 +2371,13 @@ node scripts/flicker-check.mjs <proxy.mp4> --episode ../../episodes/NIF0NN
 ```
 
 `motion-check` measures two laws on every frame instead of on samples: any stretch
-visually unchanged for 3 seconds or more (§3 law 11), and every shot outside 2–9
+visually unchanged for 3 seconds or more (§3 law 11), and every shot outside 2–6
 seconds (§3 law 2), each mapped to its beat. **It also measures activity:** the share
 of frames in which at least 0.3% of the picture moves. A blink or a mouth flap passes
 the held-state test but moves far less than that, so a stretch that quiet for 2 s
-(1 s in the cold open) is a QUIET run and fails. The gate is at least 70% active
-frames in the first 15 s. Activity is a floor, not proof of good motion: the
+(1 s in the cold open) is a QUIET run and fails. The gates are at least 70% active
+frames in the first 15 s and at least 60% over the whole episode (`--min-active 60`,
+§4.9.1). Activity is a floor, not proof of good motion: the
 creator's eye decides the rest. `flicker-check` finds A-B-A and pop
 flicker, frame to frame. A held state or a flicker cluster goes back to 3c. A long shot
 passes only if it is a continuous flow shot declared in `shots.json` (§10.7).
@@ -2403,7 +2479,7 @@ The mix moves between episodes (§4.8). A story set mostly in one real place lea
   checked at build time, not from memory.
 - **No two consecutive shots share a location and a framing.** A cut must change
   the location, the angle or the shot size.
-- **Shot lengths vary between 2 and 9 seconds** (§3 law 2).
+- **Shot lengths vary between 2 and 6 seconds** (§3 law 2).
 - **Every returning shot template is re-composed**: a new location, angle and
   action (§2.7).
 
@@ -2972,6 +3048,10 @@ and will be overwritten on the next mix.
 Locked chain values live in `video-os/library/nif-look/README.md` (§10.9) and are
 not re-tuned per episode.
 
+**Every scene sounds like its place** (§4.9.1). The cold open's sound rule runs all
+episode. Each location's ambience starts with its first frame, or 0.5–1 s before it
+as a J-cut (§4.9), and every scene carries three or more specific sounds (§3 law 5).
+
 **Measure balance in integrated LUFS relative to the voice — never by ear alone,
 and never by dB-window medians.** On NIF007 the music and effects went through
 four rounds of "too loud / too quiet" because the levels were judged by ear while
@@ -3236,17 +3316,17 @@ is checked again later lists every step in its Step column.
 | Gate | Step | Test |
 | --- | --- | --- |
 | Evidence | 0 | A proven outlier clears the §6.2 floor for its age and is ≥ 3× its channel's baseline, measured by `vph.mjs` |
-| Payer in the title | 0 | The working title names the object the viewer pays for, or the viewer, or both (§6.0) |
+| Payer in the title | 0 | The working title names the object the viewer pays for, the viewer, or the case's mark (§6.0) |
 | Case test | 0 | All eleven rows of §6.2.1 pass, written to `00_intake/case-test.md` with the case score (§6.2.2), and `saturation.md` beside it |
 | Cold answer | 0 | A fresh model given only the title's question does not name the culprit |
 | Why ours | 0 | Three specific things ours has that each of the top three videos lacks |
-| POV | 0 | The viewer is the one paying |
+| POV | 0 | The viewer stands where the payer stood: Lucky is the mark, and the close lands in the viewer's wallet (§1.1) |
 | Object | 0 | One concrete object carries the episode |
 | Why | 0, 1 | Every §4.5 row answered in writing, none answered with the topic |
 | Location cap | 0, 3 | At most two new locations; no camera angle reused within or across episodes |
 | Postmortem | 0 | `00_intake/postmortem.md` covers the last two episodes: both numbers against the gates, every dip mapped to a beat with a named cause (§6.1) |
 | Keyword | 0 | One primary keyword per candidate, with volume and competition read in vidIQ |
-| No spend | 0, 5 | No vidIQ credit spent and nothing on the channel changed by Claude (§6, browser rules) |
+| vidIQ budget | 0, 5 | Credits spent only on the connector's read tools, within §6's budget; nothing on the channel changed by Claude (§6) |
 
 ### 12.1 · Step 1 · Script
 
@@ -3331,7 +3411,8 @@ is checked again later lists every step in its Step column.
 | Feed test | 3 | Every thumbnail variant seen in `feed-mock.mjs`'s three views beside the topic's top results; `feed-test.md` answers both questions (§9.10) |
 | Cost recorded | 3 | Agent minutes per finished second, split 3a/3b/3c, in `project.json` |
 | No AI imagery | 3 | Zero AI-generated video, images, textures or words anywhere on screen |
-| Motion check | 3 | `motion-check.mjs` on the proxy: zero held states and zero quiet runs; every shot 2–9 s or a declared flow shot |
+| Motion check | 3 | `motion-check.mjs` on the proxy: zero held states and zero quiet runs; at least 60% active frames overall and 70% in the first 15 s; every shot 2–6 s or a declared flow shot |
+| Every scene directed | 3 | Each scene opens with a move into its place; the date and place stamp at every jump; the chapter tabs; the hero prop in the first and last shots; the Ledger at the close (§4.9.1, §2.8) |
 | Fix loop | 3 | Creator issues arrive as `issues.csv`; fixed by class, component first; only changed clips re-rendered; two rounds at most (§9.5.1) |
 
 ### 12.4 · Step 4 · Resolve
@@ -3394,8 +3475,11 @@ everyone else using it. Effects are written into this channel's own library.
 - **The narrator is a synthetic voice** (SAP Narrator, ElevenLabs Voice Design),
   not a person's own cloned voice, so the own-voice exemption no longer applies to
   it. It narrates; it never imitates a real person or presents invented events as
-  real. The creator checks YouTube's current altered-content guidance at upload
-  and ticks the label if it applies.
+  real. The creator checks YouTube's current altered-content guidance at upload.
+  YouTube is starting to detect synthetic voices on its own (announced for May 2026,
+  as reported by FERN), and ElevenLabs marks its output with SynthID, so ticking the
+  label is the safe default. The creator may switch to their own recorded narration at
+  any time; a human voice is the strongest signal against the AI wave.
 - **No AI visuals, so no visual label.** Nothing on screen is generated (§3 law 12).
 - The description's AI block states plainly what is generated (the narrator's voice)
   and what is not (every picture), and is rewritten in the same change as any
@@ -3429,13 +3513,17 @@ and credits are final. It replaces the separate packaging and description files:
    500 characters; YouTube gives tags little weight)
 5. The **pinned comment** and the **end-screen** targets (§14.1)
 6. An empty slot for **vidIQ's packages**, which the creator generates and compares.
-   Claude never spends vidIQ credits
+   Claude never generates them (§6)
 
 **The disclaimer**, adapted per episode:
 
-> Nobody in this video is accused of breaking any law. Prices and figures are sourced
-> below, with years, and vary by country and date. Scenes and characters are
+> Every crime described here was established by a court or the historical record,
+> sourced below with years. No living private person is accused. Amounts in today's
+> money are estimates, with the method below. Scenes and characters are
 > illustrative reconstructions. Not financial advice. Narration is a synthetic voice.
+
+For a trick-you-still-pay case (§1.2), the first line is instead *"Nobody in this video
+is accused of breaking any law."*, and the prices vary by country and date.
 
 ### 13.4 · Source safety
 
@@ -3514,6 +3602,10 @@ uploads and never clicks Save in Studio or vidIQ (§6, browser rules).
    suspected; the pinned question gives them a place to say it. The creator replies to
    comments in the first two hours. The pinned comment never asks for likes or
    subscriptions.
+7. **Category Education**, not Entertainment. vidIQ's model puts Education at about
+   $6 per 1,000 US views and Entertainment at $2.50 (`SAP_Subniche_v3.md` §5). The
+   thumbnail is painted or toon-lit from our own scene, never a glossy 3D look, which
+   viewers now read as AI.
 
 ### 14.2 · The 48-hour and 7-day reviews
 

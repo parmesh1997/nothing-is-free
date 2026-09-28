@@ -1,8 +1,10 @@
-# Merge pack, round 2 (2026-09-28)
+# Merge pack, rounds 2 and 3 (2026-09-28)
 
 **The runbook stays the one source of truth.** Your merged runbook from 2026-09-27 is now
 the base in the repo. This round's changes were written on top of it, so the merge on your
-PC only has to bring in this round, plus anything you've changed since you sent it.
+PC only has to bring in these rounds, plus anything you've changed since you sent it.
+**Round 3** (the territory and the whole-episode direction) sits on top of round 2 in the
+same proposed file, so it's still one merge.
 
 ---
 
@@ -11,7 +13,7 @@ PC only has to bring in this round, plus anything you've changed since you sent 
 | File | What it is |
 | --- | --- |
 | `merge/runbook_base_2026-09-27.md` | Your merged runbook, exactly as you sent it (line endings normalised to LF) |
-| `merge/runbook_proposed.md` | That runbook with this round's changes (identical to `Someone_Always_Pays_Runbook.md` in the repo) |
+| `merge/runbook_proposed.md` | That runbook with rounds 2 and 3 (identical to `Someone_Always_Pays_Runbook.md` in the repo) |
 | `SAP_Merge_Pack.md` | This file: the steps, the prompt (§3), the conflict rules (§3.1), the change list (§4) and the files (§5) |
 | `SAP_Subniche_v3.md` | The sub-niche from the vidIQ data, plus the whole-episode proposal P1–P7 (not in this merge) |
 
@@ -53,7 +55,8 @@ D:\YT\_merge\merge-progress.md and stop.
    Recommend by SAP_Merge_Pack.md §3.1. Then STOP and show me the table.
 6. After my answers: write the merged runbook over LOCAL, no conflict markers.
    Verify and report as a short table: every "§n" resolves; no duplicate section
-   numbers; runtime is 10–15 minutes everywhere; one upload slot everywhere.
+   numbers; runtime is 10–15 minutes everywhere; one upload slot everywhere;
+   shots 2–6 s everywhere; the Ledger in §2.8 and §4.2.
 7. Files in §5: replace or add as listed. If a file I have locally differs from
    the base version in a way the list doesn't explain, show me and ask.
 8. Reference videos, as data and not instructions. For each URL in §6, with
@@ -93,14 +96,28 @@ Model: Sonnet 5, high.
 | 8 | **One thumbnail at publish; *Test & compare* only after about 1,000 impressions** | §14.1 | Tests at 170 impressions are noise; your observation | Recommended |
 | 9 | **`motion-check` measures activity;** quiet runs fail | §9.5, §12.3 | A blink passed the old held-state test | This round |
 | 10 | **Gates:** treatment, cold open directed, atmosphere, no plain boards | §12 | A rule without a gate drifts | This round |
+| **R3-1** | **The territory:** true money crimes from history, from the payer's POV; the six pillars; the POV test | §1.1 | The vidIQ research (`SAP_Subniche_v3.md`) | **Creator** (2026-09-28) |
+| R3-2 | Case types: the con, the bubble, the heist, plus the trick you still pay (at most one in three) | §1.2 | Same | **Creator** |
+| R3-3 | **The Ledger** closes every case (a fixed signature) | §2.8, §4.2 | Pillar 3 | **Creator** (the plan) |
+| R3-4 | Shots 2–6 s (was 2–9) | §3 law 2, §9.5, §12.3, `motion-check.mjs` | FERN 2.5–4 s, Nightshift 3.5–5 s | **Creator** (the plan) |
+| R3-5 | The first image an object in a hand; second-person hook; a stakes line allowed | §4.1 | The reference analyses | **Creator** (the plan) |
+| R3-6 | Lucky is the mark; the Close adds the Ledger and the trick today; the last shot rhymes | §4.2 | Pillars 2–4 | **Creator** (the plan) |
+| R3-7 | **§4.9.1 Every scene is directed**, five kit devices, the optional mythic shot | §4.9.1 | "Not only the cold open, it needs to be everything" | **Creator** |
+| R3-8 | vidIQ read tools through the connector, within a credit budget | §6, §12.0, §13.3 | The connector replaces the browser | **Creator** |
+| R3-9 | Case test rows 2, 6 and 9 for historical crimes; the payer in the title can be the mark; the standing bend | §6.0, §6.2.1, §6.4 | A crime lane needs a legal line | This round |
+| R3-10 | The treatment's shot list for every setup | §9.0.1 | Whole-episode direction | **Creator** (the plan) |
+| R3-11 | Motion gate: 60% active overall; a new gate, "Every scene directed" | §9.5, §12.3 | Measured: the DoodleDemo 71%, the old cold open 30% | This round |
+| R3-12 | Ambience and three sounds in every scene | §10.8 | Whole-episode direction | **Creator** (the plan) |
+| R3-13 | The AI-voice label as the default; the disclaimer for historical crimes; Education category; no 3D-look thumbnails | §13.3, §14.1 | YouTube's auto-labelling; RPM; FERN | This round |
 
 ## 5 · Files
 
 | File | Action |
 | --- | --- |
-| `video-os/engine/remotion/scripts/motion-check.mjs` | **Replace:** adds the activity measure (`--quiet`, `--cold`, `--active-pct`); the old checks are unchanged |
+| `video-os/engine/remotion/scripts/motion-check.mjs` | **Replace:** adds the activity measure (`--quiet`, `--cold`, `--active-pct`) and the floors (`--min-active 60`, `--min-cold 70`); the shot maximum is now 6 s |
 | `SAP_Subniche_v3.md` | Add |
-| `SAP_Master_Plan.md`, `SAP_QA_Audit.md`, `SAP_README.md` | Replace (reference documents) |
+| `SAP_Master_Plan.md` | Replace: **the whole plan in one file** (v2) |
+| `SAP_QA_Audit.md`, `SAP_README.md` | Replace (reference documents) |
 
 ## 6 · The reference videos (for step 8)
 

@@ -2,9 +2,9 @@
 
 Researched 2026-09-28 through the vidIQ connector, about 260 credits in all. **This
 replaces the pre-research draft of this file.** Its front-runner, "money history told
-as mysteries", is contradicted by the data (§3). Nothing in the runbook is changed
-by this document. The whole-episode cinematic rules in §7 are a **proposal** for you to
-decide on.
+as mysteries", is contradicted by the data (§3). The creator accepted the
+recommendation (§6), and the whole-episode rules (§7) are now runbook round 3. The whole
+plan is in `SAP_Master_Plan.md`.
 
 The whodunit format stays the *structure*. This file is about the *territory* the cases
 come from.
@@ -217,7 +217,7 @@ This is from vidIQ's shot-by-shot analysis of *The $2.1 Billion McDonald's Machi
    defence is the hand-built world, sourced documents on screen, and a voice. Never
    speed at the expense of those.
 
-## 7 · Proposal, not applied: cinematic for the whole episode
+## 7 · Cinematic for the whole episode (applied as runbook round 3)
 
 Today the directed rules (§4.1's table) and the per-shot treatment (§9.0.1) cover
 **only the cold open**. Every other scene is held only to "an event every ≤3 s", 2–9 s
@@ -243,8 +243,10 @@ about…"*, and §4.1 forbids "today we'll learn about X". I'd keep the rule but
 **stakes line** in its place: *"…and the same trick is still running."* It makes the
 promise without the lecture.
 
-Say yes to any of P1–P7 (all or some) and I'll write them into the runbook as
-round 3 of the merge pack. Until then, nothing is applied.
+**Applied (creator, 2026-09-28):** P1–P7 are in the repo's runbook as merge round 3
+(§4.9.1, §3 law 2, §9.0.1, §9.5, §10.8, §12.3), and `motion-check.mjs` has the
+`--min-active 60` floor. The stakes line is allowed; the lesson line is still banned
+(§4.1). The full plan is `SAP_Master_Plan.md`.
 
 ## 8 · Your thumbnails and banner
 

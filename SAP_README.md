@@ -5,14 +5,14 @@ first**: it's the whole plan on one page, and it points to the detail.
 
 | # | File | What it is | Status |
 | --- | --- | --- | --- |
-| 1 | **`SAP_Master_Plan.md`** | **The plan on one page:** the channel, our numbers, how a video grows, how ideas are chosen, who does what, the calendar, how we judge it | Final |
+| 1 | **`SAP_Master_Plan.md`** | **The whole plan in one file (v2):** the channel, the six pillars, evergreen and monetisation rules, what we build, the runbook and workflow changes, one episode end to end, the calendar | Final |
 | 2 | `SAP_Subniche_Strategy.md` | **What the channel is:** The Money Whodunit, why viewers watch ours, what our own numbers say (§2.1), the format, the 12-case slate, the channel description | Final; chosen 2026-09-25 |
 | 3 | `Someone_Always_Pays_Runbook.md` | **The runbook:** every step, rule and gate, with every change applied | Live |
 | 4 | `SAP_Production_Plan_v2.md` | **How it's made:** 2D-first with painted plates, depth tricks, the orbit, the cold open, Steps 3–4, episodes 9 and 10 | Final |
 | 5 | `SAP_Toolchain.md` | Every tool by step: licence, cost, how Claude runs it, optional AI (not recommended) | Final |
 | 6 | `SAP_QA_Audit.md` | Every audit finding, pass by pass (§1–§9), and where each fix lives | Final |
 | 7 | `Step3_Step4_Options.md` | Only **§2, the prompt that finishes episode 9's 3b** | Archive once episode 9 ships |
-| 9 | **`SAP_Subniche_v3.md`** | **The territory, from the vidIQ data:** our analytics, demand × supply, proven small channels, RPM, the recommendation (true money crimes from history), FERN and Nightshift shot by shot, the whole-episode cinematic proposal (P1–P7) | Your decision |
+| 9 | **`SAP_Subniche_v3.md`** | **The territory, from the vidIQ data:** our analytics, demand × supply, proven small channels, RPM, the recommendation (true money crimes from history), FERN and Nightshift shot by shot, the whole-episode rules (now runbook round 3) | Decided |
 | 8 | **`SAP_Merge_Pack.md`** + `merge/` | **The prompt and files that merge all of this into the runbook on your PC**, keeping your own edits and showing every conflict with a recommendation | Use after the weekly reset |
 | — | `archive/` | `Visual_Upgrade_Plan.md`, `Runbook_Changes_2026-09-24.md`: earlier rounds, folded into files 3 and 4 | Archived |
 | — | `NIF_CONTENT_PLAN_Sept-Dec_2026.md` | The old 90-day plan: a record of episodes 1–9, superseded from episode 10 (see its first lines) | Record |
@@ -29,6 +29,20 @@ itself was tested on a simulated local runbook.
 ---
 
 ## Change history, newest first
+
+### 11 · The plan, and runbook round 3 (2026-09-28)
+
+- **`SAP_Master_Plan.md` is the whole plan in one file:**
+  - the six pillars (who really paid, Lucky as the mark, the Ledger, the trick today,
+    hand-built with real documents, the challenge);
+  - evergreen and monetisation rules and what we build;
+  - every runbook and workflow change;
+  - one episode (Poyais) walked through from Step 0 to publish.
+- **Runbook round 3** (merge pack R3-1 to R3-13): the territory, the case types, the
+  Ledger, shots of 2–6 s, §4.9.1 *every scene is directed*, the vidIQ connector's
+  budget, the legal line for historical crimes, the disclaimer, the Education category.
+- **`motion-check`:** a floor of 60% active frames over the whole episode. The
+  DoodleDemo passes; the old cold open fails.
 
 ### 10 · The vidIQ research (2026-09-28)
 

@@ -3,17 +3,19 @@
  * measured by ffmpeg instead of by a model looking at stills:
  *
  *   law 11 · no held state   → freezedetect: any stretch visually unchanged ≥ 3 s
- *   law 2  · shot lengths    → scene-cut detection: every shot between 2 and 9 s
+ *   law 2  · shot lengths    → scene-cut detection: every shot between 2 and 6 s
  *   activity                 → the share of the picture that actually moves, per frame.
  *                              A blink or a mouth flap keeps freezedetect happy but moves
  *                              well under 0.3% of the frame; a stretch that quiet for
  *                              --quiet seconds (2 s; 1 s inside the cold open, --cold 15)
  *                              is a QUIET run: the viewer sees a still with a twitch in it.
+ *                              The whole episode needs --min-active 60 (% of frames active,
+ *                              §4.9.1); the cold open needs 70% in its first --cold seconds.
  *
  *   (from engine/remotion/)
  *   node scripts/motion-check.mjs <proxy.mp4> [--episode ../../episodes/NIF0NN]
- *        [--hold 3] [--noise -50dB] [--cut 0.3] [--min 2] [--max 9]
- *        [--quiet 2] [--cold 15] [--active-pct 0.3]
+ *        [--hold 3] [--noise -50dB] [--cut 0.3] [--min 2] [--max 6]
+ *        [--quiet 2] [--cold 15] [--active-pct 0.3] [--min-active 60] [--min-cold 70]
  *
  * Run it on the proxy BEFORE grain is added — grain changes every frame and
  * would hide a frozen picture. With --episode, every finding is mapped to its
@@ -39,10 +41,12 @@ const hold = parseFloat(opt("--hold", "3"));
 const noise = opt("--noise", "-50dB");
 const cut = parseFloat(opt("--cut", "0.3"));
 const minShot = parseFloat(opt("--min", "2"));
-const maxShot = parseFloat(opt("--max", "9"));
+const maxShot = parseFloat(opt("--max", "6"));
 const quietSec = parseFloat(opt("--quiet", "2"));
 const coldSec = parseFloat(opt("--cold", "15"));
 const activePct = parseFloat(opt("--active-pct", "0.3"));
+const minActive = parseFloat(opt("--min-active", "60"));
+const minCold = parseFloat(opt("--min-cold", "70"));
 const input = args[0];
 if (!input) {
   console.error("usage: node scripts/motion-check.mjs <proxy.mp4> [--episode dir] [--hold 3] [--cut 0.3]");
@@ -141,6 +145,8 @@ out.push(
   `ACTIVITY (frames where ≥${activePct}% of the picture moves): ${activeShare.toFixed(0)}% overall · ` +
     `${coldShare.toFixed(0)}% in the first ${coldSec}s · QUIET runs: ${quiet.length ? `FAIL × ${quiet.length}` : "PASS"}`,
 );
+const lowAll = !(activeShare >= minActive), lowCold = !(coldShare >= minCold);
+out.push(`  floors: overall ≥${minActive}% ${lowAll ? "FAIL" : "PASS"} · first ${coldSec}s ≥${minCold}% ${lowCold ? "FAIL" : "PASS"}`);
 for (const q of quiet) out.push(`  quiet  ${where(q.start, q.end)}  (${(q.end - q.start).toFixed(1)} s)${q.cold ? "  — inside the cold open (limit 1 s)" : ""}`);
 console.log(out.join("\n"));
-process.exit(freezes.length || quiet.length ? 1 : 0);
+process.exit(freezes.length || quiet.length || lowAll || lowCold ? 1 : 0);
