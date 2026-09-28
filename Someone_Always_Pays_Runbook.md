@@ -171,23 +171,28 @@ arrived is a good outcome; leaving because the episode stalled is not.
   to the viewer and to the algorithm, and the channel's current weak number is
   retention — so length is a reward for holding attention, not a bid for it.
 
-  **The case format starts at about 8 minutes (1,400 words)** and grows only under
-  the rule above. It also keeps a solo production finishable: the build cost grows
-  with the number of setups (§9.0), and a shorter case needs fewer.
+  **The topic sets the runtime; there is no fixed length** (creator, 2026-09-27). A
+  case runs as long as its suspects, alibis and reveal genuinely need: nine minutes if
+  it has nine, thirteen if it has thirteen. It is decided at Round 2 (§6.5) from the
+  case itself, never padded to a target and never cut to fit one. Round 2 states the
+  runtime, its word budget (minutes × 160) and its estimated weekly usage together
+  (the build cost grows with the number of setups, §9.0), so a long case is chosen
+  knowing what it costs. Retention (the 45% gate above) is still how a length is judged
+  afterwards.
 - **Evergreen only.** No news pegs.
 - **Everything is 1920×1080, 24fps, end to end.** Remotion and Blender render at
   1080p (§9.4), the Resolve timeline is 1080p (§10.4) and the upload is 1080p
   (§10.10). Nothing is upscaled at any point. Real archival documents enter at
   their native size and are scaled down (§9.9).
 - **A fixed slot, never missed.** The public promise is **one case a week, on the same
-  day at the same time: Saturday, 21:30 IST** (Saturday midday in the US east, morning
-  in the US west; an hour earlier in US time once US clocks go back in November). The
-  channel's two best-reached episodes went out on a weekend at about this hour, and
-  every weekday upload did worse. With five episodes that is a lead, not proof, which
+  day at the same time: Sunday, 21:00 IST** (creator, 2026-09-27; Sunday late morning
+  in the US east, early morning in the US west; an hour earlier in US time once US clocks
+  go back in November). The channel's two best-reached episodes went out on a weekend
+  evening, and every weekday upload did worse. With five episodes that is a lead, not proof, which
   is why the slot is fixed: from episode 10 the day stops varying, so the topic and the
-  packaging can be read on their own. Two a week stays the target: the second slot opens once four
-  episodes in a row have shipped on time, with Step 3's agent time (recorded in
-  `project.json`, §9.0) inside the production plan's budget. The slot is kept for
+  packaging can be read on their own. **One episode a week is the plan** (creator, 2026-09-27). A second slot is
+  considered only after four episodes in a row have shipped on time, with Step 3's agent
+  time (recorded in `project.json`, §9.0) inside the production plan's budget. The slot is kept for
   the audience, who learn the day and come back on it. YouTube found no consistent
   penalty for gaps between uploads, but a promise the channel breaks costs more than a
   modest one it keeps.
@@ -433,6 +438,43 @@ the mouth carry the acting. A full walk is used only when a character crosses a
 location. It is the most expensive motion and the most error-prone, and a slide
 with no steps reads as skating.
 
+**The walk obeys physics** (from the NIF009 master, 2026-09-27). The walk cycle's
+phase is **ground covered ÷ stride**, never the clock, so the feet plant and the body
+travels with them. A walking character **faces the way it moves**; walking backwards
+happens only when the shot declares `"backs away"`. At zero speed the cycle stops on a
+contact pose. **The cast stays on its floor under every camera move:** a tilt, crane or
+push never makes a character walk down from the sky or drift up off the floor, because
+the cast is parented to the set layer it stands on (§9.8.1) and only the camera moves.
+
+**Grounding: characters stand on floors, and only on floors** (from the NIF009 upload,
+2026-09-27: three extras walking on the stand's roof, one walking across the sky in a
+low-angle shot, one crossing the top of frame). Every character's position is a
+**world point on a walkable floor**, projected through the shot's camera on every
+frame, never a screen coordinate. A 2.5D shot takes it from a kit mark (§9.8.1); a 2D
+set declares its floor polygon and places the cast inside it. A roof, a counter top, a
+vehicle, a sign or the sky is never a floor. **When the camera tilts away from the
+floor, the cast leaves the frame with it**; nobody is kept in frame by pinning them to
+the screen.
+
+**Walks cross the frame.** The rig faces left or right and cannot turn, so a walk runs
+across the frame (within about 30° of horizontal on screen). A character going toward
+or away from the camera is shown by a cut, not walked, until the rig has front and
+back views.
+
+**No sliced characters.** A near occluder (a car frame, a pillar, a window mullion)
+either hides a character completely or leaves the head readable. It never leaves a
+headless body or a floating head. A figure cut by the frame edge is a deliberate
+over-the-shoulder with its shape readable, never an unreadable blob at the edge.
+
+**The cast takes the scene's light, and the scene's colour** (from NIF009, 2026-09-27).
+The character's colours are **multiplied by the plate's own tone at its mark** (`lit`
+or `shade`, from Stage & Marks), the same way the set is. A tint mixed over the
+character's own colours is not lighting: on NIF009 it left Lucky bright, with a yellow
+shade band, in a blue night. The shade band takes the plate's shade colour. A warm rim
+appears only where a visible warm practical (a lamp, a sign, a screen) is near, takes
+that practical's colour, and stays subtle. Measured: the character's mid-body brightness
+is within **±15%** of the plate's brightness around its mark.
+
 **Who talks.** The narrator's voice carries the episode. Lucky speaks to camera,
 lip-synced, in the cold open and at the reversal. Other characters mime and react.
 There is no second voice.
@@ -494,6 +536,29 @@ twice in a row**, and stages each one differently every time (§4.8):
 Type on a 3D surface rides that surface through the camera move, through the
 shot's anchors (§9.8). A foreground set piece never crosses typeset text unless
 the occlusion matte covers it.
+
+### 2.8.1 · Key facts on screen
+
+**When the narration says a year, a price or number, or a proper name, it appears on
+screen on the spoken word** (1948, $9, McDonald's, Ray Kroc). It is screen-space type
+through **one shared component, `KeyFact`**, in the channel kit (§9.2.1), so a fix
+lands in every episode.
+
+| | Spec |
+| --- | --- |
+| **Dark scene** | Warm light grey `#D9D4CC`, with a soft dark drop shadow. Never pure white |
+| **Bright scene** | Warm off-black `#221E1A`, with a soft light shadow. Never pure black |
+| **Money figures** | May use the accent `#E24D28` (the accent is money, §2.2), only at 48 px and above: it measures 3.3:1 on cream. Orange is never a general text colour |
+| **Placement** | The left or right third, on the side away from the subject's face or the key object. Never centred over the subject; never in the bottom 15% of the frame, where YouTube's controls sit; inside title-safe |
+| **Timing** | Lands on the word from `timing.json`; fades in and out (§9.2); one key fact on screen at a time; at least 1 s per 3 words |
+| **Fit** | `fitText` into its box and clamped to title-safe; never overlaps other text or a face |
+
+The shadow is a baked image or one SVG filter shared by every instance, never a
+per-frame CSS `drop-shadow` (§9.4).
+
+**No subtitles** (creator, 2026-09-27). Key facts carry the words that matter, so no
+subtitle or SRT file is made and nothing is burned in. YouTube's automatic captions are
+left as they are.
 
 ---
 
@@ -820,7 +885,7 @@ video-os/episodes/NIF0NN/
   05_layers/            ← Blender plates and mattes, Remotion scene passes (ProRes 4444, 1080p)
     cams/               ← cam-<shot>.json per 2.5D and 3D shot (§9.8)
   06_audio/             ← stems, mix-final.mjs, audio notes
-  07_packaging/         ← thumbnail stills and the title recommendation (§9.10)
+  07_packaging/         ← packaging.md (§13.3) and the thumbnail stills (§9.10)
   08_conform/           ← stills-audit.json, sfx cues, text timing, resolve notes
   09_master/            ← the upload file
   10_review/            ← review.md at 48 hours and 7 days (§14)
@@ -859,7 +924,7 @@ downgrade.
 | 3a · Angle kits | `nif-builder` | Sonnet 5, high | Twelve angles per new location, by script, plus one contact-sheet check |
 | 3b · Kit shots | `nif-builder` | Sonnet 5, medium | Picking angles and marks, running `place-check`. It is data entry against measured numbers. Batches of eight (§9.0) |
 | 3b · Hero shots, 3c · Scenes | `nif-builder` | Sonnet 5, high | At most two moving Blender shots (§9.7), and Remotion composition by setups (§9.8.4). Opus only to unpick a structural bug |
-| 3 · Stills audit | `nif-auditor` | Sonnet 5, medium | Independent of the builder; measures, never fixes |
+| 3 · Stills audit (optional) | `nif-auditor` | Sonnet 5, medium | A backup the creator may call. The builder's self-check and the creator's review are the process (§9.5) |
 | 4 · Resolve | `nif-finisher` | Sonnet 5, medium | Opus 5.5 medium for grade and look decisions, and first-time Fusion authoring |
 | 5 · Publish and learn | `nif-researcher` | Sonnet 5, medium | Reading numbers and writing the review. Opus only when a lesson changes the runbook |
 | Runbook changes | — | Opus 5.5, high | Rare, high-consequence |
@@ -1275,7 +1340,9 @@ is rejected.
 
 **Round 1 — Topic.** Claude presents the outlier evidence, vidIQ's answer beside
 its own, and three angles, ranked with a recommendation, plus the standing option
-for the creator to name their own. Each as:
+for the creator to name their own. **Each angle carries its "why ours" sentence**
+(why a viewer who has seen the popular videos still clicks ours; §4.5, §6.2.1), and the
+creator signs off that sentence with the topic. Each as:
 
 ```
 [Angle]
@@ -1318,17 +1385,17 @@ Step 1 starts only once Round 2 is answered.
 ### 6.6 · Intake output
 
 **The word budget is the single most consequential number set at intake**, and
-it is arithmetic, not judgement: **target minutes × 175 wpm** (§8.1). Ten to
-fourteen minutes means **1,750 to 2,450 words**, and twelve minutes means
-**2,100**. Budgeting from any other rate than the one the voice is set to just
+it is arithmetic, not judgement: **target minutes × 160 wpm** (§8.1). Ten to
+fourteen minutes means **1,600 to 2,240 words**, and twelve minutes means
+**1,920**. Budgeting from any other rate than the one the voice is set to just
 produces an episode that misses its runtime with no way left to fix it.
 
 | Target | Word budget |
 | --- | --- |
-| 8 min | 1,400 |
-| 10 min | 1,750 |
-| 12 min | **2,100** |
-| 14 min | 2,450 |
+| 8 min | **1,280** |
+| 10 min | 1,600 |
+| 12 min | 1,920 |
+| 14 min | 2,240 |
 
 Written to `project.json`:
 
@@ -1344,7 +1411,7 @@ LESSONS           [the DO NOT REPEAT lines this episode must pass (§7.0)]
 THE OBJECT        [the one concrete thing]
 THE PAYER         [who pays — the POV anchor]
 TARGET RUNTIME    [n] min
-WORD BUDGET       [n] words = target minutes × 175   ← the set rate, §8.1
+WORD BUDGET       [n] words = target minutes × 160   ← the set rate, §8.1
 CLOSING CALLBACK  [Ep ## — title]
 COLD-OPEN STORY   [two lines]
 HISTORY START     [person · decision · date]
@@ -1362,7 +1429,7 @@ Two artefacts and nothing else: `01_script/script.md` and `01_script/beats.md`.
 No assets, no prompts, no scene briefs — every duration in them would be wrong.
 
 **Each beat in `script.md` carries one `PLAIN` block.** It is what ElevenLabs
-generates (§8.1), the read-aloud reference, the subtitle source, and what the word
+generates (§8.1), the read-aloud reference, the `KeyFact` source (§2.8.1), and what the word
 count and `reconcile.mjs` are computed from. Delivery is written into it with
 punctuation and sentence length; there are no audio tags.
 
@@ -1564,6 +1631,22 @@ Two rules on top of the skill's own:
 - **The read-aloud test is the final authority.** If the humanized line is
   cleaner on the page but worse in the mouth, the spoken version wins.
 
+**The humanizer is not enough on its own** (from NIF009: its gate was PASS and the
+script still read as machine-written). It catches words; the shapes need three more
+checks before the pre-VO lock:
+
+- **`script-lint`** counts the shapes that make a script read as AI: "It's not X, it's
+  Y" and "not just X, but Y", "Here's the thing / the catch / the twist", lists of three,
+  a question answered by the next sentence, a paragraph ending on a one-line zinger
+  again and again, flat sentence lengths, and stock words (*crucial, pivotal,
+  landscape, navigate, unlock, delve, testament, realm*). Anything over its threshold is
+  rewritten.
+- **The concreteness rule:** every paragraph carries at least one name, date, place,
+  number or physical object. A paragraph of pure abstraction is cut or rewritten.
+- **The creator's read-aloud:** the creator reads three passages aloud (the cold open,
+  the red herring cleared, the reveal). About five minutes; the creator's ear is the
+  final authority.
+
 ### 7.7 · The pre-VO lock
 
 Before any audio is generated: script final, humanizer pass done, every citation
@@ -1601,13 +1684,13 @@ both places, in the same commit.
 | Voice | **SAP Narrator**, `9Qr0WkVfC2wAjGibgnfe` — a Voice Design voice made for this channel, saved in the channel's own account. Never a premade or trending library voice: those are on hundreds of channels, and a viewer who has heard one reads the episode as mass-produced |
 | Model | `eleven_multilingual_v2` — chosen for consistency from beat to beat |
 | Text sent | The beat's **`PLAIN`** block. v2 does not read audio tags |
-| Settings | stability 0.5 · similarity 0.75 · style 0.2 · speaker boost on · **speed 1.00** (below) · fixed **seed** |
+| Settings | stability 0.5 · similarity 0.75 · style 0.2 · speaker boost on · **speed 0.90** (below) · fixed **seed** |
 | Continuity | Every beat is sent with the neighbouring beats' text (`previous_text` / `next_text`), so the delivery flows across beat boundaries |
 | Output | `mp3_44100_192` |
 | Key | `ELEVENLABS_API_KEY` in `engine/remotion/.env`. Never a flag, never in a script |
 | Takes | **One per beat. One render is the render.** See below |
 
-**Pace is set by the speed setting: 1.00, locked by the creator on 2026-09-24, which delivers about 175 wpm.** v2 honours
+**Pace is set by the speed setting: 0.90, set by the creator on 2026-09-27, which delivers about 160 wpm.** (It was 1.00 ≈ 177 wpm on NIF009, which read too fast for a cinematic documentary.) v2 honours
 `speed` (0.7–1.2); `eleven_v3` did not, which is why the old bands were whatever
 the voice happened to deliver. The speed was chosen by ear from an audition of the cold open at several
 settings, and it is held for every episode. It changes only as a runbook change,
@@ -1618,7 +1701,13 @@ node scripts/tts-nif.mjs NIF0NN --only B00 --speed 0.85 --out 06_audio/voice-aud
 ```
 
 SAP Narrator reads fast by nature: on NIF009's cold open, 1.00 gave 177 wpm,
-0.90 gave 160 and 0.85 gave 146. The creator chose 1.00. The per-beat spread at the chosen speed is
+0.90 gave 160 and 0.85 gave 146. The creator chose 1.00 on 2026-09-24, heard it at
+full length on NIF009, and moved to **0.90** on 2026-09-27.
+
+**Pauses are written, not stretched.** At each turn of the case spine (§4.2) the
+`PLAIN` text carries one `<break time="0.6s" />` (v2 reads break tags; confirm on the
+first audition at 0.90). Never more than one break per three sentences: ElevenLabs warns
+that dense break tags destabilise the voice. The per-beat spread at the chosen speed is
 measured on NIF009 and written here as the observed band.
 
 Variation between beats comes from the **writing** — short sentences for a
@@ -1639,8 +1728,8 @@ try again.
 - A beat whose mp3 exists is **skipped**, always.
 - `--force` is for a **file that is broken** — truncated, silent, corrupt, the
   wrong text. It is **never** for a delivery you would like to be different.
-- **Delivered WPM is not a defect.** A beat that comes back outside ±8% of 175
-  is not re-generated (the target is 175 wpm). It is corrected in Resolve (§8.2), or it is accepted as it
+- **Delivered WPM is not a defect.** A beat that comes back outside ±8% of 160
+  is not re-generated (the target is 160 wpm). It is corrected in Resolve (§8.2), or it is accepted as it
   is.
 - A second render costs real credits to buy a different roll of the dice, not a
   better one.
@@ -1804,7 +1893,8 @@ character (§9.8.1). Then:
 node scripts/place-check.mjs ../../episodes/NIF0NN --kits ../../library/locations --write
 ```
 
-It checks every placement with numbers: the mark is free, in title-safe, the head is
+It checks every placement with numbers: the mark is on a walkable floor (the `SET`
+collection's floor, never a roof, counter, vehicle or sky), the mark is free, in title-safe, the head is
 visible, the feet are visible (or declared hidden), nobody stands closer than 0.6 m
 to anyone else, no walk crosses furniture, no shot is bare, and no angle is used
 twice. Then it writes `05_layers/cams/place-<shot>.json`, which Remotion renders
@@ -1839,7 +1929,7 @@ quality before their go.
 **6 · Render the layer passes and hand them to Resolve** (§9.4).
 
 **7 · Record the cost.** Write agent minutes per finished second, split by 3a, 3b
-and 3c, into `project.json`. The two-a-week decision is made from these numbers
+and 3c, into `project.json`. Also record the weekly usage percentage (`/usage`) at the start and end of every step, so the next episode is budgeted from measured numbers, not estimates. Any second weekly slot is decided from these numbers
 (§1.4).
 
 ### 9.1 · What Remotion owns
@@ -1915,9 +2005,9 @@ table — the answer is usually already installed.
 | **`@remotion/shapes`** | Real geometry — circle, rect, triangle, star, pie, ellipse | Charts, pie splits, callout frames, any prop currently hand-built from divs |
 | **`@remotion/noise`** | 2D/3D/4D simplex noise | Idle life in the cast (breathing, sway), hand-wobble on "nothing perfectly aligned" (§3 law 1), organic camera float |
 | **`@remotion/transitions`** | Beat-to-beat transitions with presets and timings | §9.2 — transitions now live here, not in Resolve |
-| **`@remotion/motion-blur`** | Trail and camera blur | Camera moves that carry weight (§3 law 8) |
+| **`@remotion/motion-blur`** | Trail and camera blur | Short, fast character action only, within the budget of §9.4.1 |
 | **`@remotion/layout-utils`** | `measureText` before render | Typeset text that never overflows a card. Essential now that Remotion owns all text |
-| **`@remotion/captions`** | Caption primitives, `.srt` parsing, token pages | Word-synced captions straight off `timing.json` |
+| **`@remotion/captions`** | Caption primitives, `.srt` parsing, token pages | Not used for subtitles (none are made, §2.8.1); fine for word timing inside `KeyFact` |
 | **`@remotion/media-utils`** | `getAudioData`, `visualizeAudio`, `getVideoMetadata` | Driving motion off the VO waveform; reading a plate's real duration before placing it |
 | **`@remotion/google-fonts`** | Font loading | Already used. Keep using it rather than CSS imports |
 
@@ -1928,6 +2018,17 @@ appears on screen (§3 law 12).
 
 **The rule:** a bespoke implementation of something in this table is a code
 review failure. Reach for the package first, and say which one a beat is using.
+
+**The channel kit: build it once, import it forever** (from NIF009, 2026-09-27).
+NIF009's whole kit (actor, cast light, type, UI, documents: 1,183 lines) lived in
+`src/nif009/kit/`, and nothing else imported it, so every fix made on NIF009 would
+have died with NIF009. The kit lives in **`src/sap/kit/`**: the actor and walk, cast
+light, `KeyFact` and the text components, the shared camera (with motion blur and the
+speed cap, §9.4.1), the case devices, transitions and the fades. An episode's folder
+(`src/nif0NN/`) holds only its setups and shots, and imports the kit. **A fix to a
+shared class is made in the kit, never copied into an episode.** Changing the kit is
+done in its own session between episodes, and every change is checked against the
+last episode's setups so nothing already shipped breaks.
 
 ### 9.3 · The layer contract
 
@@ -1996,6 +2097,32 @@ ProRes master out of Resolve (§10.10) — these files are the archive. They are
 reproducible, version-controlled and re-renderable at any size, and they are
 never deleted to reclaim disk.
 
+### 9.4.1 · Motion blur and camera speed
+
+**Motion blur is used, and it is cheap** (creator, 2026-09-27, lifting the NIF009 ban).
+It sells the depth tricks (parallax, push-ins, the foreground wipe) and it stops 24 fps
+judder. It lives in one place, **the shared camera** in the channel kit (§9.2.1), so it
+is consistent and costs the least:
+
+| Moving thing | How it is blurred | Cost |
+| --- | --- | --- |
+| **Layer parallax and camera moves** (far / set / near) | Each layer's speed is known from the camera maths, so it gets **one directional blur** of about half its per-frame travel (a 180° shutter), along its direction of travel. One sample, no re-rendering of the frame | Low |
+| **Slow drift** (under ~4 px per frame) | **No blur.** It isn't visible, so it isn't paid for. Most of an episode's camera time is here | Zero |
+| **Short, fast character action** (a throw, a fall, a whip turn, under 1 s) | `@remotion/motion-blur` `<CameraMotionBlur>`, **at most 6 samples**, on that clip only | Medium, but brief |
+| **L3 moving 3D shots** | Blender's own motion blur, on in the render | Low |
+| **Text and `KeyFact`** | **Never blurred.** Type stays sharp | — |
+
+Every character and the set layer it stands on share one blur, because they move
+together (§2.1 "Same motion").
+
+**Camera speed cap.** An unblurred move covers **at most ~10 px per frame at 1080p**
+(crossing the whole frame takes at least 8 s). A faster move (a whip pan between
+locations, a crash zoom) is allowed **only with its blur on**. Every move eases in and
+out, with no jump in speed on its first or last frame. The shared camera enforces the cap
+and logs any shot that breaks it. On NIF009, with blur banned, the stutter the creator
+saw measured as only 8 repeated frames in 8:25, so most of it was judder from fast
+unblurred moves.
+
 ### 9.5 · Verification happens before render, not after
 
 **This is a hard gate.**
@@ -2037,31 +2164,91 @@ episode:
 | **Cast** | Any character that is not Lucky's rig with parameters (§2.5) |
 | **Three planes** | Any frame has fewer than background, midground, foreground |
 
-**How the auditor looks, cheapest first** (§5.4):
+**The scene QA checklist governs every review.** Whoever reviews (the builder's own
+sweep, and the creator) runs every row of `video-os/library/SCENE-QA-CHECKLIST.md`:
+text, characters, physics, light and shadow, background, UI and layout bugs, design
+and "AI slop", motion and repetition, layers, story. It looks at the frame as a
+viewer would. A check not looked at is `NOT CHECKED`, never pass, and a failure
+class found once becomes a standing check everywhere, **fixed in the channel kit**
+(§9.2.1) so it can't come back.
+
+**The standing rules, in one place** (full detail and rationale in
+`SCENE-QA-CHECKLIST.md`; found on NIF009, standing on every episode since):
+
+*From the automated audit —* text dwell time · text-pass respects scene occlusion
+· contrast minimum (4.5:1, or 3:1 at 48px+) · title-safe margins · accent colour on
+money and Lucky only, one per frame · no templating past the quota · nothing held
+static past 3s · no dead/blank opening · motion keyed to spoken words, never frame
+numbers · window length law (2-9s) · foot lock ≤1px · document pages need real
+separated planes.
+
+*From a creator stills review —* no text-on-text or text-over-body-part overlap ·
+one clean set of facial features (no doubled brows/eyes) · grounding: nobody stands
+on a vehicle, occupants sit inside the cabin · every shadow caster-matched, no
+floating slabs · hair and limbs opaque, never translucent · one document per
+region, never overlapping.
+
+*From a creator video review —* no full-frame flash or black frames · no
+per-frame randomness in generated text/numbers (deterministic per frame) · a walk
+must visibly cover ground, not walk in place · a render error is fixed at its
+cause, never worked around · motion blur only through the shared camera, never on
+text (§9.4.1; the NIF009 ban was lifted by the creator on 2026-09-27) · transitions
+vary by beat context, not one repeated slide.
+
+*From the NIF009 master (2026-09-27) —* **zero untriaged flicker clusters**
+(`flicker-check`; NIF009 had 54 of 109 shots flagged, mostly in each shot's first five
+frames) · **facing follows travel**: a walking character faces the way it moves unless
+the shot declares "backs away", and the walk cycle's phase comes from ground covered ÷
+stride, never from the clock · **the cast stays on its floor under every camera move**:
+a tilt or crane never makes a character walk down from the sky; the cast is parented
+to the set layer (§9.8.1) · **the cast takes the scene's light**: brightness within
+±15% of the plate around its mark, and no warm (yellow) shade or rim in a blue night
+unless a visible warm practical casts it (§2.5) · **camera speed cap** (§9.4.1).
+
+*From the NIF009 upload (2026-09-27) —* **grounded**: every character stands on a
+walkable floor point, projected through the camera, never on a roof, a vehicle or the
+sky, and never pinned to the screen · **walks cross the frame**; no walking toward or
+away from camera · **no sliced characters**: an occluder hides a character completely
+or leaves the head readable · **text never over a head or face** (the "SPEEDEE SERVICE
+SYSTEM" card sat on three heads) (§2.5, §2.8.1).
+
+**How the builder checks its own work, cheapest first** (§5.4). This is the builder's
+self-check, not a gate; the `nif-auditor` is an optional backup the creator may call.
 
 1. **Scripts first.** `ep-audit.mjs` and `ep-textaudit.mjs` measure contrast,
-   title-safe, overlap and text timing. The auditor reads their summary.
-2. **Contact sheets second.** Each beat's stills go into one grid image, three
+   title-safe, overlap and text timing. The builder reads their summary.
+2. **Contact sheets second.** Each setup's stills go into one grid image, three
    across and four down, taken a second apart. That is enough to judge
    composition, three planes, one subject, repetition and whether anything moves.
 3. **Full-size stills last**, and only for a frame the grid or a script flagged,
    or for a §2.1 check that needs detail, such as line weight or contact shadow.
 
-**Then render the proxy, machine-check it, and stop.** When the audit passes,
-render the review proxy (§11.2) and run `motion-check.mjs` on it before grain is
-applied:
+When the self-check is clean, the builder records it in `08_conform/stills-audit.json`
+(`"verdict": "PASS"`, `"basis": "builder-self-check"`, the date), which is what the
+render-guard hook reads to unlock the **half-size review proxy** only.
+
+**Then render the proxy, machine-check it, and stop.** Render the review proxy
+(§11.2) and run the two whole-episode checks on it before grain is applied:
 
 ```bash
 node scripts/motion-check.mjs <proxy.mp4> --episode ../../episodes/NIF0NN
+node scripts/flicker-check.mjs <proxy.mp4> --episode ../../episodes/NIF0NN
 ```
 
-It measures two laws on every frame of the episode instead of on samples: any
-stretch visually unchanged for 3 seconds or more (§3 law 11), and every shot
-outside 2–9 seconds (§3 law 2), each mapped to its beat. A held state is a
-failure and goes back to 3c. A long shot passes only if it is a continuous flow
-shot declared in `shots.json` (§10.7). Then report it with screenshots and put
-the proxy in front of the creator. The creator says go, or returns every fix in
-one message. Claude never starts a full-quality render on its own judgement.
+`motion-check` measures two laws on every frame instead of on samples: any stretch
+visually unchanged for 3 seconds or more (§3 law 11), and every shot outside 2–9
+seconds (§3 law 2), each mapped to its beat. `flicker-check` finds A-B-A and pop
+flicker, frame to frame. A held state or a flicker cluster goes back to 3c. A long shot
+passes only if it is a continuous flow shot declared in `shots.json` (§10.7).
+
+**The creator reviews by eye, and the creator's go is the sign-off (from NIF009).**
+The builder hands the creator the proxy, the check results and a per-setup QA map: the
+composition to open in Studio (`Setup-<id>`, `Shot-<id>`, `Text-<id>`), and what to
+watch. The creator watches the proxy with sound (Studio has no narration audio, so
+script-to-picture sync is judged here) and either says go or writes the issue sheet
+(§9.5.1). The go is recorded as `creatorGo` in `08_conform/stills-audit.json` with
+`"basis": "creator-manual-qa"` and the date. Claude never starts a full-quality render
+on its own judgement.
 
 ### 9.5.1 · The fix loop
 
@@ -2071,9 +2258,10 @@ loop that spent a 5-hour session window in four hours on NIF009. The loop is:
 
 1. **Prevent the classes that repeat.** Typeset text goes through one component that
    fits it to its box and clamps it to title-safe (`fitText` and `measureText` from
-   `@remotion/layout-utils`, already installed). Overlays sit on named lanes and
-   anchors, and layers use named z-order constants. A class that can't happen doesn't
-   need auditing.
+   `@remotion/layout-utils`, already installed); key facts go through `KeyFact`
+   (§2.8.1). Overlays sit on named lanes and anchors, and layers use named z-order
+   constants. All of it lives in the channel kit (§9.2.1). A class that can't happen
+   doesn't need auditing.
 2. **The creator watches the proxy and writes an issue sheet**,
    `08_conform/issues.csv`, one row per issue:
 
@@ -2083,12 +2271,12 @@ loop that spent a 5-hour session window in four hours on NIF009. The loop is:
    ```
 
    The classes are TEXT (overflow, safe area, overlap, timing), PLACE (position,
-   scale, feet), MOTION (held, pops in, timing), LOOK (colour, line, light), CONTENT
-   (wrong object or fact) and AUDIO. A screenshot is attached only when the note
-   can't say it, cropped to the problem.
+   scale, feet, facing), MOTION (held, pops in, timing, stutter, flicker), LOOK
+   (colour, line, light, vignette), CONTENT (wrong object or fact) and AUDIO. A
+   screenshot is attached only when the note can't say it, cropped to the problem.
 3. **One fix session, fresh, on Sonnet (medium).** It reads the sheet and only the
    files the rows name. It groups the rows by class, then by setup, and fixes in that
-   order: **the shared component first, then the setup, then single shot rows.** One
+   order: **the shared kit first, then the setup, then single shot rows.** One
    fix in a component closes every row of its class. Rows that are pure text or
    numbers can go to Haiku.
 4. **Re-render only the clips that changed** (§9.4), as one short proxy of just those
@@ -2622,7 +2810,7 @@ and reproduced on every render. The vocabulary the camera works from:
   and the cast moves with the set layer it stands on (§9.8.1)
 - **Elements entering** from left, right, top or bottom, with overshoot and
   settle. Never linear, never a one-second opacity fade
-- **Motion blur** on every moving element
+- **Motion blur** from the shared camera, by the table in §9.4.1; never on text
 - **Depth ordering.** Elements arrive back to front
 - **Text, arrows and lines** animate on; they never pop
 
@@ -2644,6 +2832,31 @@ beats without a cut, with the scene changing around it — are the strongest too
 available and should be used at least twice per episode. Each one is declared in
 `shots.json` with `"flow": true`, which is what lets it run past nine seconds
 through the motion check (§9.5).
+
+**The opening and the close are cinematic** (creator, 2026-09-27):
+
+- **The opening:** the picture fades up from black over **1 s (24 frames)**. The room's
+  sound starts at **frame 0**, under the black, so the first second is never dead air:
+  the viewer hears the place before seeing it.
+- **The close:** after the sign-off, the picture fades to black over **3 s**. The music
+  carries on under the 10–15 s end-screen hold (§14.1), and the whole mix fades out over
+  the last 3 s of the file.
+
+**The transition vocabulary, in order of preference.** Each one is chosen for what the
+story does at that boundary, never on a schedule:
+
+| Transition | When |
+| --- | --- |
+| **Hard cut** | The default, inside a movement |
+| **J-cut / L-cut** | The next scene's sound arrives up to 1 s before its picture (J), or this scene's sound runs on under the next picture (L). Almost every scene change |
+| **Match cut** | Past to present on a shared shape or object (a 1948 counter becomes today's), §4.9 |
+| **Dip to black** | Between movements of the case spine (§4.2): 12–18 frames down and up, with a sound bridge across it. The chapter break the viewer feels |
+| **Foreground wipe** | A near-layer object (a pillar, a shoulder, a passing tray) crosses the lens and the scene changes behind it |
+| **Whip pan** | A jump in place or time with energy, with its motion blur on (§9.4.1) |
+| **Letterbox in / out** | Entering or leaving the past (§4.9) |
+
+Never a white flash (a standing rule), never the same transition twice in a row
+between movements, never a slide or a preset wipe used as furniture.
 
 ### 10.8 · Audio
 
@@ -2685,10 +2898,31 @@ Sound effects mark meaningful events only. Not every animation gets a sound. SFX
 cues derive from the real beat schedule, never guessed in advance. No room tone,
 and no filtered-noise "paper" sounds — both were tried and rejected.
 
+**No sound effect is synthesised in code** (creator, 2026-09-27: the NIF009 effects
+were not good enough). Effects come from the libraries in §10.8.1, chiefly the
+ElevenLabs Sound Effects Library, **downloaded by the creator**.
+
+**The sound request list.** At the start of Step 3, as soon as `timing.json` exists,
+Claude writes `06_audio/sound-request.md` and hands it to the creator before building
+anything that needs a sound. One row per cue:
+
+```
+id  | beat · word it lands on | what it is (plain words)            | duration | where it sits | search terms
+S01 | B00 · "tray"            | plastic tray set on a steel counter | 1.0 s    | under VO      | "tray set down counter"
+T03 | movement 2 → 3          | low whoosh into a dip to black      | 1.5 s    | transition    | "soft whoosh dark"
+```
+
+It covers the transitions, the case-device sounds (the stamp, the meter tick), the
+signature sounds of the object and the music beds, with a **recommended duration for
+each** (for example 0.5 s, 1 s or 2 s). The creator downloads them into
+`06_audio/sfx-inbox/` with the ids as file names. Claude logs the licence (§10.8.1),
+places each cue on its word, and trims or fades it; it never generates or synthesises one.
+
 ### 10.8.1 · Audio provenance
 
-**Music and sound effects come from five standing sources, and nowhere else.**
-All free; no paid library.
+**Music and sound effects come from six standing sources, and nowhere else.**
+Sources 1–5 are free. Source 6 is the ElevenLabs subscription the channel already
+pays for and adds no cost.
 
 | # | Source | For | Rule |
 | --- | --- | --- | --- |
@@ -2697,11 +2931,22 @@ All free; no paid library.
 | 3 | **Pixabay Sound Effects** | SFX | Pixabay Content License, no attribution |
 | 4 | **Freesound** | SFX | **CC0**, or CC BY with the credit. Never NC |
 | 5 | **Recorded in-house** | The episode's signature sounds — the object itself (a paper bag, a tray on a counter) | Ours |
+| 6 | **ElevenLabs Sound Effects Library** | SFX only: risers, whooshes, transitions, ambience beds, UI sounds | **Pre-made clips only.** Browse and download by hand from the Library, never generate. Paid plan required (Creator or above). Log title, prompt text, duration, download date and plan tier. No attribution on a paid plan |
 
 **Pixabay Music is not used.** Some uploaders also register their tracks with
 Content ID, so a claim can land on a legal use. **Incompetech is not used**
 either: its tracks are so common a viewer has heard them before. No AI-generated
 music.
+
+**ElevenLabs is a source for sound effects only.** Its Music tab and Marketplace
+are not used: the tracks are AI-generated, and no licence page says how Content ID
+claims are handled. The "no AI-generated music" rule stands. Library sound effects
+are user-generated AI clips, so treat quality as unchecked. Audition every clip
+against the beat before it goes in. Loop only a clip the Library already lists as
+looping, or a bed that loops cleanly on a measured seam. A clip whose licence the
+plan does not cover, or that lapsed with the plan, does not go in the episode.
+Signature sounds (the paper bag, the tray on a counter, a receipt, coins) are still
+recorded in-house (source 5). The Library is not a substitute for them.
 
 At the moment a track or sound is chosen, record its **source, title, artist,
 licence and attribution status** in the episode's audio notes, and carry any
@@ -2727,7 +2972,8 @@ with the Board. The scene look is built once, judged on stills, and locked in
 | **Show LUT** | `nif-scene.cube`, Resolve Colour page, node 1. Warm and slightly lifted in the shadows, so ink stays ink and colour stays flat. One LUT for every episode. **To be built** on the first scene-system episode's stills |
 | **Location balance** | Node 2, per location, saved as a still in the gallery named after the location. It brings each set's palette into the show look, so a deli and a concourse feel like the same film |
 | **Bloom** | A soft glow on practicals only: lamps, windows, screens. Never over the whole frame |
-| **Vignette** | Fusion `Vignette`: size 0.9, softness 0.85, transparency 0.9, Blend 0.22 (unchanged) |
+| **Vignette** | Fusion `Vignette`, set **by measurement**: on a flat mid-grey test frame the corners come out about **30% darker than the centre**, with a soft falloff and no visible edge. (NIF009's transparency 0.9 / Blend 0.22 was barely visible; the creator asked for a cinematic one on 2026-09-27.) The tuned values are written into `nif-look/README.md` and then locked |
+| **Shadow floor** | Outside letterbox bars, no more than ~2% of a frame's pixels are near-black. Checked on three stills (day interior, night, history) with the vignette on, so the vignette never crushes the picture |
 | **Grain** | Fusion `Grain`, monochrome. Power is re-judged for flat colour. Expect lighter than the Board's 1.8 |
 | Wiring | `MediaIn1 → Grain1 → Vignette1 → MediaOut1` |
 
@@ -2743,6 +2989,18 @@ things first:
 - the whole frame at viewer size
 - a 2× crop of a flat colour field and of a character's edge
 - the noise number
+### 10.9.1 · Stop before export
+
+**When the timeline is built, graded and mixed, and before the final picture render,
+the finisher stops** and says, in these words or close to them:
+
+> Resolve is open on `<timeline>`. I'm about to export. Do you want to change anything
+> in Resolve first (a title, a trim, the grade)? `packaging.md` is at `<path>`. Say
+> "export" when you're done.
+
+It waits. After the creator's edits it **reads the timeline back** and renders what is
+there. It never re-imports the timeline file (§10.5) over the creator's changes.
+
 ### 10.10 · Delivery
 
 **One file.** There is no ProRes master from Resolve — NIF007 rendered a 63 GB
@@ -2901,6 +3159,8 @@ is checked again later lists every step in its Step column.
 | --- | --- | --- |
 | Front-loading | 1 | Mechanism starts by B04; never 3+ consecutive stat beats |
 | Humanizer | 1 | `humanizer` run on the script and beats; no fact added; read-aloud passed |
+| Script lint | 1 | `script-lint` under its thresholds; every paragraph carries a concrete (§7.6) |
+| Creator read-aloud | 1 | The creator has read the cold open, the red herring cleared and the reveal aloud (§7.6) |
 | Object carries it | 1 | Every beat demonstrable with the object; sound-off test passed (§4.6) |
 | First payoff | 1 | Delivered and closed by ~40% |
 | Beat loops | 1 | No beat resolves without opening the next |
@@ -2922,7 +3182,8 @@ is checked again later lists every step in its Step column.
 
 | Gate | Step | Test |
 | --- | --- | --- |
-| Voice | 2 | SAP Narrator on `eleven_multilingual_v2`, PLAIN block, speed 1.00, fixed seed; dry run before generation |
+| Voice | 2 | SAP Narrator on `eleven_multilingual_v2`, PLAIN block, speed 0.90, fixed seed; dry run before generation |
+| Sound request | 2, 3 | `06_audio/sound-request.md` handed to the creator at the start of Step 3; no synthesised effects (§10.8) |
 | Reconcile | 2 | Every EST replaced by a measured duration |
 | FPS | 2 | `--fps 24` passed to transcribe, build-timing and reconcile |
 | Word timing | 2 | `timing.json` written; every beat has word-level entries |
@@ -2939,7 +3200,15 @@ is checked again later lists every step in its Step column.
 | Setups | 3 | 3c builds setups, then shots as rows: at most one setup per four shots, with progress written per batch (§9.8.4) |
 | Orbit | 3 | At most one diorama orbit, 5–10 s, from the location's template (§9.8.3) |
 | Title echo | 3 | The title's object is in the first image, and its key words are in the world by 0:15 (§4.1) |
-| Stills review | 3 | Every beat passes on stills; `stills-audit.json` verdict PASS, written by `nif-auditor` |
+| Self-check | 3 | The builder's self-check is clean (§9.5); `stills-audit.json` verdict PASS, basis `builder-self-check`. It unlocks the half-size proxy only |
+| Creator go | 3 | The creator watched the proxy; `creatorGo` recorded, basis `creator-manual-qa` |
+| Flicker | 3 | `flicker-check` on the proxy: zero untriaged clusters |
+| Walk | 3 | Facing matches travel on every walking frame; cycle phase from ground covered; walks cross the frame; no character leaves its floor under a camera move (§2.5) |
+| Grounding | 3 | Every character's feet on a walkable floor point projected through the camera (kit mark or the 2D set's floor polygon); none on a roof, vehicle or sky; none pinned to the screen; no sliced characters (§2.5) |
+| Cast light | 3 | Character mid-body brightness within ±15% of the plate around its mark; no warm shade in a cool scene without a practical (§2.5) |
+| Camera speed | 3 | No unblurred move over ~10 px per frame; every move eased (§9.4.1) |
+| Key facts | 3 | Every year, price and proper name in the narration is on screen through `KeyFact` (§2.8.1) |
+| Channel kit | 3 | Shared classes come from `src/sap/kit/`; nothing shared is copied into an episode (§9.2.1) |
 | Clean frame | 3 | Every row of §9.6 passes on every beat |
 | Lip sync | 3 | Lucky's mouth driven by the Step 2 Rhubarb cues (§8.4) |
 | Licence | 3 | Every archival and 3D item's licence, source URL and credit in `stock-ledger.json` |
@@ -2977,6 +3246,10 @@ is checked again later lists every step in its Step column.
 | Stub read | 4 | Every new Resolve method’s TypedDict read before it is called |
 | Capability probe | 4 | Anything outside the verified table probed on a disposable project first |
 | Loudness | 4 | −14 LUFS integrated, −1.5 dBTP, music −22 dB |
+| Opening and close | 4 | 1 s fade up with sound from frame 0; 3 s fade out after the sign-off (§10.7) |
+| Vignette | 4 | Corners ~30% darker than centre on the test frame; shadow floor met (§10.9) |
+| Stop before export | 4 | The finisher stopped and the creator said "export" (§10.9.1) |
+| Packaging | 4 | `07_packaging/packaging.md` complete: three titles, two thumbnail concepts, description, keywords and tags, disclaimer (§13.3) |
 | Delivery QC | 4 | Rendered file passes spec |
 
 ### 12.5 · Step 5 · Publish and learn
@@ -3039,8 +3312,31 @@ survive into the published description:
 3. **Sources with years**, for every figure stated in the episode.
 4. **Chapters**, exactly as computed at Step 2 (§8.3).
 
-These are handed over with the delivered file. A missing credit is a licensing
-problem, not a packaging one.
+A missing credit is a licensing problem, not a packaging one.
+
+**One packaging file** (creator, 2026-09-27). Everything the creator needs at upload
+is in **`07_packaging/packaging.md`**, written at the end of Step 4, when the chapters
+and credits are final. It replaces the separate packaging and description files:
+
+1. **Three titles** in whodunit shapes, the payer in each (§6.0), at most 60
+   characters, one marked as the pick
+2. **Two thumbnail concepts**, each a rendered still from the episode's own sets and
+   cast (no AI imagery, §3 law 12), with one line on the idea and its feed-test result
+   (§9.10)
+3. **The description, ready to paste:** two hook lines with the primary keyword, the
+   **chapters** (§8.3), the **sources with years**, the music and archival
+   **credits**, the **AI block** above and the **disclaimer**
+4. **Keywords** (one primary, three secondary, from vidIQ) and **tags** (10–15, under
+   500 characters; YouTube gives tags little weight)
+5. The **pinned comment** and the **end-screen** targets (§14.1)
+6. An empty slot for **vidIQ's packages**, which the creator generates and compares.
+   Claude never spends vidIQ credits
+
+**The disclaimer**, adapted per episode:
+
+> Nobody in this video is accused of breaking any law. Prices and figures are sourced
+> below, with years, and vary by country and date. Scenes and characters are
+> illustrative reconstructions. Not financial advice. Narration is a synthetic voice.
 
 ### 13.4 · Source safety
 
