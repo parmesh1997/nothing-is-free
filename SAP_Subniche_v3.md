@@ -1,197 +1,252 @@
-# Someone Always Pays: the sub-niche, re-opened (v3)
+# Someone Always Pays: the sub-niche, from the vidIQ data (v3)
 
-Written 2026-09-28. The whodunit format (`SAP_Subniche_Strategy.md`) stays the
-*structure*. This document re-opens the *territory* the cases come from, because the
-current one isn't giving you topics or impressions. **Nothing here is decided until the
-vidIQ research in §5 comes back.** Then the decision rule in §6 picks.
+Researched 2026-09-28 through the vidIQ connector, about 260 credits in all. **This
+replaces the pre-research draft of this file.** Its front-runner, "money history told
+as mysteries", is contradicted by the data (§3). Nothing in the runbook is changed
+by this document. The whole-episode cinematic rules in §7 are a **proposal** for you to
+decide on.
+
+The whodunit format stays the *structure*. This file is about the *territory* the cases
+come from.
 
 ---
 
-## 1 · What the numbers say now
+## 1 · Our channel, as vidIQ sees it
 
-| Episode | Age when read | Impressions | Views | Impressions CTR |
+| Video | Views | Share watched |
+| --- | --- | --- |
+| Popcorn | 108 | 25% |
+| TV bill | 86 | 20% |
+| Printer ink | 57 | 24% |
+| Google Maps | 46 | 17% |
+| Auction | 35 | 37% |
+| Airport | 11 | 5.7% |
+| Weather | 9 | 2% |
+| Points | 5 | 38% |
+| McDonald's (8:25) | 1 | — |
+
+Where the views came from: subscriber browse 184, **advertising 76 (at 11.6% watched)**,
+search 37, suggested 18.
+
+1. **Suggested traffic is 18 views.** YouTube has not yet found a viewer to recommend us
+   to. Suggested traffic is how history channels grow, and it follows topics viewers
+   already binge.
+2. **Paid promotion is hurting the signal.** The 76 ad views watched 11.6%, half our
+   organic rate, and they count toward the averages YouTube reads. The runbook already
+   forbids it; stop any campaign that's still running.
+3. Clicks (0.8–3.4% CTR) and retention (about 25%) are both under the gates. The topic
+   comes first: a thumbnail can't sell a topic nobody is curious about.
+
+## 2 · Demand × supply
+
+The volumes are US YouTube searches a month. vidIQ's competition score runs from 0 to
+100, where lower means fewer strong videos compete for the term. "Small channels breaking
+in" means outliers from channels under about 10k subscribers in the last year.
+
+| Lane | Demand (US searches/month) | Competition | Small channels breaking in? | Quadrant |
 | --- | --- | --- | --- | --- |
-| McDonald's ("YOU WORK HERE") | 18 hours | 170 | ~1–2 | **0.8%** |
-| Airline food | ~5 days | — | ~5–10 in 4 days, then ~30 in one day after the A/B test was removed | **3.4%** |
-| Printer ink | weeks | ~450 | 57–59 in 4 days, then ~1 more | **1.8–2%** |
-| Popcorn (episode 1) | weeks | ~650 | ~100 | — |
+| **Frauds, cons, heists, scandals** | *scam documentary* 50k (**+148%**), *ponzi scheme* 59k, *financial crime* 53k, *white collar crime* 31k (+13%), *heists* 26k (**+125%**), *greatest heists in history* 12k (+29%), *biggest scams in history* 6.8k, *bank robbery* 88k | 28–55 (medium) | **Yes**: see §4 | **High demand, medium supply** ✅ |
+| Food and brand money stories | *weird history food* 167k; brand rise-and-fall titles | medium | **Yes**: 1–7k channels at 60–118k views | High demand, medium supply ✅ |
+| Economic / money history explainers | *history of money* 190k (46), *economic history* 64k (27), *history of paper money* 15k (+85%) | 27–46 (low) | **No**: the channels in this exact lane are stuck at 10–1,450 subscribers (§3) | High demand, low supply, **but the format fails** ⚠️ |
+| General history storytelling | *history documentary* 1.28M, *weird history* 492k (60), *american history* 345k | 60+ (high) | Rarely; the winners are big studios (Nightshift 993k subs) and the AI wave | High demand, high supply ❌ for a new channel |
+| Everyday prices (our current lane) | *why is it so expensive* 4.9k | — | — | **Low demand**, and our CTR is under 2% ❌ |
 
-**Reading them honestly:**
+## 3 · Why "money history as mysteries" lost
 
-1. **The click rate is the first wall.** YouTube's own help says half of all channels
-   sit between 2% and 10%. Ours sits at or under the bottom of that range, so YouTube
-   stops widening after a few hundred impressions. That's a packaging problem *and*
-   an idea problem: a viewer has to want the topic before any thumbnail can work.
-2. **Retention is the second wall** (about 25% watched on the best two). A longer
-   runtime doesn't fix it; a story that holds the question does.
-3. **The topic supply is the third.** You told me the filters leave you with one or
-   two vague topics. A format that can't produce a strong topic every week will keep
-   shipping weak ones.
+The keywords look perfect: high volume, low competition. But the channels already
+making exactly that video are stuck:
 
-**The A/B test question.** YouTube's *Test & compare* shows the variants evenly and
-picks the one with the most *watch time share*. YouTube says it doesn't suppress a
-video. But at 170 impressions, each of three variants gets about 57, which is noise,
-and the test can run two weeks without a result. Your "views came back when I removed
-it" is one observation, but there's no reason to run a test at this size either. **New
-rule: no test at publish.** Choose one thumbnail with the feed test, and start *Test &
-compare* only once a video has passed about 1,000 impressions (runbook §14.1).
-
-## 2 · What you're seeing in history
-
-The 10–15 channels you describe (American or British history, 200–400k views within a
-month, three or four videos) are real, and so is the demand behind them: history is
-one of YouTube's deepest binge genres, with a US and UK audience. Two cautions:
-
-- **Much of that wave is mass-produced with AI** (generated images, recycled facts,
-  synthetic narration). YouTube's July 2026 clarification on inauthentic content
-  targets exactly that: template content and low-effort channels. Many of those
-  channels won't last. **The demand will**, and the high end of the genre (well-told
-  and hand-made) is where a channel survives.
-- **History alone isn't a reason to watch *us*.** A pure history channel competes
-  with the whole wave. We need history *plus* the thing only we do.
-
-## 3 · The candidates
-
-Every candidate keeps the cast, the look, the whodunit spine and the channel's name.
-What changes is where the cases come from.
-
-| | Sub-niche | One line | Topic supply | Click hook | Risk |
-| --- | --- | --- | --- | --- | --- |
-| **A** ⭐ | **Money history, told as mysteries** | *True stories from American and British history where money changed hands, and someone else paid* | Bottomless: every deal, bubble, scheme, law and fortune in 300 years | People and absurd numbers from history: "Who Really Paid for the Statue of Liberty?" | A history-literate audience catches a lazy fact. Research load rises |
-| B | Business history dramas | *The deal that made or ruined a company* | Large | Brand names, rise and fall | Crowded by big business-documentary channels; brand and trademark caution |
-| C | Pure American / UK history storytelling | *The story, told well* | Bottomless | Wars, presidents, disasters | The whole AI wave is here; loses "someone always pays" |
-| D | Everyday prices (today's slate) | *Why this costs what it costs* | **Thin** (your experience) | The object you paid for | Current data: CTR under 2% |
-| E | Historical cons, heists and scandals | *The greatest cons, and who they cost* | Large | "The man who sold the Eiffel Tower" | Well-trodden; channels named for money mysteries exist. **Works best as an episode type inside A** |
-
-**Why A is my preliminary pick:**
-
-- **It's the transfer, done properly** (strategy §3.2): the proven genre you're
-  watching explode (history) moved onto the lens nobody uses for it (who paid).
-- **It fixes topic supply for good.** History doesn't run out, and the case test
-  gets easier: history has named people, dates and documents for every suspect.
-- **It fixes the click hook.** People and stakes from the past carry curiosity that
-  "why is X expensive" doesn't: *"The Bank That Paid for America's Biggest Purchase
-  Was British."*
-- **It keeps everything built.** The channel name, the tagline, Lucky (as the viewer's
-  stand-in in any era), the case spine, the seven devices, the cold open, the Stage &
-  Marks pipeline. Your popcorn, ink and airline work was already history-first; A
-  makes that the front door instead of the back room.
-- **Today's topics still fit** as episodes whose crime happened in the past (popcorn
-  and the 1930s cinemas).
-
-**Example cases for A (hypotheses for research, not findings):**
-
-| Working title | The popular answer (red herring) | The case to check |
+| Channel | What it makes | Subscribers |
 | --- | --- | --- |
-| Who Really Paid for the Statue of Liberty? | France, or rich donors | The pedestal was funded by a newspaper's campaign of small public donations (1885) |
-| The Bank That Paid for the Louisiana Purchase Was British | The US government | The purchase was financed with bonds through British and Dutch banks, while Britain was at war with the seller |
-| Who Paid for Prohibition? | Bootleggers, or drinkers | The federal income tax (1913) replaced the liquor tax that had funded the government |
-| The Railroad That Robbed Its Own Investors | Robber barons | The Crédit Mobilier scandal (1872), and who carried the cost |
-| Isaac Newton Lost a Fortune. Who Took It? | "Greedy speculators" | The South Sea Bubble (1720) |
-| The Popcorn That Saved the Movies | The greedy cinema | The 1930s cinemas and the Depression (the remake already planned) |
+| Drawn to Power | An investigator host follows the paper trail of fortunes (almost our pitch) | 24 |
+| Oswald Ledgerwood | Economic history | 10 |
+| Barons Power Ledger | Robber-baron money stories | 18 |
+| History Has Questions | History as questions | 33 |
+| The Price of Power | Money and power | 103 |
+| Financial Debrief | Financial history | 1,450 |
+| Wealth Through Time | Wealth history | 1.1k |
 
-## 4 · Why would a viewer watch ours?
+Many of these channels look AI-made. The exception, EconTales (2.2k subscribers; *How
+America Became a Financial Superpower After WWII*, 36k views, 446 views an hour), is
+one video. **Low competition here means the format doesn't pull, not that nobody is
+serving the demand.** The people searching *history of money* are served by big
+explainers and don't click an unknown channel's version.
 
-| They get elsewhere | They get only here |
+## 4 · What does break in: proof from small and new channels
+
+| Channel (subscribers) | Video | Views |
+| --- | --- | --- |
+| Nomad Over Normal | *Biggest Scam in Physical Media* | 503k |
+| Controversy Explained (1.3k) | Weird fast-food history | 118k |
+| Shots Fired West (3.8k) | *Sam Burchfield: The Outlaw So Violent They Erased Him From History* | 121k |
+| The Story of Money, FT (18k) | *The Prophet Mohammed's surprising life as a businessman* | 661k |
+| Canadian History Ehx (9.7k) | *The History Of Harveys* | 62k |
+| Yesterdays Brands (7.4k) | A&W, rise and fall | 60k |
+| Restaurant Association (3.2k) | Tommy's Burger | 60k |
+| doghut (1.1k) | A scammer exposé | 59k |
+| Roots of Evil (2.1k) | A historical true-crime case (1900s) | 56k |
+| Animoria Studio (1k) | *Birth of America Explained* | 51k |
+
+**The big proof sits on the same lane.** FERN (5.5M subscribers):
+
+| Video | Views |
 | --- | --- |
-| A history channel: the story, told in order ("and then") | The story as a **case**: a question held to the end, suspects cleared, a reveal |
-| A finance channel: how money works | **A person, a date, a place**, and the money moving on screen through a world you can see |
-| The AI history wave: generated stills and narration | **A hand-built world**: sets, a recurring cast, real documents, a cinematic cold open |
-| A chatbot: the answer | The popular answer taken apart first, the way people actually learn |
+| *How Hackers Stole $1,000,000,000 From Banks* | 6.9M |
+| *The Biggest Fraud on TV* | 6.6M |
+| *The Bank Heist of the Century* | 5.6M |
+| *The $2.1 Billion McDonald's Machine* | 5.0M |
 
-## 5 · The research (one pass, not ten)
+Nightshift, a channel under a year old at 993k subscribers:
 
-### 5.1 · Through the vidIQ connector (preferred)
+| Video | Views |
+| --- | --- |
+| *The Most Powerful Pirate In History* | 2.1M |
+| *The Crazy Story of the Opium Wars* | 1.5M |
+| *The Gold Nugget That Changed America Forever* | 1.0M |
 
-vidIQ is installed on your claude.ai account but **disconnected**. Once it's connected
-and switched on for the session, I run the whole comparison myself in one pass, with
-no browsing and no pasting:
+Every one of these is money with a person, a crime or a scheme, and stakes. None of
+them is a price explained.
 
-1. **Outliers** for each candidate's three seed terms (A: *money history*, *who paid
-   for*, *financial history mystery*; B, C, D, E similarly), last 90 days and last
-   12 months.
-2. **Keyword research** on the same seeds: volume, competition, related terms.
-3. **Channel search** for small, young channels (under 12 months, under 100k
-   subscribers) with outliers: the proof a new channel can break in.
-4. **Your channel's analytics** for the last three videos: impressions, CTR, watch
-   time, retention.
-5. **Similar thumbnails** for the winning outliers: what the row our thumbnail sits in
-   looks like.
+## 5 · The money: RPM (vidIQ's model, per 1,000 long-form views)
 
-I don't know how many vidIQ credits each connector call uses. Check vidIQ's usage page
-after the first run, and if it's costly, the prompts below do the same in three
-messages.
+| Category and audience | Low | Mid | High |
+| --- | --- | --- | --- |
+| Business, US | $4.80 | **$8.00** | $12.80 |
+| Education, US | $3.60 | **$6.00** | $9.60 |
+| Education, UK | $3.24 | **$5.40** | $8.64 |
+| Entertainment, US | $1.50 | **$2.50** | $4.00 |
 
-### 5.2 · The vidIQ chat prompts (if the connector isn't available)
+These are estimates from a model, not a real channel's revenue. Fraud and financial
+crime pull finance advertisers, so they sit in the Business band. The same story filed
+as Entertainment earns about a third as much, so upload under **Education**, and title
+around money, not gore.
 
-Run them **one after another**, and paste each answer back to me before the next.
+## 6 · The recommendation
 
-**Prompt 1 · The landscape**
+### 6.1 · The territory: **true money crimes from history, told as a case**
 
-```
-I run "Someone Always Pays", a faceless animated channel (hand-built 2D/2.5D
-scenes, a recurring character, a whodunit structure: every episode asks "who
-really paid?" and names the answer at the end). My audience target is the US,
-UK, Canada and Australia. My current CTR is 0.8–3.4%, and I need a stronger
-sub-niche. Compare these five for a channel like mine:
-A) money history told as mysteries (true American/British history where money
-   changed hands and someone else paid)
-B) business history dramas (the deal that made or ruined a company)
-C) American/UK history storytelling
-D) everyday prices explained (why things cost what they cost)
-E) historical cons, heists and financial scandals
-For EACH, give me tables:
-1. The 10 best outlier videos of the last 90 days, preferring channels under
-   12 months old or under 100k subscribers: title, channel, subscribers,
-   channel age, views, views per hour, outlier score.
-2. The 3 best keywords: search volume, competition, overall score.
-3. What the winning titles have in common, and what the winning thumbnails
-   have in common (one line each).
-4. How saturated it is, and whether new channels are breaking in (yes/no,
-   with the evidence).
-5. Advertiser value for a US/UK audience, if you have it (say where it comes from).
-Finish with a ranking of the five for a new channel making one 10–13 minute
-video a week, and why.
-```
+*Frauds, cons, heists, bubbles and swindles from American and British history. Every
+case asks the channel's question: who really paid?*
 
-**Prompt 2 · The best two, in depth** (after prompt 1)
+- **It's the only lane with all four:** rising demand (+125–148%), medium competition,
+  small channels breaking in, and the top RPM band.
+- **It finally gives the whodunit a real culprit.** "Who did it?" was always strained
+  for a popcorn price. A swindle has a culprit, victims, a trail and a reveal, and "who
+  really paid?" still twists it: in a Ponzi scheme the later investors pay the earlier
+  ones; after the salad-oil swindle, American Express's shareholders paid.
+- **The name was made for it.** In a con, someone literally pays.
+- **One case in three can stay close to home:** a trick you still pay for, told
+  through its history (the popcorn remake, the McDonald's kiosk). This keeps what's
+  built. It is the lane with the smallest proof (FERN did the kiosk at 5M, so check
+  saturation).
 
-```
-Take the top two sub-niches from your ranking. For each, give me 25 video
-ideas as a table: working title, primary keyword, search volume, competition,
-the outlier video that proves demand (title, views, age), and the angle that
-video DIDN'T take. Then: the 5 title patterns that win in this sub-niche, the
-3 thumbnail patterns that win, and the typical length of the outliers.
-```
+**Hypotheses for Step 0, not findings.** Every one still has to pass the case test,
+the cold-answer test and `saturation.mjs`:
 
-**Prompt 3 · My channel against the winners** (after prompt 2)
-
-```
-Look at my channel's last 5 videos. Compare their titles and thumbnails with
-the winning patterns you found for the top sub-niche. Tell me exactly why my
-CTR is 0.8–3.4%, what my thumbnails are missing, and give me 3 concrete
-changes for the next video's title and thumbnail. Also say whether my last
-videos' Review issues in Optimize repeat anything.
-```
-
-## 6 · How the decision is made (after the data)
-
-Each candidate is scored on the research, out of 100:
-
-| Measure | Points | Source |
+| Working title | The red herring | The case |
 | --- | --- | --- |
-| Young channels breaking in (outliers from channels under 12 months or 100k subscribers) | 25 | Prompt 1, table 1 |
-| Demand (median views per hour of the top 10 outliers, against the runbook's VPH floor) | 20 | Prompt 1, table 1 |
-| Topic supply (strong ideas, each with proof, out of 25) | 20 | Prompt 2 |
-| Keyword room (volume against competition) | 10 | Prompt 1, table 2 |
-| Fit with what we've built (cast, spine, devices, pipeline) | 15 | Judgment, written down |
-| The "why ours" gap (none of the outliers tells it as a case) | 10 | Prompt 1, table 3 |
+| He Sold a Country That Didn't Exist | Gullible investors | Gregor MacGregor's Poyais (1820s): London bonds, and settlers who sailed to it |
+| The Tanks Were Full of Water | The swindler | The salad-oil swindle (1963): who ended up holding the loss |
+| Ponzi Promised 50% in 45 Days. Who Paid? | Ponzi kept it | Early investors were paid with later investors' money (1920) |
+| Isaac Newton Lost a Fortune. Who Took It? | Greedy speculators | The South Sea Bubble (1720) |
+| The Railroad That Robbed Its Own Investors | The robber barons | Crédit Mobilier (1872) |
+| The Man Who Sold the Eiffel Tower | The buyer's greed | Lustig (1925). **Heavily told:** saturation check first |
 
-The top score becomes the sub-niche from episode 10 onward. If A wins, the runbook
-changes only where topics come from (§6.0–§6.2, the case slate) and the title patterns.
-If the data says otherwise, I'll say so, whatever I recommended here.
+**Legal line:** only closed historical cases, with no living private person accused.
+Court records are the sources (they're also the documents we show on screen).
 
-## 7 · Your thumbnails and banner
+### 6.2 · Why watch ours when a chatbot answers in 30 seconds?
+
+Nobody clicks a Nightshift video to learn *that* San Francisco boomed. A chatbot gives
+the fact. The video gives **the moment**:
+
+- a glowing vial of gold dust in a shopkeeper's hand;
+- a man running down a muddy street shouting;
+- a date and a place stamped on the screen;
+- a question held for 14 minutes;
+- an ironic ending: the richest man in California dies penniless, with his top hat on
+  his grave.
+
+FERN does the same with the second person: *"You're at McDonald's and you're craving a
+double cheeseburger…"*, so the viewer is the one being played.
+
+**Ours:** you're the mark. You meet the con man, you'd have bought in, you watch your
+money move through a world you can see, and the case tells you who paid. A chatbot
+gives an answer. It can't give you the feeling of being conned, or the reveal.
+
+### 6.3 · The craft, measured: FERN and Nightshift, shot by shot
+
+This is from vidIQ's shot-by-shot analysis of *The $2.1 Billion McDonald's Machine*
+(FERN) and *The Gold Nugget That Changed America Forever* (Nightshift).
+
+| | FERN | Nightshift | What we take (cheap in our pipeline) |
+| --- | --- | --- | --- |
+| **First image** | A slow push through the restaurant's glass doors | A hand holding a glowing vial of gold dust, with rim light and particles | **An object in a hand, lit, moving.** Our proxy opened on Lucky standing at a counter |
+| **Hook voice** | Second person: "You're at McDonald's…" | Present tense: "A bottle of shiny dust sparkles…" | Second person or present tense; the viewer is the mark |
+| **Shots before 0:52** | ~15 | 8 | 5–7 in the first 15 s (already in §4.1) |
+| **Shot length** | 2.5–4 s | 3.5–5 s in exposition, 1.5–2.5 s in conflict montage | Tighten our 2–9 s law (proposal P2) |
+| **Event rate** | Something changes every 1.5–2 s | Every 2–3 s | We already require ≤3 s |
+| **Static holds** | "Virtually never 100% static": micro-drift, push-ins | Under 5–6 s, always with smoke, water or birds moving | **The camera never rests, all episode** (P1) |
+| **Time and place** | — | A **"MAY 10, 1848" → "SAN FRANCISCO"** badge at 0:28 | A date/place stamp at every jump in time or place |
+| **Structure** | Symptom first, then the term ("nudging" named only after you've seen it happen) | 5 chapters on **parchment title cards** | Misconception first (already §4.6); **case-file chapter tabs** |
+| **Colour and medium** | Clinical grey world, so the brand red and yellow pop | Gold and purple for greed; **charcoal ink-wash** for violence; murky browns for ruin | Colour script (§4.9), plus **one medium change** for the dark act (a Remotion filter) |
+| **Motif** | The kiosk, alone and rotating, at the end | **The top hat**: thrown, then silhouetted, then on the grave | One **hero prop** per case that returns in the last shot |
+| **Mythic scale** | — | Giant figures looming over the town | A huge cut-out of the culprit behind the town plate (one composite) |
+| **Ending** | Nuanced verdict under an "Own opinion" tag; slow pull back | A bookend: the last shot rhymes with the first (pebbles in the mud); an ironic final line | **The last shot rhymes with the cold open**; the irony line |
+| **Humour** | — | Visual understatement (a miner keeps a grizzly cub, "why the hell not") | Our Lucky beats; the laugh in the picture (§4.6) |
+| **Cast** | Faceless grey low-poly mannequins | Silhouettes and painted figures | Our cast is already stronger here |
+
+**Channels not analysed, and why:**
+
+- **Oversimplified** is already the model behind §4.1.
+- **"Imperium":** the search found only a Shorts channel and a live-action channel.
+  Send me the link to the one you mean.
+- **"Crayon capital":** I couldn't identify it. Send the link.
+- **The Black Files is an AI channel.** FERN's video shows it copied FERN's work with
+  invented scenes and factual errors. Study it only as a warning.
+
+### 6.4 · Three risks this data raised
+
+1. **YouTube is labelling AI content automatically** (announced for May 2026, using
+   SynthID, per FERN's video), and ElevenLabs has adopted SynthID. Assume our voice will
+   be detected. Disclose it in Studio's altered-content setting, or record the
+   narration yourself. A human voice is also the clearest "not slop" signal.
+2. **Viewers now read 3D-looking thumbnails as AI slop** (FERN). Keep thumbnails painted
+   or toon-lit, built from our own scene (§8).
+3. **The AI history wave is exactly where this lane's competition comes from.** Our
+   defence is the hand-built world, sourced documents on screen, and a voice. Never
+   speed at the expense of those.
+
+## 7 · Proposal, not applied: cinematic for the whole episode
+
+Today the directed rules (§4.1's table) and the per-shot treatment (§9.0.1) cover
+**only the cold open**. Every other scene is held only to "an event every ≤3 s", 2–9 s
+shots and one atmosphere layer. That's why the middle of an episode can still read as
+a lesson. Both reference videos keep the cold open's standard for 14 minutes.
+
+| # | Change | Runbook section | Cost |
+| --- | --- | --- | --- |
+| P1 | **The directed rules apply to every scene.** Each scene opens with a move into its place, the camera never rests (a drift at minimum), and every shot has a physical action. The cold open keeps its stricter numbers (5–7 shots in 15 s, two atmosphere layers) | §4.1 → a new §4.9.1 "Every scene is directed" | Free: camera moves are Remotion data |
+| P2 | **Shot length 2–6 s** (from 2–9 s), except a declared flow shot. Conflict montages run 1.5–2.5 s | §3 law 2, §9.5, §12.3 | Free |
+| P3 | **An activity gate for the whole episode:** at least 60% active frames overall, at least 70% in the first 15 s, and quiet runs over 2 s fail | §9.5, §12.3; one flag in `motion-check.mjs` | Free (the measure already exists) |
+| P4 | **The treatment covers every scene**, with a one-line shot list per setup: the move, the action, the atmosphere and the sound. Opus writes it, and it still fits on two pages | §9.0.1 | About 5–10k more Opus tokens per episode |
+| P5 | **Four devices built once:** the date/place stamp; case-file chapter tabs at act breaks; the hero-prop motif that returns in the last shot; the ending that rhymes with the cold open | §4.9, the §2.8 devices | One session to build the components |
+| P6 | **One medium change for the dark act:** an ink-wash or charcoal treatment as a Remotion filter on the same plates | §4.9 colour script | One component |
+| P7 | **Sound across the whole episode:** an ambience bed per location from the first frame of each scene, and three or more specific sounds per scene (the cold open's rule, extended) | §10.8 | Sound library time, no render time |
+
+**Render time:** every item is in Remotion over plates that already exist. The only
+real cost is the atmosphere layers, which §9.8.5 already asks to be baked once as
+loops. None of this adds a Blender render.
+
+**A conflict to decide:** FERN ends its hook with *"Today we are going to talk
+about…"*, and §4.1 forbids "today we'll learn about X". I'd keep the rule but allow a
+**stakes line** in its place: *"…and the same trick is still running."* It makes the
+promise without the lecture.
+
+Say yes to any of P1–P7 (all or some) and I'll write them into the runbook as
+round 3 of the merge pack. Until then, nothing is applied.
+
+## 8 · Your thumbnails and banner
 
 **The banner is good:** clear, on-brand, a place you can believe in, and Lucky as the
 detective. Keep it.
@@ -215,3 +270,36 @@ runbook allows AI for reference). As the published thumbnail, runbook law 12 say
 thumbnail is built from the episode's own scene. If you want to change that rule for
 thumbnails, it's your call through §13.5, and YouTube's disclosure rules for
 thumbnails should be checked first.
+
+## 9 · Working cheaper
+
+**vidIQ credits.**
+
+- **What you have:** 712 left, but only 89 are the monthly kind (the pool resets on
+  2026-10-12 to 2,000). The other 623 are add-on credits that don't refill.
+- **What the calls cost:** most calls cost 5 credits. A shot-by-shot analysis of any
+  YouTube video (`video_watch`) costs 25.
+- **What to budget:** one Step 0 pass is about 40–60 credits (8–12 calls), so a monthly
+  pool of 2,000 covers every week with room for 4–6 reference analyses.
+
+**Reference videos without YouTube access.** `video_watch` reads a video on vidIQ's
+side, which this cloud session can reach. That covers most of what the merge pack's
+step 8 would download. Step 8 is still needed for measured numbers (activity, cuts
+per minute), so it stays optional on your PC.
+
+**Opening YouTube to this cloud environment.** YouTube is still refused right now (the
+proxy denied `www.youtube.com`, `i.ytimg.com` and `*.googlevideo.com` on 2026-09-28).
+To open it:
+
+1. In the session's title bar, open the **cloud environment menu**, then **Edit**.
+2. Under **Network access**, choose a broader access level, or add these to the allowed
+   domains: `youtube.com`, `*.youtube.com`, `youtu.be`, `*.googlevideo.com`,
+   `*.ytimg.com`.
+3. Save, then **start a new session**. The container in use keeps its policy.
+
+The access levels are explained at https://code.claude.com/docs/en/claude-code-on-the-web.
+If it's already on the broadest level and still refused, the block comes from your
+organisation's policy, which is set outside the environment.
+
+**The DaVinci Resolve MCP** failed to connect here because it points at a program on
+your PC (`C:\Users\parme\...`). It is expected to work only in sessions on your PC.

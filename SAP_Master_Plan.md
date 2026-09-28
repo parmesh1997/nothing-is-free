@@ -16,9 +16,10 @@ you know who.* Chosen by the creator on 2026-09-25, from episode 10.
   is our red herring, cleared on screen. They explain; we solve (strategy §3).
 - **The mix:** at least 65% story and comedy, at most 35% mechanism (strategy §6.1).
 - **Length:** 10 to 15 minutes, usually about 13 (creator, 2026-09-28; runbook §1.4).
-- **Where the cases come from is re-opened** (`SAP_Subniche_v3.md`): everyday prices
-  alone gives too few strong topics and a CTR under 2%. The front-runner is **money
-  history told as mysteries**; the vidIQ research decides.
+- **Where the cases come from: the vidIQ data is in** (`SAP_Subniche_v3.md`). The
+  recommendation is **true money crimes from history** (frauds, cons, heists, bubbles),
+  told as a case, with one case in three a trick you still pay for. Money history as
+  mysteries lost: channels already making it are stuck. **Your decision.**
 
 ## 2 · Where we stand
 
@@ -129,7 +130,7 @@ orbit). Tools: Blender, Remotion and Resolve Studio, all free or already owned
 
 | When | What |
 | --- | --- |
-| **Now** | Connect vidIQ in this cloud session and run the sub-niche research (`SAP_Subniche_v3.md` §5), or paste its three prompts into vidIQ one at a time and send me the answers |
+| **Now** | Decide the territory (`SAP_Subniche_v3.md` §6) and which of the whole-episode proposals P1–P7 (§7) go into the runbook |
 | **Then** | Merge round 2 on your PC (`SAP_Merge_Pack.md`), including the reference-video study (its step 8) |
 | **The current episode (airline tax)** | Rebuild the cold open to runbook §4.1: Opus writes the treatment first (§9.0.1), then the atmosphere layers it needs (§9.8.5); `motion-check` must show at least 70% active frames in the first 15 s |
 | **In parallel, once** | Build the atmosphere kit and the case-file kit; test one plate toon vs soft-lit |

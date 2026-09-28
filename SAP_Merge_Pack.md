@@ -13,7 +13,7 @@ PC only has to bring in this round, plus anything you've changed since you sent 
 | `merge/runbook_base_2026-09-27.md` | Your merged runbook, exactly as you sent it (line endings normalised to LF) |
 | `merge/runbook_proposed.md` | That runbook with this round's changes (identical to `Someone_Always_Pays_Runbook.md` in the repo) |
 | `SAP_Merge_Pack.md` | This file: the steps, the prompt (§3), the conflict rules (§3.1), the change list (§4) and the files (§5) |
-| `SAP_Subniche_v3.md` | The sub-niche re-opened: the research plan, the vidIQ prompts, the decision rule |
+| `SAP_Subniche_v3.md` | The sub-niche from the vidIQ data, plus the whole-episode proposal P1–P7 (not in this merge) |
 
 ## 2 · What you do
 

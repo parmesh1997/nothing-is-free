@@ -12,7 +12,7 @@ first**: it's the whole plan on one page, and it points to the detail.
 | 5 | `SAP_Toolchain.md` | Every tool by step: licence, cost, how Claude runs it, optional AI (not recommended) | Final |
 | 6 | `SAP_QA_Audit.md` | Every audit finding, pass by pass (§1–§9), and where each fix lives | Final |
 | 7 | `Step3_Step4_Options.md` | Only **§2, the prompt that finishes episode 9's 3b** | Archive once episode 9 ships |
-| 9 | **`SAP_Subniche_v3.md`** | **The territory re-opened:** candidates, the vidIQ research plan and prompts, the decision rule, the thumbnail review | Run the research now |
+| 9 | **`SAP_Subniche_v3.md`** | **The territory, from the vidIQ data:** our analytics, demand × supply, proven small channels, RPM, the recommendation (true money crimes from history), FERN and Nightshift shot by shot, the whole-episode cinematic proposal (P1–P7) | Your decision |
 | 8 | **`SAP_Merge_Pack.md`** + `merge/` | **The prompt and files that merge all of this into the runbook on your PC**, keeping your own edits and showing every conflict with a recommendation | Use after the weekly reset |
 | — | `archive/` | `Visual_Upgrade_Plan.md`, `Runbook_Changes_2026-09-24.md`: earlier rounds, folded into files 3 and 4 | Archived |
 | — | `NIF_CONTENT_PLAN_Sept-Dec_2026.md` | The old 90-day plan: a record of episodes 1–9, superseded from episode 10 (see its first lines) | Record |
@@ -29,6 +29,18 @@ itself was tested on a simulated local runbook.
 ---
 
 ## Change history, newest first
+
+### 10 · The vidIQ research (2026-09-28)
+
+- **Researched first, through the vidIQ connector** (about 260 credits). `SAP_Subniche_v3.md`
+  is rewritten from the data. The pre-research front-runner (money history as
+  mysteries) lost: the channels already making it are stuck under 1,500 subscribers.
+- **The recommendation:** true money crimes from history (frauds, cons, heists,
+  bubbles), told as a case. It's high demand (+125–148% on *heists* and *scam documentary*),
+  medium competition, small channels breaking in, and the Business RPM band (about $8
+  per 1,000 US views, mid estimate).
+- **The whole-episode cinematic rules (P1–P7) are a proposal only.** The runbook is
+  unchanged until you say yes.
 
 ### 9 · The merged runbook, the cold open, and the territory (QA §11)
 
