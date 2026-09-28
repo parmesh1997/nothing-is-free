@@ -191,3 +191,27 @@ treats it as proposals, not as changes.
 **Checked and consistent after this pass:** every "§n" in the runbook resolves; the
 case test is eleven rows; there are seven case devices; "at most two" moving 3D shots;
 one upload slot; `merge/runbook_proposed.md` is identical to the runbook.
+
+## 11 · Seventh pass: the merged runbook, the cold open, and the territory (2026-09-28)
+
+**Your merged runbook** (2026-09-27) checked clean: no conflict markers, no duplicated
+section numbers, every "§n" resolves, and your three new sections (key facts on screen,
+motion blur and camera speed, stop before export) fit. It is now the repo's source of
+truth and the base for the next merge.
+
+| # | Finding | Sev | Fix | Where |
+| --- | --- | --- | --- | --- |
+| G1 | **The cold open doesn't move.** Measured: 22% of frames active in the first 15 s, a 5.4 s stretch where only an eye blinks, 4 shots. The DoodleDemo reference: 71% active | 🔴 | The cold open is directed: 5–7 shots, a move into a place first, the camera never rests, two atmosphere layers, physical action, kinetic type | Runbook §4.1 |
+| G2 | **`motion-check` passed a blink as motion.** Its held-state test only caught 3 s of the 5.4 s stare | 🟠 | An activity measure (share of the picture moving); quiet runs over 2 s (1 s in the cold open) fail | `motion-check.mjs`; runbook §9.5, §12.3 |
+| G3 | **Plain boards read as a lesson:** the flat cream floor-and-wall two-shot | 🔴 | No plain boards for story beats; the case-file language for mechanism | Runbook §2.3 |
+| G4 | **"Cinematic" was being made by the builder model**, turn by turn | 🟠 | Opus writes the director's treatment before the build; the cold open is built on Opus | Runbook §5.2, §9.0.1 |
+| G5 | **Nothing in the world moved by itself** | 🟠 | The atmosphere kit, built once; plates lit fully because they're stills | Runbook §9.8.5 |
+| G6 | **CTR 0.8–3.4%**, under YouTube's normal 2–10% range, and topics too thin to choose from | 🔴 | The territory re-opened, with a research plan through the vidIQ connector or three prompts and a scored decision | `SAP_Subniche_v3.md` |
+| G7 | **A/B tests started at publish** on videos with 170 impressions | 🟡 | One thumbnail at publish; a test only after about 1,000 impressions | Runbook §14.1 |
+| G8 | **Runtime:** the creator set 10–15 minutes; §1.4 still said no fixed length | 🟡 | §1.4 rewritten; the 8-minute references in the other documents updated | Runbook §1.4; Strategy §6.4; Production §5 |
+| G9 | **The slot:** your merge chose Sunday 21:00 IST; four documents still said Saturday | 🟡 | Aligned | Master plan, strategy, production plan, content plan |
+| G10 | **The "YOU WORK HERE" thumbnails** don't state a money contradiction, the face is neutral, and the key object is tiny; they also look AI-generated, against law 12 | 🟠 | A principle for the fix and a question to the creator | `SAP_Subniche_v3.md` §7 |
+
+**Not reachable from the review environment:** the nine reference videos (YouTube is
+blocked). The merge prompt's step 8 turns each into a summary, two numbers and a
+contact sheet on the creator's PC.

@@ -48,6 +48,7 @@ to between a twelfth of the file (Step 2) and two-fifths of it (Step 3 build):
 | 0 · Intake | §1, §4.1–4.5, §5.4, §6, §12 (Step 0 block), §14.3 | §2, §7–§11 |
 | 1 · Script | §1.1–1.3, §2.5–2.8, §4, §7, §12 (Step 1 block) | §8–§11 |
 | 2 · VO | §8, §12 (Step 2 block) | everything else |
+| 3-0 · Treatment | §2.3, §4.1, §4.9, §9.0.1, §9.8.5 | everything else |
 | 3 · Build | §2, §4.9, §9, §11, §12 (Step 3 block) | §6–§8 |
 | 3 · Audit | §2.1, §3, §9.5–9.6, §12 (Step 3 block) | everything else |
 | 3 · Fix (an issue sheet) | §5.4, §9.5.1, and only the sections the sheet's classes name | everything else |
@@ -159,10 +160,12 @@ arrived is a good outcome; leaving because the episode stalled is not.
 
 - **No paid promotion.** Promoted views do not click the next video, and they
   poison the signal that decides whether YouTube expands a test.
-- **Runtime is whatever the material honestly carries.** No target, no floor, no
-  ceiling. If a topic genuinely supports thirty or forty minutes, it runs that
-  long; if it says everything it has in eleven, it ends at eleven. Never pad to
-  reach a number and never cut something that earns its place.
+- **Runtime: 10 to 15 minutes** (creator, 2026-09-28). Ten minutes is the floor, about
+  thirteen is usual, and fifteen is the ceiling. Inside that range the case sets the
+  length. Never pad to reach ten: a case that can't fill ten minutes with suspects,
+  alibis and a reveal is too thin to be an episode, and goes back to the shortlist.
+  Never cut something that earns its place to stay under fifteen: split it into two
+  cases instead.
 
   **Length is earned by the previous episode's retention.** Going longer than the
   last episode requires the last episode to have held ≥45% (§1.3), as recorded
@@ -171,9 +174,8 @@ arrived is a good outcome; leaving because the episode stalled is not.
   to the viewer and to the algorithm, and the channel's current weak number is
   retention — so length is a reward for holding attention, not a bid for it.
 
-  **The topic sets the runtime; there is no fixed length** (creator, 2026-09-27). A
-  case runs as long as its suspects, alibis and reveal genuinely need: nine minutes if
-  it has nine, thirteen if it has thirteen. It is decided at Round 2 (§6.5) from the
+  **The case sets the runtime inside 10–15 minutes** (creator, 2026-09-28, replacing
+  the no-fixed-length rule of 2026-09-27). It is decided at Round 2 (§6.5) from the
   case itself, never padded to a target and never cut to fit one. Round 2 states the
   runtime, its word budget (minutes × 160) and its estimated weekly usage together
   (the build cost grows with the number of setups, §9.0), so a long case is chosen
@@ -319,6 +321,20 @@ shot rather than set once per location.
 | **L1 · Drawn 2D** | A drawn set in Remotion (SVG), with the cast rig in it: history, the case devices | ~35% |
 | **In-world insert** | A graphic shown inside the world (§2.8) | ~12% |
 | **L3 · Moving 3D** | A Blender camera move, 5–10 s: the cold open's one moving shot, or the diorama orbit (§9.8.3). **At most two per episode.** Characters in it are still the 2D rig, placed per frame from the shot's anchors; there is no 3D Lucky until a modelled rig exists | ≤3% |
+
+**No plain boards** (creator, 2026-09-28). A story beat never plays on a bare floor
+line and an empty wall. That picture reads as a lesson, not a story, whatever the
+script says. Every STORY or COMEDY beat happens **in a place**: an L2 plate, or an L1
+set drawn as a full environment with a background, light, weather and life (§9.8.5).
+Flat, empty staging is allowed only for the case-file language below.
+
+**The case-file language, for the mechanism.** MECHANISM beats (the 30%) look like
+the detective's notebook: hand-drawn lines that draw themselves on warm paper, a
+pencil or a magnifier moving across the desk, red string between pinned notes,
+typewriter captions, charts and arrows that draw on, and a stamp that lands. It moves
+continuously, like a hand at work (the creator's *DoodleDemo* is the reference: about
+70% of its frames move). It's built once as a kit of components (`CaseFile`,
+`DrawOn`, `Typewriter`, `RedString`, `Stamp`) and restyled per episode (§4.8).
 
 **Every frame has three planes**: background (the set), midground (the counter,
 the board, the furniture) and foreground (the character, the prop in hand, the
@@ -668,6 +684,23 @@ payoff. Then the history begins.
 How the question lands changes every episode, because the location it lands in
 does (§4.8).
 
+**The cold open is directed, not animated** (creator, 2026-09-28). The next
+episode's cold-open proxy (the airline tax, 2026-09-28) measured 22% of frames moving
+in its first 15 seconds, with a 5.4-second stretch where only an eye blinked. It read
+as a lesson. The rules:
+
+| Rule | Spec |
+| --- | --- |
+| **Shots** | 5–7 in the first 15 s; a cut, or a new camera move, every 2–3 s |
+| **The first image is a move into a place** | A crane down from the sky or the ceiling, a push through a door or window, or a whip into the counter. Never a static frame on a face |
+| **The camera never rests** | Every cold-open shot has a camera move: push, drift, pan, crane, whip (with its blur, §9.4.1) or handheld |
+| **The world moves** | At least two atmosphere layers in every shot (§9.8.5): rain, fog, dust in a light shaft, steam, a passing light, people crossing near the lens |
+| **The cast acts** | Every shot has a physical action: reach, pay, drop, turn, react big. A stare with a blink is a held frame |
+| **The title question lands as kinetic type in the world** | On the location's surfaces, moving with the camera (the in-world rule above stays) |
+| **Sound** | The location's ambience from the first frame, three or more specific sounds, a music sting on the number |
+| **Measured** | `motion-check`: at least 70% of frames active in the first 15 s and no quiet run over 1 s (§9.5) |
+| **Written first** | The director's treatment (§9.0.1), by Opus, before anything is built |
+
 ### 4.2 · The spine
 
 | Position | Movement | What happens |
@@ -923,7 +956,8 @@ downgrade.
 | 3a · Library | `nif-builder` | **Opus 5.5, high** | A new location, a new cast parameter or a new shot template. Built once, reused for every episode after |
 | 3a · Angle kits | `nif-builder` | Sonnet 5, high | Twelve angles per new location, by script, plus one contact-sheet check |
 | 3b · Kit shots | `nif-builder` | Sonnet 5, medium | Picking angles and marks, running `place-check`. It is data entry against measured numbers. Batches of eight (§9.0) |
-| 3b · Hero shots, 3c · Scenes | `nif-builder` | Sonnet 5, high | At most two moving Blender shots (§9.7), and Remotion composition by setups (§9.8.4). Opus only to unpick a structural bug |
+| 3-0 · Director's treatment | `nif-scriptwriter` | **Opus 5.5, high** | The cinematic decisions (camera, action, atmosphere, light, sound) for the cold open shot by shot and for every setup (§9.0.1). The build follows it, so Sonnet builds to a director's spec instead of inventing one |
+| 3b · Hero shots, 3c · Scenes | `nif-builder` | Sonnet 5, high | At most two moving Blender shots (§9.7), and Remotion composition by setups (§9.8.4), **built to the treatment**. The cold open is built on Opus 5.5 (high): it's 15 seconds and the most valuable in the episode. Opus otherwise only to unpick a structural bug |
 | 3 · Stills audit (optional) | `nif-auditor` | Sonnet 5, medium | A backup the creator may call. The builder's self-check and the creator's review are the process (§9.5) |
 | 4 · Resolve | `nif-finisher` | Sonnet 5, medium | Opus 5.5 medium for grade and look decisions, and first-time Fusion authoring |
 | 5 · Publish and learn | `nif-researcher` | Sonnet 5, medium | Reading numbers and writing the review. Opus only when a lesson changes the runbook |
@@ -1006,6 +1040,17 @@ treatment to use, or how much research is needed — those are this runbook's jo
 
 Rows 2 and 3 run in a browsing subagent on Sonnet (§5.2), which hands back the
 filled-in tables of §6.1 and §6.2 and nothing else (§5.4).
+
+**With the vidIQ connector, rows 2 and 3 are one pass, with no browser.** vidIQ is a
+Claude connector (read-only on the channel). When it is connected and on for the
+session, 0a and 0b run through it: the channel's analytics for the last three
+episodes, outliers and keyword research for every candidate's seed terms, channel
+search for young channels with outliers, and similar thumbnails, **all collected in
+one pass before anything is decided**, never one call per question. Studio is opened
+only for what the connector doesn't return (the retention curve's key moments); the
+creator may instead drop Studio screenshots of the last three videos and their vidIQ
+Review issues into `00_intake/screens/`. Row 4's vidIQ chat prompt is then needed only
+for what the connector can't answer.
 
 **The browser rules.** Claude reads YouTube Studio and vidIQ in Chrome, in the
 **Rama** profile (the channel's own account; the other connected Chrome is a
@@ -1839,6 +1884,21 @@ Step 3 runs in three parts: **3a library, 3b plates, 3c scenes.** Skipping the
 inventory is how episodes end up rebuilding what exists, and how a shelved
 episode's assets get built in by mistake.
 
+### 9.0.1 · The director's treatment
+
+**Before 3a builds anything, Opus writes `01_script/treatment.md`**, the episode as a
+director would shoot it. Sonnet then builds to it, and a change to it is written down
+with its reason. It is short, and it is where "cinematic" is decided:
+
+| Level | What it names |
+| --- | --- |
+| **The episode** | The colour script (§4.9), the weather and time of day per location, and the one L3 shot and one orbit if any |
+| **The cold open, per shot** | Size, the camera move (from → to, with its ease), what the cast does, the atmosphere layers (§9.8.5), the key sound, the type |
+| **Each setup** (§9.8.4) | Its camera vocabulary, the light, the atmosphere, and the one cinematic device from §4.9 it carries, if any |
+
+The creator reads the cold open's page before 3b-0 starts. It is the cheapest place to
+fix a flat opening: a line of text, not a render.
+
 **0 · Read §2 before writing a single shot.** The `nif-house-style` skill at
 `engine/remotion/.claude/skills/` was written for the Board and still describes
 cream paper. **Where it conflicts with §2, §2 wins.** It is rewritten from the
@@ -2237,7 +2297,12 @@ node scripts/flicker-check.mjs <proxy.mp4> --episode ../../episodes/NIF0NN
 
 `motion-check` measures two laws on every frame instead of on samples: any stretch
 visually unchanged for 3 seconds or more (§3 law 11), and every shot outside 2–9
-seconds (§3 law 2), each mapped to its beat. `flicker-check` finds A-B-A and pop
+seconds (§3 law 2), each mapped to its beat. **It also measures activity:** the share
+of frames in which at least 0.3% of the picture moves. A blink or a mouth flap passes
+the held-state test but moves far less than that, so a stretch that quiet for 2 s
+(1 s in the cold open) is a QUIET run and fails. The gate is at least 70% active
+frames in the first 15 s. Activity is a floor, not proof of good motion: the
+creator's eye decides the rest. `flicker-check` finds A-B-A and pop
 flicker, frame to frame. A held state or a flicker cluster goes back to 3c. A long shot
 passes only if it is a continuous flow shot declared in `shots.json` (§10.7).
 
@@ -2550,6 +2615,36 @@ compositions. An episode that builds 15–20 setups and lists its shots as rows 
   shots are interleaved with other setups, never run back to back.
 - **3c works in batches of setups**, each ending with `08_conform/3c-progress.json`,
   so a session that hits a usage limit resumes without re-reading anything.
+
+### 9.8.5 · The atmosphere kit
+
+**Cinematic is the world moving, not a grade** (creator, 2026-09-28). Rain on the
+window, dust turning in a light shaft, steam off the fryer, a car's headlights sweeping
+the wall: a place feels alive when something in it moves that nobody is animating.
+These are **Remotion layers built once**, seeded and reusable, laid over or between the
+plate's far / set / near layers. None of them needs a Blender render.
+
+| Layer | How it is made | Sits |
+| --- | --- | --- |
+| **Dust in light** | Seeded motes drifting on noise (`@remotion/noise`), brighter inside a light-shaft mask | Between set and near |
+| **Light shafts** | A pre-blurred cone image per practical or window, slowly breathing in opacity | Over the set layer, screen blend |
+| **Fog and haze** | Two tileable pre-blurred fog images scrolling at different speeds, denser toward the far layer | Over far, thinner over set |
+| **Rain** | Streak sprites at two depths, a window-drip layer, and a darker, wetter plate variant (one extra plate, rendered once) | Near and far |
+| **Steam and smoke** | Sprite puffs rising on noise from anchors (the fryer, a coffee, a chimney) | At the anchor's depth |
+| **A passing light** | A soft gradient sweeping across the plate (headlights, a door opening, a flicker) | Over the set layer |
+| **Life near the lens** | Crowd silhouettes crossing the near layer, out of focus, fast (with blur, §9.4.1) | Near |
+| **Paper and money** | Falling receipts, bills, confetti: seeded sprites with rotation | Any depth |
+
+- **Every L2 shot carries at least one atmosphere layer; every cold-open shot at least
+  two.** They are chosen in the treatment (§9.0.1), per location and weather.
+- **Cheap by construction:** sprites and pre-blurred images, never per-frame CSS blur
+  (§9.4). The kit is built once, in the week after NIF009, and kept in the library.
+- **Plates are stills, so light them fully.** A kit plate renders once per angle, so it
+  can afford what a moving shot can't: soft shadows, ambient occlusion, bloom, a
+  volume for light shafts, even Cycles. **Spend render time on twelve stills, never
+  on frames.** Whether plates move from the toon look toward the soft-lit look of the
+  creator's reference thumbnail is a creator decision: one plate is rendered both
+  ways and compared before any kit changes.
 
 ### 9.9 · Archival and free sources
 
@@ -3197,6 +3292,10 @@ is checked again later lists every step in its Step column.
 | Gate | Step | Test |
 | --- | --- | --- |
 | Cold open first | 3 | The cold open built and its proxy watched by the creator before any other shot is built |
+| Treatment | 3 | `01_script/treatment.md` written by Opus before 3a; the cold open page read by the creator (§9.0.1) |
+| Cold open directed | 3 | 5–7 shots in 15 s; every shot has a camera move, a physical action and at least two atmosphere layers; `motion-check` shows at least 70% active frames in the first 15 s and no quiet run over 1 s (§4.1) |
+| Atmosphere | 3 | Every L2 shot carries at least one atmosphere layer (§9.8.5) |
+| No plain boards | 1, 3 | No STORY or COMEDY beat on a bare floor and wall; flat staging only in the case-file language (§2.3) |
 | Setups | 3 | 3c builds setups, then shots as rows: at most one setup per four shots, with progress written per batch (§9.8.4) |
 | Orbit | 3 | At most one diorama orbit, 5–10 s, from the location's template (§9.8.3) |
 | Title echo | 3 | The title's object is in the first image, and its key words are in the world by 0:15 (§4.1) |
@@ -3232,7 +3331,7 @@ is checked again later lists every step in its Step column.
 | Feed test | 3 | Every thumbnail variant seen in `feed-mock.mjs`'s three views beside the topic's top results; `feed-test.md` answers both questions (§9.10) |
 | Cost recorded | 3 | Agent minutes per finished second, split 3a/3b/3c, in `project.json` |
 | No AI imagery | 3 | Zero AI-generated video, images, textures or words anywhere on screen |
-| Motion check | 3 | `motion-check.mjs` on the proxy: zero held states; every shot 2–9 s or a declared flow shot |
+| Motion check | 3 | `motion-check.mjs` on the proxy: zero held states and zero quiet runs; every shot 2–9 s or a declared flow shot |
 | Fix loop | 3 | Creator issues arrive as `issues.csv`; fixed by class, component first; only changed clips re-rendered; two rounds at most (§9.5.1) |
 
 ### 12.4 · Step 4 · Resolve
@@ -3398,9 +3497,12 @@ uploads and never clicks Save in Studio or vidIQ (§6, browser rules).
 2. **Check the four obligations of §13.3** against the description as it stands:
    the AI block, the credits, the sources with years, and the chapters from
    `03_transcript/chapters.md`.
-3. **Test the thumbnail rather than guess it.** The two or three variants built at
-   Step 3 (§9.10) go into Studio's *Test & compare*, and the title too where the
-   account offers it. The creator sets it up.
+3. **One thumbnail at publish; test it later.** The variant chosen with the feed test
+   (§9.10) goes up alone. *Test & compare* starts only once the video has passed about
+   1,000 impressions: below that, each variant gets too few impressions for a result,
+   and the test adds a variable while YouTube is still deciding whether to widen
+   (creator's observation, 2026-09-28: views returned when a test was removed). The
+   creator sets it up.
 4. **Add the episode to `library/shipped.md`**: code, title, publish date. Its
    numbers are filled in at 7 days.
 5. **The end screen points backward:** the last 10–15 seconds after the sign-off carry

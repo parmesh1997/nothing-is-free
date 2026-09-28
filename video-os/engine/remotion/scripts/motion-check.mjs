@@ -4,10 +4,16 @@
  *
  *   law 11 · no held state   → freezedetect: any stretch visually unchanged ≥ 3 s
  *   law 2  · shot lengths    → scene-cut detection: every shot between 2 and 9 s
+ *   activity                 → the share of the picture that actually moves, per frame.
+ *                              A blink or a mouth flap keeps freezedetect happy but moves
+ *                              well under 0.3% of the frame; a stretch that quiet for
+ *                              --quiet seconds (2 s; 1 s inside the cold open, --cold 15)
+ *                              is a QUIET run: the viewer sees a still with a twitch in it.
  *
  *   (from engine/remotion/)
  *   node scripts/motion-check.mjs <proxy.mp4> [--episode ../../episodes/NIF0NN]
  *        [--hold 3] [--noise -50dB] [--cut 0.3] [--min 2] [--max 9]
+ *        [--quiet 2] [--cold 15] [--active-pct 0.3]
  *
  * Run it on the proxy BEFORE grain is added — grain changes every frame and
  * would hide a frozen picture. With --episode, every finding is mapped to its
@@ -34,6 +40,9 @@ const noise = opt("--noise", "-50dB");
 const cut = parseFloat(opt("--cut", "0.3"));
 const minShot = parseFloat(opt("--min", "2"));
 const maxShot = parseFloat(opt("--max", "9"));
+const quietSec = parseFloat(opt("--quiet", "2"));
+const coldSec = parseFloat(opt("--cold", "15"));
+const activePct = parseFloat(opt("--active-pct", "0.3"));
 const input = args[0];
 if (!input) {
   console.error("usage: node scripts/motion-check.mjs <proxy.mp4> [--episode dir] [--hold 3] [--cut 0.3]");
@@ -81,6 +90,36 @@ if (epDir) {
 const mmss = (s) => `${Math.floor(s / 60)}:${(s % 60).toFixed(1).padStart(4, "0")}`;
 const where = (a, b) => `${mmss(a)}–${mmss(b)}${epDir ? ` · ${beatAt(a)}${beatAt(b - 0.01) !== beatAt(a) ? `→${beatAt(b - 0.01)}` : ""}` : ""}`;
 
+// ── activity: the share of pixels that change between frames, on a 160×90 grey copy ──
+const W = 160, H = 90;
+const raw = spawnSync(cmd[0], [...cmd.slice(1), "-hide_banner", "-loglevel", "error", "-i", input, "-vf", `scale=${W}:${H},format=gray`, "-an", "-f", "rawvideo", "-"], {
+  maxBuffer: 1 << 30,
+}).stdout;
+const fr = /(\d+(?:\.\d+)?) fps/.exec(log);
+const fps = fr ? parseFloat(fr[1]) : 24;
+const nF = Math.floor((raw?.length ?? 0) / (W * H));
+const act = new Float32Array(Math.max(0, nF - 1));
+for (let f = 1; f < nF; f++) {
+  let n = 0;
+  const a = (f - 1) * W * H, b = f * W * H;
+  for (let i = 0; i < W * H; i++) if (Math.abs(raw[b + i] - raw[a + i]) > 6) n++;
+  act[f - 1] = (100 * n) / (W * H);
+}
+const quiet = [];
+let qs = -1;
+for (let f = 0; f <= act.length; f++) {
+  const still = f < act.length && act[f] < activePct;
+  if (still && qs < 0) qs = f;
+  if (!still && qs >= 0) {
+    const s0 = qs / fps, s1 = f / fps, limit = s0 < coldSec ? Math.min(1, quietSec) : quietSec;
+    if (s1 - s0 >= limit) quiet.push({ start: s0, end: s1, cold: s0 < coldSec });
+    qs = -1;
+  }
+}
+const activeShare = act.length ? (100 * act.filter((x) => x >= activePct).length) / act.length : NaN;
+const coldFrames = act.slice(0, Math.round(coldSec * fps));
+const coldShare = coldFrames.length ? (100 * coldFrames.filter((x) => x >= activePct).length) / coldFrames.length : NaN;
+
 const short = shots.filter((s) => s.len < minShot);
 const long = shots.filter((s) => s.len > maxShot);
 const lens = shots.map((s) => s.len).sort((a, b) => a - b);
@@ -97,5 +136,11 @@ out.push(
 );
 for (const s of long) out.push(`  long   ${where(s.start, s.end)}  (${s.len.toFixed(1)} s)  — fails unless it is a declared continuous flow shot (§10.7)`);
 for (const s of short) out.push(`  short  ${where(s.start, s.end)}  (${s.len.toFixed(1)} s)`);
+out.push("");
+out.push(
+  `ACTIVITY (frames where ≥${activePct}% of the picture moves): ${activeShare.toFixed(0)}% overall · ` +
+    `${coldShare.toFixed(0)}% in the first ${coldSec}s · QUIET runs: ${quiet.length ? `FAIL × ${quiet.length}` : "PASS"}`,
+);
+for (const q of quiet) out.push(`  quiet  ${where(q.start, q.end)}  (${(q.end - q.start).toFixed(1)} s)${q.cold ? "  — inside the cold open (limit 1 s)" : ""}`);
 console.log(out.join("\n"));
-process.exit(freezes.length ? 1 : 0);
+process.exit(freezes.length || quiet.length ? 1 : 0);

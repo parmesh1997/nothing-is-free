@@ -40,7 +40,7 @@ most two L3 shots on top.
 
 **What you lose going from L3 to L2:** the camera can't travel *through* a space or
 orbit it. It can push, drift, pan and rack focus, and the layers give parallax. In an
-8-minute case, viewers feel the lack of travel only in establishing moments, and that
+10–15 minute case, viewers feel the lack of travel only in establishing moments, and that
 is what the two L3 shots are for: the cold open's moving shot and one diorama orbit.
 
 **What you lose going from L2 to L1:** a sense of place. Light pools, occlusion and
@@ -136,7 +136,7 @@ the hook doesn't work, it's fixed while it is 15 seconds of work, not 12 minutes
 | **3a · Library** | New locations from the modular kit, plus **the angle kit**: twelve angles, each with a layered plate, fg matte, mist and practicals passes, measured floor marks (`marks.py`), and a contact sheet checked once | Opus for a new location; Sonnet for the kit render | ~1 h per new location, 0 for kitted ones |
 | **3b-0 · Cold open** | Built first, proxy watched (the gate above) | Sonnet, high | ~45 min |
 | **3b · Shots** | Each L2 shot is data: an angle, a mark for each character, a camera move. `place-check.mjs` validates it with numbers and writes `place-<shot>.json`. Batches of eight; two fix attempts, then the ladder (§9.8.2) | Sonnet, medium | ~1–1.5 h for 20 shots |
-| **3c · Scenes** | **Setups first, then shots as data rows** (runbook §9.8.4): 15–20 parameterised setups for an 8-minute case, at most one per four shots. Then the three case devices this episode uses, the reconstruction overlay, inserts and text. Batches with a progress file | Sonnet, high | ~2–4 h for an 8-minute case (estimate) |
+| **3c · Scenes** | **Setups first, then shots as data rows** (runbook §9.8.4): 15–25 parameterised setups for a 10–15 minute case, at most one per four shots. Then the three case devices this episode uses, the reconstruction overlay, inserts and text. Batches with a progress file | Sonnet, high | ~3–5 h for a 13-minute case (estimate) |
 | **Audit** | Scripts first, then contact sheets, then `motion-check.mjs` on the proxy (§9.5) | Sonnet, medium | ~30 min |
 | **Fix loop** | You watch the proxy and write `issues.csv`; one fresh fix session fixes by class, component first, re-renders only changed clips; two rounds at most (runbook §9.5.1) | Sonnet, medium | ~30–60 min per round (estimate) |
 
@@ -301,7 +301,7 @@ candidate: a deliberate remake of episode 1, the channel's best-reached topic, t
 a whodunit with a culprit past episode 1's own answer (strategy §7). The case test and
 the case score decide; if popcorn fails, the next slate topic that passes goes instead.
 
-- **Upload:** Saturday, 21:30 IST, the fixed slot (runbook §1.4).
+- **Upload:** Sunday, 21:00 IST, the fixed slot (runbook §1.4).
 - **Packaging:** two or three thumbnail variants through the feed test (`feed-mock.mjs`,
   runbook §9.10), then *Test & compare* at publish.
 - **Read it against episode 1 at equal age** (first 7 days): CTR, 30-second retention

@@ -15,8 +15,10 @@ you know who.* Chosen by the creator on 2026-09-25, from episode 10.
 - **What the viewer gets that other channels don't:** the answer the popular videos give
   is our red herring, cleared on screen. They explain; we solve (strategy §3).
 - **The mix:** at least 65% story and comedy, at most 35% mechanism (strategy §6.1).
-- **Length:** about 8 minutes to start, longer only once an episode holds 45% (runbook
-  §1.4).
+- **Length:** 10 to 15 minutes, usually about 13 (creator, 2026-09-28; runbook §1.4).
+- **Where the cases come from is re-opened** (`SAP_Subniche_v3.md`): everyday prices
+  alone gives too few strong topics and a CTR under 2%. The front-runner is **money
+  history told as mysteries**; the vidIQ research decides.
 
 ## 2 · Where we stand
 
@@ -33,7 +35,12 @@ you know who.* Chosen by the creator on 2026-09-25, from episode 10.
 3. **Weekend-evening uploads (IST) did best**, but the oldest video has also had the most
    time. That's a lead, so the day is now fixed and videos are compared at equal age.
 
-Detail: strategy §2.1.
+**Newer (2026-09-28):** the McDonald's episode had 0.8% CTR on 170 impressions in 18
+hours; airline food 3.4%, with views returning once the A/B test was removed; printer
+ink 1.8–2%. YouTube's normal range starts at 2%, so **the click is the first wall**.
+From now on: one thumbnail at publish, and a test only after about 1,000 impressions.
+
+Detail: strategy §2.1 and `SAP_Subniche_v3.md` §1.
 
 ## 3 · How a video grows from hundreds to lakhs of impressions
 
@@ -59,7 +66,7 @@ That difference has to show **in the thumbnail** (the feed test checks it) and b
 **paid off in the video** (the red herring cleared). A topic where someone already tells
 it as a mystery is dropped (`saturation.mjs`, row 11).
 
-### 3.1 · Why eight minutes instead of a four-second chatbot answer
+### 3.1 · Why thirteen minutes instead of a four-second chatbot answer
 
 A chatbot has the answer. It doesn't have **the case**: the people and the day it
 happened, the popular answer shown fairly and then taken apart, the suspects cleared
@@ -122,11 +129,12 @@ orbit). Tools: Blender, Remotion and Resolve Studio, all free or already owned
 
 | When | What |
 | --- | --- |
-| **After the weekly reset** | One session: merge everything into your runbook (`SAP_Merge_Pack.md`) |
-| **Then** | Episode 9: 3c is done. Write `issues.csv` from the proxy, then run the fix-loop prompt (Production §9.1.1), then Steps 4 and 5. Test a whodunit-style title with *Test & compare* |
-| **The week after 9** | Write `kit.py`; kit the existing rooms; build the case devices once (Production §9.2) |
-| **Episode 10** | **The popcorn remake:** "Your Popcorn Costs $9. The Cinema Didn't Take It." Episode 1's own answer (the studio) is suspect two, and the culprit hypothesis is metering (strategy §7). It must pass the case test |
-| **Every week** | One case, **Saturday 21:30 IST**. The second slot opens after four on-time episodes |
+| **Now** | Connect vidIQ in this cloud session and run the sub-niche research (`SAP_Subniche_v3.md` §5), or paste its three prompts into vidIQ one at a time and send me the answers |
+| **Then** | Merge round 2 on your PC (`SAP_Merge_Pack.md`), including the reference-video study (its step 8) |
+| **The current episode (airline tax)** | Rebuild the cold open to runbook §4.1: Opus writes the treatment first (§9.0.1), then the atmosphere layers it needs (§9.8.5); `motion-check` must show at least 70% active frames in the first 15 s |
+| **In parallel, once** | Build the atmosphere kit and the case-file kit; test one plate toon vs soft-lit |
+| **The next case** | From the sub-niche the research picks. The popcorn remake fits the front-runner too (a 1930s case) |
+| **Every week** | One case, **Sunday 21:00 IST** (your merge). The second slot opens after four on-time episodes |
 | **After episodes 10–12** | The three-case read below |
 
 ## 7 · How we judge it, and what we change
@@ -147,6 +155,7 @@ with the others at the same age, and episode 10 against episode 1.
 | --- | --- |
 | **`SAP_Master_Plan.md`** | This page |
 | `SAP_Subniche_Strategy.md` | The whodunit: why ours, our own numbers, the format, the 12-case slate, the channel description |
+| **`SAP_Subniche_v3.md`** | **The territory re-opened:** the candidates, the vidIQ research plan and prompts, the decision rule, the thumbnail review |
 | `Someone_Always_Pays_Runbook.md` | Every step, rule and gate |
 | `SAP_Production_Plan_v2.md` | How it's made: levels, depth tricks, orbit, cold open, Steps 3–4, episodes 9 and 10 |
 | `SAP_Toolchain.md` | Every tool, its licence and cost, and how Claude runs it |

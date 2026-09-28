@@ -1,5 +1,8 @@
 # Someone Always Pays: the new sub-niche (from episode 10)
 
+> **2026-09-28:** the whodunit *format* here stands. Where the cases come *from* is
+> re-opened in `SAP_Subniche_v3.md`, after the latest CTR data. Read that next.
+
 Final version, after the QA audit (`SAP_QA_Audit.md`). **The recommendation changed from
 "The Legal Heist" to "The Money Whodunit"**: finding S1 in the audit explains why.
 **Chosen by the creator on 2026-09-25.** The runbook applies it throughout.
@@ -60,7 +63,7 @@ end.** That question can't be answered by assumption, only by the reveal.
 3. **Weekend evenings (IST) did better, but it isn't proven.** The popcorn episode is
    also the oldest, and old videos keep collecting impressions. From now on,
    episodes are compared at the same age (Studio's *First 7 days*), and the upload
-   slot is fixed on Saturday at 21:30 IST so the day stops being a variable (runbook
+   slot is fixed (now Sunday 21:00 IST, the creator's choice) so the day stops being a variable (runbook
    §1.4, §6.1).
 
 **Figures this small swing a lot.** Five episodes with a few hundred impressions each
@@ -202,9 +205,9 @@ quota). The case spine is the constant; the surfaces change.
 
 ### 6.4 · Runtime, the opening seconds, and the end
 
-- **Start at about 8 minutes (1,400 words).** It grows only when an episode holds 45%
-  (runbook §1.4). Shorter also means fewer setups, which is what makes a solo channel
-  finishable every week.
+- **10 to 15 minutes, usually about 13** (creator, 2026-09-28; runbook §1.4). It
+  replaces the earlier 8-minute start. Longer means more setups, so the build plan
+  (§9.8.4 of the runbook) matters more, not less.
 - **The title echoes within five seconds:** the title's object is in the first image,
   and its words are in the world by 0:15. A viewer who can't see what they clicked for
   leaves.
