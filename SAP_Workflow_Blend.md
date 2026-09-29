@@ -29,7 +29,7 @@ channel's monetisation at risk (Meshy, RIFE, Real-ESRGAN, stock clips, MiniMax).
 
 | Score out of 10 | Theirs | Ours today | Blended |
 | --- | --- | --- | --- |
-| **Total (12 rows below, average)** | **6.3** | **7.9** | **8.7** |
+| **Total (12 rows below, average)** | **6.3** | **7.9** | **8.6** |
 
 ## 2 · The rating, row by row
 
@@ -50,7 +50,7 @@ The scores judge the plan as written, and the last row separates "designed" from
 | 10 | **Cost and token discipline** | 7 | 8 | 8 | Same principle ("Claude decides, scripts execute, never send long logs"). Ours has the concrete rules: a context ceiling, model routing, fix by class, a log trimmer |
 | 11 | **Cinematic quality rules** | 6 | 8 | 8 | Theirs gives a style name and a tool split. Ours measures it: directed cold open, every scene directed, atmosphere kit, activity floor |
 | 12 | **Tested in practice** | 3 | 7 | 7 | Theirs is a design. Ours has shipped ten episodes and about 40 working scripts, and it carries their scars (NIF007's 63 GB master, NIF009's UI-issue marathon) |
-| | **Average** | **6.3** | **7.9** | **8.7** | |
+| | **Average** | **6.3** | **7.9** | **8.6** | |
 
 ## 3 · Their 43 sections, mapped
 
