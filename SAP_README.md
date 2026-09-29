@@ -30,6 +30,12 @@ itself was tested on a simulated local runbook.
 
 ## Change history, newest first
 
+### 12 · The workflow comparison (2026-09-29)
+
+- **`SAP_Workflow_Blend.md`:** the 43-section NIF production workflow rated against the
+  runbook (theirs 6.3, ours 7.9, blended 8.7 out of 10), with 13 proposed changes.
+  **Proposed only: nothing is in the runbook yet.**
+
 ### 11 · The plan, and runbook round 3 (2026-09-28)
 
 - **`SAP_Master_Plan.md` is the whole plan in one file:**

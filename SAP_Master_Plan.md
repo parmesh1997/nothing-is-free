@@ -320,6 +320,7 @@ others at the same age.
 | --- | --- |
 | **`SAP_Master_Plan.md`** | **This: the whole plan in one file** |
 | `Someone_Always_Pays_Runbook.md` | Every step, rule and gate: the source of truth |
+| `SAP_Workflow_Blend.md` | Their 43-section workflow rated against ours, and the proposed changes W1–W13 (not yet applied) |
 | `SAP_Subniche_v3.md` | The vidIQ research: data, demand × supply, RPM, FERN and Nightshift shot by shot |
 | `SAP_Merge_Pack.md` + `merge/` | Brings rounds 2 and 3 into the runbook on your PC |
 | `SAP_Production_Plan_v2.md`, `SAP_Toolchain.md` | How it's made; every tool |
